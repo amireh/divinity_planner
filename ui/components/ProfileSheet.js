@@ -1,6 +1,8 @@
 const React = require('react');
 const { object } = React.PropTypes;
 const AttributePanel = require('./AttributePanel');
+const SkillPanel = require('./SkillPanel');
+const CharacterSheet = require('./CharacterSheet');
 
 const ProfileSheet = React.createClass({
   propTypes: {
@@ -27,7 +29,13 @@ const ProfileSheet = React.createClass({
           onRemoveAttributePoint={profile.removeAttributePoint}
         />
 
-        <p>Level required: {profileStats.level}</p>
+        <SkillPanel
+          abilityPoints={profileStats.abilityPoints}
+          onAbilityPointIncrease={profile.addAbilityPoint}
+          onAbilityPointDecrease={profile.removeAbilityPoint}
+        />
+
+        <CharacterSheet stats={profileStats} />
       </div>
     );
   },

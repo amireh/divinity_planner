@@ -1,22 +1,22 @@
 [
   {
     "id": "str",
-    "label": "Strength",
+    "name": "Strength",
     "boosts": [
-      "man-at-arms"
+      "man_at_arms"
     ]
   },
   {
     "id": "dex",
-    "label": "Dexterity",
+    "name": "Dexterity",
     "boosts": [
-      "expert-marksman",
+      "expert_marksman",
       "scoundrel"
     ]
   },
   {
     "id": "int",
-    "label": "Intellect",
+    "name": "Intellect",
     "boosts": [
       "aerotheurge",
       "geomancer",
@@ -27,19 +27,19 @@
   },
   {
     "id": "con",
-    "label": "Constitution",
+    "name": "Constitution",
     "boosts": [
     ]
   },
   {
     "id": "spe",
-    "label": "Speed",
+    "name": "Speed",
     "boosts": [
     ]
   },
   {
     "id": "per",
-    "label": "Perception",
+    "name": "Perception",
     "boosts": [
     ]
   }

@@ -1,74 +1,57 @@
 const K = require('constants');
 const EventEmitter = require('EventEmitter');
-const ATTRIBUTES = require('database/attributes.json');
-const {
-  BASE_ATTRIBUTE_POINTS,
-  MAX_ATTRIBUTE_POINTS,
-  STARTING_ATTRIBUTE_POINTS
-} = K;
+const AttributeCalculator = require('AttributeCalculator');
+const AbilityCalculator = require('AbilityCalculator');
+const assign = require('utils/assign');
 
 function Profile() {
   let API = {};
-
   const emitter = EventEmitter();
-  const attributePoints = ATTRIBUTES.reduce(function(set, attr) {
-    set[attr.id] = BASE_ATTRIBUTE_POINTS;
-    return set;
-  }, {});
 
-  API.addAttributePoint = function(attrId) {
-    if (API.getLevel() === K.MAX_LEVEL) {
-      return;
-    }
+  const attributeCalculator = AttributeCalculator({
+    getLevel: () => API.getLevel()
+  }, emitter.emitChange);
 
-    if (attributePoints[attrId] < MAX_ATTRIBUTE_POINTS) {
-      attributePoints[attrId] += 1;
-      emitter.emitChange();
-    }
-  };
+  const abilityCalculator = AbilityCalculator({
+    getLevel: () => API.getLevel()
+  }, emitter.emitChange);
 
-  API.removeAttributePoint = function(attrId) {
-    if (attributePoints[attrId] > BASE_ATTRIBUTE_POINTS) {
-      attributePoints[attrId] = attributePoints[attrId] - 1;
-      emitter.emitChange();
-    }
-  };
+  let level = null;
+
+  API.addChangeListener = emitter.addChangeListener;
+  API.removeChangeListener = emitter.removeChangeListener;
+
+  API.addAttributePoint = attributeCalculator.addPoint;
+  API.removeAttributePoint = attributeCalculator.removePoint;
+
+  API.addAbilityPoint = abilityCalculator.addPoint;
+  API.removeAbilityPoint = abilityCalculator.removePoint;
 
   API.getLevel = function() {
-    return Math.max(
-      1,
-      Math.max(getAllocatedPoints() - STARTING_ATTRIBUTE_POINTS, 0) * 2
-    );
+    return level || inferLevel();
+  };
+
+  API.setLevel = function(inLevel) {
+    level = inLevel;
+    emitter.emitChange();
   };
 
   API.toJSON = function() {
     let stats = {};
 
     stats.level = API.getLevel();
-    stats.attributePoints = ATTRIBUTES.reduce(function(set, attr) {
-      const points = attributePoints[attr.id];
 
-      set[attr.id] = {
-        canIncrease: points < MAX_ATTRIBUTE_POINTS && stats.level < K.MAX_LEVEL,
-        canDecrease: points > BASE_ATTRIBUTE_POINTS,
-        points: points
-      };
-
-      return set;
-    }, {});
-
-    stats.allocatedPoints = getAllocatedPoints();
+    assign(stats, attributeCalculator.toJSON());
+    assign(stats, abilityCalculator.toJSON());
 
     return JSON.parse(JSON.stringify(stats));
   };
 
-  API.addChangeListener = emitter.addChangeListener;
-  API.removeChangeListener = emitter.removeChangeListener;
-
-  function getAllocatedPoints() {
-    return Object.keys(attributePoints).reduce((sum, attrId) => {
-      return sum += (attributePoints[attrId] - BASE_ATTRIBUTE_POINTS);
-    }, 0);
+  function inferLevel() {
+    return Math.max(
+      1,
+      Math.max(attributeCalculator.getAllocatedPoints() - K.STARTING_ATTRIBUTE_POINTS, 0) * 2
+    );
   }
 
   return API;
