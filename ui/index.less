@@ -1,0 +1,39 @@
+.attribute-panel {
+  padding: 0;
+  margin: 0;
+
+  display: inline-block;
+  padding: 1em;
+  border: 1px solid #ccc;
+
+  &__entry {
+    display: block;
+    list-style: none;
+  }
+
+  &__label {
+    width: 140px;
+    display: inline-block;
+  }
+
+  &__controls {
+    display: inline-block;
+  }
+
+  &__points {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+  }
+
+  &__btn {
+    background: #eee;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75em;
+
+    &:disabled {
+      visibility: hidden;
+    }
+  }
+}

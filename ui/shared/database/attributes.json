@@ -1,0 +1,46 @@
+[
+  {
+    "id": "str",
+    "label": "Strength",
+    "boosts": [
+      "man-at-arms"
+    ]
+  },
+  {
+    "id": "dex",
+    "label": "Dexterity",
+    "boosts": [
+      "expert-marksman",
+      "scoundrel"
+    ]
+  },
+  {
+    "id": "int",
+    "label": "Intellect",
+    "boosts": [
+      "aerotheurge",
+      "geomancer",
+      "hydrosophist",
+      "pyrokinetic",
+      "witchcraft"
+    ]
+  },
+  {
+    "id": "con",
+    "label": "Constitution",
+    "boosts": [
+    ]
+  },
+  {
+    "id": "spe",
+    "label": "Speed",
+    "boosts": [
+    ]
+  },
+  {
+    "id": "per",
+    "label": "Perception",
+    "boosts": [
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "name": "divinity_calculator",
+  "version": "1.0.0",
+  "description": "Divinity: Original Sin talent calculator app.",
+  "main": "ui/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "json-loader": "^0.5.3",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "scripts": {
+    "test": "karma start --single-run",
+    "build": "webpack",
+    "server": "NODE_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amireh/divinity_calculator.git"
+  },
+  "keywords": [
+    "divinity",
+    "original",
+    "sin",
+    "talent",
+    "calculator",
+    "game"
+  ],
+  "author": "Ahmad Amireh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amireh/divinity_calculator/issues"
+  },
+  "homepage": "https://github.com/amireh/divinity_calculator#readme"
+}
