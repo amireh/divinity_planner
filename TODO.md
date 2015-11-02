@@ -1,7 +1,7 @@
-- choose skills
-- enable/disable skills based on ability level
-- set level
-- persist attributes in URL
-- persist abilities in URL
+- ~~choose skills~~
+- ~~enable/disable skills based on ability level~~
+- ~~set level~~
+- ~~persist attributes in URL~~
+- ~~persist abilities in URL~~
 - persist skills in URL
 - multiple profiles

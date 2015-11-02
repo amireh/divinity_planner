@@ -1,7 +1,7 @@
 const K = require('constants');
 const ABILITIES = require('database/abilities.json');
 
-function AbilityCalculator(character, onChange = Function.prototype) {
+function CharacterAbilities(character, onChange = Function.prototype) {
   let exports = {};
 
   const abilityPoints = ABILITIES.reduce(function(hash, ability) {
@@ -25,9 +25,13 @@ function AbilityCalculator(character, onChange = Function.prototype) {
     }
   };
 
-  exports.removePoint = function(attrId) {
-    if (abilityPoints[attrId] > 0) {
-      abilityPoints[attrId] -= 1;
+  exports.getAllocatedPointsFor = function(ability) {
+    return abilityPoints[ability];
+  }
+
+  exports.removePoint = function(id) {
+    if (abilityPoints[id] > 0) {
+      abilityPoints[id] -= 1;
 
       onChange();
     }
@@ -112,7 +116,80 @@ function AbilityCalculator(character, onChange = Function.prototype) {
   exports.getAccumulativeCost = getAccumulativeCost;
   exports.getCost = getCost;
 
+  exports.getPoints = function() {
+    return abilityPoints;
+  };
+
+  exports.ensureIntegrity = function() {
+    while (getAllocatedPoints() > getPoolSize()) {
+      reduceOne();
+    }
+
+    function reduceOne() {
+      Object.keys(abilityPoints).some(function(id) {
+        if (abilityPoints[id] > 0) {
+          abilityPoints[id] -= 1;
+          return true;
+        }
+      });
+    }
+  };
+
+  exports.toURL = function() {
+    let fragments = [];
+    let lastAbilityIndex = -1;
+
+    function getIndexCharacter(index) {
+      return String.fromCharCode(97+index);
+    }
+
+    ABILITIES.forEach(function(ability, index) {
+      const points = abilityPoints[ability.id];
+
+      if (points > 0) {
+        if (lastAbilityIndex !== index - 1) {
+          const key = K.ABILITY_URL_KEYS[ability.id];
+          fragments.push(key);
+        }
+
+        lastAbilityIndex = index;
+        fragments.push(getIndexCharacter(points));
+      }
+    });
+
+    return fragments.join('');
+  };
+
+  exports.fromURL = function(url) {
+    let distribution = {};
+    let nextAbility = ABILITIES[0];
+
+    const attrKeys = Object.keys(K.ABILITY_URL_KEYS).reduce(function(set, id) {
+      const key = K.ABILITY_URL_KEYS[id];
+
+      set[key] = ABILITIES.filter(a => a.id === id)[0];
+
+      return set;
+    }, {})
+
+    url.split('').forEach(function(char) {
+      if (attrKeys[char]) {
+        nextAbility = attrKeys[char]
+      }
+      else {
+        const points = char.charCodeAt(0) - 97;
+
+        distribution[nextAbility.id] = points;
+        abilityPoints[nextAbility.id] = points;
+
+        nextAbility = ABILITIES[ABILITIES.indexOf(nextAbility) + 1];
+      }
+    });
+
+    return distribution;
+  };
+
   return exports;
 };
 
-module.exports = AbilityCalculator;
+module.exports = CharacterAbilities;

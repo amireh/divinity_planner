@@ -19,7 +19,6 @@ const AbilityPanel = React.createClass({
     return (
       <li key={id} className="item-points-sheet__entry">
         <a
-          href="#"
           onClick={this.props.onSelect.bind(null, id)}
           className={`
             item-points-sheet__label

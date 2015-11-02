@@ -6,8 +6,19 @@
 
 var path = require('path');
 var fs = require('fs');
-var file = fs.readFileSync(path.resolve(process.argv[2]), 'utf-8');
-var database = JSON.parse(file);
+var assert = require('assert');
+
+assert(fs.existsSync('skills.raw.json'),
+  "You must first generate the raw skills database by using ./divinity_wikia_scraper.js"
+);
+
+var database = JSON.parse(fs.readFileSync('skills.raw.json', 'utf-8'));
+var descriptions;
+
+if (fs.existsSync('skill_descriptions.json')) {
+  descriptions = JSON.parse(fs.readFileSync('skill_descriptions.json', 'utf-8'));
+}
+
 var normalize = require('./utils/normalize');
 var COLUMN_MAPPING = {
   'rqLevel': 'rqCharacterLevel',
@@ -58,6 +69,12 @@ function normalizeSkills(database) {
       return hsh;
     }, {});
 
+    info.id = normalize(info.name);
+
+    if (descriptions[info.name] && descriptions) {
+      info.description = descriptions[info.name];
+    }
+
     return info;
   }, []);
 
@@ -105,9 +122,9 @@ function normalizeSkills(database) {
       abilities.push(ability);
     }
 
-    delete skill.ability;
-
     ability.skills.push(skill);
+
+    skill.ability = normalize(skill.ability);
 
     return abilities;
   }, []);

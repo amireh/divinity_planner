@@ -12,3 +12,14 @@ exports.ATTRIBUTE_URL_KEYS = {
   'spe': 'S',
   'per': 'P',
 };
+
+exports.ABILITY_URL_KEYS = {
+  'aerotheurge': null,
+  'expertMarksman': 'E',
+  'geomancer': 'G',
+  'hydrosophist': 'H',
+  'manAtArms': 'M',
+  'pyrokinetic': 'P',
+  'scoundrel': 'S',
+  'witchcraft': 'W',
+};

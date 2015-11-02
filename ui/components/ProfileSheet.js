@@ -5,7 +5,9 @@ const AbilityPanel = require('./AbilityPanel');
 const CharacterSheet = require('./CharacterSheet');
 const SkillTree = require('components/SkillTree');
 const AdjustableItem = require('components/AdjustableItem');
+const Spellbook = require('components/Spellbook');
 const ABILITIES = require('database/abilities.json');
+const assign = require('utils/assign');
 const K = require('constants');
 
 const ProfileSheet = React.createClass({
@@ -37,60 +39,81 @@ const ProfileSheet = React.createClass({
   render() {
     const { profile } = this.props;
     const { activeAbilityId } = this.state;
-    const profileStats = profile.toJSON();
+    const stats = profile.toJSON();
 
     return (
       <div>
-        <div className="column">
+        <div className="column type-small">
           <div className="item-points-sheet__entry">
             <span className="item-points-sheet__label">
-              Character level
+              Level
             </span>
 
             <div className="item-points-sheet__controls">
               <AdjustableItem
-                canIncrease={profileStats.canIncreaseLevel}
-                canDecrease={profileStats.canDecreaseLevel}
+                canIncrease={stats.canIncreaseLevel}
+                canDecrease={stats.canDecreaseLevel}
                 onIncrease={this.raiseLevel}
                 onDecrease={this.lowerLevel}
                 onMax={this.setMaxLevel}
                 withMaxControl
               >
-                {profileStats.level}
+                {stats.level}
               </AdjustableItem>
             </div>
 
           </div>
 
+          <h3 className="header">
+            Attributes
+
+            <span className="header-auxiliary">
+              {stats.allocatedAttributePoints} / {stats.availableAttributePoints}
+            </span>
+          </h3>
+
           <AttributePanel
-            attributePoints={profileStats.attributePoints}
+            attributePoints={stats.attributePoints}
             onAddAttributePoint={profile.addAttributePoint}
             onRemoveAttributePoint={profile.removeAttributePoint}
           />
 
+          <h3 className="header">
+            Abilities
+
+            <span className="header-auxiliary">
+              {stats.allocatedAbilityPoints} / {stats.availableAbilityPoints}
+            </span>
+          </h3>
+
           <AbilityPanel
-            abilityPoints={profileStats.abilityPoints}
+            abilityPoints={stats.abilityPoints}
             onIncrease={profile.addAbilityPoint}
             onDecrease={profile.removeAbilityPoint}
             onSelect={this.showAbilitySkillTree}
             selectedAbilityId={activeAbilityId}
           />
-
-          <CharacterSheet stats={profileStats} />
         </div>
 
-        {activeAbilityId && (
-          <SkillTree
-            abilityId={activeAbilityId}
-            level={profileStats.level}
-            attributePoints={profileStats.attributePoints}
-            abilityPoints={profileStats.abilityPoints}
-            skills={ABILITIES.filter(function(ability) {
-              return ability.id === activeAbilityId;
-            })[0].skills}
-          />
-        )}
+        <div className="column">
+          {activeAbilityId && (
+            <SkillTree
+              abilityId={activeAbilityId}
+              level={stats.level}
+              attributePoints={stats.attributePoints}
+              abilityPoints={stats.abilityPoints}
+              skills={this.getSkillsForAbility(activeAbilityId)}
 
+              onSkillSelect={this.toggleSkillSelection}
+            />
+          )}
+        </div>
+
+        {stats.skillbook.length > 0 && (
+          <div className="column">
+            <Spellbook skills={stats.skillbook} />
+          </div>
+        )}
       </div>
     );
   },
@@ -114,6 +137,33 @@ const ProfileSheet = React.createClass({
   lowerLevel() {
     const { profile } = this.props;
     profile.setLevel(profile.getLevel() - 1);
+  },
+
+  toggleSkillSelection(id) {
+    const { profile } = this.props;
+
+    if (profile.hasSkillInSpellbook(id)) {
+      profile.removeSkillFromSpellbook(id);
+    }
+    else {
+      profile.addSkillToSpellbook(id);
+    }
+  },
+
+  getSkillsForAbility(abilityId) {
+    const { profile } = this.props;
+    const { skills } = ABILITIES.filter(function(ability) {
+      return ability.id === abilityId;
+    })[0];
+
+    return skills.map(function(skill) {
+      const decoratedSkill = assign({}, skill);
+
+      decoratedSkill.learned = profile.skillbook.hasSkill(skill.id);
+      decoratedSkill.canLearn = profile.skillbook.canUseSkill(skill);
+
+      return decoratedSkill;
+    });
   },
 
   reload() {

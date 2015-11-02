@@ -1,7 +1,7 @@
 const K = require('constants');
 const ATTRIBUTES = require('database/attributes.json');
 
-function AttributeCalculator(character, onChange = Function.prototype) {
+function CharacterAttributes(character, onChange = Function.prototype) {
   let exports = {};
 
   const attributePoints = ATTRIBUTES.reduce(function(hash, ability) {
@@ -124,12 +124,29 @@ function AttributeCalculator(character, onChange = Function.prototype) {
     return getPoolSize() - getAllocatedPoints();
   }
 
-
   exports.getPoolSize = getPoolSize;
   exports.getAllocatedPoints = getAllocatedPoints;
   exports.getRemainingPoints = getRemainingPoints;
+  exports.getPoints = function() {
+    return attributePoints;
+  };
+
+  exports.ensureIntegrity = function() {
+    while (getAllocatedPoints() > getPoolSize()) {
+      reduceOne();
+    }
+
+    function reduceOne() {
+      Object.keys(attributePoints).some(function(id) {
+        if (attributePoints[id] > 0) {
+          attributePoints[id] -= 1;
+          return true;
+        }
+      });
+    }
+  };
 
   return exports;
 };
 
-module.exports = AttributeCalculator;
+module.exports = CharacterAttributes;

@@ -6,6 +6,8 @@ const CharacterSheet = React.createClass({
 
     return (
       <div>
+        <h2>Character</h2>
+
         <p>Level required: {stats.level}</p>
         <p>Attribute points: {stats.allocatedAttributePoints} / {stats.availableAttributePoints}</p>
         <p>

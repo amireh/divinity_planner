@@ -1,7 +1,28 @@
+@import "../public/assets/skill_icons";
+
+body {
+  color: #444;
+  width: 960px;
+  margin: 0 auto;
+}
+
+a, a:visited {
+  color: #4078c0;
+  cursor: pointer;
+}
+
+.app-header {
+  margin-bottom: 1em;
+}
+
 .column {
   vertical-align: top;
   display: inline-block;
-  margin-right: 5em;
+  margin-right: 2em;
+}
+
+.type-small {
+  font-size: 0.75em;
 }
 
 .item-points-sheet, .adjustable-item {
@@ -15,10 +36,11 @@
   &__entry {
     display: block;
     list-style: none;
+    margin: 0 0 0.25em 0;
   }
 
   &__label {
-    width: 140px;
+    width: 160px;
     display: inline-block;
   }
 
@@ -34,9 +56,12 @@
 
   &__btn {
     background: #ddd;
+    // color: white;
     border: none;
     cursor: pointer;
     font-size: 0.75em;
+    line-height: 17px;
+    // padding: 0.25em;
 
     &:disabled {
       visibility: hidden;
@@ -48,40 +73,48 @@
   display: inline-block;
   vertical-align: top;
 
-  margin: 1em 0;
+  // margin: 1em 0;
 
   &__tabs {
     margin: 0;
   }
 
-  &__selected-ability-link {
+  a&__selected-ability-link {
     color: green;
   }
 }
 
 .skill-tree {
-  width: 640px;
+  width: 480px;
   display: inline-block;
   vertical-align: top;
   margin: 0 1em;
+
+  &__controls {
+    margin: 0 0 1em 0;
+    font-size: 0.75em;
+    line-height: 1;
+  }
 
   &__listing {
     text-align: center;
     margin: 0;
     padding: 0;
-    position: relative;
   }
 
   &__level {
     list-style: none;
     margin: 0 0 0.5em 0;
     background: #eee;
-    // padding: 1em;
+    position: relative;
   }
 
   &__level-indicator {
     position: absolute;
-    right: 1em;
+    right:  1em;
+    top:    1em;
+    font-size: 0.75em;
+    font-weight: bold;
   }
 
   &__skill {
@@ -89,27 +122,66 @@
     margin: 1em;
     width: 100px;
     vertical-align: top;
+    text-align: center;
 
     &--locked {
-      opacity: 0.5;
+      .skill-icon {
+        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(100%);
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+
+    &--learned a {
+      color: green;
     }
   }
 
   &__skill-icon {
-    @dim: 32px;
+    @dim: 38px;
 
     height: @dim;
+    width:  @dim;
 
-    img {
-      width:  @dim;
-      height: @dim;
-    }
+    background: url('./images/skill-frame--38.png') no-repeat 0 0;
 
+    margin: 0 auto;
     margin-bottom: 0.5em;
+
+    .skill-icon {
+      position: relative;
+      top:  3px;
+      left: 3px;
+    }
   }
 
   &__skill-name {
     font-size: 0.75em;
     display: block;
+  }
+}
+
+.header {
+  position: relative;
+  line-height: 24px;
+}
+
+.header-auxiliary {
+  font-size: 12px;
+  position: absolute;
+  right: 2.25em;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+.skillbook {
+  width: 80px;
+
+  .skill-tree__skill {
+    margin: 0 0 1em 0;
   }
 }

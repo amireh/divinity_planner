@@ -1,6 +1,6 @@
-const AttributeCalculator = require('../AttributeCalculator');
+const CharacterAttributes = require('../CharacterAttributes');
 
-describe('AttributeCalculator', function() {
+describe('CharacterAttributes', function() {
   let subject;
   let level;
 
@@ -10,7 +10,7 @@ describe('AttributeCalculator', function() {
 
   beforeEach(function() {
     level = 1;
-    subject = AttributeCalculator({ getLevel: () => level });
+    subject = CharacterAttributes({ getLevel: () => level });
   });
 
   describe('#getPoolSize', function() {
