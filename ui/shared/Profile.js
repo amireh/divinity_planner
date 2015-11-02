@@ -32,19 +32,57 @@ function Profile() {
   };
 
   API.setLevel = function(inLevel) {
-    level = inLevel;
-    emitter.emitChange();
+    if (inLevel <= K.MAX_LEVEL && inLevel >= 1) {
+      level = inLevel;
+      emitter.emitChange();
+    }
   };
 
   API.toJSON = function() {
     let stats = {};
 
     stats.level = API.getLevel();
+    stats.canIncreaseLevel = stats.level < K.MAX_LEVEL;
+    stats.canDecreaseLevel = stats.level > 1;
 
     assign(stats, attributeCalculator.toJSON());
     assign(stats, abilityCalculator.toJSON());
 
     return JSON.parse(JSON.stringify(stats));
+  };
+
+  API.toURL = function() {
+    let fragments = [];
+    let attributesURL = attributeCalculator.toURL();
+
+    if (attributesURL.length) {
+      fragments.push('X');
+      fragments.push(attributesURL);
+    }
+
+    return fragments.join('');
+  };
+
+  API.fromURL = function(url) {
+    let domain;
+    let attributesStr = '';
+
+    url.split('').forEach(function(char) {
+      switch(char) {
+        case 'X':
+          domain = 'attributes';
+        break;
+
+        default:
+          if (domain === 'attributes') {
+            attributesStr += char;
+          }
+      }
+    });
+
+    if (attributesStr.length) {
+      attributeCalculator.fromURL(attributesStr);
+    }
   };
 
   function inferLevel() {
@@ -53,6 +91,10 @@ function Profile() {
       Math.max(attributeCalculator.getAllocatedPoints() - K.STARTING_ATTRIBUTE_POINTS, 0) * 2
     );
   }
+
+  emitter.addChangeListener(function() {
+    window.location.hash = `#${API.toURL()}`;
+  });
 
   return API;
 };

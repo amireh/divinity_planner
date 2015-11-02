@@ -16,4 +16,18 @@ describe('Profile', function() {
       serialize();
     });
   });
+
+  describe('#toURL', function() {
+    it('works with an empty state', function() {
+      assert.equal(subject.toURL(), '');
+    });
+  });
+
+  describe('#fromURL', function() {
+    it('accepts attributes "XDb"', function() {
+      subject.fromURL('XDb');
+
+      assert.equal(serialize().allocatedAttributePoints, 1);
+    });
+  });
 });

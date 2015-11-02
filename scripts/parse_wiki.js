@@ -12,7 +12,7 @@ function parse() {
 
       if (column === 'skill') {
         set.name = columnNode.querySelector('a[title]:last-of-type').textContent;
-        set.image = columnNode.querySelector('img').src;
+        set.image = columnNode.querySelector('img').src.replace(/\/revision\/latest.+$/, '');
       }
       else if (column === 'description') {
         set.description_text = columnNode.innerText;

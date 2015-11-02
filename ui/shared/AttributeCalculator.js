@@ -40,7 +40,7 @@ function AttributeCalculator(character, onChange = Function.prototype) {
         name: ability.name,
         canIncrease: points < K.MAX_ATTRIBUTE_POINTS && remaining > 0,
         canDecrease: points > 0,
-        points: points
+        points: points + K.BASE_ATTRIBUTE_POINTS
       };
 
       return set;
@@ -52,6 +52,60 @@ function AttributeCalculator(character, onChange = Function.prototype) {
     stats.remainingAttributePoints = getRemainingPoints();
 
     return stats;
+  };
+
+  exports.toURL = function() {
+    let fragments = [];
+    let lastAttrIndex = -1;
+
+    function getIndexCharacter(index) {
+      return String.fromCharCode(97+index);
+    }
+
+    ATTRIBUTES.forEach(function(attr, index) {
+      const points = attributePoints[attr.id];
+
+      if (points > 0) {
+        if (lastAttrIndex !== index - 1) {
+          const key = K.ATTRIBUTE_URL_KEYS[attr.id];
+          fragments.push(key);
+        }
+
+        lastAttrIndex = index;
+        fragments.push(getIndexCharacter(points));
+      }
+    });
+
+    return fragments.join('');
+  };
+
+  exports.fromURL = function(url) {
+    let distribution = {};
+    let nextAttribute = ATTRIBUTES[0];
+
+    const attrKeys = Object.keys(K.ATTRIBUTE_URL_KEYS).reduce(function(set, id) {
+      const key = K.ATTRIBUTE_URL_KEYS[id];
+
+      set[key] = ATTRIBUTES.filter(a => a.id === id)[0];
+
+      return set;
+    }, {})
+
+    url.split('').forEach(function(char) {
+      if (attrKeys[char]) {
+        nextAttribute = attrKeys[char]
+      }
+      else {
+        const points = char.charCodeAt(0) - 97;
+
+        distribution[nextAttribute.id] = points;
+        attributePoints[nextAttribute.id] = points;
+
+        nextAttribute = ATTRIBUTES[ATTRIBUTES.indexOf(nextAttribute) + 1];
+      }
+    });
+
+    return distribution;
   };
 
   function getPoolSize() {

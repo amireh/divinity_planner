@@ -55,4 +55,60 @@ describe('AttributeCalculator', function() {
       assert.notOk( subject.addPoint('dex') );
     });
   });
+
+  describe('#toURL', function() {
+    it('ignores attributes with no points allocated', function() {
+      assert.equal(subject.toURL(), '');
+
+    });
+
+    it('makes no gaps for STR', function() {
+      subject.addPoint('str');
+
+      assert.equal(subject.toURL(), 'b');
+    });
+
+    it('makes a gap for CON', function() {
+      subject.addPoint('con');
+      assert.equal(subject.toURL(), 'Cb');
+    });
+
+    it('makes only 1 gap for CON + SPE', function() {
+      subject.addPoint('con');
+      subject.addPoint('spe');
+      assert.equal(subject.toURL(), 'Cbb');
+    });
+
+    it('makes 2 gaps for INT + SPE', function() {
+      subject.addPoint('int');
+      subject.addPoint('spe');
+      assert.equal(subject.toURL(), 'IbSb');
+    });
+  });
+
+  describe('#fromURL', function() {
+    it('deserializes a full point allocation str "bbbbbb"', function() {
+      assert.deepEqual(subject.fromURL('bbbbbb'), {
+        str: 1,
+        dex: 1,
+        int: 1,
+        con: 1,
+        spe: 1,
+        per: 1,
+      });
+    });
+
+    it('deserializes a point in dex "Db"', function() {
+      assert.deepEqual(subject.fromURL('Db'), {
+        dex: 1,
+      });
+    });
+
+    it('deserializes 1 dex and 1 per "DbPb"', function() {
+      assert.deepEqual(subject.fromURL('DbPb'), {
+        dex: 1,
+        per: 1
+      });
+    });
+  });
 });

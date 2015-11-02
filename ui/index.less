@@ -1,8 +1,14 @@
-.item-points-sheet {
+.column {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 5em;
+}
+
+.item-points-sheet, .adjustable-item {
   padding: 0;
   margin: 0;
 
-  display: inline-block;
+  // display: inline-block;
   // padding: 1em;
   // border: 1px solid #ccc;
 
@@ -38,13 +44,72 @@
   }
 }
 
-.skill-panel {
+.ability-panel {
   display: inline-block;
   vertical-align: top;
 
-  margin: 0 1em;
+  margin: 1em 0;
 
   &__tabs {
     margin: 0;
+  }
+
+  &__selected-ability-link {
+    color: green;
+  }
+}
+
+.skill-tree {
+  width: 640px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 1em;
+
+  &__listing {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &__level {
+    list-style: none;
+    margin: 0 0 0.5em 0;
+    background: #eee;
+    // padding: 1em;
+  }
+
+  &__level-indicator {
+    position: absolute;
+    right: 1em;
+  }
+
+  &__skill {
+    display: inline-block;
+    margin: 1em;
+    width: 100px;
+    vertical-align: top;
+
+    &--locked {
+      opacity: 0.5;
+    }
+  }
+
+  &__skill-icon {
+    @dim: 32px;
+
+    height: @dim;
+
+    img {
+      width:  @dim;
+      height: @dim;
+    }
+
+    margin-bottom: 0.5em;
+  }
+
+  &__skill-name {
+    font-size: 0.75em;
+    display: block;
   }
 }
