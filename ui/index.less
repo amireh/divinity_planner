@@ -1,5 +1,5 @@
-@import "../public/assets/skill_icons";
-@import "../public/assets/ability_icons";
+@import "./sprites/skill_icons";
+@import "./sprites/ability_icons";
 @import "./fonts/romancaps_regular_macroman/stylesheet";
 @import "./css/frames";
 
@@ -7,6 +7,11 @@
 @red: #dc322f;
 @green: white;
 @footer-height: 100px;
+
+#splash.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 html {
   position: relative;
@@ -329,6 +334,19 @@ a, a:visited {
       }
     }
   }
+
+  &__portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 50px;
+
+    &--0 { background-image: url('./images/portrait-1.png'); }
+    &--1 { background-image: url('./images/portrait-2.png'); }
+    &--2 { background-image: url('./images/portrait-3.png'); }
+    &--3 { background-image: url('./images/portrait-4.png'); }
+  }
 }
 
 .character-panel {
@@ -406,15 +424,15 @@ a, a:visited {
 
 .app-footer {
   font-size: 0.75em;
-  text-align: center;
 
   position: absolute;
   bottom: 0;
   margin-left: -30px;
 
   margin-top: 1em;
-  padding: 1em 0;
-  text-align: center;
+  padding: 1em 3em;
+  text-align: left;
+  box-sizing: border-box;
 
   width: 1020px;
 

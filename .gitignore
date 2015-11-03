@@ -1,7 +1,7 @@
 /node_modules
 /scripts/fixtures
 /scripts/images
-/dist
+/public/dist
 /scripts/*.json
 *.zip
 /ui/images/unused

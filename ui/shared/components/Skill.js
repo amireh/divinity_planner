@@ -17,7 +17,7 @@ const Skill = React.createClass({
       'skill-tree__skill': true,
       'skill-tree__skill--unlocked': learnable && canLearn && !skill.learned,
       'skill-tree__skill--learned': learnable && skill.learned,
-      'skill-tree__skill--locked': learnable && !skill.learned && !canLearn,
+      'skill-tree__skill--locked': !skill.learned && !canLearn,
       'hint--top': true
     });
 

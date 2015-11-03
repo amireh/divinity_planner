@@ -148,7 +148,7 @@ const ProfileSheet = React.createClass({
       const requirement = profile.skillbook.getSkillRequirement(skill);
 
       decoratedSkill.learned = profile.skillbook.hasSkill(skill.id);
-      decoratedSkill.canLearn = requirement === true;
+      decoratedSkill.canLearn = !requirement;
       decoratedSkill.requirement = requirement;
 
       return decoratedSkill;

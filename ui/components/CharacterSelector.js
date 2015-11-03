@@ -22,7 +22,12 @@ const CharacterSelector = React.createClass({
         className={className}
         onClick={this.props.onSwitchProfile.bind(null, index)}
       >
-        <img src={`/assets/${character.portrait}`} width="100%" height="100%" />
+        <span
+          className={`
+            character-selector__portrait
+            character-selector__portrait--${index}
+          `}
+        />
       </li>
     )
   }

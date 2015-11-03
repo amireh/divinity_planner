@@ -5,13 +5,21 @@ const CharacterSelector = require('./CharacterSelector');
 const URLManager = require('URLManager');
 
 const profiles = [
-  Character({ portrait: 'portrait-1.png' }),
-  Character({ portrait: 'portrait-2.png' })
+  Character(),
+  Character(),
+  Character(),
+  Character(),
 ];
 
 const Root = React.createClass({
   // Deserialize the profiles from the URL if possible.
   componentWillMount: function() {
+    document.querySelector('#splash').className += ' hidden';
+
+    setTimeout(() => {
+      document.querySelector('#splash').remove();
+    }, 500);
+
     URLManager.getParams().forEach(function(fragment, index) {
       if (profiles[index] && fragment.length > 0) {
         profiles[index].fromURL(fragment);
@@ -52,7 +60,7 @@ const Root = React.createClass({
 
         <div className="app-footer">
           <p>
-            Made with <span style={{ color: 'red' }}>♥</span> and <em>a lot</em> of care by {rainbow('KANDIE')}. © 2015
+            Made with <span style={{ color: 'red' }}>&hearts;</span> and <em>a lot</em> of care by {rainbow('KANDIE')}. &copy; 2015
           </p>
 
           <p>Source code on <a href="https://github.com/amireh/divinity_planner" target="_blank">github</a>.</p>
