@@ -20,3 +20,20 @@ nsg({
 }, function (err) {
   console.log('Sprite generated!');
 });
+
+nsg({
+  src: [
+    'ability_icons/*.png'
+  ],
+
+  spritePath:     path.join(assetDir, 'ability_icons.png'),
+  stylesheetPath: path.join(assetDir, 'ability_icons.less'),
+  stylesheet: 'css',
+  stylesheetOptions: {
+    prefix: 'ability-icon--',
+    pixelRatio: 1
+  }
+
+}, function (err) {
+  console.log('Sprite generated!');
+});

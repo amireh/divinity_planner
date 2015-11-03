@@ -1,5 +1,6 @@
 const React = require('react');
 const classSet = require('classnames');
+const K = require('constants');
 
 const Skill = React.createClass({
   getDefaultProps: function() {
@@ -20,7 +21,11 @@ const Skill = React.createClass({
       'hint--top': true
     });
 
-    const description = (skill.description || skill.descriptionText || '').trim();
+    let description = (skill.description || skill.descriptionText || '').trim();
+
+    if (skill.requirement && skill.requirement !== true) {
+      description += '\n\n' + this.getRequirementString(skill.requirement);
+    }
 
     return (
       <div
@@ -44,6 +49,22 @@ const Skill = React.createClass({
         </span>
       </div>
     );
+  },
+
+  getRequirementString(requirement) {
+    switch(requirement) {
+      case K.ERR_ABILITY_LEVEL_TOO_LOW:
+        return "You need to invest more ability points to learn this skill."
+        break;
+
+      case K.ERR_ABILITY_CAP_REACHED:
+        return "You have reached the maximum number of skills for this ability at that ability level."
+        break;
+
+      case K.ERR_CHAR_LEVEL_TOO_LOW:
+        return "Your character needs a higher level to learn this skill."
+        break;
+    }
   }
 });
 

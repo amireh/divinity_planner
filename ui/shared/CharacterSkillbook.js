@@ -13,7 +13,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   exports.addSkill = function(id) {
     const skill = getSkillById(id);
 
-    if (skill && canUseSkill(skill)) {
+    if (skill && canUseSkill(skill) === true) {
       book.push(skill.id);
 
       onChange();
@@ -40,7 +40,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     book = book.filter(function(id) {
       const skill = getSkillById(id);
 
-      return canUseSkill(skill);
+      return canUseSkill(skill) === true;
     });
   };
 
@@ -103,18 +103,31 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   };
 
   function canUseSkill(skill) {
-    if (skill.rqAbilityLevel > 0) {
-      if (character.getAbilityPoints()[skill.ability] < skill.rqAbilityLevel) {
-        console.debug('Missing ability points on "%s"', skill.ability);
-        return false;
-      }
+    if (typeof skill === 'string') {
+      skill = getSkillById(skill);
     }
 
-    if (skill.rqCharacterLevel > 0) {
-      if (character.getLevel() < skill.rqCharacterLevel) {
-        console.debug('Higher level required for "%s": %d', skill.id, skill.rqCharacterLevel);
-        return false;
-      }
+    const abilityId = skill.ability;
+    const abilityPoints = character.getAbilityPoints()[abilityId];
+    const abilitySkillCount = book.filter(function(id) {
+      return getSkillById(id).ability === abilityId;
+    }).length;
+
+    const allowedSkillCount = getSkillPoolSize(abilityPoints);
+
+    if (skill.rqAbilityLevel > 0 && abilityPoints < skill.rqAbilityLevel) {
+      console.debug('Missing ability points on "%s"', abilityId);
+      return K.ERR_ABILITY_LEVEL_TOO_LOW;
+    }
+
+    if (allowedSkillCount <= abilitySkillCount) {
+      console.debug('Ability skill limit "%d" reached.', allowedSkillCount);
+      return K.ERR_ABILITY_CAP_REACHED;
+    }
+
+    if (skill.rqCharacterLevel > 0 && character.getLevel() < skill.rqCharacterLevel) {
+      console.debug('Higher level required for "%s": %d', skill.id, skill.rqCharacterLevel);
+      return K.ERR_CHAR_LEVEL_TOO_LOW;
     }
 
     return true;
@@ -129,4 +142,30 @@ function getSkillById(id) {
   return SKILLS.filter(s => s.id === id)[0];
 }
 
+function getSkillPoolSize(abilityPoints) {
+  switch(abilityPoints) {
+    case 0:
+      return 0;
+      break;
+
+    case 1:
+      return K.BASE_ABILITY_SKILL_COUNT;
+      break;
+
+    case 2:
+    case 3:
+    case 4:
+      return K.BASE_ABILITY_SKILL_COUNT + abilityPoints * 2;
+      break;
+
+    case 5:
+      return K.UNLIMITED;
+
+    default:
+      console.warn('Expected ability points to range from 0 to 5, got "%s"!', abilityPoints);
+      return 0;
+  }
+}
+
 module.exports = CharacterSkillbook;
+module.exports.getSkillPoolSize = getSkillPoolSize;

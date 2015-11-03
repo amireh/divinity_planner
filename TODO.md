@@ -4,7 +4,7 @@
 - ~~persist attributes in URL~~
 - ~~persist abilities in URL~~
 - ~~persist skillbook in URL~~
-- skillbook ought to account for the ability levels
+- ~~skillbook ought to account for the ability levels~~
 - ~~multiple profiles~~
 - ~~tooltips~~
 - better descriptions plz

@@ -97,7 +97,10 @@ const ProfileSheet = React.createClass({
         </div>
 
         <div className="column">
-          <Spellbook skills={stats.skillbook} />
+          <Spellbook
+            skills={stats.skillbook}
+            abilityPoints={stats.abilityPoints}
+          />
         </div>
       </div>
     );
@@ -147,9 +150,11 @@ const ProfileSheet = React.createClass({
 
     return skills.map(function(skill) {
       const decoratedSkill = assign({}, skill);
+      const requirement = profile.skillbook.canUseSkill(skill);
 
       decoratedSkill.learned = profile.skillbook.hasSkill(skill.id);
-      decoratedSkill.canLearn = profile.skillbook.canUseSkill(skill);
+      decoratedSkill.canLearn = requirement === true;
+      decoratedSkill.requirement = requirement;
 
       return decoratedSkill;
     });

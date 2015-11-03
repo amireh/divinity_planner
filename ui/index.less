@@ -1,4 +1,5 @@
 @import "../public/assets/skill_icons";
+@import "../public/assets/ability_icons";
 @import "./fonts/romancaps_regular_macroman/stylesheet";
 @import "./css/frames";
 
@@ -265,6 +266,7 @@ a, a:visited {
   width: 100px;
   text-align: center;
   font-size: 0.75em;
+  padding-bottom: 1em;
 
   .framerize();
 
@@ -272,6 +274,19 @@ a, a:visited {
     margin: 0 0 1em 0;
   }
 
+  &__ability[data-hint] {
+    display: block;
+  }
+
+  &__ability-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__ability-stats {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 .character-selector {
