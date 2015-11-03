@@ -24,11 +24,11 @@ describe('CharacterSkillbook', function() {
     });
   });
 
-  describe.only('#canUseSkill', function() {
+  describe('#getSkillRequirement', function() {
     it('is false if ability level is below the required', function() {
       abilityPoints.aerotheurge = 0;
 
-      assert.equal(subject.canUseSkill('airShield'), K.ERR_ABILITY_LEVEL_TOO_LOW);
+      assert.equal(subject.getSkillRequirement('airShield'), K.ERR_ABILITY_LEVEL_TOO_LOW);
     });
 
     it('is false if ability skill limit is exceeded', function() {
@@ -38,15 +38,12 @@ describe('CharacterSkillbook', function() {
       subject.addSkill('blitzBolt');
       subject.addSkill('bitterCold');
 
-      assert.equal(subject.canUseSkill('teleportation'), K.ERR_ABILITY_CAP_REACHED);
+      assert.equal(subject.getSkillRequirement('teleportation'), K.ERR_ABILITY_CAP_REACHED);
     });
 
     it('is false if character level is below the required', function() {
       level = 1;
-      assert.equal(subject.canUseSkill('airShield'), K.ERR_CHAR_LEVEL_TOO_LOW);
-    });
-
-    it('is aware of how many skills the ability allows as per its points', function() {
+      assert.equal(subject.getSkillRequirement('airShield'), K.ERR_CHAR_LEVEL_TOO_LOW);
     });
   });
 

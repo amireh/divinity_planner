@@ -8,3 +8,7 @@
 - ~~multiple profiles~~
 - ~~tooltips~~
 - better descriptions plz
+- ~~footer~~
+- splash
+- ~~remember tab selection in URL~~
+- ~~remember character selection in URL~~

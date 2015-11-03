@@ -8,21 +8,16 @@ const Spellbook = require('components/Spellbook');
 const ABILITIES = require('database/abilities.json');
 const assign = require('utils/assign');
 const K = require('constants');
+const URLManager = require('URLManager');
 
 const ProfileSheet = React.createClass({
   propTypes: {
     profile: object
   },
 
-  getInitialState: function() {
-    return {
-      activeAbilityId: null
-    };
-  },
-
   render() {
     const { profile } = this.props;
-    const { activeAbilityId } = this.state;
+    const activeAbilityId = getAbilityIdFromIndex(this.props.queryParams.t);
     const activeAbility = ABILITIES.filter(a => a.id === activeAbilityId)[0];
     const stats = profile.toJSON();
 
@@ -107,9 +102,9 @@ const ProfileSheet = React.createClass({
   },
 
   showAbilitySkillTree(abilityId) {
-    this.setState({
-      activeAbilityId: abilityId
-    });
+    URLManager.setQueryParam('t', K.ABILITY_URL_KEYS[abilityId]);
+
+    this.forceUpdate();
   },
 
   raiseLevel() {
@@ -150,7 +145,7 @@ const ProfileSheet = React.createClass({
 
     return skills.map(function(skill) {
       const decoratedSkill = assign({}, skill);
-      const requirement = profile.skillbook.canUseSkill(skill);
+      const requirement = profile.skillbook.getSkillRequirement(skill);
 
       decoratedSkill.learned = profile.skillbook.hasSkill(skill.id);
       decoratedSkill.canLearn = requirement === true;
@@ -160,5 +155,20 @@ const ProfileSheet = React.createClass({
     });
   },
 });
+
+
+function getAbilityIdFromIndex(index) {
+  let id;
+
+  Object.keys(K.ABILITY_URL_KEYS).some(function(key) {
+    if (K.ABILITY_URL_KEYS[key] === index) {
+      id = key;
+
+      return true;
+    }
+  });
+
+  return id;
+}
 
 module.exports = ProfileSheet;

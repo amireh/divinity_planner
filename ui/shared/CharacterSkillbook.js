@@ -13,7 +13,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   exports.addSkill = function(id) {
     const skill = getSkillById(id);
 
-    if (skill && canUseSkill(skill) === true) {
+    if (skill && canLearnSkill(skill) === true && !exports.hasSkill(id)) {
       book.push(skill.id);
 
       onChange();
@@ -37,11 +37,11 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   };
 
   exports.ensureIntegrity = function() {
-    book = book.filter(function(id) {
-      const skill = getSkillById(id);
+    const oldBook = [].concat(book);
 
-      return canUseSkill(skill) === true;
-    });
+    book = [];
+
+    oldBook.forEach(exports.addSkill);
   };
 
   exports.toURL = function() {
@@ -102,7 +102,11 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     });
   };
 
-  function canUseSkill(skill) {
+  function canLearnSkill(skill) {
+    return !exports.getSkillRequirement(skill);
+  }
+
+  exports.getSkillRequirement = function(skill) {
     if (typeof skill === 'string') {
       skill = getSkillById(skill);
     }
@@ -116,24 +120,19 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     const allowedSkillCount = getSkillPoolSize(abilityPoints);
 
     if (skill.rqAbilityLevel > 0 && abilityPoints < skill.rqAbilityLevel) {
-      console.debug('Missing ability points on "%s"', abilityId);
       return K.ERR_ABILITY_LEVEL_TOO_LOW;
     }
 
-    if (allowedSkillCount <= abilitySkillCount) {
-      console.debug('Ability skill limit "%d" reached.', allowedSkillCount);
+    if (abilitySkillCount >= allowedSkillCount) {
       return K.ERR_ABILITY_CAP_REACHED;
     }
 
     if (skill.rqCharacterLevel > 0 && character.getLevel() < skill.rqCharacterLevel) {
-      console.debug('Higher level required for "%s": %d', skill.id, skill.rqCharacterLevel);
       return K.ERR_CHAR_LEVEL_TOO_LOW;
     }
+  };
 
-    return true;
-  }
-
-  exports.canUseSkill = canUseSkill;
+  exports.canLearnSkill = canLearnSkill;
 
   return exports;
 }

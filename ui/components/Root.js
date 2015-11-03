@@ -2,36 +2,37 @@ const React = require('react');
 const Character = require('Character');
 const ProfileSheet = require('./ProfileSheet');
 const CharacterSelector = require('./CharacterSelector');
+const URLManager = require('URLManager');
 
 const profiles = [
   Character({ portrait: 'portrait-1.png' }),
   Character({ portrait: 'portrait-2.png' })
 ];
 
-let profile = profiles[0];
-
 const Root = React.createClass({
+  // Deserialize the profiles from the URL if possible.
+  componentWillMount: function() {
+    URLManager.getParams().forEach(function(fragment, index) {
+      if (profiles[index] && fragment.length > 0) {
+        profiles[index].fromURL(fragment);
+      }
+    });
+  },
+
   componentDidMount: function() {
-    const { hash } = window.location;
-
-    profiles.forEach(profile => profile.addChangeListener(this.reload));
-
-    if (hash.length > 1) {
-      hash.slice(1).split(/\-/).forEach(function(fragment, index) {
-        if (profiles[index] && fragment.length > 0) {
-          profiles[index].fromURL(fragment);
-        }
-      });
-
-      this.reload();
-    }
+    URLManager.addChangeListener(this.reload);
+    profiles.forEach(profile => profile.addChangeListener(this.updateURL));
   },
 
   componentWillUnmount: function() {
-    profiles.forEach(profile => profile.removeChangeListener(this.reload));
+    profiles.forEach(profile => profile.removeChangeListener(this.updateURL));
+    URLManager.removeChangeListener(this.reload);
   },
 
   render() {
+    const queryParams = URLManager.getQueryParams();
+    const profile = profiles[queryParams.p || 0];
+
     return (
       <div>
         <h1 className="app-header">
@@ -44,22 +45,47 @@ const Root = React.createClass({
           onSwitchProfile={this.switchProfile}
         />
 
-        <ProfileSheet profile={profile} />
+        <ProfileSheet
+          profile={profile}
+          queryParams={queryParams}
+        />
+
+        <div className="app-footer">
+          <p>
+            Made with <span style={{ color: 'red' }}>♥</span> and <em>a lot</em> of care by {rainbow('KANDIE')}. © 2015
+          </p>
+
+          <p>Source code on <a href="https://github.com/amireh/divinity_planner" target="_blank">github</a>.</p>
+        </div>
       </div>
     );
   },
 
   switchProfile(index) {
-    profile = profiles[index];
+    URLManager.setQueryParam('p', index === 0 ? null : index);
+  },
 
-    this.forceUpdate();
+  updateURL() {
+    URLManager.updateURL(profiles.map(p => p.toURL()));
   },
 
   reload() {
-    window.location.hash = '#' + profiles.map(p => p.toURL()).join('-');
-
     this.forceUpdate();
-  }
+  },
 });
+
+function rainbow(string) {
+  const COLORS = [ 'magenta', 'yellow', 'green', 'red', 'steelblue', 'orange' ];
+
+  return string.split('').map(function(char, index) {
+    return (
+      <span
+        key={`${char}--${index}`}
+        style={{ color: COLORS[index % COLORS.length] }}
+        children={char}
+      />
+    );
+  });
+}
 
 module.exports = Root;
