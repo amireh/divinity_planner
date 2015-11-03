@@ -36,8 +36,6 @@ const Skillbook = React.createClass({
   },
 
   renderTabs(skills) {
-    const abilityIds = skills.map(s => s.ability);
-    // const abilities = ABILITIES.filter(a => abilityIds.indexOf(a.id) > -1);
     const abilities = Object.keys(this.props.abilityPoints).filter((id) => {
       return this.props.abilityPoints[id].points > 0;
     }).map(function(id) {

@@ -1,11 +1,6 @@
 const React = require('react');
-const ATTRIBUTES = require('database/attributes.json');
 const ItemPointsSheet = require('components/ItemPointsSheet');
-const { shape, object, string, number, func } = React.PropTypes;
-const {
-  BASE_ATTRIBUTE_POINTS,
-  MAX_ATTRIBUTE_POINTS
-} = require('constants');
+const { object, func } = React.PropTypes;
 
 const AttributePanel = React.createClass({
   propTypes: {

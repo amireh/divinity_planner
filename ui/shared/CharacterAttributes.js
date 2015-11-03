@@ -116,7 +116,7 @@ function CharacterAttributes(character, onChange = Function.prototype) {
 
   function getAllocatedPoints() {
     return Object.keys(attributePoints).reduce((sum, id) => {
-      return sum += attributePoints[id];
+      return sum + attributePoints[id];
     }, 0);
   }
 
@@ -147,6 +147,6 @@ function CharacterAttributes(character, onChange = Function.prototype) {
   };
 
   return exports;
-};
+}
 
 module.exports = CharacterAttributes;

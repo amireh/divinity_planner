@@ -1,6 +1,5 @@
 const React = require('react');
 const { array, func } = React.PropTypes;
-const classSet = require('classnames');
 const Skill = require('components/Skill');
 
 const SkillTree = React.createClass({

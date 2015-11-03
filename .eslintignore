@@ -1,4 +1,5 @@
-dist
+public/dist
 node_modules
 karma.conf.js
 test.js
+scripts

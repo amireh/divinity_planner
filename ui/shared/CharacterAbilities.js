@@ -87,7 +87,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
 
   function getAllocatedPoints() {
     return Object.keys(abilityPoints).reduce((sum, id) => {
-      return sum += getAccumulativeCost(abilityPoints[id]);
+      return sum + getAccumulativeCost(abilityPoints[id]);
     }, 0);
   }
 
@@ -190,6 +190,6 @@ function CharacterAbilities(character, onChange = Function.prototype) {
   };
 
   return exports;
-};
+}
 
 module.exports = CharacterAbilities;

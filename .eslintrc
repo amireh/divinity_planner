@@ -2,6 +2,7 @@
   "env": {
     "node": true,
     "mocha": true,
+    "browser": true,
   },
 
   "plugins": [
@@ -67,7 +68,7 @@
     "no-irregular-whitespace": 2,
     "no-negated-in-lhs": 2,
     "no-sparse-arrays": 2,
-    "no-unreachable": 2,
+    "no-unreachable": 0,
     "use-isnan": 2,
     "no-caller": 2,
     "no-else-return": 0,
@@ -93,7 +94,7 @@
     "react/jsx-uses-react": 2,
     "react/jsx-no-undef": 2,
     "react/react-in-jsx-scope": 2,
-    "react/prop-types": [2],
+    "react/prop-types": [0],
   },
 
   "ecmaFeatures": {

@@ -65,7 +65,7 @@ function generateParamString(params) {
   return params.join('-');
 }
 
-function getPathName(queryParams = null) {
+function getPathName() {
   return window.location.hash.replace(/\?.+$/, '').replace(/^\#+/, '');
 }
 

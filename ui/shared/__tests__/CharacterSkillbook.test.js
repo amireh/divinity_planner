@@ -5,10 +5,6 @@ describe('CharacterSkillbook', function() {
   let subject;
   let level, abilityPoints;
 
-  function serialize() {
-    return subject.toJSON();
-  }
-
   beforeEach(function() {
     level = 20;
     abilityPoints = {

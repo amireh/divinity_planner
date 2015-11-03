@@ -2,7 +2,7 @@
 
 var nsg = require('node-sprite-generator');
 var path = require('path');
-var assetDir = path.resolve(__dirname, '..', 'public', 'assets');
+var assetDir = path.resolve(__dirname, '..', 'ui', 'sprites');
 
 nsg({
   src: [

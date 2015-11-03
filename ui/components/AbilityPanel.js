@@ -14,7 +14,6 @@ const AbilityPanel = React.createClass({
 
   renderAbility(id) {
     const entry = this.props.abilityPoints[id];
-    const { points, canIncrease, canDecrease } = entry;
 
     if (id === 'special') {
       return null;

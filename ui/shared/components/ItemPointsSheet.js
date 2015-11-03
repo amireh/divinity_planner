@@ -1,6 +1,5 @@
 const React = require('react');
-const ATTRIBUTES = require('database/attributes.json');
-const { shape, object, string, number, func } = React.PropTypes;
+const { object, func } = React.PropTypes;
 const AdjustableItem = require('components/AdjustableItem');
 
 const ItemPointsSheet = React.createClass({
@@ -27,7 +26,6 @@ const ItemPointsSheet = React.createClass({
 
   renderItem(id) {
     const entry = this.props.items[id];
-    const { points, canIncrease, canDecrease } = entry;
 
     return (
       <li key={id} className="item-points-sheet__entry">

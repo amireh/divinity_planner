@@ -54,7 +54,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
       return String.fromCharCode(K.STARTING_INDEX_CHAR_CODE + index);
     }
 
-    ABILITIES.forEach(function(ability, index) {
+    ABILITIES.forEach(function(ability) {
       const skills = book.reduce(function(set, id) {
         const skill = getSkillById(id);
 
@@ -78,7 +78,6 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   };
 
   exports.fromURL = function(url) {
-    let distribution = {};
     let currentAbility = ABILITIES[0];
 
     book = [];
