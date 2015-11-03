@@ -1,6 +1,7 @@
 # divinity_planner
 
-This is a character planner/builder application for Divinity: Original Sin.
+This is a character planner/builder web application for Divinity: Original Sin.
+The application is available at www.divinityplanner.tk.
 
 ## Hacking
 
@@ -14,3 +15,7 @@ Clone the git repo and run `npm install` to get the packages. Once that is done,
 
 - http://divinity.wikia.com for all the content and images!
 - http://divinityoriginalsin.wikia.com/ for the favicon
+
+## License
+
+MIT

@@ -1,5 +1,5 @@
 {
-  "name": "divinity_calculator",
+  "name": "divinity_planner",
   "version": "1.0.0",
   "description": "Divinity: Original Sin talent calculator app.",
   "main": "ui/index.js",
@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/amireh/divinity_calculator.git"
+    "url": "git+ssh://git@github.com/amireh/divinity_planner.git"
   },
   "keywords": [
     "divinity",
@@ -55,7 +55,7 @@
   "author": "Ahmad Amireh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amireh/divinity_calculator/issues"
+    "url": "https://github.com/amireh/divinity_planner/issues"
   },
-  "homepage": "https://github.com/amireh/divinity_calculator#readme"
+  "homepage": "https://github.com/amireh/divinity_planner#readme"
 }
