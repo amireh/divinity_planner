@@ -1,7 +1,7 @@
 # divinity_planner
 
 This is a character planner/builder web application for Divinity: Original Sin.
-The application is available at www.divinityplanner.tk.
+The application is available at www.divinityplanner.cf.
 
 ## Features
 
