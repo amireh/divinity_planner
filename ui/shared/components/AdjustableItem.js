@@ -4,7 +4,7 @@ const AdjustableItem = React.createClass({
     return (
       <div className="adjustable-item">
         <button
-          className="adjustable-item__btn"
+          className="btn adjustable-item__btn btn--minus"
           onClick={this.props.onDecrease}
           disabled={!this.props.canDecrease}
           children="-"
@@ -15,7 +15,7 @@ const AdjustableItem = React.createClass({
         </span>
 
         <button
-          className="adjustable-item__btn"
+          className="btn adjustable-item__btn btn--plus"
           onClick={this.props.onIncrease}
           disabled={!this.props.canIncrease}
           children="+"
@@ -25,7 +25,7 @@ const AdjustableItem = React.createClass({
 
         {this.props.withMaxControl && (
           <button
-            className="adjustable-item__btn"
+            className="btn adjustable-item__btn"
             onClick={this.props.onMax}
             disabled={!this.props.canIncrease}
             children="&gt;"

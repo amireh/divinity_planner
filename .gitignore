@@ -3,3 +3,6 @@
 /scripts/images
 /dist
 /scripts/*.json
+*.zip
+/ui/images/unused
+/src_images

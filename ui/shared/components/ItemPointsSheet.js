@@ -1,6 +1,7 @@
 const React = require('react');
 const ATTRIBUTES = require('database/attributes.json');
 const { shape, object, string, number, func } = React.PropTypes;
+const AdjustableItem = require('components/AdjustableItem');
 
 const ItemPointsSheet = React.createClass({
   propTypes: {
@@ -35,23 +36,14 @@ const ItemPointsSheet = React.createClass({
         </span>
 
         <div className="item-points-sheet__controls">
-          <button
-            className="item-points-sheet__btn"
-            onClick={this.props.onDecrease.bind(null, id)}
-            disabled={!entry.canDecrease}
-            children="-"
-          />
-
-          <span className="item-points-sheet__points">
+          <AdjustableItem
+            canIncrease={entry.canIncrease}
+            canDecrease={entry.canDecrease}
+            onIncrease={this.props.onIncrease.bind(null, id)}
+            onDecrease={this.props.onDecrease.bind(null, id)}
+          >
             {entry.points}
-          </span>
-
-          <button
-            className="item-points-sheet__btn"
-            onClick={this.props.onIncrease.bind(null, id)}
-            disabled={!entry.canIncrease}
-            children="+"
-          />
+          </AdjustableItem>
         </div>
       </li>
     );

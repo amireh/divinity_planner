@@ -6,8 +6,11 @@ const Skillbook = React.createClass({
   render() {
     return (
       <div className="skillbook">
-        <h3>Skillbook</h3>
+        <h3 className="skillbook__header">Skillbook</h3>
 
+        {this.props.skills.length === 0 && (
+          <p><em>Empty.</em></p>
+        )}
         {this.props.skills.map(this.renderSkill)}
       </div>
     );
@@ -21,6 +24,7 @@ const Skillbook = React.createClass({
         key={id}
         {...skill}
         learned
+        learnable={false}
       />
     );
   }

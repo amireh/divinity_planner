@@ -1,24 +1,72 @@
 @import "../public/assets/skill_icons";
+@import "./fonts/romancaps_regular_macroman/stylesheet";
+@import "./css/frames";
+
+@brown: #b3a598;
+@red: #dc322f;
+@green: white;
 
 body {
-  color: #444;
+  color: #b3a598;
+  background-color: darken(@brown, 55%);
+  background-image: url('images/bg.png');
+  background-repeat: repeat;
+
   width: 960px;
   margin: 0 auto;
+  font-family: serif, Helvetica, Helvetica Neue, Arial;
+
+  &:before {
+    @padding: 30px;
+
+    position: fixed;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    width: 960px + @padding*2;
+    bottom: 0;
+    content: '';
+    margin-left: -@padding;
+    box-shadow: 0 0 0 1px #2a2a2a, 0 5px 10px 2px rgba(0,0,0,0.75) inset;
+  }
 }
 
 a, a:visited {
-  color: #4078c0;
+  color: darken(@brown, 25%);
   cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: @red;
+  }
 }
 
 .app-header {
+  margin-top: 1em;
   margin-bottom: 1em;
+  height: 48px;
+  font-size: 18px;
+  line-height: 48px;
+  text-align: center;
+
+  .frame__main-header();
+}
+
+.app-header, h1,h2,h3 {
+  font-family: 'roman_sdregular';
+  font-weight: 700;
 }
 
 .column {
   vertical-align: top;
   display: inline-block;
-  margin-right: 2em;
+
+  & + .column {
+    margin-left: 2em;
+  }
 }
 
 .type-small {
@@ -28,10 +76,6 @@ a, a:visited {
 .item-points-sheet, .adjustable-item {
   padding: 0;
   margin: 0;
-
-  // display: inline-block;
-  // padding: 1em;
-  // border: 1px solid #ccc;
 
   &__entry {
     display: block;
@@ -53,19 +97,34 @@ a, a:visited {
     width: 30px;
     text-align: center;
   }
+}
 
-  &__btn {
-    background: #ddd;
-    // color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 0.75em;
-    line-height: 17px;
-    // padding: 0.25em;
+.btn {
+  background: @brown;
+  // color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75em;
+  line-height: 17px;
 
-    &:disabled {
-      visibility: hidden;
-    }
+  &--minus {
+    background-image: url('images/btn--minus.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    color: transparent;
+  }
+
+  &--plus {
+    background-image: url('images/btn--plus.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    color: transparent;
+  }
+
+  &:disabled {
+    visibility: hidden;
   }
 }
 
@@ -78,22 +137,31 @@ a, a:visited {
   &__tabs {
     margin: 0;
   }
-
-  a&__selected-ability-link {
-    color: green;
-  }
 }
 
 .skill-tree {
-  width: 480px;
+  width: 474px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 1em;
+  // margin: 0 1em;
+
+  .header--framed {
+    margin-top: 0;
+    line-height: 44px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  &__empty-message {
+    font-size: 0.75em;
+    line-height: 1.6;
+  }
 
   &__controls {
     margin: 0 0 1em 0;
     font-size: 0.75em;
     line-height: 1;
+    display: none;
   }
 
   &__listing {
@@ -104,14 +172,16 @@ a, a:visited {
 
   &__level {
     list-style: none;
-    margin: 0 0 0.5em 0;
-    background: #eee;
+    margin: 0 0 32px 0;
     position: relative;
+
+    .frame__skill-tree-level();
+    .shaded-background();
   }
 
   &__level-indicator {
     position: absolute;
-    right:  1em;
+    right:  0em;
     top:    1em;
     font-size: 0.75em;
     font-weight: bold;
@@ -123,12 +193,11 @@ a, a:visited {
     width: 100px;
     vertical-align: top;
     text-align: center;
+    cursor: pointer;
 
     &--locked {
       .skill-icon {
-        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
-        filter: gray; /* IE6-9 */
-        -webkit-filter: grayscale(100%);
+        .h-grayscale();
       }
 
       a {
@@ -136,27 +205,40 @@ a, a:visited {
       }
     }
 
-    &--learned a {
-      color: green;
+    &--learned {
+      .skill-tree__skill-icon-highlighter {
+        display: block;
+      }
+
+      a { color: inherit; }
     }
   }
 
   &__skill-icon {
-    @dim: 38px;
+    @dim: 42px;
+    position: relative;
 
     height: @dim;
     width:  @dim;
 
-    background: url('./images/skill-frame--38.png') no-repeat 0 0;
+    .frame__skill-icon();
 
     margin: 0 auto;
     margin-bottom: 0.5em;
+    box-sizing: border-box;
+  }
 
-    .skill-icon {
-      position: relative;
-      top:  3px;
-      left: 3px;
-    }
+  &__skill-icon-highlighter {
+    display: block;
+    position: absolute;
+    top:    -5px;
+    right:  -5px;
+    height: 32px;
+    top: -5px;
+    left:   -5px;
+    z-index: 10;
+    display: none;
+    .frame__skill-icon--active();
   }
 
   &__skill-name {
@@ -171,17 +253,129 @@ a, a:visited {
 }
 
 .header-auxiliary {
-  font-size: 12px;
+  font-size: 0.75em;
   position: absolute;
-  right: 2.25em;
+  right: 0em;
   line-height: 24px;
   font-weight: normal;
+  font-style: italic;
 }
 
 .skillbook {
-  width: 80px;
+  width: 100px;
+  text-align: center;
+  font-size: 0.75em;
+
+  .framerize();
 
   .skill-tree__skill {
     margin: 0 0 1em 0;
   }
+
+}
+
+.character-selector {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+
+  &__slot {
+    @dim: 48px;
+
+    height: @dim;
+    width:  @dim;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    cursor: pointer;
+
+    .frame__character-portrait();
+
+    &--inactive {
+      .h-grayscale();
+    }
+
+    img {
+      opacity: 0.5;
+    }
+
+    &--active, &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.character-panel {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  padding: 2em 1em;
+
+  .header:first-child {
+    margin-top: 0;
+  }
+
+  .framerize();
+}
+
+.framerize() {
+  .frame__panel();
+  .shaded-background();
+
+  &:before {
+    margin-top: -40px;
+    content: '';
+    display: block;
+  }
+}
+
+.shaded-background() {
+  background-color: rgba(4,2,0, 0.4);
+}
+
+.header--framed {
+  .framerize();
+}
+
+@import "./css/hint";
+
+.hint:before, .hint:after, [data-hint]:before, [data-hint]:after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+
+  // was hoping to make the tooltips stick so we can scroll:
+  //
+  // -webkit-transition: 0s linear;
+  // -moz-transition: 0s linear;
+  // transition: 0s linear;
+  // -webkit-transition-delay: 500ms;
+  // -moz-transition-delay: 500ms;
+  // transition-delay: 500ms;
+
+  text-align: left;
+
+  line-height: 1.6;
+}
+
+.hint:after, [data-hint]:after {
+  max-width: 320px;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: pre;
+}
+
+.hint--timeout:before, .hint--timeout:after {
+}
+
+.h-grayscale() {
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }

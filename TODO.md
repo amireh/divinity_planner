@@ -3,5 +3,8 @@
 - ~~set level~~
 - ~~persist attributes in URL~~
 - ~~persist abilities in URL~~
-- persist skills in URL
-- multiple profiles
+- persist skillbook in URL
+- skillbook ought to account for the ability levels
+- ~~multiple profiles~~
+- ~~tooltips~~
+- better descriptions plz

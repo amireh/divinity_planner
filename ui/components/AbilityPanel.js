@@ -16,13 +16,17 @@ const AbilityPanel = React.createClass({
     const entry = this.props.abilityPoints[id];
     const { points, canIncrease, canDecrease } = entry;
 
+    if (id === 'special') {
+      return null;
+    }
+
     return (
       <li key={id} className="item-points-sheet__entry">
         <a
           onClick={this.props.onSelect.bind(null, id)}
           className={`
             item-points-sheet__label
-            ${this.props.selectedAbilityId === id ? 'ability-panel__selected-ability-link' : ''}
+            ${this.props.activeAbilityId === id ? 'active ability-panel__selected-ability-link' : ''}
           `}
         >
           {entry.name}

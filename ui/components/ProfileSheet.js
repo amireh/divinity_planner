@@ -2,7 +2,6 @@ const React = require('react');
 const { object } = React.PropTypes;
 const AttributePanel = require('./AttributePanel');
 const AbilityPanel = require('./AbilityPanel');
-const CharacterSheet = require('./CharacterSheet');
 const SkillTree = require('components/SkillTree');
 const AdjustableItem = require('components/AdjustableItem');
 const Spellbook = require('components/Spellbook');
@@ -21,29 +20,19 @@ const ProfileSheet = React.createClass({
     };
   },
 
-  componentDidMount: function() {
-    const { hash } = window.location;
-
-    this.props.profile.addChangeListener(this.reload);
-
-    if (hash.length > 1) {
-      this.props.profile.fromURL(hash.slice(1));
-      this.reload();
-    }
-  },
-
-  componentWillUnmount: function() {
-    this.props.profile.removeChangeListener(this.reload);
-  },
-
   render() {
     const { profile } = this.props;
     const { activeAbilityId } = this.state;
+    const activeAbility = ABILITIES.filter(a => a.id === activeAbilityId)[0];
     const stats = profile.toJSON();
 
     return (
       <div>
-        <div className="column type-small">
+        <div className="column type-small character-panel">
+          <h3 className="header">
+            Character
+          </h3>
+
           <div className="item-points-sheet__entry">
             <span className="item-points-sheet__label">
               Level
@@ -56,7 +45,7 @@ const ProfileSheet = React.createClass({
                 onIncrease={this.raiseLevel}
                 onDecrease={this.lowerLevel}
                 onMax={this.setMaxLevel}
-                withMaxControl
+                withMaxControl={false}
               >
                 {stats.level}
               </AdjustableItem>
@@ -91,29 +80,25 @@ const ProfileSheet = React.createClass({
             onIncrease={profile.addAbilityPoint}
             onDecrease={profile.removeAbilityPoint}
             onSelect={this.showAbilitySkillTree}
-            selectedAbilityId={activeAbilityId}
+            activeAbilityId={activeAbilityId}
           />
         </div>
 
         <div className="column">
-          {activeAbilityId && (
-            <SkillTree
-              abilityId={activeAbilityId}
-              level={stats.level}
-              attributePoints={stats.attributePoints}
-              abilityPoints={stats.abilityPoints}
-              skills={this.getSkillsForAbility(activeAbilityId)}
+          <SkillTree
+            activeAbilityName={activeAbility && activeAbility.name}
+            level={stats.level}
+            attributePoints={stats.attributePoints}
+            abilityPoints={stats.abilityPoints}
+            skills={this.getSkillsForAbility(activeAbilityId)}
 
-              onSkillSelect={this.toggleSkillSelection}
-            />
-          )}
+            onSkillSelect={this.toggleSkillSelection}
+          />
         </div>
 
-        {stats.skillbook.length > 0 && (
-          <div className="column">
-            <Spellbook skills={stats.skillbook} />
-          </div>
-        )}
+        <div className="column">
+          <Spellbook skills={stats.skillbook} />
+        </div>
       </div>
     );
   },
@@ -151,6 +136,10 @@ const ProfileSheet = React.createClass({
   },
 
   getSkillsForAbility(abilityId) {
+    if (!abilityId) {
+      return [];
+    }
+
     const { profile } = this.props;
     const { skills } = ABILITIES.filter(function(ability) {
       return ability.id === abilityId;
@@ -165,10 +154,6 @@ const ProfileSheet = React.createClass({
       return decoratedSkill;
     });
   },
-
-  reload() {
-    this.forceUpdate();
-  }
 });
 
 module.exports = ProfileSheet;

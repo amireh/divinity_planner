@@ -42,9 +42,21 @@ const SkillTree = React.createClass({
 
     return (
       <div className="skill-tree">
+        <h3 className="header--framed">
+          {this.props.activeAbilityName || 'Skill Tree'}
+        </h3>
+
         {this.renderControls()}
 
         <ul className="skill-tree__listing">
+          {skills.length === 0 && (
+            <li className="skill-tree__level skill-tree__empty-message">
+              <p>
+                <em>Choose an ability from the panel to the left to explore its skills.</em>
+              </p>
+            </li>
+          )}
+
           {Object.keys(skillsByLevel).map(this.renderLevel.bind(null, skillsByLevel))}
         </ul>
       </div>

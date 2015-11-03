@@ -6,12 +6,12 @@ const CharacterSkillbook = require('CharacterSkillbook');
 const assign = require('utils/assign');
 const NOOP = Function.prototype;
 
-function Character() {
+function Character(attrs = {}) {
   const emitter = EventEmitter();
   const character = {};
 
   let { emitChange } = emitter;
-  let API = {};
+  let API = assign({}, attrs);
 
   const attributes = CharacterAttributes(character, emitter.emitChange);
   const abilities = CharacterAbilities(character, emitter.emitChange);
@@ -53,6 +53,7 @@ function Character() {
 
     assign(stats, attributes.toJSON());
     assign(stats, abilities.toJSON());
+    assign(stats, attrs);
 
     return JSON.parse(JSON.stringify(stats));
   };
@@ -96,6 +97,7 @@ function Character() {
         case '1':
           domain = 'attributes';
           break;
+
         case '2':
           domain = 'abilities';
           break;
@@ -153,10 +155,6 @@ function Character() {
     attributes.ensureIntegrity();
     abilities.ensureIntegrity();
   }
-
-  emitter.addChangeListener(function() {
-    window.location.hash = `#${API.toURL()}`;
-  });
 
   return API;
 }
