@@ -8,15 +8,18 @@ var path = require('path');
 var fs = require('fs');
 var assert = require('assert');
 
-assert(fs.existsSync('skills.raw.json'),
+var RAW_SKILLS_FILE = path.resolve(__dirname, 'skills.raw.json');
+var DESCRIPTIONS_FILE = path.resolve(__dirname, 'skill_descriptions.json');
+
+assert(fs.existsSync(RAW_SKILLS_FILE),
   "You must first generate the raw skills database by using ./divinity_wikia_scraper.js"
 );
 
-var database = JSON.parse(fs.readFileSync('skills.raw.json', 'utf-8'));
+var database = JSON.parse(fs.readFileSync(RAW_SKILLS_FILE, 'utf-8'));
 var descriptions;
 
-if (fs.existsSync('skill_descriptions.json')) {
-  descriptions = JSON.parse(fs.readFileSync('skill_descriptions.json', 'utf-8'));
+if (fs.existsSync(DESCRIPTIONS_FILE)) {
+  descriptions = JSON.parse(fs.readFileSync(DESCRIPTIONS_FILE, 'utf-8'));
 }
 
 var normalize = require('./utils/normalize');
@@ -114,25 +117,36 @@ function normalizeSkills(database) {
   console.log('Skill attribute keys:')
   console.log(allKeys);
 
-  return db.reduce(function(abilities, skill) {
-    var ability = abilities.filter(function(a) { return a.name === skill.ability })[0];
+  return db
+    .reduce(function(abilities, skill) {
+      var ability = abilities.filter(function(a) { return a.name === skill.ability })[0];
 
-    if (!ability) {
-      ability = { id: normalize(skill.ability), name: skill.ability, skills: [] };
-      abilities.push(ability);
-    }
+      if (!ability) {
+        ability = { id: normalize(skill.ability), name: skill.ability, skills: [] };
+        abilities.push(ability);
+      }
 
-    ability.skills.push(skill);
+      ability.skills.push(skill);
 
-    skill.ability = normalize(skill.ability);
+      skill.ability = normalize(skill.ability);
 
-    return abilities;
-  }, []);
+      return abilities;
+    }, [])
+    .map(function sortSkillsById(ability) {
+      ability.skills.sort(function(a,b) {
+        return a.id >= b.id ? 1 : -1;
+      });
+
+      return ability;
+    })
+  ;
 }
 
 var normalizedDatabase = normalizeSkills(database);
 
-fs.writeFileSync(
-  './skills.normalized.json',
-  JSON.stringify(normalizedDatabase, null, 2)
-);
+var OUTPUT_FILE = 'scripts/skills.normalized.json';
+var INTENDED_DEST = 'ui/shared/database/abilities.json';
+
+fs.writeFileSync(OUTPUT_FILE, JSON.stringify(normalizedDatabase, null, 2));
+
+console.log('Done. You should now copy "' + OUTPUT_FILE + '" to "' + INTENDED_DEST + '".')

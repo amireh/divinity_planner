@@ -4,7 +4,8 @@
  * A very basic event emitter that is bound to a single event, "change".
  */
 function EventEmitter() {
-  var listeners = [];
+  let listeners = [];
+  let silenced = false;
 
   return {
     /**
@@ -36,7 +37,9 @@ function EventEmitter() {
      * something has changed and they should react to it.
      */
     emitChange: function() {
-      listeners.forEach(function(onChange) { onChange(); });
+      if (!silenced) {
+        listeners.forEach(function(onChange) { onChange(); });
+      }
     },
 
     /**
@@ -44,6 +47,12 @@ function EventEmitter() {
      */
     clear: function() {
       listeners = [];
+    },
+
+    inSilence(callback) {
+      silenced = true;
+      callback();
+      silenced = false;
     }
   };
 }

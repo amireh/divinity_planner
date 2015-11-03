@@ -4,7 +4,6 @@ const CharacterAttributes = require('CharacterAttributes');
 const CharacterAbilities = require('CharacterAbilities');
 const CharacterSkillbook = require('CharacterSkillbook');
 const assign = require('utils/assign');
-const NOOP = Function.prototype;
 
 function Character(attrs = {}) {
   const emitter = EventEmitter();
@@ -61,22 +60,27 @@ function Character(attrs = {}) {
   API.toURL = function() {
     const fragments = [];
     const attributesURL = attributes.toURL();
+    const abilitiesURL = abilities.toURL();
+    const skillbookURL = skillbook.toURL();
 
     if (level > 1) {
-      fragments.push('0');
-      fragments.push(String.fromCharCode(96 + level));
+      fragments.push(K.DOMAIN_URL_KEYS['level']);
+      fragments.push(String.fromCharCode(K.STARTING_INDEX_CHAR_CODE + level - 1));
     }
 
     if (attributesURL.length) {
-      fragments.push('1');
+      fragments.push(K.DOMAIN_URL_KEYS['attributes']);
       fragments.push(attributesURL);
     }
 
-    const abilitiesURL = abilities.toURL();
-
     if (abilitiesURL.length) {
-      fragments.push('2');
+      fragments.push(K.DOMAIN_URL_KEYS['abilities']);
       fragments.push(abilitiesURL);
+    }
+
+    if (skillbookURL.length) {
+      fragments.push(K.DOMAIN_URL_KEYS['skillbook']);
+      fragments.push(skillbookURL);
     }
 
     return fragments.join('');
@@ -87,45 +91,52 @@ function Character(attrs = {}) {
     let levelStr = '';
     let attributesStr = '';
     let abilitiesStr = '';
+    let skillbookStr = '';
 
     url.split('').forEach(function(char) {
       switch(char) {
-        case '0':
-          domain = 'level';
-          break;
-
-        case '1':
-          domain = 'attributes';
-          break;
-
-        case '2':
-          domain = 'abilities';
+        case K.DOMAIN_URL_KEYS['level']:
+        case K.DOMAIN_URL_KEYS['attributes']:
+        case K.DOMAIN_URL_KEYS['abilities']:
+        case K.DOMAIN_URL_KEYS['skillbook']:
+          domain = char;
           break;
 
         default:
-          if (domain === 'level') {
+          if (domain === K.DOMAIN_URL_KEYS['level']) {
             levelStr += char;
           }
-          else if (domain === 'attributes') {
+          else if (domain === K.DOMAIN_URL_KEYS['attributes']) {
             attributesStr += char;
           }
-          else if (domain === 'abilities') {
+          else if (domain === K.DOMAIN_URL_KEYS['abilities']) {
             abilitiesStr += char;
+          }
+          else if (domain === K.DOMAIN_URL_KEYS['skillbook']) {
+            skillbookStr += char;
           }
       }
     });
 
-    if (levelStr.length) {
-      level = levelStr.charCodeAt(0) - 96;
-    }
+    inSilence(function() {
+      if (levelStr.length) {
+        API.setLevel(levelStr.charCodeAt(0) - K.STARTING_INDEX_CHAR_CODE + 1);
+      }
 
-    if (attributesStr.length) {
-      attributes.fromURL(attributesStr);
-    }
+      if (attributesStr.length) {
+        attributes.fromURL(attributesStr);
+      }
 
-    if (abilitiesStr.length) {
-      abilities.fromURL(abilitiesStr);
-    }
+      if (abilitiesStr.length) {
+        abilities.fromURL(abilitiesStr);
+      }
+
+      if (skillbookStr.length) {
+        skillbook.fromURL(skillbookStr);
+      }
+    });
+
+    emitChange();
   };
 
   API.addSkillToSpellbook = skillbook.addSkill;
@@ -145,12 +156,17 @@ function Character(attrs = {}) {
   }
 
   function inSilence(performer) {
-    emitChange = NOOP;
-    performer();
-    emitChange = emitter.emitChange;
+    emitter.inSilence(performer);
   }
 
   function validate() {
+    if (level > K.MAX_LEVEL) {
+      level = K.MAX_LEVEL;
+    }
+    else if (level < 1) {
+      level = 1;
+    }
+
     skillbook.ensureIntegrity();
     attributes.ensureIntegrity();
     abilities.ensureIntegrity();

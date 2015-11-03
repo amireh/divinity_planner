@@ -29,6 +29,16 @@ describe('Character', function() {
   });
 
   describe('#fromURL', function() {
+    it('accepts the level "0c"', function() {
+      subject.fromURL('0c');
+      assert.equal(serialize().level, 3);
+    });
+
+    it('accepts level 20 from "0t"', function() {
+      subject.fromURL('0t');
+      assert.equal(serialize().level, 20);
+    });
+
     it('accepts attributes "1Db"', function() {
       subject.fromURL('1Db');
 
@@ -39,6 +49,14 @@ describe('Character', function() {
       subject.fromURL('1Db2c');
       assert.equal(serialize().allocatedAttributePoints, 1);
       assert.equal(serialize().allocatedAbilityPoints, 3);
+    });
+
+    it('accepts attributes and abilities and skills "1Db2c3Ac"', function() {
+      subject.fromURL('1Db2c3Ac');
+
+      assert.equal(serialize().allocatedAttributePoints, 1);
+      assert.equal(serialize().allocatedAbilityPoints, 3);
+      assert.deepEqual(serialize().skillbook, [ 'bitterCold' ]);
     });
   });
 });

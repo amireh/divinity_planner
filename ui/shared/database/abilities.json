@@ -1147,22 +1147,6 @@
         "description": "Summon an Ice Elemental to fight for you."
       },
       {
-        "name": "Water Shield",
-        "image": "http://vignette3.wikia.nocookie.net/divinity2/images/2/27/DOS_Skill_Water_Shield.png",
-        "ability": "hydrosophist",
-        "rqCharacterLevel": 10,
-        "skillLevel": 12,
-        "apCost": 5,
-        "baseCooldown": "6 Turn(s)",
-        "range": "15 Meters",
-        "minAttrEffect": "11 INT",
-        "rqAbilityLevel": 3,
-        "statusEffect": "Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield",
-        "duration": "3 Turn(s)",
-        "descriptionText": "Enchant self or ally with a water shield that absorbs X damage from all sources (not only water ). Does not stack with other elemental shield spells.100% base chance to set  Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield  . The shield breaks early if the damage absorption is exceeded.\n Shielded (Water) Edit 100% base chance to set  Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield  \n Immune to Frozen (Frozen-20% Water Resistance+40% Fire Resistance+65 ArmourCannot Move or ActRemoved by: Purifying FireBurning  )\n 20% chance to cause(Frozen-20% Water Resistance+40% Fire Resistance+65 ArmourCannot Move or ActRemoved by: Purifying FireBurning  ) to melee attackers on contact\n Duration: 3 turns\n Fire Resistance: -25%\n Water Resistance: +50%\n Damage shield (against all damage) equal to the target's currrent vitality\n\n Tips & Strategies Edit A creature can only be affected by one elemental shield at a time.  Casting another elemental shield on a target will remove any existing elemental shield.",
-        "id": "waterShield"
-      },
-      {
         "name": "Water of Life",
         "image": "http://vignette4.wikia.nocookie.net/divinity2/images/c/ca/DOS_Skill_Water_of_Life.png",
         "ability": "hydrosophist",
@@ -1178,6 +1162,22 @@
         "descriptionText": "Magically gain Constitution \n100% base chance to set  Vitality Boosted+3 ConstitutionSkill:  Water of Life  \n\n    \n\n\n\n\n\nif (window.fromsearch && typeof(Wikia.geo) !== 'undefined' && ['GB','JP','UK','US'].indexOf(Wikia.geo.getCountryCode()) < 0) {\n    document.write('<div id=\"monetization-adunit-in_content\" class=\"monetization-module adunit hide-for-edit in-content\" data-mon-type=\"adunit\" data-mon-slot=\"in_content\"><div class=\"ad-header\">Advertisement</div><div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></scr'+'ipt><ins class=\"adsbygoogle ad-responsive-ic\" style=\"display:inline-block;\" data-ad-client=\"ca-pub-4086838842346968\" data-ad-channel=\"mon_pl_ic_fsl_ffv mon_hub_gaming mon_sl_ic\" data-ad-type=\"text\" data-font-size=\"large\"data-font-face=\"veranda\" data-color-bg=\"#0e0e0e\" data-color-border=\"#0e0e0e\" data-color-link=\"#5cb8d0\" data-color-url=\"#5cb8d0\" data-color-text=\"#d5d4d4\" ></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</scr'+'ipt></div></div>');\n}\nTips/StrategiesEditHas a range of \"Self\" and cannot be used to buff party members.\nCasting this spell both increases the caster's current and maximum HP. When the buff ends, only the maximum HP will be reduced, essentially making this a very potent healing spell.",
         "id": "waterOfLife",
         "description": "Magically gain Constitution."
+      },
+      {
+        "name": "Water Shield",
+        "image": "http://vignette3.wikia.nocookie.net/divinity2/images/2/27/DOS_Skill_Water_Shield.png",
+        "ability": "hydrosophist",
+        "rqCharacterLevel": 10,
+        "skillLevel": 12,
+        "apCost": 5,
+        "baseCooldown": "6 Turn(s)",
+        "range": "15 Meters",
+        "minAttrEffect": "11 INT",
+        "rqAbilityLevel": 3,
+        "statusEffect": "Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield",
+        "duration": "3 Turn(s)",
+        "descriptionText": "Enchant self or ally with a water shield that absorbs X damage from all sources (not only water ). Does not stack with other elemental shield spells.100% base chance to set  Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield  . The shield breaks early if the damage absorption is exceeded.\n Shielded (Water) Edit 100% base chance to set  Shielded (Water)Immune to Freezing20% Chance to Freeze Melee Attackers+50% Water Resistance-25% Fire ResistanceSkill:  Water Shield  \n Immune to Frozen (Frozen-20% Water Resistance+40% Fire Resistance+65 ArmourCannot Move or ActRemoved by: Purifying FireBurning  )\n 20% chance to cause(Frozen-20% Water Resistance+40% Fire Resistance+65 ArmourCannot Move or ActRemoved by: Purifying FireBurning  ) to melee attackers on contact\n Duration: 3 turns\n Fire Resistance: -25%\n Water Resistance: +50%\n Damage shield (against all damage) equal to the target's currrent vitality\n\n Tips & Strategies Edit A creature can only be affected by one elemental shield at a time.  Casting another elemental shield on a target will remove any existing elemental shield.",
+        "id": "waterShield"
       },
       {
         "name": "Winterblast",
