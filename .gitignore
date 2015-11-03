@@ -6,3 +6,4 @@
 *.zip
 /ui/images/unused
 /src_images
+/.ga
