@@ -1,0 +1,2039 @@
+[
+  {
+    "id": "aerotheurge",
+    "name": "Aerotheurge",
+    "skills": [
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Enchant self or ally with an air shield. It absorbs air damage until it breaks.",
+        "id": "airAbsorptionShield",
+        "name": "Air Absorption Shield",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Make a target immune to being Electrified. (Air Resistance +25, Earth Resistance -25)",
+        "id": "avatarOfStorms",
+        "name": "Avatar of Storms",
+        "range": "5.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% base chance to cause  Immune to Electrifying  for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "3",
+        "cooldown": "8 turns",
+        "effect": "Freezes a target.",
+        "id": "bitterCold",
+        "name": "Bitter Cold",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect  Frozen for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "6",
+        "cooldown": "5 turns",
+        "effect": "Shoot a bolt of electricity that deals  X-Y air  damage.",
+        "id": "blitzBolt",
+        "name": "Blitz Bolt",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "70% base chance to cause set Stunned status  for 1 turn",
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "8",
+        "cooldown": "10 turns",
+        "effect": "Shoot a bolt of lightning that forks up to 5 times in a 7.0m radius and deals X-Y air damage.",
+        "id": "chainLightning",
+        "name": "Chain Lightning",
+        "note": "Can target some surfaces and clouds to electrify them. Stunned makes a target unable to move or act.",
+        "range": "15m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 4,
+        "statusEffect": "90% chance to cause Status Effect Stunned for 1 turn",
+        "tier": 3
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "5",
+        "cooldown": "8 turns",
+        "effect": "Deals  X-Y air  damage.",
+        "id": "headvice",
+        "name": "Headvice",
+        "note": "Blinded characters cannot target others unless they're standing right next to them.",
+        "range": "15m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to cause Status Effect Blinded for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "3",
+        "cooldown": "8 turns",
+        "effect": "Become invisible for a short time.",
+        "id": "invisibility",
+        "name": "Invisibility",
+        "note": "Breaks when casting or attacking.",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to cause Status Effect Invisible for 2 turns",
+        "tier": 2
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "5",
+        "cooldown": "8 turns",
+        "effect": "Set invisible status on a target. Invisibility breaks when casting, attacking or detected.",
+        "id": "makeInvisible",
+        "name": "Make Invisible",
+        "note": "When you are invisible, enemies cannot see you or target you directly.",
+        "range": "12m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 3,
+        "statusEffect": "100% chance to cause Status Effect Invisible for 5 turns",
+        "tier": 3
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "2",
+        "cooldown": "8 turns",
+        "effect": "Make two characters switch places.",
+        "id": "netherswap",
+        "name": "Netherswap",
+        "note": "One of the characters can be you.",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 3
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Electrify a nearby target. Deal X-Y air  damage.",
+        "id": "shockingTouch",
+        "name": "Shocking Touch",
+        "range": "3.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Willpower",
+        "statusEffect": "80% chance to cause Status Effect Stunned for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "11",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Create a lightning storm that randomly picks targets and deals  X-Y air  damage.",
+        "id": "storm",
+        "name": "Storm",
+        "note": "Can electrify water surfaces. Stunned makes a target unable to move or act.",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% chance to cause Status Effect Stunned for 1 turns",
+        "tier": 3
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Summon a level 8 Air Elemental to fight for you in a 15.0m radius for 18s",
+        "id": "summonAirElemental",
+        "name": "Summon Air Elemental",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "??"
+        ],
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "7",
+        "cooldown": "10 turns",
+        "effect": "Throw an item or character up high and drop it to the ground, dealing X-Y crushing damage.",
+        "id": "teleportation",
+        "name": "Teleportation",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "??"
+        ],
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "5",
+        "cooldown": "10 turns",
+        "effect": "Jump from one target to the other, hitting a maximum of 2 targets, stunning them and dealing  X-Y air  damage.",
+        "id": "thunderJump",
+        "name": "Thunder Jump",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "??"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Willpower",
+        "statusEffect": "50% chance to cause Status Effect Stunned for 5 turns",
+        "tier": 1
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "4",
+        "cooldown": "10 turns",
+        "effect": "Removes surfaces from the battlefield, reveals invisible characters and clears Warm, Burning and Hastened.",
+        "id": "tornado",
+        "name": "Tornado",
+        "range": "2.0m radius",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "aerotheurge",
+        "abilityName": "Aerotheurge",
+        "apCost": "2",
+        "cooldown": "7 turns",
+        "effect": "Cures Petrified, Slowed and Stunned.",
+        "id": "windOfChange",
+        "name": "Wind of Change",
+        "recommendedAttribute": [
+          "Intelligence",
+          "??"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "Cures Petrified, Slowed and Stunned",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": "expertMarksman",
+    "name": "Expert Marksman",
+    "skills": [
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "3",
+        "cooldown": "8 turns",
+        "effect": "Decrease armor, but grant higher resistance against all the elements.",
+        "id": "absorbTheElements",
+        "name": "Absorb the Elements",
+        "range": "12.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "3"
+        ],
+        "rqAbilityLevel": 3,
+        "statusEffect": "100% chance to set Elemental Absorption for 5 turns",
+        "tier": 2
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "7",
+        "cooldown": "6 turns",
+        "effect": "Fire 16 arrows in a 45 degree arc. Each arrow deals 50% Weapon (piercing) damage.",
+        "id": "arrowSpray",
+        "name": "Arrow Spray",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "4"
+        ],
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "6",
+        "cooldown": "6 turns",
+        "effect": "Fire multiple arrows in a straight line, each dealing 75% weapon (piercing) damage.",
+        "id": "barrage",
+        "name": "Barrage",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "3"
+        ],
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "3",
+        "cooldown": "4 turns",
+        "effect": "Cures Weak, Blind, Mute, and Infected. Grants 1 Bodybuilding for 2 turns.",
+        "id": "doctor",
+        "name": "Doctor",
+        "range": "10m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "2"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Doctor for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "2",
+        "cooldown": "8 turns",
+        "effect": "Grant a target improved sight and +50 chance to hit with ranged weapons for 4 turns. Removes Blinded.",
+        "id": "farseer",
+        "name": "Farseer",
+        "note": "A higher sight score improves your chance to hit with ranged weapons over longer distances.",
+        "range": "12.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "2"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Farseer for 4 turns",
+        "tier": 2
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "3",
+        "cooldown": "4 turns",
+        "effect": "Cures Status Effect Bleeding, Crippled and Diseased. Heals target for 10%.",
+        "id": "firstAid",
+        "name": "First Aid",
+        "range": "10m",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set First Aid for 1 turns",
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "6",
+        "cooldown": "6 turns",
+        "effect": "Infect a target with a vicious disease.",
+        "id": "infect",
+        "name": "Infect",
+        "note": "Disease lowers target's Constitution by -3 and Bodybuilding ability by -2. Infected has a chance of infecting everyone that comes near the target.",
+        "range": "10.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "3"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Infected status for 4 turns",
+        "tier": 2
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "8",
+        "cooldown": "5 turns",
+        "effect": "Let a shower of piercing arrows rain down on your enemy. Deals 300% Weapon (piercing) damage to each enemy.",
+        "id": "rainOfArrows",
+        "name": "Rain of Arrows",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "4"
+        ],
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "0",
+        "cooldown": "2 turns",
+        "effect": "Improve damage with Bows and Crossbows at the cost of precision. (Toggle Stance)",
+        "id": "rangedPowerStance",
+        "name": "Ranged Power Stance",
+        "note": "Lasts until cancelled or replaced by another stance.",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "0",
+        "cooldown": "2 turns",
+        "id": "rangedPrecisionStance",
+        "name": "Ranged Precision Stance",
+        "note": "Lasts until cancelled or replaced by another stance.",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "4",
+        "cooldown": "4 turns",
+        "effect": "Fire a normal arrow that deals 100% weapon (piercing) damage and then forks off to the next target up to 4 times within 8.0m.",
+        "id": "ricochet",
+        "name": "Ricochet",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "5",
+        "cooldown": "6 turns",
+        "effect": "Target a corpse or a container and make it explode. The flying debris will damage characters around it.",
+        "id": "shrapnelScatter",
+        "name": "Shrapnel Scatter",
+        "note": "Can fork up to 6 times.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "4"
+        ],
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "7",
+        "cooldown": "10 turns",
+        "effect": "Fire an arrow that splinters on impact, dividing 250% weapon (piercing) damage over enemy targets in an 8.0m radius.",
+        "id": "splinteredArrow",
+        "name": "Splintered Arrow",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "2"
+        ],
+        "rqAbilityLevel": 2,
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "6",
+        "cooldown": "8 turns",
+        "effect": "Increase luck and critical chance of you and all around you.",
+        "id": "survivorSKarma",
+        "name": "Survivor's Karma",
+        "note": "Luck increases your Chance to hit, and improves the odds of finding valuables.",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "2"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Karma for 5 turns",
+        "tier": 2
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "2",
+        "cooldown": "2 turns",
+        "effect": "Cures Poison. Target gains 100% poison resistance for 2 turns.",
+        "id": "treatPoisoning",
+        "name": "Treat Poisoning",
+        "range": "3.0m",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Treating Poison for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "expertMarksman",
+        "abilityName": "Expert Marksman",
+        "apCost": "4",
+        "cooldown": "10 turns",
+        "effect": "An arrow that deals half of your weapon damage, 50% weapon (piercing), that fully heals you over 2 rounds.",
+        "id": "vampiricArrow",
+        "name": "Vampiric Arrow",
+        "note": "Damage dealt depends on your weapon's damage rating.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Expert Marksman Level",
+          "4"
+        ],
+        "rqAbilityLevel": 4,
+        "statusEffect": "100% chance to heal 70 Vitality",
+        "tier": 2
+      }
+    ]
+  },
+  {
+    "id": "geomancer",
+    "name": "Geomancer",
+    "skills": [
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Make a target immune to being poisoned. Melee attackers may get poisoned!",
+        "id": "avatarOfPoison",
+        "name": "Avatar of Poison",
+        "note": "Target can still take poison damage.",
+        "range": "5.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Avatar of Poison for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Bless a target. Removes curse.",
+        "id": "bless",
+        "name": "Bless",
+        "note": "Blessed boosts Chance to hit by +30.",
+        "range": "12.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Blessed status for 5 turns",
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "5",
+        "cooldown": "4 turns",
+        "effect": "A Boulder comes crashing from the sky. It does X-Y earth damage to anything within a 1.0m range from impact, creating an oil surface where it lands.",
+        "id": "boulderBash",
+        "name": "Boulder Bash",
+        "range": "15.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "9",
+        "cooldown": "8 turns",
+        "effect": "Launch multiple poisonous spores that each deal X-Y poison damage each to anything 3.0m from impact.",
+        "id": "deadlySpores",
+        "name": "Deadly Spores",
+        "note": "Can target terrain to create an ooze surface.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Poison Resistance",
+        "statusEffect": "100% chance to set Poisoned status for 3 turns",
+        "tier": 3
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Enchant self or ally with an earth shield. An earth shield absorbs earth damage until it breaks.",
+        "id": "earthAbsorptionShield",
+        "name": "Earth Absorption Shield",
+        "note": "Immune to Petrification,",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "2",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "9",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Knocks down enemies, deals X-Y earth damage, and creates random oil surfaces.",
+        "id": "earthquake",
+        "name": "Earthquake",
+        "note": "Knockdown make a target unable to move or act.",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "300% chance to set Knocked Down status for 1 turns",
+        "tier": 3
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "5",
+        "cooldown": "8 turns",
+        "effect": "Give yourself or another target magical armor.",
+        "id": "fortify",
+        "name": "Fortify",
+        "range": "12.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Fortified status for 5 turns",
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "5",
+        "cooldown": "4 turns",
+        "effect": "Cast a poisonous magical dart that does X-Y poison damage.",
+        "id": "magicalPoisonDart",
+        "name": "Magical Poison Dart",
+        "note": "Can target terrain to create ooze surface.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Poison Resistance",
+        "statusEffect": "100% chance to set Poisoned status for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "3",
+        "cooldown": "5 turns",
+        "effect": "Create an oil surface.",
+        "id": "midnightOil",
+        "name": "Midnight Oil",
+        "note": "Oil slows characters down and can be set on fire.",
+        "range": "15.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Turn a nearby target to stone, dealing X-Y earth damage.",
+        "id": "petrifyingTouch",
+        "name": "Petrifying Touch",
+        "note": "Petrified makes target unable to move or act.",
+        "range": "3.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Willpower",
+        "statusEffect": "80% chance to set Petrified status for 2 turns",
+        "tier": 2
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "8",
+        "cooldown": "8 turns",
+        "effect": "Summon a level 8 earth elemental in a 15.0m radius for 18s.",
+        "id": "summonEarthElemental",
+        "name": "Summon Earth Elemental",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "4",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Summon a level 8 Poison Slug in a 15.0m radius for 30s.",
+        "id": "summonPoisonSlug",
+        "name": "Summon Poison Slug",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "4",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "7",
+        "cooldown": "6 turns",
+        "effect": "Summon a level 8 spider in a 10.0m radius for 30s.",
+        "id": "summonSpider",
+        "name": "Summon Spider",
+        "note": "You can only have one summon at a time.",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Summon a level 8 wolf within a 5.0m radius for 24s.",
+        "id": "summonWolf",
+        "name": "Summon Wolf",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "geomancer",
+        "abilityName": "Geomancer",
+        "apCost": "8",
+        "cooldown": "12 turns",
+        "effect": "Deal X-Y earth damage to all targets in a 45 degree cone that's 7.0m long. Creates an oil surface. Has a chance to petrify.",
+        "id": "tectonicSpray",
+        "name": "Tectonic Spray",
+        "note": "Petrified makes target unable to move or act.",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Willpower",
+        "statusEffect": "80% chance to set Petrified status for 1 turns",
+        "tier": 2
+      }
+    ]
+  },
+  {
+    "id": "hydrosophist",
+    "name": "Hydrosophist",
+    "skills": [
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Make a target immune to being frozen. Melee attackers may get frozen.",
+        "id": "avatarOfFrost",
+        "name": "Avatar of Frost",
+        "note": "Target can still be Chilled and still takes water damage.",
+        "range": "5.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Avatar of Frost for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "4",
+        "cooldown": "7 turns",
+        "effect": "Cures Blind, Mute, Disease, Infected, Bleeding, Crippled and Decaying Touch.",
+        "id": "cleansingWater",
+        "name": "Cleansing Water",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "3",
+        "cooldown": "5 turns",
+        "effect": "Freeze a nearby target, dealing X-Y water damage.",
+        "id": "freezingTouch",
+        "name": "Freezing Touch",
+        "note": "Frozen makes a target unable to move or act, but it gains increased Armor Rating and Fire Resistance.",
+        "range": "3.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Frozen status for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "11",
+        "cooldown": "Can only be used once per combat",
+        "effect": "20 ice shards rain from the sky, each doing X-Y water damage to entities within 15.0m range from impact.",
+        "id": "hailAttack",
+        "name": "Hail Attack",
+        "note": "Can target terrain to create ice surface or freeze water.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Frozen status for 2 turns",
+        "tier": 3
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "7",
+        "cooldown": "8 turns",
+        "effect": "Shoot a chilling shard of ice that deals X-Y water damage.",
+        "id": "iceShard",
+        "name": "Ice Shard",
+        "note": "Can target terrain to create ice surface or freeze water.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Frozen status for 1 turn",
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "5",
+        "cooldown": "10 turns",
+        "effect": "Create a wall to block enemies or to lock them inside. Deals X-Y water damage.",
+        "id": "iceWall",
+        "name": "Ice Wall",
+        "note": "Draw a line where you want the wall to appear.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Frozen status for 2 turn",
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "7",
+        "cooldown": "8 turns",
+        "effect": "Disease all enemies within an area.",
+        "id": "massDisease",
+        "name": "Mass Disease",
+        "note": "Disease lowers target's Constitution by -3 and Bodybuilding by -2.",
+        "range": "16.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Diseased status for 2 turns",
+        "tier": 3
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "8",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Heal all within an area for 7 turns.",
+        "id": "massHeal",
+        "name": "Mass Heal",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "5",
+        "recommendedAttribute": [
+          "Intelligence",
+          "13"
+        ],
+        "rqAbilityLevel": 5,
+        "tier": 3
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "6",
+        "cooldown": "Can only be used once per combat.",
+        "effect": "Slow enemies around you.",
+        "id": "massSlow",
+        "name": "Mass Slow",
+        "note": "Slowed characters move more slowly and receive less AP.",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% chance to set Slowed status for 3 turn",
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Create water surfaces.",
+        "id": "rain",
+        "name": "Rain",
+        "note": "Creates water puddles on terrain, douses fires, and makes characters wet. Wet makes target less resistant to air spells but more resistant to fire spells.",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Wet status for 5 turns",
+        "tier": 1
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "5",
+        "cooldown": "5 turns",
+        "effect": "Heal X Vitality on a target for 3 turns.",
+        "id": "regeneration",
+        "name": "Regeneration",
+        "range": "12.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "2",
+        "cooldown": "6 turns",
+        "effect": "Slow a target.",
+        "id": "slowCurrent",
+        "name": "Slow Current",
+        "note": "Slowed characters move more slowly and receive less AP.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Slowed status for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Summon a level 8 Ice Elemental in a 15.0m radius for 18s.",
+        "id": "summonIceElemental",
+        "name": "Summon Ice Elemental",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "2",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Enchant self or an ally with a water shield. A water shield absorbs water damage until it breaks.",
+        "id": "waterAbsorptionShield",
+        "name": "Water Absorption Shield",
+        "note": "Immune to being Frozen",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "6",
+        "cooldown": "8 turns",
+        "effect": "You and allies around you magically gain Constitution and heal immensely.",
+        "id": "waterOfLife",
+        "name": "Water of Life",
+        "note": "Constitution boosted by 3",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Vitality Boosted for 4 turns",
+        "tier": 2
+      },
+      {
+        "ability": "hydrosophist",
+        "abilityName": "Hydrosophist",
+        "apCost": "8",
+        "cooldown": "12 turns",
+        "effect": "Freeze and deal X-Y water damage to all targets in a 60 degree cone that's 9.0m long.",
+        "id": "winterblast",
+        "name": "Winterblast",
+        "note": "More effective when it's raining.",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Frozen status for 1 turn",
+        "tier": 3
+      }
+    ]
+  },
+  {
+    "id": "manAtArms",
+    "name": "Man-At-Arms",
+    "skills": [
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "0",
+        "cooldown": "4 turns",
+        "effect": "Reflect melee damage inflicted upon you, at the cost of your Chance to hit. (Toggle Stance)",
+        "id": "barbedWire",
+        "name": "Barbed Wire",
+        "note": "Lasts until cancelled or replace by another stance. Decreases chance to hit.",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Rush forward in a straight line to a point far away, hitting all enemies in your path with X-Y slashing damage.",
+        "id": "batteringRam",
+        "name": "Battering Ram",
+        "note": "Damage dealt depends on your main weapon's damage rating.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Strength",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "80% chance to set Knocked Down status for 1 turns",
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "4",
+        "cooldown": "3 turns",
+        "effect": "Cripple a target. Deals 30% weapon (crushing) damage.",
+        "id": "cripplingBlow",
+        "name": "Crippling Blow",
+        "recommendedAttribute": [
+          "Strength",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Crippled status for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "4",
+        "cooldown": "7 turns",
+        "effect": "An enormous fist smashes your enemy and knocks them down. Deals X-Y slashing damage.",
+        "id": "crushingFist",
+        "name": "Crushing Fist",
+        "note": "Knockdown makes a target unable to move or act.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Strength",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Knocked Down status for 2 turns",
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "6",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Immediately heal yourself or a nearby ally for X Vitality.",
+        "id": "cureWounds",
+        "name": "Cure Wounds",
+        "range": "3.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "3",
+        "cooldown": "7 turns",
+        "effect": "Sets the Warm status and decreases target's Willpower and Bodybuilding within the spell's area of effect.",
+        "id": "divineLight",
+        "name": "Divine Light",
+        "note": "Lower Bodybuilding and Willpower scores, means more chance to set statuses on targets: their saving throws chances are slim.",
+        "recommendedAttribute": [
+          "Strength",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "None, Bodybuilding",
+        "statusEffect": "100% chance to set Struck by Divine Light for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "0",
+        "cooldown": "4 turns",
+        "effect": "Improve elemental resistances, but movement is slowed. (Toggle Stance)",
+        "id": "elementalTortoise",
+        "name": "Elemental Tortoise",
+        "note": "Lasts until cancelled or replace by another stance. Decreases chance to hit.",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Encourage allies around you.",
+        "id": "encourage",
+        "name": "Encourage",
+        "note": "Encouraged boosts target's Strength, Dexterity, Intelligence and Constitution by 1.",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Strength",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Encouraged for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Attack with a flurry of your main weapon and deal 100% weapon damage each strike.",
+        "id": "flurry",
+        "name": "Flurry",
+        "note": "Damage dealt depends on your main weapon's damage rating.",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "3",
+        "cooldown": "3 turns",
+        "effect": "Help a Knocked Down ally up, or pat out a Burning one.",
+        "id": "helpingHand",
+        "name": "Helping Hand",
+        "range": "10.0m",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "0",
+        "cooldown": "2 turns",
+        "effect": "Improve defense at the cost of damage. (Toggle Stance)",
+        "id": "meleeDefensiveStance",
+        "name": "Melee Defensive Stance",
+        "note": "Lasts until cancelled or replace by another stance. Decreases chance to hit.",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "0",
+        "cooldown": "2 turns",
+        "effect": "Increase both the damage of your melee attacks and your movement speed at the cost of your precision. (Toggle Stance.)",
+        "id": "meleePowerStance",
+        "name": "Melee Power Stance",
+        "note": "Lasts until cancelled or replace by another stance. Decreases chance to hit.",
+        "rqAbilityLevel": 1,
+        "tier": 1
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "2",
+        "cooldown": "5 turns",
+        "effect": "Enter an enraged state.",
+        "id": "rage",
+        "name": "Rage",
+        "note": "Rage decreases your Armor and Chance to hit, but you do more damage and have higher Critical Chance:",
+        "recommendedAttribute": [
+          "Strength",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "statusEffect": "100% chance to set Enraged status for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Mark a target that will receive all of the damage you receive.",
+        "id": "shacklesOfPain",
+        "name": "Shackles of Pain",
+        "range": "15.0m",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Taunt all enemies within 8.0m around you. Provoke and tease them so that they want to attack you.",
+        "id": "taunt",
+        "name": "Taunt",
+        "recommendedAttribute": [
+          "Strength",
+          "10"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% chance to set Taunted status for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "manAtArms",
+        "abilityName": "Man-At-Arms",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Perform a whirlwind attack, hitting enemies around you for 120% weapon (slashing) damage.",
+        "id": "whirlwind",
+        "name": "Whirlwind",
+        "note": "Damage dealt depends on your main weapon's damage rating.",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      }
+    ]
+  },
+  {
+    "id": "pyrokinetic",
+    "name": "Pyrokinetic",
+    "skills": [
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "6",
+        "cooldown": "6 turns",
+        "effect": "Make a target immune to Burning. Its melee attackers may catch on fire.",
+        "id": "avatarOfFire",
+        "name": "Avatar of Fire",
+        "range": "5.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Avatar of Fire for 3 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "4",
+        "cooldown": "8 turns",
+        "effect": "Target gains a temporary perception bonus. Cures Blinded.",
+        "id": "burnMyEyes",
+        "name": "Burn My Eyes",
+        "note": "Boosts Perception by 2.",
+        "range": "12.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Burn My Eyes for 10 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "3",
+        "cooldown": "4 turns",
+        "effect": "Set fire to a nearby target dealing X - Y damage.",
+        "id": "burningTouch",
+        "name": "Burning Touch",
+        "range": "3.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 3 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "3",
+        "cooldown": "4 turns",
+        "effect": "Deals X-Y fire damage to yourself and to those within 6.0m around you.",
+        "id": "explode",
+        "name": "Explode",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Enchant self or ally with a fire shield. A fire shield absorbs fire damage until it breaks.",
+        "id": "fireAbsorptionShield",
+        "name": "Fire Absorption Shield",
+        "note": "Immune to Burning status",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "7",
+        "cooldown": "8 turns",
+        "effect": "Cast an explosive ball of fire that does X-Y fire damage to anything within 3.0m of impact.",
+        "id": "fireball",
+        "name": "Fireball",
+        "note": "Can target terrain to create fire surface, burn ooze or oil, evaporate water, or melt ice. Can explode some clouds.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 2 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "5",
+        "cooldown": "8 turns",
+        "effect": "Create a fire surface",
+        "id": "firefly",
+        "name": "Firefly",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "5",
+        "cooldown": "4 turns",
+        "effect": "Cast magical heat that does x-y fire damage",
+        "id": "flare",
+        "name": "Flare",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to set Warm status for 3 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "6",
+        "cooldown": "6 turns",
+        "effect": "Instantly set a target on fire. Deals X-Y fire damage.",
+        "id": "immolation",
+        "name": "Immolation",
+        "note": "Burning does fire damage over time.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 3 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "7",
+        "cooldown": "10 turns",
+        "effect": "Cast a magical flame that forks on impact and does X-Y fire damage to each target.",
+        "id": "infectiousFlame",
+        "name": "Infectious Flame",
+        "note": "Can target terrain to create fire surface, burn ooze or oil, evaporate water, or melt ice. Can explode some clouds.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "11",
+        "cooldown": "Can only be use once per combat",
+        "effect": "30 fireballs come crashing from the sky. Each does X-Y fire damage to entities within a 3.0m range from impact.",
+        "id": "meteorShower",
+        "name": "Meteor Shower",
+        "note": "Can target terrain to create fire surface, burn ooze or oil, evaporate water, or melt ice. Can explode some clouds.",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to set Burning status for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "4",
+        "cooldown": "7 turns",
+        "effect": "Removes Burning, Frozen, Stun, Charm, Healing and Shields.",
+        "id": "purifyingFire",
+        "name": "Purifying Fire",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "4",
+        "cooldown": "4 turns",
+        "id": "selfImmolation",
+        "name": "Self-Immolation",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Immolated status for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "5",
+        "cooldown": "7 turns",
+        "effect": "Create a smoke cloud.",
+        "id": "smokescreen",
+        "name": "Smokescreen",
+        "note": "Draw your own smokescreen in a line. Line starts at your position. Click on the terrain to create a line until you have reached the line's maximum length.",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "70% chance to set Blinded status for 3 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "7",
+        "cooldown": "7 turns",
+        "effect": "Summon a level 8 Fire Elemental in a 15.0m radius for 18s.",
+        "id": "summonFireElemental",
+        "name": "Summon Fire Elemental",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "2",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "pyrokinetic",
+        "abilityName": "Pyrokinetic",
+        "apCost": "4",
+        "cooldown": "8 turns",
+        "id": "wildfire",
+        "name": "Wildfire",
+        "range": "12.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% chance to set Warm status for 2 turns.",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": "scoundrel",
+    "name": "Scoundrel",
+    "skills": [
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "0",
+        "cooldown": "5 turns",
+        "effect": "Borrow Action Points from your next turn. (You'll have less Action Points to spend on your next turn.)",
+        "id": "adrenaline",
+        "name": "Adrenaline",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% chance to immediately gain an extra 50% of your Turn Action Points, but lose 75% of your total Action Points next turn.",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "10",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Deal the killing blow to a target that's below 20% vitality.",
+        "id": "coupDeGrace",
+        "name": "Coup De Grace",
+        "range": "2.4 m",
+        "recommendedAbilityLevel": "5",
+        "rqAbilityLevel": 5,
+        "tier": 3
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "8",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Plant a monstrous egg in a nearby target.",
+        "id": "crawlingInfestation",
+        "name": "Crawling Infestation",
+        "range": "2.0 m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Dexterity",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "95% base chance to cause Status Effect Crawling Infestation for 3 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "2",
+        "cooldown": "12 turns",
+        "effect": "Make yourself immune to surfaces, as if you were floating above them.",
+        "id": "hoverfeet",
+        "name": "Hoverfeet",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Dexterity",
+          "9"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% base chance to cause Status Effect Winged Feet for 5 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "3",
+        "cooldown": "5 turns",
+        "effect": "Inflict Bleeding. Does 150% weapon(slashing) damage.",
+        "id": "lacerate",
+        "name": "Lacerate",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Bleeding for 3 turns",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "6",
+        "cooldown": "11 turns",
+        "effect": "Step through the shadows and attack a target from behind, dealing 100% weapon (piercing) damage.Then go back to where you came from.",
+        "id": "shadowStep",
+        "name": "Shadow Step",
+        "note": "Damage dealt depends on your main weapon's damage rating",
+        "range": "15 m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Dexterity",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "statusEffect": "100% base chance to Backstab.",
+        "tier": 3
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "4",
+        "cooldown": "8 turns",
+        "effect": "Knock down a target. Deals crushing damage.",
+        "id": "trip",
+        "name": "Trip",
+        "range": "3.0 m",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect Knocked Down for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "4",
+        "cooldown": "2 turns",
+        "effect": "Poison your target. Deals 100% weapon (piercing) damage.",
+        "id": "venomousStrike",
+        "name": "Venomous Strike",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Dexterity",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Poison Resistance",
+        "statusEffect": "100% base chance to cause Status Effect Poisoned for 4 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "3",
+        "cooldown": "10 turns",
+        "effect": "Become one with the shadows.",
+        "id": "walkInShadows",
+        "name": "Walk in Shadows",
+        "note": "Breaks when casting or attacking.",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect Invisible for 5 turns",
+        "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "2",
+        "cooldown": "10 turns",
+        "effect": "Summon a level 8 bomb in a 3.0m radius for 30s.",
+        "id": "windUpToy",
+        "name": "Wind-Up Toy",
+        "note": "You can only have one summon at a time",
+        "recommendedAbilityLevel": "4",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      }
+    ]
+  },
+  {
+    "id": "witchcraft",
+    "name": "Witchcraft",
+    "skills": [
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "9",
+        "cooldown": "11 turns",
+        "effect": "Deal X - Y crushing damage to a target near you.",
+        "id": "deathPunch",
+        "name": "Death Punch",
+        "range": "3.0m",
+        "recommendedAbilityLevel": "4",
+        "rqAbilityLevel": 4,
+        "statusEffect": "100% base chance to cause Status Effect Death Punch for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "2",
+        "cooldown": "8 turns",
+        "effect": "Make a target decay, so that it cannot be healed by magic or ptions anymore, it will be damaged instead.",
+        "id": "decayingTouch",
+        "name": "Decaying Touch",
+        "range": "5.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% base chance to cause Status Effect Decaying Touch for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "6",
+        "cooldown": "10 turns",
+        "effect": "Deal immense damage to a summoned creature",
+        "id": "destroySummon",
+        "name": "Destroy Summon",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "3",
+        "cooldown": "6 turns",
+        "effect": "Decrease a target's Willpower by -5.",
+        "id": "drainWillpower",
+        "name": "Drain Willpower",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "statusEffect": "100% base chance to cause Status Effect Willpower Lowered for 2 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "cooldown": "9 turns",
+        "effect": "Make enemies around you cower and flee.",
+        "id": "horrificScream",
+        "name": "Horrific Scream",
+        "range": "8.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% base chance to cause Status Effect Feared for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "2",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Make yourself invulnerable.",
+        "id": "invulnerability",
+        "name": "Invulnerability",
+        "recommendedAbilityLevel": "5",
+        "recommendedAttribute": [
+          "Intelligence",
+          "13"
+        ],
+        "rqAbilityLevel": 5,
+        "statusEffect": "100% base chance to cause Status Effect Invulnerable for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Decreases all elemental resistances of enemies around you.",
+        "id": "lowerResistances",
+        "name": "Lower Resistances",
+        "range": "8.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect Resistances Lowered for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "4",
+        "cooldown": "5 turns",
+        "effect": "Malediction weakens and curses an enemy.",
+        "id": "malediction",
+        "name": "Malediction",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "savingThrows": "Willpower, Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect Cursed and Weakened for 3 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "2",
+        "cooldown": "8 turns",
+        "effect": "Silence a target",
+        "id": "mute",
+        "name": "Mute",
+        "range": "16.0m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Intelligence",
+          "11"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% base chance to cause Status Effect Muted for 3 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "3",
+        "cooldown": "8 turns",
+        "effect": "Bestow a damage boost upon an ally.",
+        "id": "oathOfDesecration",
+        "name": "Oath Of Desecration",
+        "range": "15.0m",
+        "recommendedAttribute": [
+          "Intelligence",
+          "8"
+        ],
+        "rqAbilityLevel": 1,
+        "statusEffect": "100% base chance to cause Status Effect Oath Of Desecration for 2 turns.",
+        "tier": 1
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "6",
+        "cooldown": "8 turns",
+        "effect": "Charm a target.",
+        "id": "rapture",
+        "name": "Rapture",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Intelligence",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% base chance to cause Status Effect Charmed for 2 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "6",
+        "cooldown": "8 turns",
+        "effect": "Resurrect a dead ally to 50% of its vitality at a location within 10.0m.",
+        "id": "resurrect",
+        "name": "Resurrect",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "4",
+        "rqAbilityLevel": 4,
+        "tier": 3
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "8",
+        "cooldown": "Can only be used once per combat",
+        "effect": "Lower all of the target's powers and resistances",
+        "id": "soulsap",
+        "name": "Soulsap",
+        "range": "16.0m",
+        "recommendedAbilityLevel": "4",
+        "recommendedAttribute": [
+          "Intelligence",
+          "12"
+        ],
+        "rqAbilityLevel": 4,
+        "savingThrows": "Willpower",
+        "statusEffect": "100% base chance to cause Status Effect Soulsapped for 2 turns.",
+        "tier": 3
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "8",
+        "cooldown": "8 turns",
+        "effect": "Summon a powerful level 8 Skeletal Knight in a 12.0m radius for 30s.",
+        "id": "summonArmoredUndeadDecapitator",
+        "name": "Summon Armored Undead Decapitator",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 2,
+        "tier": 2
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Summon a level 8 skeleton in a 10.0m radius for 24s",
+        "id": "summonUndeadWarrior",
+        "name": "Summon Undead Warrior",
+        "note": "You can only have one summon at a time.",
+        "recommendedAbilityLevel": "2",
+        "rqAbilityLevel": 2,
+        "tier": 1
+      },
+      {
+        "ability": "witchcraft",
+        "abilityName": "Witchcraft",
+        "apCost": "4",
+        "cooldown": "6 turns",
+        "effect": "Heal yourself with the life force of someone else. Damages them for X - Y piercing damage.",
+        "id": "vampiricTouch",
+        "name": "Vampiric Touch",
+        "range": "3.0m",
+        "rqAbilityLevel": 1,
+        "statusEffect": "200% chance to heal 70 vitality",
+        "tier": 1
+      }
+    ]
+  }
+]

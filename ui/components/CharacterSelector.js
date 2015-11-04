@@ -6,6 +6,7 @@ const CharacterSelector = React.createClass({
     return (
       <ul className="character-selector">
         {this.props.profiles.map(this.renderCharacterSlot)}
+        <li key="children">{this.props.children}</li>
       </ul>
     );
   },

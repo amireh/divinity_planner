@@ -23,6 +23,28 @@ nsg({
 
 nsg({
   src: [
+    'fextralife_wiki_scraper/skill_icons/*.jpg'
+  ],
+
+  spritePath:     path.join(assetDir, 'skill_icons_ee.jpg'),
+  stylesheetPath: path.join(assetDir, 'skill_icons_ee.less'),
+  stylesheet: 'css',
+  compositor: require('node-sprite-generator-jimp'),
+  stylesheetOptions: {
+    prefix: 'skill-icon-ee--',
+    pixelRatio: 2
+  }
+
+}, function (err) {
+  if (err) {
+    throw err;
+  }
+
+  console.log('Sprite generated!');
+});
+
+nsg({
+  src: [
     'ability_icons/*.png'
   ],
 

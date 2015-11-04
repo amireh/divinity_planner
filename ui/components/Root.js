@@ -47,15 +47,26 @@ const Root = React.createClass({
           Divinity: Original Sin Character Planner
         </h1>
 
-        <CharacterSelector
-          activeProfileId={profiles.indexOf(profile)}
-          profiles={profiles}
-          onSwitchProfile={this.switchProfile}
-        />
+        <div style={{ position: 'relative' }}>
+          <CharacterSelector
+            activeProfileId={profiles.indexOf(profile)}
+            profiles={profiles}
+            onSwitchProfile={this.switchProfile}
+          />
+
+          <label style={{position: 'absolute', right: 0, top: 20 }}>
+            <input
+              type="checkbox"
+              onChange={this.toggleEnhancedMode}
+              checked={queryParams.ee}
+            /> Enhanced Edition
+          </label>
+        </div>
 
         <ProfileSheet
           profile={profile}
           queryParams={queryParams}
+          enhancedEdition={queryParams.ee}
         />
 
         <div className="app-footer">
@@ -80,6 +91,15 @@ const Root = React.createClass({
   reload() {
     this.forceUpdate();
   },
+
+  toggleEnhancedMode() {
+    if (URLManager.getQueryParams().ee) {
+      URLManager.setQueryParam('ee', null);
+    }
+    else {
+      URLManager.setQueryParam('ee', '1');
+    }
+  }
 });
 
 function rainbow(string) {

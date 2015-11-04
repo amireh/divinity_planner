@@ -12,6 +12,7 @@ const Skill = React.createClass({
   render() {
     const skill = this.props;
     const { canLearn, learnable } = skill;
+    const { enhancedEdition } = this.props;
 
     const className = classSet({
       'skill-tree__skill': true,
@@ -20,6 +21,19 @@ const Skill = React.createClass({
       'skill-tree__skill--locked': !skill.learned && !canLearn,
       'hint--top': true
     });
+
+    let iconClassName = {};
+
+    if (enhancedEdition) {
+      iconClassName['skill-icon-ee'] = true;
+      iconClassName['skill-icon-ee--' + skill.id] = true;
+    }
+    else {
+      iconClassName['skill-icon'] = true;
+      iconClassName['skill-icon--' + skill.id] = true;
+    }
+
+    iconClassName = classSet(iconClassName);
 
     let description = (skill.description || skill.descriptionText || '').trim();
 
@@ -34,7 +48,8 @@ const Skill = React.createClass({
         onClick={this.props.onClick}
       >
         <div className="skill-tree__skill-icon">
-          <div className={`skill-icon skill-icon--${skill.id}`} />
+          <div className={iconClassName} />
+
           {learnable && (
             <span className="skill-tree__skill-icon-highlighter" />
           )}

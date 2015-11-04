@@ -1,0 +1,1 @@
+exports.BASE_URL = 'http://divinityoriginalsin.wiki.fextralife.com/';

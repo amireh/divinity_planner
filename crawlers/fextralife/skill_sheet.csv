@@ -1,0 +1,129 @@
+,School,Name,Type,Tier,AP,Min Stat,Skill Lvl Req
+,Aerotheurge,Avatar of Storms,Immune,Novice,4,9,1
+,Aerotheurge,Bitter Cold,Disable,Novice,3,8,1
+,Aerotheurge,Shocking Touch,Disable,Novice,3,9,1
+,Aerotheurge,Teleportation,Utility,Novice,7,8,1
+,Aerotheurge,Thunder Jump,Blink,Novice,5,,1
+,Aerotheurge,Wind of Change,Cure,Novice,2,,1
+,Aerotheurge,Blitz Bolt,Attack,Novice,6,8,1
+,Aerotheurge,Invisibility,Utility,Adept,3,10,2
+,Aerotheurge,Air Absorption Shield,Shield,Adept,3,,3
+,Aerotheurge,Headvice,Attack,Adept,5,10,3
+,Aerotheurge,Summon Air Elemental,Summon,Adept,7,,3
+,Aerotheurge,Tornado,Utility,Adept,4,,3
+,Aerotheurge,Make Invisible,Buff,Master,5,11,3
+,Aerotheurge,Netherswap,Utility,Master,2,,3
+,Aerotheurge,Chain Lightning,Attack,Master,8,11,4
+,Aerotheurge,Storm,Attack,Master,11,12,4
+,Expert Marksman,First Aid,Cure,Novice,3,8,1
+,Expert Marksman,Ranged Power Stance,Buff,Novice,0,,1
+,Expert Marksman,Ranged Precision Stance,Buff,Novice,0,,1
+,Expert Marksman,Ricochet,Attack,Novice,4,,1
+,Expert Marksman,Treat Poisoning,Cure,Novice,2,8,1
+,Expert Marksman,Doctor,Cure,Novice,3,9,2
+,Expert Marksman,Splintered Arrow,Attack,Novice,7,,2
+,Expert Marksman,Farseer,Buff,Adept,2,10,2
+,Expert Marksman,Survivor's Karma,Buff,Adept,6,9,2
+,Expert Marksman,Absorb the Elements,Shield,Adept,3,10,3
+,Expert Marksman,Barrage,Attack,Adept,6,,3
+,Expert Marksman,Infect,Disable,Adept,6,10,3
+,Expert Marksman,Vampiric Arrow,Attack,Adept,4,11,4
+,Expert Marksman,Arrow Spray,Attack,Master,7,,4
+,Expert Marksman,Rain of Arrows,Attack,Master,8,,4
+,Expert Marksman,Sharpnel Scatter,Attack,Master,5,12,4
+,Geomancer,Bless,Buff,Novice,3,8,1
+,Geomancer,Midnight Oil,Utility,Novice,3,,1
+,Geomancer,Summon Spider,Summon,Novice,7,,1
+,Geomancer,Boulder Bash,Disable,Novice,5,,1
+,Geomancer,Avatar of Poison,Immune,Novice,4,8,1
+,Geomancer,Fortify,Buff,Novice,5,9,2
+,Geomancer,Magical Poison Dart,Attack,Adept,5,9,2
+,Geomancer,Earth Absorption Shield,Shield,Adept,3,,2
+,Geomancer,Petrifying Touch,Disable,Adept,4,10,2
+,Geomancer,Tectonic Spray,Attack,Adept,8,11,3
+,Geomancer,Summon Wolf,Summon,Adept,7,,3
+,Geomancer,Deadly Spores,Attack,Master,9,12,4
+,Geomancer,Summon Poison Slug,Summon,Master,7,,4
+,Geomancer,Summon Earth Elemental,Summon,Master,8,,4
+,Geomancer,Earthquake,Attack,Master,9,12,4
+,Hydrosophist,Regeneration,Heal,Novice,5,,1
+,Hydrosophist,Rain,Utility,Novice,4,8,1
+,Hydrosophist,Freezing Touch,Disable,Novice,3,8,1
+,Hydrosophist,Avatar of Frost,Immune,Novice,4,8,1
+,Hydrosophist,Slow Current,Disable,Novice,2,9,2
+,Hydrosophist,Water of Life,Buff,Adept,6,10,2
+,Hydrosophist,Summon Ice Elemental,Summon,Adept,7,,2
+,Hydrosophist,Ice Shard,Attack,Adept,7,10,3
+,Hydrosophist,Cleansing Water,Cure,Adept,4,,3
+,Hydrosophist,Ice Wall,Utility,Adept,5,10,3
+,Hydrosophist,Water Absorption Shield,Shield,Adept,3,,3
+,Hydrosophist,Mass Slow,Debuff,Adept,6,12,4
+,Hydrosophist,Mass Disease,Debuff,Master,7,11,4
+,Hydrosophist,Winterblast,Attack,Master,8,12,4
+,Hydrosophist,Hail Attack,Attack,Master,11,12,4
+,Hydrosophist,Mass Heal,Heal,Master,8,13,5
+,Man at Arms,Battering Ram,Blink,Novice,4,8,1
+,Man at Arms,Crushing Fist,Disable,Novice,4,8,1
+,Man at Arms,Cure Wounds,Heal,Novice,6,,1
+,Man at Arms,Divine Light,Debuff,Novice,3,8,1
+,Man at Arms,Encourage,Buff,Novice,3,8,1
+,Man at Arms,Helping Hand,Cure,Novice,3,,1
+,Man at Arms,Melee Power Stance,Buff,Novice,0,,1
+,Man at Arms,Melee Defensive Stance,Buff,Novice,0,,1
+,Man at Arms,Barbed Wire,Buff,Adept,0,,2
+,Man at Arms,Taunt,Utility,Adept,3,10,2
+,Man at Arms,Elemental Tortoise,Buff,Adept,0,,2
+,Man at Arms,Whirlwind,AoE,Adept,4,,2
+,Man at Arms,Crippling Blow,Disable,Adept,4,10,3
+,Man at Arms,Rage,Buff,Adept,2,10,3
+,Man at Arms,Flurry,Attack,Master,7,,4
+,Man at Arms,Shackles of Pain,Debuff,Master,4,,4
+,Pyrokinetic,Burning Touch,Attack,Novice,3,8,1
+,Pyrokinetic,Firefly,Utility,Novice,5,8,1
+,Pyrokinetic,Flare,Attack,Novice,5,8,1
+,Pyrokinetic,Burn My Eyes,Buff,Novice,4,8,1
+,Pyrokinetic,Avatar of Fire,Immune,Novice,6,9,2
+,Pyrokinetic,Wildfire,Buff,Novice,4,9,2
+,Pyrokinetic,Self Immolation,Utility,Novice,4,9,2
+,Pyrokinetic,Summon Fire Elemental,Summon,Adept,7,,2
+,Pyrokinetic,Smokescreen,Utility,Adept,5,9,2
+,Pyrokinetic,Fireball,Attack,Adept,7,10,3
+,Pyrokinetic,Explode,AoE,Adept,3,,3
+,Pyrokinetic,Fire Absorption Shield,Shield,Adept,5,,3
+,Pyrokinetic,Purifying Fire,Cure,Adept,4,,3
+,Pyrokinetic,Immolation,Debuff,Master,6,11,4
+,Pyrokinetic,Infectious Flame,Attack,Master,7,12,4
+,Pyrokinetic,Meteor Shower,Attack,Master,11,12,4
+,Scoundrel,Adrenaline,Buff,Novice,0,8,1
+,Scoundrel,Lacerate,Disable,Novice,3,8,1
+,Scoundrel,Trip,Disable,Novice,4,8,1
+,Scoundrel,Walk in Shadows,Buff,Novice,3,8,1
+,Scoundrel,Winged Feet,Buff,Novice,2,9,2
+,Scoundrel,Venomous Strike,Disable,Novice,4,9,2
+,Scoundrel,Fast Track,Buff,Novice,2,8,2
+,Scoundrel,Razor's Edge,Disable,Adept,4,8,2
+,Scoundrel,Eye Gouge,Disable,Adept,4,9,2
+,Scoundrel,Become Air,Buff,Adept,7,10,3
+,Scoundrel,Cloak and Dagger,Blink,Adept,4,,3
+,Scoundrel,Daggers Drawn,Attack,Adept,6,,3
+,Scoundrel,Precise Incision,Debuff,Adept,7,10,3
+,Scoundrel,Crawling Infestation,Debuff,Master,8,12,4
+,Scoundrel,Shadow Step,Attack,Master,6,12,4
+,Scoundrel,Wind-Up Toy,Utility,Master,2,,4
+,Scoundrel,Coup De Grace,Attack,Master,10,,5
+,Witchcraft,Decaying Touch,Debuff,Novice,2,8,1
+,Witchcraft,Lower Resistances,Debuff,Novice,4,8,1
+,Witchcraft,Malediction,Debuff,Novice,4,8,1
+,Witchcraft,Oath of Desecration,Buff,Novice,3,8,1
+,Witchcraft,Vampiric Touch,Heal,Novice,4,,1
+,Witchcraft,Summon Undead Warrior,Summon,Novice,4,,2
+,Witchcraft,Destroy Summon,Utility,Adept,8,8,2
+,Witchcraft,Rapture,Disable,Adept,6,9,2
+,Witchcraft,Mute,Disable,Adept,2,11,3
+,Witchcraft,Drain Willpower,Debuff,Adept,3,10,3
+,Witchcraft,Summon Armoured Undead Decapitator,Summon,Adept,8,,3
+,Witchcraft,Death Punch,Attack,Master,9,,4
+,Witchcraft,Horrific Scream,Debuff,Master,12,11,4
+,Witchcraft,Resurrect,Utility,Master,6,,4
+,Witchcraft,Soulsap,Debuff,Master,8,12,4
+,Witchcraft,Invulnerability,Buff,Master,2,13,5

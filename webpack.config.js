@@ -1,7 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
 var loaders = [ 'babel-loader' ];
-var plugins = [];
+var plugins = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  })
+];
 
 if (process.env.NODE_ENV === 'development') {
   loaders.push('react-hot-loader');
@@ -45,7 +49,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000'
       },
 

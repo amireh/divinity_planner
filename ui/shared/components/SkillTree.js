@@ -10,7 +10,7 @@ const SkillTree = React.createClass({
 
   getInitialState: function() {
     return {
-      groupBy: 'charLevel'
+      groupBy: 'rqCharacterLevel'
     };
   },
 
@@ -22,13 +22,14 @@ const SkillTree = React.createClass({
 
   render() {
     const { skills } = this.props;
-    const { groupBy } = this.state;
+    let { groupBy } = this.state;
+
+    if (this.props.enhancedEdition) {
+      groupBy = 'rqAbilityLevel';
+    }
 
     const skillsByLevel = skills.reduce(function(levels, skill) {
-      const level = groupBy === 'charLevel' ?
-        (skill.rqCharacterLevel || 1) :
-        (skill.skillLevel || 1)
-      ;
+      const level = skill[groupBy] || 1;
 
       if (!levels[level]) {
         levels[level] = [];
@@ -63,7 +64,7 @@ const SkillTree = React.createClass({
   },
 
   renderLevel(hsh, level) {
-    const title = this.state.groupBy === 'charLevel' ?
+    const title = this.state.groupBy === 'rqCharacterLevel' ?
       'The character level required to use these skills.' :
       'The skill level.'
     ;
@@ -84,6 +85,7 @@ const SkillTree = React.createClass({
       <Skill
         key={skill.id}
         {...skill}
+        enhancedEdition={this.props.enhancedEdition}
         onClick={this.props.onSkillSelect.bind(null, skill.id)}
       />
     );
@@ -95,8 +97,8 @@ const SkillTree = React.createClass({
         <label>
           <input
             type="radio"
-            checked={this.state.groupBy === 'charLevel'}
-            value="charLevel"
+            checked={this.state.groupBy === 'rqCharacterLevel'}
+            value="rqCharacterLevel"
             onChange={this.changeGrouping}
           /> Group by Required Character Level
         </label>

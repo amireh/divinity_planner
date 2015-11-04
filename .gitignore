@@ -6,4 +6,8 @@
 *.zip
 /ui/images/unused
 /src_images
-/.ga
+/.ga/screenshots
+
+/crawlers/*/output
+/crawlers/*/fixtures
+/crawlers/*/*.json

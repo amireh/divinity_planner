@@ -6,6 +6,7 @@ const SkillTree = require('components/SkillTree');
 const AdjustableItem = require('components/AdjustableItem');
 const Spellbook = require('components/Spellbook');
 const ABILITIES = require('database/abilities.json');
+const ABILITIES_EE = require('database/abilities_ee.json');
 const assign = require('utils/assign');
 const K = require('constants');
 const URLManager = require('URLManager');
@@ -88,6 +89,7 @@ const ProfileSheet = React.createClass({
             skills={this.getSkillsForAbility(activeAbilityId)}
 
             onSkillSelect={this.toggleSkillSelection}
+            enhancedEdition={this.props.enhancedEdition}
           />
         </div>
 
@@ -103,8 +105,6 @@ const ProfileSheet = React.createClass({
 
   showAbilitySkillTree(abilityId) {
     URLManager.setQueryParam('t', K.ABILITY_URL_KEYS[abilityId]);
-
-    this.forceUpdate();
   },
 
   raiseLevel() {
@@ -138,8 +138,10 @@ const ProfileSheet = React.createClass({
       return [];
     }
 
+    const sourceAbilities = this.props.enhancedEdition ? ABILITIES_EE : ABILITIES;
+
     const { profile } = this.props;
-    const { skills } = ABILITIES.filter(function(ability) {
+    const { skills } = sourceAbilities.filter(function(ability) {
       return ability.id === abilityId;
     })[0];
 
