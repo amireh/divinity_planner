@@ -94,11 +94,11 @@ program
 program
   .command('parse-ability <path>')
   .action(function(filePath) {
-    console.log(
-      Crawler.parseAbilityPage(
-        fs.readFileSync(path.resolve(filePath), 'utf-8')
-      )
-    );
+    var skills = Crawler.parseAbilityPage(fs.readFileSync(path.resolve(filePath), 'utf-8'));
+
+    console.log(skills.length);
+    console.log(skills.map(function(s) { return s.name; }));
+    console.log(JSON.stringify(skills, null, 2));
   })
 ;
 

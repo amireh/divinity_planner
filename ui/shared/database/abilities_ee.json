@@ -1615,6 +1615,35 @@
       {
         "ability": "scoundrel",
         "abilityName": "Scoundrel",
+        "apCost": "7",
+        "effect": "Only take half of all physical damage dealt to you",
+        "id": "becomeAir",
+        "name": "Become Air",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Dexterity",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "statusEffect": "100% base chance to cause Status Effect Air for 2 turns",
+        "tier": 2
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "4",
+        "cooldown": "8 turns",
+        "effect": "Jump to target location, leaving behind a smokescreen.",
+        "id": "cloakAndDagger",
+        "name": "Cloak and Dagger",
+        "range": "15.0m",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
         "apCost": "10",
         "cooldown": "Can only be used once per combat",
         "effect": "Deal the killing blow to a target that's below 20% vitality.",
@@ -1643,6 +1672,54 @@
         "savingThrows": "Bodybuilding",
         "statusEffect": "95% base chance to cause Status Effect Crawling Infestation for 3 turns.",
         "tier": 3
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "6",
+        "cooldown": "12 turns",
+        "effect": "Erupt with a barrage of stabs and cuts and 70% (piercing) weapon damage.",
+        "id": "daggersDrawn",
+        "name": "Daggers Drawn",
+        "note": "Damage dealt depends on your main weapon's damage rating.",
+        "recommendedAbilityLevel": "3",
+        "rqAbilityLevel": 3,
+        "tier": 2
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "4",
+        "cooldown": "10 turns",
+        "effect": "Blinds a target. Does 100% weapon (piercing) damage.",
+        "id": "eyeGouge",
+        "name": "Eye Gouge",
+        "range": "3.4m",
+        "recommendedAbilityLevel": "2",
+        "recommendedAttribute": [
+          "Dexterity",
+          "9"
+        ],
+        "rqAbilityLevel": 2,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% chance to cause Status Effect Blind for 3 turns",
+        "tier": 2
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "2",
+        "cooldown": "12 turns",
+        "effect": "Become hastened for a short while",
+        "id": "fastTrack",
+        "name": "Fast Track",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "100% base chance to cause Status Effect Hasted for 2 turns",
+        "tier": 2
       },
       {
         "ability": "scoundrel",
@@ -1677,6 +1754,42 @@
         "savingThrows": "Bodybuilding",
         "statusEffect": "100% base chance to cause Bleeding for 3 turns",
         "tier": 1
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "7",
+        "cooldown": "8 turns",
+        "effect": "Weaken a target. Deals 150% weapon (slashing) damage.",
+        "id": "preciseIncision",
+        "name": "Precise Incision",
+        "range": "3.4 m",
+        "recommendedAbilityLevel": "3",
+        "recommendedAttribute": [
+          "Dexterity",
+          "10"
+        ],
+        "rqAbilityLevel": 3,
+        "savingThrows": "Bodybuilding",
+        "statusEffect": "100% base chance to cause Status Effect Weak  for 3 turns.",
+        "tier": 2
+      },
+      {
+        "ability": "scoundrel",
+        "abilityName": "Scoundrel",
+        "apCost": "4",
+        "cooldown": "12 turns",
+        "effect": "Stun a target. Deals 50% weapon damage.",
+        "id": "razorSEdge",
+        "name": "Razor's Edge",
+        "range": "2.4 m",
+        "recommendedAttribute": [
+          "Dexterity",
+          "8"
+        ],
+        "rqAbilityLevel": 2,
+        "statusEffect": "70% base chance to cause Status Effect Stunned",
+        "tier": 2
       },
       {
         "ability": "scoundrel",

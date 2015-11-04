@@ -202,9 +202,19 @@ function parseAbilityPage(html) {
     });
   }
 
-  parseTierSkills($('div[class^="includeBody-Novice"]'), 1);
-  parseTierSkills($('div[class^="includeBody-Adept"]'), 2);
-  parseTierSkills($('div[class^="includeBody-Master"]'), 3);
+  $('div[class^="includeBody-"]').each(function() {
+    var $section = $(this);
+    var className = $section.attr('class');
+    if (className.match(/novice[\_\-]/i)) {
+      parseTierSkills($section, 1);
+    }
+    else if (className.match(/adept[\_\-]/i)) {
+      parseTierSkills($section, 2);
+    }
+    else if (className.match(/master[\_\-]/i)) {
+      parseTierSkills($section, 3);
+    }
+  });
 
   return skills;
 }
