@@ -22,9 +22,6 @@ var NAME_MAP = {
   'Water Resistance Shield': 'Water Absorption Shield',
   'Mass Healing': 'Mass Heal',
 
-  // SOURCE
-  'Resuscitate': null, // this points to the Scroll of Resurrect, not Witchcraft
-
   // ROGUE
   'Winged Feet': 'Hoverfeet',
 };

@@ -4,6 +4,7 @@ const CharacterSheet = require('./CharacterSheet');
 const CharacterSelector = require('./CharacterSelector');
 const URLManager = require('URLManager');
 const Character = require('Character');
+const Checkbox = require('components/Checkbox');
 
 const profiles = [
   Character(),
@@ -61,13 +62,13 @@ const Root = React.createClass({
             onSwitchProfile={this.switchProfile}
           />
 
-          <label style={{position: 'absolute', right: 0, top: 20 }}>
-            <input
-              type="checkbox"
+          <div className="root__ee-toggler">
+            <Checkbox
               onChange={this.toggleEnhancedMode}
               checked={queryParams.ee}
-            /> Enhanced Edition
-          </label>
+              label="Enhanced Edition"
+            />
+          </div>
         </div>
 
         <CharacterSheet

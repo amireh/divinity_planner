@@ -23,7 +23,7 @@ nsg({
 
 nsg({
   src: [
-    'fextralife_wiki_scraper/skill_icons/*.jpg'
+    '../crawlers/fextralife/output/skill_icons/*.jpg'
   ],
 
   spritePath:     path.join(assetDir, 'skill_icons_ee.jpg'),

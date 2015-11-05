@@ -1,13 +1,25 @@
 const React = require('react');
+const ReactDOM = require('react-dom');
+const ReactDOMServer = require('react-dom/server');
 const classSet = require('classnames');
 const K = require('constants');
 const GameState = require('GameState');
+const GameAbilities = require('GameAbilities');
+const Tooltip = require('shims/tooltip');
 
 const Skill = React.createClass({
   getDefaultProps: function() {
     return {
       learnable: true
     };
+  },
+
+  componentDidMount: function() {
+    this.tip = new Tooltip();
+  },
+
+  componentWillUnmount: function() {
+    this.tip = null;
   },
 
   render() {
@@ -35,16 +47,11 @@ const Skill = React.createClass({
 
     iconClassName = classSet(iconClassName);
 
-    let description = (skill.description || skill.descriptionText || '').trim();
-
-    if (skill.requirement && skill.requirement !== true) {
-      description += '\n\n' + this.getRequirementString(skill.requirement);
-    }
-
     return (
       <div
         className={className}
-        data-hint={description}
+        onMouseOver={this.showTooltip}
+        onMouseLeave={this.hideTooltip}
         onClick={this.props.onClick}
       >
         <div className="skill-tree__skill-icon">
@@ -66,20 +73,59 @@ const Skill = React.createClass({
     );
   },
 
-  getRequirementString(requirement) {
+  getRequirementString(requirement, skill) {
     switch(requirement) {
       case K.ERR_ABILITY_LEVEL_TOO_LOW:
-        return "You need to invest more ability points to learn this skill."
+        const requiredLevel = GameState.isEE() ? (
+          K.TIER_AP_REQUIREMENTS[skill.tier]
+        ) : (
+          skill.rqAbilityLevel
+        );
+
+        const abilityName = GameAbilities.get(skill.ability).name;
+
+        return `You need ${requiredLevel} points in ${abilityName} to learn this skill.`;
         break;
 
       case K.ERR_ABILITY_CAP_REACHED:
-        return "You have reached the maximum number of skills for this ability at that ability level."
+        return "You have learned the maximum number of skills at this ability level."
         break;
 
       case K.ERR_CHAR_LEVEL_TOO_LOW:
-        return "Your character needs a higher level to learn this skill."
+        return `Your character needs to be level ${skill.level || skill.rqCharacterLevel} to learn this skill.`
         break;
     }
+  },
+
+  renderTooltip() {
+    const skill = this.props;
+
+    let description = (skill.description || skill.descriptionText || '').trim();
+
+
+    return ReactDOMServer.renderToStaticMarkup(
+      <div>
+        {description}
+
+        {skill.requirement && (
+          <p className="skill__tooltip-requirement">
+            {this.getRequirementString(skill.requirement, skill)}
+          </p>
+        )}
+      </div>
+    );
+  },
+
+  showTooltip() {
+    if (this.tip.hidden) {
+      this.tip.content(this.renderTooltip());
+      this.tip.show(ReactDOM.findDOMNode(this));
+      this.tip.position();
+    }
+  },
+
+  hideTooltip() {
+    this.tip.hide();
   }
 });
 

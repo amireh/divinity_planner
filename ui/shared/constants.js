@@ -32,6 +32,8 @@ exports.ABILITY_URL_KEYS = {
   'witchcraft':     'W',
 };
 
+exports.SKILLBOOK_TAB_URL_KEY = 'V';
+
 exports.STARTING_INDEX_CHAR_CODE = 97;
 exports.K_UNLIMITED = Infinity;
 
@@ -44,3 +46,9 @@ exports.TIER_ADEPT  = 2;
 exports.TIER_MASTER = 3;
 
 exports.TIER_NAMES = { 1: 'Novice', 2: 'Adept', 3: 'Master' };
+
+exports.TIER_AP_REQUIREMENTS = {
+  1: 1,
+  2: 2,
+  3: 4
+};

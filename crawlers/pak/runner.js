@@ -10,6 +10,7 @@ var Parser = require('./');
 var OUTPUT_DIR = path.resolve(__dirname, 'output');
 var DATABASE_PATH = path.join(OUTPUT_DIR, 'skills.json');
 var DEST_PATH = path.resolve(__dirname, '..', '..', 'ui', 'shared', 'database', 'abilities_ee.json');
+var BLACKLIST = [ 'resuscitate' ];
 
 program
   .command('parse <stats_file> <skill_file>')
@@ -85,8 +86,9 @@ program
         sortedSet[key] = skill[key];
         return sortedSet;
       }, {});
+    }).filter(function(skill) {
+      return BLACKLIST.indexOf( skill.id ) === -1;
     });
-
 
     // finally, we group them by ability
     var abilitySkills = normalizedSkills.reduce(function(abilities, skill) {

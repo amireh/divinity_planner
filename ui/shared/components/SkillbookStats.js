@@ -6,38 +6,43 @@ const Skill = require('components/Skill');
 const CharacterSkillbook = require('CharacterSkillbook');
 const K = require('constants');
 const classSet = require('classnames');
+const URLManager = require('URLManager');
 
 const Counter = React.createClass({
   render() {
     const { value, maxValue } = this.props;
     const className = classSet({
-      'skillbook__counter': true,
-      'skillbook__counter--max': value === maxValue,
+      'skillbook-stats__counter': true,
+      'skillbook-stats__counter--max': value === maxValue,
     });
 
     return (
-      <span className={className}>
-        {value}
+      <span title={this.props.title} className={className}>
+        {value}/{maxValue}
       </span>
     )
   }
 });
 
-const Skillbook = React.createClass({
+const SkillbookStats = React.createClass({
   render() {
     const skills = this.props.skills.map(id => GameSkills.get(id));
 
     return (
-      <div className="skillbook">
-        <h3 className="skillbook__header">Skillbook</h3>
+      <div className="skillbook-stats">
+        <h3 className="skillbook-stats__header header">
+          <a onClick={this.openSkillbook}>
+            Skillbook
+          </a>
+        </h3>
 
         {this.props.skills.length === 0 && (
           <p><em>Empty.</em></p>
         )}
 
-        {skills.map(this.renderSkill)}
+        {false && skills.map(this.renderSkill)}
 
-        {this.renderTabs(skills)}
+        {this.renderCounters(skills)}
       </div>
     );
   },
@@ -53,7 +58,7 @@ const Skillbook = React.createClass({
     );
   },
 
-  renderTabs(skills) {
+  renderCounters(skills) {
     const abilities = Object.keys(this.props.abilityPoints).filter((id) => {
       return this.props.abilityPoints[id].points > 0;
     }).map(function(id) {
@@ -61,17 +66,17 @@ const Skillbook = React.createClass({
     });
 
     return (
-      <nav className="skillbook__abilities">
-        {abilities.map(this.renderAbilityTab.bind(null, skills))}
+      <nav className="skillbook-stats__abilities">
+        {abilities.map(this.renderAbilitySkillCounts.bind(null, skills))}
       </nav>
     )
   },
 
-  renderAbilityTab(skills, ability) {
+  renderAbilitySkillCounts(skills, ability) {
     return (
-      <div key={ability.id} data-hint={ability.name} className="hint--left skillbook__ability">
-        <span className={`skillbook__ability-icon ability-icon--${ability.id}`} />
-        <span className="skillbook__ability-stats">
+      <div key={ability.id} className="skillbook-stats__ability">
+        <span className={`skillbook-stats__ability-icon ability-icon--${ability.id}`} />
+        <span className="skillbook-stats__ability-stats">
           {GameState.isEE() ?
             this.renderEECounts(skills, ability) :
             this.renderStandardCounts(skills, ability)
@@ -102,16 +107,19 @@ const Skillbook = React.createClass({
     return (
       <span>
         <Counter
+          title="Novice skills"
           value={tieredSkillCount[K.TIER_NOVICE] || 0}
           maxValue={poolSize[K.TIER_NOVICE]}
         />
-        {' / '}
+        {' - '}
         <Counter
+          title="Adept skills"
           value={tieredSkillCount[K.TIER_ADEPT] || 0}
           maxValue={poolSize[K.TIER_ADEPT]}
         />
-        {' / '}
+        {' - '}
         <Counter
+          title="Master skills"
           value={tieredSkillCount[K.TIER_MASTER] || 0}
           maxValue={poolSize[K.TIER_MASTER]}
         />
@@ -128,10 +136,14 @@ const Skillbook = React.createClass({
     return (
       <span>
         {skillCount}
-        {poolSize !== K.UNLIMITED && `/ ${poolSize}`}
+        {poolSize !== K.UNLIMITED && `/${poolSize}`}
       </span>
     );
   },
+
+  openSkillbook() {
+    URLManager.setQueryParam('t', K.SKILLBOOK_TAB_URL_KEY);
+  }
 });
 
-module.exports = Skillbook;
+module.exports = SkillbookStats;

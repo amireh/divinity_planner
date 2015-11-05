@@ -3208,30 +3208,6 @@
       {
         "ability": "witchcraft",
         "abilityName": "Witchcraft",
-        "actionPoints": "10",
-        "areaRadius": "10",
-        "canTargetCharacters": "No",
-        "cooldown": "8",
-        "cooldownReduction": "35",
-        "damage": "0",
-        "damageMultiplier": "0",
-        "damageRange": "0",
-        "description": "Resurrect a dead ally to 20% of its vitality at a location within 10.",
-        "id": "resuscitate",
-        "level": 16,
-        "name": "Resuscitate",
-        "skillProperties": "Resurrect,500,20",
-        "skillType": "Teleportation",
-        "statDescriptions": [
-          "Range: 15"
-        ],
-        "targetConditions": "Party;Dead;NonSummon;Character",
-        "targetRadius": "15",
-        "tier": 3
-      },
-      {
-        "ability": "witchcraft",
-        "abilityName": "Witchcraft",
         "actionPoints": "4",
         "cooldown": "6",
         "cooldownReduction": "40",

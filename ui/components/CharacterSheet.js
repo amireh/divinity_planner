@@ -5,7 +5,8 @@ const AbilityPanel = require('./AbilityPanel');
 const SkillTree = require('components/SkillTree');
 const AdjustableItem = require('components/AdjustableItem');
 const GameAbilities = require('GameAbilities');
-const Spellbook = require('components/Spellbook');
+const SkillbookStats = require('components/SkillbookStats');
+const Skillbook = require('components/Skillbook');
 const assign = require('utils/assign');
 const K = require('constants');
 const URLManager = require('URLManager');
@@ -23,78 +24,86 @@ const CharacterSheet = React.createClass({
 
     return (
       <div>
-        <div className="column type-small character-panel">
-          <h3 className="header">
-            Character
-          </h3>
+        <div className="column column--left">
 
-          <div className="item-points-sheet__entry">
-            <span className="item-points-sheet__label">
-              Level
-            </span>
+          <div className="type-small character-panel">
+            <h3 className="header">
+              Character
+            </h3>
 
-            <div className="item-points-sheet__controls">
-              <AdjustableItem
-                canIncrease={stats.canIncreaseLevel}
-                canDecrease={stats.canDecreaseLevel}
-                onIncrease={this.raiseLevel}
-                onDecrease={this.lowerLevel}
-                onMax={this.setMaxLevel}
-                withMaxControl={false}
-              >
-                {stats.level}
-              </AdjustableItem>
+            <div className="item-points-sheet__entry">
+              <span className="item-points-sheet__label">
+                Level
+              </span>
+
+              <div className="item-points-sheet__controls">
+                <AdjustableItem
+                  canIncrease={stats.canIncreaseLevel}
+                  canDecrease={stats.canDecreaseLevel}
+                  onIncrease={this.raiseLevel}
+                  onDecrease={this.lowerLevel}
+                  onMax={this.setMaxLevel}
+                  withMaxControl={false}
+                >
+                  {stats.level}
+                </AdjustableItem>
+              </div>
+
             </div>
 
+            <h3 className="header">
+              Attributes
+
+              <span className="header-auxiliary">
+                {stats.allocatedAttributePoints} / {stats.availableAttributePoints}
+              </span>
+            </h3>
+
+            <AttributePanel
+              attributePoints={stats.attributePoints}
+              onAddAttributePoint={profile.addAttributePoint}
+              onRemoveAttributePoint={profile.removeAttributePoint}
+            />
+
+            <h3 className="header">
+              Abilities
+
+              <span className="header-auxiliary">
+                {stats.allocatedAbilityPoints} / {stats.availableAbilityPoints}
+              </span>
+            </h3>
+
+            <AbilityPanel
+              abilityPoints={stats.abilityPoints}
+              onIncrease={profile.addAbilityPoint}
+              onDecrease={profile.removeAbilityPoint}
+              onSelect={this.showAbilitySkillTree}
+              activeAbilityId={activeAbilityId}
+            />
+
+            <SkillbookStats
+              skills={stats.skillbook}
+              abilityPoints={stats.abilityPoints}
+            />
           </div>
-
-          <h3 className="header">
-            Attributes
-
-            <span className="header-auxiliary">
-              {stats.allocatedAttributePoints} / {stats.availableAttributePoints}
-            </span>
-          </h3>
-
-          <AttributePanel
-            attributePoints={stats.attributePoints}
-            onAddAttributePoint={profile.addAttributePoint}
-            onRemoveAttributePoint={profile.removeAttributePoint}
-          />
-
-          <h3 className="header">
-            Abilities
-
-            <span className="header-auxiliary">
-              {stats.allocatedAbilityPoints} / {stats.availableAbilityPoints}
-            </span>
-          </h3>
-
-          <AbilityPanel
-            abilityPoints={stats.abilityPoints}
-            onIncrease={profile.addAbilityPoint}
-            onDecrease={profile.removeAbilityPoint}
-            onSelect={this.showAbilitySkillTree}
-            activeAbilityId={activeAbilityId}
-          />
         </div>
 
-        <div className="column">
-          <SkillTree
-            activeAbilityName={activeAbility && activeAbility.name}
-            level={stats.level}
-            attributePoints={stats.attributePoints}
-            abilityPoints={stats.abilityPoints}
-            skills={this.getSkillsForAbility(activeAbilityId)}
-            onSkillSelect={this.toggleSkillSelection}
-          />
-        </div>
-
-        <div className="column">
-          <Spellbook
-            skills={stats.skillbook}
-            abilityPoints={stats.abilityPoints}
-          />
+        <div className="column column--right">
+          {this.props.queryParams.t === K.SKILLBOOK_TAB_URL_KEY ? (
+            <Skillbook
+              skills={stats.skillbook}
+              abilityPoints={stats.abilityPoints}
+            />
+          ) : (
+            <SkillTree
+              activeAbilityName={activeAbility && activeAbility.name}
+              level={stats.level}
+              attributePoints={stats.attributePoints}
+              abilityPoints={stats.abilityPoints}
+              skills={this.getSkillsForAbility(activeAbilityId)}
+              onSkillSelect={this.toggleSkillSelection}
+            />
+          )}
         </div>
       </div>
     );

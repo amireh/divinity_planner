@@ -16,6 +16,7 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
+  devtool: process.env.NODE_ENV ? 'eval' : null,
   entry: path.resolve(__dirname, 'ui/index.js'),
 
   plugins: plugins,
@@ -34,11 +35,15 @@ module.exports = {
   },
 
   module: {
+    noParse: /vendor/,
     loaders: [
       {
         test: /\.js$/,
         include: [
           path.resolve(__dirname, 'ui')
+        ],
+        exclude: [
+          path.resolve(__dirname, 'ui', 'vendor')
         ],
         loader: loaders.join('!')
       },

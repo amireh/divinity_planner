@@ -3,6 +3,7 @@ const { array, func } = React.PropTypes;
 const Skill = require('components/Skill');
 const GameState = require('GameState');
 const { TIER_NAMES } = require('constants');
+const classSet = require('classnames');
 
 const SkillTree = React.createClass({
   statics: {
@@ -65,8 +66,13 @@ const SkillTree = React.createClass({
       'The tier of the skills.'
     ;
 
+    const className = classSet({
+      'skill-tree__level': true,
+      'skill-tree__level--ee': GameState.isEE()
+    });
+
     return (
-      <li key={level} className="skill-tree__level">
+      <li key={level} className={className}>
         {!GameState.isEE() && (
           <span className="skill-tree__level-indicator" title={title}>
             {level}
