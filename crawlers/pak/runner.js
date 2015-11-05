@@ -100,7 +100,9 @@ program
       ability.skills.push(skill);
 
       return abilities;
-    }, []);
+    }, []).sort(function(a,b) {
+      return a.id >= b.id ? 1 : -1;
+    });
 
     fs.ensureDirSync(OUTPUT_DIR);
     fs.writeFileSync(DATABASE_PATH, JSON.stringify(abilitySkills, null, 2));

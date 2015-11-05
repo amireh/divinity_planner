@@ -9,6 +9,9 @@
 - ~~tooltips~~
 - better descriptions plz
 - ~~footer~~
-- splash
+- ~~splash~~
 - ~~remember tab selection in URL~~
 - ~~remember character selection in URL~~
+- ~~EE support~~
+- talents support
+  + Lone Wolf

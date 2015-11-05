@@ -1,13 +1,31 @@
 const React = require('react');
-const SKILLS = require('database/skills');
-const ABILITIES = require('database/abilities');
+const GameAbilities = require('GameAbilities');
+const GameSkills = require('GameSkills');
+const GameState = require('GameState');
 const Skill = require('components/Skill');
 const CharacterSkillbook = require('CharacterSkillbook');
 const K = require('constants');
+const classSet = require('classnames');
+
+const Counter = React.createClass({
+  render() {
+    const { value, maxValue } = this.props;
+    const className = classSet({
+      'skillbook__counter': true,
+      'skillbook__counter--max': value === maxValue,
+    });
+
+    return (
+      <span className={className}>
+        {value}
+      </span>
+    )
+  }
+});
 
 const Skillbook = React.createClass({
   render() {
-    const skills = this.props.skills.map(id => getSkillById(id));
+    const skills = this.props.skills.map(id => GameSkills.get(id));
 
     return (
       <div className="skillbook">
@@ -39,7 +57,7 @@ const Skillbook = React.createClass({
     const abilities = Object.keys(this.props.abilityPoints).filter((id) => {
       return this.props.abilityPoints[id].points > 0;
     }).map(function(id) {
-      return ABILITIES.filter(a => a.id === id)[0];
+      return GameAbilities.get(id);
     });
 
     return (
@@ -50,23 +68,70 @@ const Skillbook = React.createClass({
   },
 
   renderAbilityTab(skills, ability) {
+    return (
+      <div key={ability.id} data-hint={ability.name} className="hint--left skillbook__ability">
+        <span className={`skillbook__ability-icon ability-icon--${ability.id}`} />
+        <span className="skillbook__ability-stats">
+          {GameState.isEE() ?
+            this.renderEECounts(skills, ability) :
+            this.renderStandardCounts(skills, ability)
+          }
+        </span>
+      </div>
+    );
+  },
+
+  renderEECounts(skills, ability) {
+    const tieredSkillCount = skills
+      .filter(s => s.ability === ability.id)
+      .reduce(function(hsh, skill) {
+        if (!hsh[skill.tier]) {
+          hsh[skill.tier] = 0;
+        }
+
+        hsh[skill.tier] += 1;
+
+        return hsh
+      }, {})
+    ;
+
+    const poolSize = CharacterSkillbook.getSkillPoolSizeEE(
+      this.props.abilityPoints[ability.id].points
+    );
+
+    return (
+      <span>
+        <Counter
+          value={tieredSkillCount[K.TIER_NOVICE] || 0}
+          maxValue={poolSize[K.TIER_NOVICE]}
+        />
+        {' / '}
+        <Counter
+          value={tieredSkillCount[K.TIER_ADEPT] || 0}
+          maxValue={poolSize[K.TIER_ADEPT]}
+        />
+        {' / '}
+        <Counter
+          value={tieredSkillCount[K.TIER_MASTER] || 0}
+          maxValue={poolSize[K.TIER_MASTER]}
+        />
+      </span>
+    )
+  },
+
+  renderStandardCounts(skills, ability) {
     const skillCount = skills.filter(s => s.ability === ability.id).length;
     const poolSize = CharacterSkillbook.getSkillPoolSize(
       this.props.abilityPoints[ability.id].points
     );
 
     return (
-      <div key={ability.id} data-hint={ability.name} className="hint--left skillbook__ability">
-        <span className={`skillbook__ability-icon ability-icon--${ability.id}`} />
-        <span className="skillbook__ability-stats">
-          {skillCount}
-          {poolSize !== K.UNLIMITED && `/ ${poolSize}`}
-        </span>
-      </div>
+      <span>
+        {skillCount}
+        {poolSize !== K.UNLIMITED && `/ ${poolSize}`}
+      </span>
     );
-  }
+  },
 });
-
-function getSkillById(id) { return SKILLS.filter(s => s.id === id)[0]; }
 
 module.exports = Skillbook;

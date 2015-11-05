@@ -18,9 +18,7 @@ function Character(attrs = {}) {
 
   let level = null;
 
-  emitter.addChangeListener(function() {
-    inSilence(validate);
-  });
+  emitter.addChangeListener(ensureIntegrity);
 
   API.addChangeListener = emitter.addChangeListener;
   API.removeChangeListener = emitter.removeChangeListener;
@@ -134,6 +132,8 @@ function Character(attrs = {}) {
       if (skillbookStr.length) {
         skillbook.fromURL(skillbookStr);
       }
+
+      ensureIntegrity();
     });
 
     emitChange();
@@ -159,18 +159,22 @@ function Character(attrs = {}) {
     emitter.inSilence(performer);
   }
 
-  function validate() {
-    if (level > K.MAX_LEVEL) {
-      level = K.MAX_LEVEL;
-    }
-    else if (level < 1) {
-      level = 1;
-    }
+  function ensureIntegrity() {
+    inSilence(function() {
+      if (level > K.MAX_LEVEL) {
+        level = K.MAX_LEVEL;
+      }
+      else if (level < 1) {
+        level = 1;
+      }
 
-    skillbook.ensureIntegrity();
-    attributes.ensureIntegrity();
-    abilities.ensureIntegrity();
+      skillbook.ensureIntegrity();
+      attributes.ensureIntegrity();
+      abilities.ensureIntegrity();
+    });
   }
+
+  API.ensureIntegrity = ensureIntegrity;
 
   return API;
 }

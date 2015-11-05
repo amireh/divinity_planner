@@ -1,6 +1,7 @@
 const React = require('react');
 const classSet = require('classnames');
 const K = require('constants');
+const GameState = require('GameState');
 
 const Skill = React.createClass({
   getDefaultProps: function() {
@@ -12,7 +13,6 @@ const Skill = React.createClass({
   render() {
     const skill = this.props;
     const { canLearn, learnable } = skill;
-    const { enhancedEdition } = this.props;
 
     const className = classSet({
       'skill-tree__skill': true,
@@ -24,7 +24,7 @@ const Skill = React.createClass({
 
     let iconClassName = {};
 
-    if (enhancedEdition) {
+    if (GameState.isEE()) {
       iconClassName['skill-icon-ee'] = true;
       iconClassName['skill-icon-ee--' + skill.id] = true;
     }

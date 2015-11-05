@@ -1,8 +1,9 @@
 const React = require('react');
-const Character = require('Character');
-const ProfileSheet = require('./ProfileSheet');
+const GameState = require('GameState');
+const CharacterSheet = require('./CharacterSheet');
 const CharacterSelector = require('./CharacterSelector');
 const URLManager = require('URLManager');
+const Character = require('Character');
 
 const profiles = [
   Character(),
@@ -28,17 +29,23 @@ const Root = React.createClass({
   },
 
   componentDidMount: function() {
-    URLManager.addChangeListener(this.reload);
     profiles.forEach(profile => profile.addChangeListener(this.updateURL));
+  },
+
+  componentWillUpdate: function(nextProps, nextState) {
+    if (nextProps.queryParams.ee !== this.props.queryParams.ee) {
+      profiles.forEach(profile => profile.ensureIntegrity());
+
+      this.updateURL();
+    }
   },
 
   componentWillUnmount: function() {
     profiles.forEach(profile => profile.removeChangeListener(this.updateURL));
-    URLManager.removeChangeListener(this.reload);
   },
 
   render() {
-    const queryParams = URLManager.getQueryParams();
+    const { queryParams } = this.props;
     const profile = profiles[queryParams.p || 0];
 
     return (
@@ -63,10 +70,9 @@ const Root = React.createClass({
           </label>
         </div>
 
-        <ProfileSheet
+        <CharacterSheet
           profile={profile}
           queryParams={queryParams}
-          enhancedEdition={queryParams.ee}
         />
 
         <div className="app-footer">
@@ -93,12 +99,7 @@ const Root = React.createClass({
   },
 
   toggleEnhancedMode() {
-    if (URLManager.getQueryParams().ee) {
-      URLManager.setQueryParam('ee', null);
-    }
-    else {
-      URLManager.setQueryParam('ee', '1');
-    }
+    GameState.setEE(!GameState.isEE());
   }
 });
 

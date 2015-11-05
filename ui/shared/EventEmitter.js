@@ -50,6 +50,10 @@ function EventEmitter() {
     },
 
     inSilence(callback) {
+      if (silenced) {
+        return callback();
+      }
+
       silenced = true;
       callback();
       silenced = false;

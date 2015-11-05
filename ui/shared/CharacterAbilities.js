@@ -1,10 +1,10 @@
 const K = require('constants');
-const ABILITIES = require('database/abilities.json');
+const GameAbilities = require('GameAbilities');
 
 function CharacterAbilities(character, onChange = Function.prototype) {
   let exports = {};
 
-  const abilityPoints = ABILITIES.reduce(function(hash, ability) {
+  const abilityPoints = GameAbilities.getAll().reduce(function(hash, ability) {
     hash[ability.id] = 0;
 
     return hash;
@@ -42,7 +42,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
 
     const remaining = getRemainingPoints();
 
-    stats.abilityPoints = ABILITIES.reduce(function(set, ability) {
+    stats.abilityPoints = GameAbilities.getAll().reduce(function(set, ability) {
       const points = abilityPoints[ability.id];
 
       set[ability.id] = {
@@ -143,7 +143,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
       return String.fromCharCode(97+index);
     }
 
-    ABILITIES.forEach(function(ability, index) {
+    GameAbilities.getAll().forEach(function(ability, index) {
       const points = abilityPoints[ability.id];
 
       if (points > 0) {
@@ -161,13 +161,15 @@ function CharacterAbilities(character, onChange = Function.prototype) {
   };
 
   exports.fromURL = function(url) {
+    const abilities = GameAbilities.getAll();
+
     let distribution = {};
-    let nextAbility = ABILITIES[0];
+    let nextAbility = abilities[0];
 
     const attrKeys = Object.keys(K.ABILITY_URL_KEYS).reduce(function(set, id) {
       const key = K.ABILITY_URL_KEYS[id];
 
-      set[key] = ABILITIES.filter(a => a.id === id)[0];
+      set[key] = abilities.filter(a => a.id === id)[0];
 
       return set;
     }, {})
@@ -182,7 +184,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
         distribution[nextAbility.id] = points;
         abilityPoints[nextAbility.id] = points;
 
-        nextAbility = ABILITIES[ABILITIES.indexOf(nextAbility) + 1];
+        nextAbility = abilities[abilities.indexOf(nextAbility) + 1];
       }
     });
 

@@ -1,17 +1,19 @@
 const React = require('react');
 const { array, func } = React.PropTypes;
 const Skill = require('components/Skill');
+const GameState = require('GameState');
+const { TIER_NAMES } = require('constants');
 
 const SkillTree = React.createClass({
+  statics: {
+    getGroupingScope() {
+      return GameState.isEE() ? 'tier' : 'rqCharacterLevel';
+    }
+  },
+
   propTypes: {
     skills: array,
     onSkillSelect: func,
-  },
-
-  getInitialState: function() {
-    return {
-      groupBy: 'rqCharacterLevel'
-    };
   },
 
   getDefaultProps: function() {
@@ -22,11 +24,7 @@ const SkillTree = React.createClass({
 
   render() {
     const { skills } = this.props;
-    let { groupBy } = this.state;
-
-    if (this.props.enhancedEdition) {
-      groupBy = 'rqAbilityLevel';
-    }
+    const groupBy = SkillTree.getGroupingScope();
 
     const skillsByLevel = skills.reduce(function(levels, skill) {
       const level = skill[groupBy] || 1;
@@ -46,8 +44,6 @@ const SkillTree = React.createClass({
           {this.props.activeAbilityName || 'Skill Tree'}
         </h3>
 
-        {this.renderControls()}
-
         <ul className="skill-tree__listing">
           {skills.length === 0 && (
             <li className="skill-tree__level skill-tree__empty-message">
@@ -64,16 +60,24 @@ const SkillTree = React.createClass({
   },
 
   renderLevel(hsh, level) {
-    const title = this.state.groupBy === 'rqCharacterLevel' ?
+    const title = SkillTree.getGroupingScope() === 'rqCharacterLevel' ?
       'The character level required to use these skills.' :
-      'The skill level.'
+      'The tier of the skills.'
     ;
 
     return (
       <li key={level} className="skill-tree__level">
-        <span className="skill-tree__level-indicator" title={title}>
-          {level}
-        </span>
+        {!GameState.isEE() && (
+          <span className="skill-tree__level-indicator" title={title}>
+            {level}
+          </span>
+        )}
+
+        {GameState.isEE() && (
+          <h4 className="skill-tree__level-indicator skill-tree__level-indicator--tier">
+            {TIER_NAMES[level]}
+          </h4>
+        )}
 
         {hsh[level].map(this.renderSkill)}
       </li>
@@ -85,40 +89,10 @@ const SkillTree = React.createClass({
       <Skill
         key={skill.id}
         {...skill}
-        enhancedEdition={this.props.enhancedEdition}
         onClick={this.props.onSkillSelect.bind(null, skill.id)}
       />
     );
   },
-
-  renderControls() {
-    return (
-      <div className="skill-tree__controls">
-        <label>
-          <input
-            type="radio"
-            checked={this.state.groupBy === 'rqCharacterLevel'}
-            value="rqCharacterLevel"
-            onChange={this.changeGrouping}
-          /> Group by Required Character Level
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            checked={this.state.groupBy === 'skillLevel'}
-            value="skillLevel"
-            onChange={this.changeGrouping}
-          /> Group by Skill Level
-        </label>
-
-      </div>
-    )
-  },
-
-  changeGrouping(e) {
-    this.setState({ groupBy: e.target.value });
-  }
 });
 
 module.exports = SkillTree;

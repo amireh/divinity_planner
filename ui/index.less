@@ -173,13 +173,6 @@ a, a:visited {
     line-height: 1.6;
   }
 
-  &__controls {
-    margin: 0 0 1em 0;
-    font-size: 0.75em;
-    line-height: 1;
-    display: none;
-  }
-
   &__listing {
     text-align: center;
     margin: 0;
@@ -201,6 +194,12 @@ a, a:visited {
     top:    1em;
     font-size: 0.75em;
     font-weight: bold;
+
+    &--tier {
+      position: static;
+      font-size: inherit;
+      line-height: 2em;
+    }
   }
 
   &__skill {
@@ -212,7 +211,7 @@ a, a:visited {
     cursor: pointer;
 
     &--locked {
-      .skill-icon {
+      .skill-tree__skill-icon {
         .h-grayscale();
       }
 
@@ -301,6 +300,12 @@ a, a:visited {
   &__ability-stats {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  &__counter {
+    &--max {
+      color: @red;
+    }
   }
 }
 

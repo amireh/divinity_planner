@@ -4,14 +4,13 @@ const AttributePanel = require('./AttributePanel');
 const AbilityPanel = require('./AbilityPanel');
 const SkillTree = require('components/SkillTree');
 const AdjustableItem = require('components/AdjustableItem');
+const GameAbilities = require('GameAbilities');
 const Spellbook = require('components/Spellbook');
-const ABILITIES = require('database/abilities.json');
-const ABILITIES_EE = require('database/abilities_ee.json');
 const assign = require('utils/assign');
 const K = require('constants');
 const URLManager = require('URLManager');
 
-const ProfileSheet = React.createClass({
+const CharacterSheet = React.createClass({
   propTypes: {
     profile: object
   },
@@ -19,7 +18,7 @@ const ProfileSheet = React.createClass({
   render() {
     const { profile } = this.props;
     const activeAbilityId = getAbilityIdFromIndex(this.props.queryParams.t);
-    const activeAbility = ABILITIES.filter(a => a.id === activeAbilityId)[0];
+    const activeAbility = GameAbilities.getAll().filter(a => a.id === activeAbilityId)[0];
     const stats = profile.toJSON();
 
     return (
@@ -87,9 +86,7 @@ const ProfileSheet = React.createClass({
             attributePoints={stats.attributePoints}
             abilityPoints={stats.abilityPoints}
             skills={this.getSkillsForAbility(activeAbilityId)}
-
             onSkillSelect={this.toggleSkillSelection}
-            enhancedEdition={this.props.enhancedEdition}
           />
         </div>
 
@@ -138,7 +135,7 @@ const ProfileSheet = React.createClass({
       return [];
     }
 
-    const sourceAbilities = this.props.enhancedEdition ? ABILITIES_EE : ABILITIES;
+    const sourceAbilities = GameAbilities.getAll();
 
     const { profile } = this.props;
     const { skills } = sourceAbilities.filter(function(ability) {
@@ -173,4 +170,4 @@ function getAbilityIdFromIndex(index) {
   return id;
 }
 
-module.exports = ProfileSheet;
+module.exports = CharacterSheet;

@@ -237,7 +237,7 @@ exports.findSkillLevels = function(playerSkills, allSkills) {
 
     allSkills.filter(function(entry) {
       if (entry['Level'] && entry.$extends.indexOf($id) > -1) {
-        levels[$id] = entry['Level'];
+        levels[$id] = parseInt(entry['Level'], 10);
       }
     });
   });

@@ -1,6 +1,7 @@
 const K = require('constants');
-const SKILLS = require('database/skills');
-const ABILITIES = require('database/abilities');
+const GameState = require('GameState');
+const GameSkills = require('GameSkills');
+const GameAbilities = require('GameAbilities');
 
 function CharacterSkillbook(character, onChange = Function.prototype) {
   let exports = {};
@@ -17,6 +18,8 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
       book.push(skill.id);
 
       onChange();
+
+      return true;
     }
   };
 
@@ -48,13 +51,13 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     let fragments = [];
 
     function getIndexCharacter(skill) {
-      const ability = ABILITIES.filter(a => a.id === skill.ability)[0];
+      const ability = GameAbilities.get(skill.ability);
       const index = ability.skills.indexOf(skill);
 
       return String.fromCharCode(K.STARTING_INDEX_CHAR_CODE + index);
     }
 
-    ABILITIES.forEach(function(ability) {
+    GameAbilities.getAll().forEach(function(ability) {
       const skills = book.reduce(function(set, id) {
         const skill = getSkillById(id);
 
@@ -78,12 +81,13 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   };
 
   exports.fromURL = function(url) {
-    let currentAbility = ABILITIES[0];
+    const abilities = GameAbilities.getAll();
+    let currentAbility = abilities[0];
 
     book = [];
 
     const indexedAbilities = Object.keys(K.ABILITY_URL_KEYS).reduce(function(set, id) {
-      set[K.ABILITY_URL_KEYS[id]] = ABILITIES.filter(a => a.id === id)[0];
+      set[K.ABILITY_URL_KEYS[id]] = abilities.filter(a => a.id === id)[0];
 
       return set;
     }, {})
@@ -106,6 +110,10 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   }
 
   exports.getSkillRequirement = function(skill) {
+    if (GameState.isEE()) {
+      return exports.getSkillRequirementEE(skill);
+    }
+
     if (typeof skill === 'string') {
       skill = getSkillById(skill);
     }
@@ -131,13 +139,66 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     }
   };
 
+  exports.getSkillRequirementEE = function(skill) {
+    if (typeof skill === 'string') {
+      skill = getSkillById(skill);
+    }
+
+    const abilityId = skill.ability;
+    const abilityPoints = character.getAbilityPoints()[abilityId];
+    const poolSize = getSkillPoolSizeEE(abilityPoints);
+    const currentTierSkills = book.reduce(function(tierSkills, id) {
+      const skillInBook = getSkillById(id);
+
+      if (skillInBook.ability === abilityId) {
+        if (!tierSkills[skillInBook.tier]) {
+          tierSkills[skillInBook.tier] = 0;
+        }
+
+        tierSkills[skillInBook.tier] += 1;
+      }
+
+      return tierSkills;
+    }, {});
+
+    if (currentTierSkills[skill.tier] === poolSize[skill.tier]) {
+      return K.ERR_ABILITY_CAP_REACHED;
+    }
+
+    if (character.getLevel() < skill.level) {
+      return K.ERR_CHAR_LEVEL_TOO_LOW;
+    }
+
+    switch(skill.tier) {
+      case K.TIER_NOVICE:
+        if (abilityPoints < 1) {
+          return K.ERR_ABILITY_LEVEL_TOO_LOW;
+        }
+
+        break;
+      case K.TIER_ADEPT:
+        if (abilityPoints < 2) {
+          return K.ERR_ABILITY_LEVEL_TOO_LOW;
+        }
+
+        break;
+
+      case K.TIER_MASTER:
+        if (abilityPoints < 4) {
+          return K.ERR_ABILITY_LEVEL_TOO_LOW;
+        }
+
+        break;
+    }
+  };
+
   exports.canLearnSkill = canLearnSkill;
 
   return exports;
 }
 
 function getSkillById(id) {
-  return SKILLS.filter(s => s.id === id)[0];
+  return GameSkills.getAll().filter(s => s.id === id)[0];
 }
 
 function getSkillPoolSize(abilityPoints) {
@@ -165,5 +226,56 @@ function getSkillPoolSize(abilityPoints) {
   }
 }
 
+//
+// 1 - 3 Novice Skills
+// 2 - 5 Novice Skills, 2 Adept Skills
+// 3 - 6 Novice Skills, 3 Adept Skills
+// 4 - 6 Novice Skills, 4 Adept Skills, 1 Master Skill
+// 5 - 6 Novice Skills, 4 Adept Skills, 2 Master Skills
+function getSkillPoolSizeEE(abilityPoints) {
+  let pool = {};
+
+  pool[K.TIER_NOVICE] = 0;
+  pool[K.TIER_ADEPT]  = 0;
+  pool[K.TIER_MASTER] = 0;
+
+  switch(abilityPoints) {
+    case 0:
+      break;
+
+    case 1:
+      pool[K.TIER_NOVICE] = 3;
+      break;
+
+    case 2:
+      pool[K.TIER_NOVICE] = 5;
+      pool[K.TIER_ADEPT]  = 2;
+      break;
+
+    case 3:
+      pool[K.TIER_NOVICE] = 6;
+      pool[K.TIER_ADEPT]  = 3;
+      break;
+
+    case 4:
+      pool[K.TIER_NOVICE] = 6;
+      pool[K.TIER_ADEPT]  = 4;
+      pool[K.TIER_MASTER] = 1;
+      break;
+
+    case 5:
+      pool[K.TIER_NOVICE] = 6;
+      pool[K.TIER_ADEPT]  = 4;
+      pool[K.TIER_MASTER] = 2;
+      break;
+
+    default:
+      console.warn('Expected ability points to range from 0 to 5, got "%s"!', abilityPoints);
+  }
+
+  return pool;
+}
+
 module.exports = CharacterSkillbook;
 module.exports.getSkillPoolSize = getSkillPoolSize;
+module.exports.getSkillPoolSizeEE = getSkillPoolSizeEE;
