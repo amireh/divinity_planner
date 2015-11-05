@@ -1,4 +1,5 @@
 /node_modules
+/assets
 /scripts/fixtures
 /scripts/images
 /scripts/ability_icons
@@ -8,6 +9,7 @@
 /src_images
 /.ga/screenshots
 
-/crawlers/*/output
+/crawlers/*/assets
 /crawlers/*/fixtures
+/crawlers/*/output
 /crawlers/*/*.json
