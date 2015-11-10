@@ -13,3 +13,5 @@
 /crawlers/*/fixtures
 /crawlers/*/output
 /crawlers/*/*.json
+
+/archives

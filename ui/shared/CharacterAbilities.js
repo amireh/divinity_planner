@@ -46,6 +46,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
       const points = abilityPoints[ability.id];
 
       set[ability.id] = {
+        id: ability.id,
         name: ability.name,
         canIncrease: points < K.MAX_ABILITY_POINTS && remaining >= getCost(points+1),
         canDecrease: points > 0,

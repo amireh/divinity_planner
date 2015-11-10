@@ -185,6 +185,41 @@ a, a:visited {
   &__tabs {
     margin: 0;
   }
+
+  &__category {
+    display: block;
+    position: relative;
+    letter-spacing: .2px;
+    font-weight: 700;
+    font-size: 1.2em;
+    // padding: 0.5em 0;
+
+    &-collapser {
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top:   2px;
+      width:  18px;
+      height: 18px;
+      background-size: 100%;
+      background-color: transparent;
+      background-position: top left;
+      background-repeat: no-repeat;
+      border: none;
+      padding: 0;
+
+      .h-sepia();
+
+      &--expanded {
+        background-image: url("images/collapser/expanded.png");
+      }
+
+      &--collapsed {
+        background-image: url("images/collapser/collapsed.png");
+      }
+    }
+  }
 }
 
 .skill-tree {
@@ -479,6 +514,14 @@ a, a:visited {
   -webkit-filter: grayscale(100%);
 }
 
+.h-sepia() {
+  filter: sepia(1);
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  -ms-filter: sepia(1);
+}
+
 .app-footer {
   font-size: 0.75em;
 
@@ -542,5 +585,34 @@ a, a:visited {
     // font-style: italic;
     font-size: 0.85em;
     color: @red;
+  }
+}
+
+.stats-panel {
+  &__link {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+
+    background-color: darken(@brown, 55%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0;
+
+    // .frame__skill-icon--no-fill();
+    border: 1px solid darken(@brown, 40%);
+    margin: 0 1em 1em 0;
+
+    &--character {
+      background-image: url("images/stats-icons/stats__equipment.png");
+    }
+
+    &--abilities {
+      background-image: url("images/stats-icons/stats__abilities.png");
+    }
+
+    &:not(.active) {
+      .h-grayscale();
+    }
   }
 }

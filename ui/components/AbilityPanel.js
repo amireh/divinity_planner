@@ -1,26 +1,89 @@
 const React = require('react');
 const AdjustableItem = require('components/AdjustableItem');
+const GameAbilities = require('GameAbilities');
+const classSet = require('classnames');
+
+const ORDER = [
+  'Weapons',
+  'Defence',
+  'Skills',
+  'Personality',
+  'Craftsmanship',
+  'Nasty Deeds'
+];
 
 const AbilityPanel = React.createClass({
+  getInitialState: function() {
+    return {
+    };
+  },
+
   render() {
+    const { abilityPoints } = this.props;
+    const abilitiesByCategory = Object.keys(abilityPoints).reduce(function(set, abilityId) {
+      const ability = GameAbilities.get(abilityId);
+      const category = ability.category || 'Skills';
+
+      let categoryEntry = set.filter(e => e.name === category)[0];
+
+      if (!categoryEntry) {
+        categoryEntry = { name: category, abilities: [] };
+
+        set.push(categoryEntry);
+      }
+
+      categoryEntry.abilities.push(abilityPoints[abilityId]);
+
+      return set;
+    }, []).sort(function(a,b) {
+      return ORDER.indexOf(a.name) > ORDER.indexOf(b.name);
+    });
+
     return (
       <div className="ability-panel">
-        <ul className="item-points-sheet">
-          {Object.keys(this.props.abilityPoints).map(this.renderAbility)}
-        </ul>
+        {abilitiesByCategory.map(this.renderCategory)}
+      </div>
+    )
+  },
+
+  renderCategory(category) {
+    const collapsed = this.state[`${category.name}Collapsed`];
+
+    return (
+      <div key={category.name}>
+        <h4 className="ability-panel__category">
+          {category.name}
+
+          <button
+            className={classSet({
+              "ability-panel__category-collapser": true,
+              'ability-panel__category-collapser--collapsed': collapsed,
+              'ability-panel__category-collapser--expanded': !collapsed,
+            })}
+            onClick={this.toggleCategory.bind(null, category.name)}
+          />
+        </h4>
+
+        {!collapsed && (
+          <ul className="item-points-sheet">
+            {category.abilities.map(this.renderAbility.bind(null, category.name === 'Skills'))}
+          </ul>
+        )}
       </div>
     );
   },
 
-  renderAbility(id) {
-    const entry = this.props.abilityPoints[id];
+  renderAbility(isLinkable, entry) {
+    const { id } = entry;
 
     if (id === 'special') {
       return null;
     }
 
-    return (
-      <li key={id} className="item-points-sheet__entry">
+    let Link;
+
+    if (isLinkable) {
+      Link = (
         <a
           onClick={this.props.onSelect.bind(null, id)}
           className={`
@@ -30,6 +93,17 @@ const AbilityPanel = React.createClass({
         >
           {entry.name}
         </a>
+      );
+    }
+    else {
+      Link = (
+        <span className="item-points-sheet__label">{entry.name}</span>
+      );
+    }
+
+    return (
+      <li key={id} className="item-points-sheet__entry">
+        {Link}
 
         <div className="item-points-sheet__controls">
           {entry.name !== 'Special' && (
@@ -45,6 +119,13 @@ const AbilityPanel = React.createClass({
         </div>
       </li>
     );
+  },
+
+  toggleCategory(name) {
+    const newState = {};
+    const key = `${name}Collapsed`;
+    newState[key] = !this.state[key];
+    this.setState(newState);
   }
 });
 
