@@ -9,19 +9,24 @@ const K = require('constants');
 
 const PANEL_CHAR = 'character';
 const PANEL_ABILITIES = 'abilities';
+const PANEL_TALENTS = 'talents';
+const PANEL_TRAITS = 'traits';
 
 const Tabs = React.createClass({
   render() {
     return (
-      <div>
+      <div className="stats-panel__tabs">
         {this.renderLink(PANEL_CHAR, 'Character')}
         {this.renderLink(PANEL_ABILITIES, 'Abilities')}
+        {this.renderLink(PANEL_TALENTS, 'Talents')}
+        {this.renderLink(PANEL_TRAITS, 'Traits')}
       </div>
     )
   },
 
   renderLink(name, text) {
     const className = {};
+
     className['stats-panel__link'] = true;
     className[`stats-panel__link--${name}`] = true;
     className['active'] = this.props.activePanelId === name;
@@ -51,6 +56,14 @@ const CharacterStatsPanel = React.createClass({
         break;
       case PANEL_ABILITIES:
         panel = this.renderAbilitiesPanel();
+        break;
+
+      case PANEL_TALENTS:
+        panel = <p>Talents will be available soon!</p>;
+        break;
+
+      case PANEL_TRAITS:
+        panel = <p>Traits will also be available soon!</p>;
         break;
     }
 

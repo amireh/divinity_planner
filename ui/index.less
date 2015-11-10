@@ -29,7 +29,7 @@ body {
 
   width: 960px;
   margin: 0 auto;
-  margin-bottom: @footer-height;
+  margin-bottom: @footer-height + 30px;
   // position: relative;
 
   font-family: serif, Helvetica, Helvetica Neue, Arial;
@@ -73,7 +73,7 @@ a, a:visited {
   .frame__main-header();
 }
 
-.app-header, h1,h2,h3 {
+.app-header, h1,h2,h3,h4 {
   font-family: 'roman_sdregular';
   font-weight: 700;
 }
@@ -110,7 +110,7 @@ a, a:visited {
   }
 
   &__label {
-    width: 160px;
+    width: 165px;
     display: inline-block;
   }
 
@@ -177,7 +177,7 @@ a, a:visited {
 }
 
 .ability-panel {
-  display: inline-block;
+  display: block;
   vertical-align: top;
 
   // margin: 1em 0;
@@ -191,8 +191,6 @@ a, a:visited {
     position: relative;
     letter-spacing: .2px;
     font-weight: 700;
-    font-size: 1.2em;
-    // padding: 0.5em 0;
 
     &-collapser {
       cursor: pointer;
@@ -541,9 +539,9 @@ a, a:visited {
     , 0 10px 10px -2px rgba(5,0,0,0.25) inset
   ;
 
-  background: rgba(0,0,0,0.3);
+  // background: rgba(0,0,0,0.3);
   transition: opacity 0.2s ease;
-  opacity: 0.5;
+  // opacity: 0.5;
 
   &:hover {
     opacity: 1;
@@ -578,6 +576,11 @@ a, a:visited {
     height: 16px;
     margin-bottom: -8px;
   }
+
+  ul {
+    margin-left: 0;
+    padding-left: 1em;
+  }
 }
 
 .skill {
@@ -589,19 +592,32 @@ a, a:visited {
 }
 
 .stats-panel {
+  text-align: center;
+
+  &__tabs {
+    text-align: center;
+    border-bottom: 1px dotted darken(@brown, 40%);
+    margin-bottom: 2em;
+  }
+
   &__link {
     width: 32px;
     height: 32px;
     display: inline-block;
 
-    background-color: darken(@brown, 55%);
+    // background-color: darken(@brown, 55%);
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: 100%;
     padding: 0;
 
     // .frame__skill-icon--no-fill();
-    border: 1px solid darken(@brown, 40%);
-    margin: 0 1em 1em 0;
+    // border: 1px solid darken(@brown, 40%);
+    margin: 0 0 1em 0;
+
+    & + & {
+      margin-left: 1em;
+    }
 
     &--character {
       background-image: url("images/stats-icons/stats__equipment.png");
@@ -611,8 +627,21 @@ a, a:visited {
       background-image: url("images/stats-icons/stats__abilities.png");
     }
 
+    &--talents {
+      background-image: url("images/stats-icons/stats__talents.png");
+    }
+
+    &--traits {
+      background-image: url("images/stats-icons/stats__traits.png");
+    }
+
     &:not(.active) {
       .h-grayscale();
+    }
+
+    &.active {
+      -webkit-filter: sepia(1) brightness(125%);
+      // .h-sepia();
     }
   }
 }

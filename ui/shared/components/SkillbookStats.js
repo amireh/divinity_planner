@@ -40,8 +40,6 @@ const SkillbookStats = React.createClass({
           <p><em>Empty.</em></p>
         )}
 
-        {false && skills.map(this.renderSkill)}
-
         {this.renderCounters(skills)}
       </div>
     );
@@ -63,6 +61,8 @@ const SkillbookStats = React.createClass({
       return this.props.abilityPoints[id].points > 0;
     }).map(function(id) {
       return GameAbilities.get(id);
+    }).filter(function(ability) {
+      return ability.category === 'Skills';
     });
 
     return (

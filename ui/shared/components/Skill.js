@@ -101,11 +101,17 @@ const Skill = React.createClass({
     const skill = this.props;
 
     let description = (skill.description || skill.descriptionText || '').trim();
+    let extraInfo;
 
+    if (GameState.isEE()) {
+      extraInfo = this.renderEETooltipData(skill);
+    }
 
     return ReactDOMServer.renderToStaticMarkup(
       <div>
         {description}
+
+        {extraInfo}
 
         {skill.requirement && (
           <p className="skill__tooltip-requirement">
@@ -114,6 +120,22 @@ const Skill = React.createClass({
         )}
       </div>
     );
+  },
+
+  renderEETooltipData(skill) {
+    return (
+      <div className="type-small">
+        {skill.statDescriptions && skill.statDescriptions.length > 0 && (
+          <div>
+            <h3>Additional Information</h3>
+
+            <ul>
+              {skill.statDescriptions.map(e => <li key={e}>{e}</li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    )
   },
 
   showTooltip() {
