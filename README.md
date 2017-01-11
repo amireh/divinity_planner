@@ -1,7 +1,7 @@
 # divinity_planner
 
 > UPDATE: the previous domain www.divinityplanner.cf no longer works, please 
-> use the new one at [www.divinityplanner.tk](www.divinityplanner.tk) instead!
+> use the new one at www.divinityplanner.tk instead!
 
 This is a character planner/builder web application for Divinity: Original Sin.
 The application is available at ~~www.divinityplanner.cf~~ www.divinityplanner.tk.
