@@ -19,9 +19,9 @@ The application is available at ~~www.divinityplanner.cf~~ www.divinityplanner.t
 
 Clone the git repo and run `npm install` to get the packages. Once that is done, you can:
 
-- run `npm run server` to launch the dev-server (with hot live-reload)
+- run `npm start` to launch the dev-server (with hot live-reload)
+- run `npm test` to run the tests
 - run `npm run build` to build the app
-- run `npm run test` to run the tests
 
 We scrape the content from http://divinity.wikia.com. Currently, the descriptions of the skills are a mess and will probably come from a different source later.
 

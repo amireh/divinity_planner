@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+const scraper = require('../lib')
+const program = require('commander')
+const lodash = require('lodash')
+const yaml = require('node-yaml')
+const dump = data => process.stdout.write(yaml.dump(data))
+
+program
+  .command('query <property>')
+  .option('-u, --uniq')
+  .option('-c, --count')
+  .option('--present')
+  .action(function(property, params) {
+    const skillData = scraper.parseSkillData(scraper.loadSkillData());
+    const props = skillData.map(x => x.properties[property])
+      .filter(value => {
+        if (params.present) {
+          return !!value;
+        }
+        else {
+          return true;
+        }
+      })
+
+    if (params.count) {
+      const counted = props.reduce(function(map, value) {
+        if (!map[value]) {
+          map[value] = 0;
+        }
+
+        map[value] += 1
+
+        return map
+      }, {})
+
+      dump(counted)
+    }
+    else if (params.uniq) {
+      dump(lodash.uniq(props))
+    }
+    else {
+      dump(props)
+    }
+  })
+;
+
+program.parse(process.argv)
