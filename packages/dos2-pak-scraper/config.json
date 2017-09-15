@@ -1,5 +1,8 @@
 {
+  "archives": {
+    "Shared": "archives/Shared"
+  },
   "assets": {
-    "SkillData": "assets/unpacked/Shared/Public/Shared/Stats/Generated/Data/SkillData.txt"
+    "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt"
   }
 }

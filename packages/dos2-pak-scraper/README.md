@@ -4,8 +4,8 @@ Extract game data from .pak archives.
 
 ## Usage
 
-Use lslib.exe to extract the `Shared.pak` archive into
-`/assets/unpacked/Shared`.
+Use [ExportTool](http://larian.com/forums/ubbthreads.php?ubb=showflat&Number=57
+2322&page=7) to extract the `Shared.pak` archive into `/archives/Shared`.
 
 Run the CLI and take it from there:
 
@@ -20,3 +20,4 @@ Run the CLI and take it from there:
 ## TODO
 
 - [ ] figure out where the icons are in the spritesheet
+- [ ] scrape talents

@@ -1,14 +1,22 @@
 const subject = require("../parseSkillData");
-const utils = require('./utils')
+const fs = require('fs')
+const { assert, fixtures } = require('./utils')
 const { loadSkillData } = require('../')
 
 describe("dos2-pak-scraper::parseSkillData", function() {
-  it('works', function() {
-    const skillDataSource = loadSkillData();
+  it('works with the real thing', function() {
+    const skillDataSource = loadSkillData({});
     const skillData = subject(skillDataSource)
 
-    console.log('Skills?', skillData.length)
-    // console.log('Skills?', skillData.map(x => x.id))
-    console.log(skillData[0])
+    assert.ok(skillData.length > 0);
   });
+
+  context('with a sample...', function() {
+    const sample = fs.readFileSync(fixtures.join('SkillData.txt'), 'utf8')
+    const [ skill ] = subject(sample)
+
+    it('extracts skill id', function() {
+      assert.deepEqual(skill.id, 'Projectile_StaffOfMagus');
+    })
+  })
 });

@@ -42,7 +42,7 @@
     "test": "karma start --single-run",
     "build": "NODE_ENV=production webpack && cp ui/css/splash.css public/dist/",
     "start": "NODE_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --content-base=public",
-    "lint": "eslint .",
+    "lint": "eslint ui packages/*/lib",
     "sprites": "./scripts/generate_spritesheet.js"
   },
   "repository": {

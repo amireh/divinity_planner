@@ -12,7 +12,7 @@ module.exports = function parseSkillData(sourceFile) {
 
     switch (directive.type) {
       case Directive.Entry:
-        list.push({ id: directive.data, properties: {} })
+        list.push({ id: directive.data[0], properties: {} })
         break;
 
       case Directive.Type:
