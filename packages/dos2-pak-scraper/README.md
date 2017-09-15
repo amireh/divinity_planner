@@ -9,13 +9,20 @@ Use [ExportTool](http://larian.com/forums/ubbthreads.php?ubb=showflat&Number=57
 
 Run the CLI and take it from there:
 
-    bin/dos2-pak-scraper --help
+    bin/dos2-pak --help
+
+To (re)generate the database:
+
+    bin/dos2-pak extract
+
+Make sure to manually go over the diffs of each file under `db/` and review
+the changes.
 
 ## Data
 
 ### Tiers
 
-    bin/dos2-pak-scraper query Tier --present --uniq | sort
+    bin/dos2-pak query Tier --present --uniq | sort
 
 ## TODO
 

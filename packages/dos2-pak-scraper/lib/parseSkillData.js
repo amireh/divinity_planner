@@ -6,9 +6,21 @@ const Directive = {
   Unknown: 0,
 };
 
+const Classifiers = [
+  { type: Directive.Entry, matcher: /^new entry "(.+)"$/ },
+  { type: Directive.Type, matcher: /^type "(.+)"$/ },
+  { type: Directive.Using, matcher: /^using "(.+)"$/ },
+  { type: Directive.Data, matcher: /^data "(.+)" "([^"]*)"$/ },
+]
+
+const trim = x => x.trim()
+const notEmpty = x => x.length > 0
+
 module.exports = function parseSkillData(sourceFile) {
-  return sourceFile.split('\n').reduce(function(list, line) {
-    const directive = classifyLine(line)
+  const lines = sourceFile.split('\n').map(trim).filter(notEmpty);
+
+  return lines.reduce(function(list, line, index) {
+    const directive = classifyLine(line, lines, index)
 
     switch (directive.type) {
       case Directive.Entry:
@@ -28,6 +40,7 @@ module.exports = function parseSkillData(sourceFile) {
         break;
 
       case Directive.Unknown:
+        // console.warn(`Unrecognized entry: ${line}`)
         break;
     }
 
@@ -35,18 +48,27 @@ module.exports = function parseSkillData(sourceFile) {
   }, [])
 }
 
-function classifyLine(line) {
-  return [
-    { type: Directive.Entry, matcher: /^new entry "(.+)"$/ },
-    { type: Directive.Type, matcher: /^type "(.+)"$/ },
-    { type: Directive.Using, matcher: /^using "(.+)"$/ },
-    { type: Directive.Data, matcher: /^data "(.+)" "(.+)"$/ },
-  ].reduce(function(directive, { matcher, type }) {
-    if (directive.type !== Directive.Unknown) {
+function classifyLine(line, lines, index) {
+  const tryWithNextLine = () => {
+    if (!lines) {
+      return null;
+    }
+
+    const nextLine = lines[index + 1]
+
+    if (!nextLine) {
+      return null;
+    }
+
+    return classifyLine(line + ' ' + nextLine)
+  }
+
+  return Classifiers.reduce(function(directive, { matcher, type }) {
+    if (directive) {
       return directive;
     }
 
-    const match = line.trim().match(matcher);
+    const match = line.match(matcher);
 
     if (match) {
       return { type, data: match.slice(1) }
@@ -54,5 +76,5 @@ function classifyLine(line) {
     else {
       return directive;
     }
-  }, { type: Directive.Unknown })
+  }, null) || tryWithNextLine() || { type: Directive.Unknown }
 }

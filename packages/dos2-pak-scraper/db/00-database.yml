@@ -308,6 +308,7 @@
     IsEnemySkill: 'Yes'
     Magic Cost: '0'
     Memory Cost: '0'
+    PrepareEffect: ''
     SkillProperties: 'WEB,100,1'
     SurfaceType: Web
   type: SkillData
@@ -1360,6 +1361,7 @@
     LandingEffect: 'RS3_FX_Char_Creature_Dragon_DragonDive_Land_01:root:teleport_end'
     Magic Cost: '0'
     Memory Cost: '0'
+    PrepareEffect: ''
     SkillProperties: 'KNOCKED_DOWN,80,1;'
     TargetRadius: '25'
   type: SkillData
@@ -1428,6 +1430,7 @@
     DisplayNameRef: Scale-Portation
     ForGameMaster: 'Yes'
     IsEnemySkill: 'Yes'
+    LandingEffect: ''
     Magic Cost: '0'
     Memory Cost: '0'
     PrepareEffect: RS3_FX_Skills_Air_FreeFall_Prepare_01
@@ -1537,6 +1540,8 @@
       Detach:root:teleport_end
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
+    Requirements: ''
     TargetRadius: '70'
     TeleportTextEvent: teleport
   type: SkillData
@@ -2577,6 +2582,7 @@
   properties:
     Angle: '0'
     CastAnimation: noprepare
+    CastEffect: ''
     Damage Multiplier: '150'
     DisplayName: ProjectileStrike_Quest_CaveIn_DisplayName
     DisplayNameRef: '| Cave In |'
@@ -2584,6 +2590,7 @@
     Height: '10'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     StrikeCount: '20'
     StrikeDelay: '100'
     TargetConditions: Character
@@ -2601,6 +2608,7 @@
     Angle: '0'
     AreaRadius: '3'
     CastAnimation: noprepare
+    CastEffect: ''
     Damage Multiplier: '100'
     Damage Range: '10'
     Distribution: Normal
@@ -2611,6 +2619,7 @@
     Memory Cost: '0'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     SingleSource: 'No'
     StrikeCount: '5'
     StrikeDelay: '100'
@@ -2627,12 +2636,14 @@
   properties:
     AreaRadius: '3'
     CastAnimation: noprepare
+    CastEffect: ''
     Damage Multiplier: '100'
     Distribution: Normal
     ForGameMaster: 'No'
     IsEnemySkill: 'Yes'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     StrikeCount: '5'
     StrikeDelay: '100'
     Template: 4df4e4fa-65bf-424a-b0dd-16787471a918
@@ -2648,6 +2659,7 @@
   properties:
     AreaRadius: '3'
     CastAnimation: noprepare
+    CastEffect: ''
     Damage Multiplier: '200'
     DisplayName: ProjectileStrike_Quest_LightningStrike_DisplayName
     DisplayNameRef: '| Lightning Storm |'
@@ -2657,6 +2669,7 @@
     IsEnemySkill: 'Yes'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     SingleSource: 'No'
     SkillProperties: 'STUNNED,100,1;'
     StrikeCount: '5'
@@ -2677,6 +2690,7 @@
     CanTargetItems: 'Yes'
     CanTargetTerrain: 'Yes'
     CastAnimation: noprepare
+    CastEffect: ''
     DisplayName: ProjectileStrike_Quest_Volcano_CaveIn_DisplayName
     DisplayNameRef: Lava Eruption
     ExplodeRadius: '1'
@@ -2686,6 +2700,7 @@
     Memory Cost: '0'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     SkillProperties: 'Ignite;CreateSurface,1,,Lava,100'
     StrikeCount: '14'
     StrikeDelay: '90'
@@ -4233,6 +4248,7 @@
     ForGameMaster: 'No'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     SkillProperties: 'DISEASED,100,1;CreateSurface,2,,Blood,60'
     Template: ae731186-df2d-460c-979e-e1c4f98dc60d
   type: SkillData
@@ -4841,6 +4857,7 @@
     CanTargetItems: 'Yes'
     CanTargetTerrain: 'Yes'
     CastAnimation: skill_cast_shout_01_cast
+    CastEffect: ''
     CastTextEvent: cast
     Cooldown: '0'
     Damage Multiplier: '200'
@@ -4859,6 +4876,7 @@
     OverrideMinAP: 'No'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     ProjectileCount: '1'
     ProjectileDelay: '0'
     ProjectileTerrainOffset: 'Yes'
@@ -5506,6 +5524,7 @@
     CanTargetItems: 'Yes'
     CanTargetTerrain: 'Yes'
     CastAnimation: skill_cast_shout_01_cast
+    CastEffect: ''
     CastTextEvent: cast
     Cooldown: '0'
     Damage Multiplier: '200'
@@ -5524,6 +5543,7 @@
     OverrideMinAP: 'No'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     ProjectileCount: '1'
     ProjectileDelay: '0'
     ProjectileTerrainOffset: 'Yes'
@@ -5584,6 +5604,7 @@
     CanTargetItems: 'Yes'
     CanTargetTerrain: 'Yes'
     CastAnimation: skill_cast_shout_01_cast
+    CastEffect: ''
     CastTextEvent: cast
     Cooldown: '0'
     Damage Multiplier: '350'
@@ -5602,6 +5623,7 @@
     OverrideMinAP: 'No'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     ProjectileCount: '1'
     ProjectileDelay: '0'
     ProjectileTerrainOffset: 'Yes'
@@ -5732,6 +5754,7 @@
     CanTargetItems: 'Yes'
     CanTargetTerrain: 'Yes'
     CastAnimation: skill_cast_shout_01_cast
+    CastEffect: ''
     CastTextEvent: cast
     Cooldown: '0'
     Damage Multiplier: '200'
@@ -5750,6 +5773,7 @@
     OverrideMinAP: 'No'
     PrepareAnimationInit: noprepare
     PrepareAnimationLoop: noprepare
+    PrepareEffect: ''
     ProjectileCount: '1'
     ProjectileDelay: '0'
     ProjectileTerrainOffset: 'Yes'
@@ -9590,6 +9614,7 @@
     DisplayName: Projectile_Quest_KrakenRay_Poison_DisplayName
     DisplayNameRef: Breath from the Depths
     ForGameMaster: 'Yes'
+    PrepareEffect: ''
     SkillProperties: 'CreateSurface,4,,PoisonCursed,100;POISONED,20,2'
     Template: 9bb14a2b-d931-4a41-ba21-7b24fe3cc490
   type: SkillData
@@ -9608,6 +9633,7 @@
     DisplayName: Projectile_Quest_KrakenRay_Water_DisplayName
     DisplayNameRef: Abyssal Waters
     ForGameMaster: 'Yes'
+    PrepareEffect: ''
     SkillProperties: 'CreateSurface,4,,WaterCursed,100;WET,100,2'
     Template: 19fc296e-f62d-407a-a8a0-a6818efe32dd
   type: SkillData
@@ -12530,6 +12556,7 @@
     PrepareAnimationLoop: skill_prepare_totem_01_loop
     PrepareEffect: 'RS3_FX_Skills_Water_Prepare_Divine_Root_01,KeepRot:Dummy_Root'
     RainEffect: RS3_FX_Environment_Rain_HolyPoison_01
+    SkillProperties: ''
     SurfaceType: PoisonBlessed
   type: SkillData
   using: Rain_EnemyWater
@@ -13221,6 +13248,7 @@
     PrepareAnimationLoop: skill_prepare_soul_01_loop
     PrepareEffect: >-
       RS3_FX_Skills_Polymorph_Soul_TurnInto_Prepare_Root_01;RS3_FX_Skills_Polymorph_Soul_TurnInto_Prepare_Hand_01:Dummy_R_HandFX
+    SkillProperties: ''
     StatusClearChance: '100'
   type: SkillData
   using: Shout_PolymorphIntoHuman
@@ -17904,6 +17932,10 @@
     Cooldown: '5'
     DeathType: Explode
     Description: Storm_Blood_Description
+    DescriptionRef: >-
+      |The sky is weeping bloody tears. Bolts of coagulated blood fall on enemy
+      characters in the area, setting Disease and Decaying Touch. Turns all
+      water into blood in the area.| |
     DisplayName: Storm_Blood_DisplayName
     DisplayNameRef: '| Blood Storm |'
     ForGameMaster: 'Yes'
@@ -18432,6 +18464,7 @@
   properties:
     Ability: Earth
     ActionPoints: '2'
+    AIFlags: ''
     CastAnimation: cast_long_cast
     CastEffect: RS3_FX_Char_Animals_Frog_A_Poison_Projectile_Cast_01
     CastEffectTextEvent: cast
@@ -18773,6 +18806,7 @@
   properties:
     Ability: Fire
     AiCalculationSkillOverride: Target_DummyTargetSkill_Fire
+    AIFlags: ''
     CastAnimation: skill_cast_summon_totem_01_cast
     CastEffectTextEvent: cast
     CastTextEvent: cast
@@ -18804,6 +18838,7 @@
     Ability: Water
     ActionPoints: '2'
     AiCalculationSkillOverride: Target_DummyTargetSkill_Fire
+    AIFlags: ''
     CastEffect: RS3_FX_Skills_Water_Ice_Shout_Ground_02
     Cooldown: '1'
     DisplayName: Summon_EnemyWaterSlug_DisplayName
@@ -22989,6 +23024,7 @@
     CastTextEvent: cast
     ForGameMaster: 'Yes'
     IsEnemySkill: 'Yes'
+    PrepareEffect: ''
     TargetEffect: >-
       RS3_FX_Skills_Voodoo_Impact_Shout_Terrify_Root_01,FaceSource:Dummy_BodyFX:cast
   type: SkillData
@@ -25180,6 +25216,7 @@
     IsEnemySkill: 'Yes'
     Magic Cost: '0'
     Memory Cost: '0'
+    PrepareEffect: ''
     SkillProperties: 'DEMONIC_POSSESSION,100,-1'
     TargetConditions: Character
     TargetEffect: >-
@@ -25198,6 +25235,8 @@
     CastTextEvent: cast
     ForGameMaster: 'No'
     IsEnemySkill: 'Yes'
+    PrepareEffect: ''
+    SkillProperties: ''
     TargetEffect: >-
       RS3_FX_Char_Creature_Demon_Caster_Impact_Possession_Dummy_01:Dummy_StatusFX:cast
   type: SkillData
@@ -26957,8 +26996,10 @@
 - id: Teleportation_EnemyFeatherFallSelf_Lucian
   properties:
     CastAnimation: skill_cast_aoe_divine_01_cast
+    CastEffect: ''
     CastTextEvent: cast
     Cooldown: '1'
+    DisappearEffect: ''
     DisplayName: Teleportation_EnemyFeatherFallSelf_Lucian_DisplayName
     DisplayNameRef: Translocate
     ForGameMaster: 'No'
