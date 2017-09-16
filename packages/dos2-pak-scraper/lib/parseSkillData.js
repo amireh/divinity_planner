@@ -24,19 +24,19 @@ module.exports = function parseSkillData(sourceFile) {
 
     switch (directive.type) {
       case Directive.Entry:
-        list.push({ id: directive.data[0], properties: {} })
+        list.push({ Id: directive.data[0], Properties: {} })
         break;
 
       case Directive.Type:
-        list[list.length-1].type = directive.data[0];
+        list[list.length-1].Type = directive.data[0];
         break;
 
       case Directive.Using:
-        list[list.length-1].using = directive.data[0];
+        list[list.length-1].Using = directive.data[0];
         break;
 
       case Directive.Data:
-        list[list.length-1].properties[directive.data[0]] = directive.data[1];
+        list[list.length-1].Properties[directive.data[0]] = directive.data[1];
         break;
 
       case Directive.Unknown:

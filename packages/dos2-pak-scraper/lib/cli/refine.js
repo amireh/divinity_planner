@@ -115,15 +115,15 @@ module.exports = R.pipe(
 
 function isPlayerSkill(skill) {
   return (
-    skill.type === 'SkillData' &&
-    skill.properties.IsEnemySkill !== 'Yes' &&
+    skill.Type === 'SkillData' &&
+    skill.Properties.IsEnemySkill !== 'Yes' &&
     // e.g. Projectile_Grenade_ChemicalWarfare_-1
-    !skill.id.match(/.+_\-\d$/) &&
+    !skill.Id.match(/.+_\-\d$/) &&
     // e.g. Zone_EnemyAutomatonElectricRay
-    !skill.id.match(/^Zone_/) &&
-    skill.properties.Ability &&
+    !skill.Id.match(/^Zone_/) &&
+    skill.Properties.Ability &&
     // "None" is the "Special" category of skills in Wikis; they are not learnable
-    skill.properties.Ability !== 'None'
+    skill.Properties.Ability !== 'None'
   )
 }
 
@@ -159,8 +159,8 @@ function castValues(mapping) {
 }
 
 function flattenSkill(skill) {
-  return Object.assign({}, skill.properties, {
-    Id: skill.id,
+  return Object.assign({}, skill.Properties, {
+    Id: skill.Id,
   })
 }
 
