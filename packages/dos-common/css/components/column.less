@@ -1,0 +1,16 @@
+.column {
+  vertical-align: top;
+  display: inline-block;
+
+  & + .column {
+    margin-left: 2em;
+  }
+
+  &--left {
+    width: 292px;
+  }
+
+  &--right {
+    width: 636px;
+  }
+}

@@ -1,12 +1,14 @@
 const React = require('react');
 
 const Root = React.createClass({
-  componentWillMount: function() {
-    document.querySelector('#splash').className += ' hidden';
+  componentWillMount() {
+    const splashNode = document.querySelector('#splash');
+
+    splashNode.classList.add('hidden');
 
     setTimeout(() => {
-      document.querySelector('#splash').remove();
-    }, 500);
+      splashNode.remove();
+    }, 1000);
   },
 
   render() {
@@ -22,7 +24,7 @@ const Root = React.createClass({
 
         <div className="app-footer">
           <p>
-            Made with <span style={{ color: 'red' }}>&hearts;</span> and a lot of care by {rainbow('KANDIE')}. &copy; 2015
+            Made with <span style={{ color: 'red' }}>&hearts;</span> and a lot of care by {rainbow('KANDIE')}. &copy; 2017
           </p>
 
           <p>Source code on <a href="https://github.com/amireh/divinity_planner" target="_blank">github</a>.</p>
