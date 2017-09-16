@@ -1,3 +1,3 @@
 require('../css/index.less');
 
-exports.App = require('./components/App')
+exports.App = require('./components/DOS2App')

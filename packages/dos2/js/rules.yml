@@ -1,8 +1,16 @@
 Attributes:
-  - Id: str
-    Name: Strength
-    Boosts:
-      - man_at_arms
+  - Id: CON
+    DisplayName: Constitution
+  - Id: MEM
+    DisplayName: Memory
+  - Id: FIN
+    DisplayName: Finesse
+  - Id: INT
+    DisplayName: Intelligence
+  - Id: STR
+    DisplayName: Strength
+  - Id: WIT
+    DisplayName: Wits
 
 StartingAttributePoints: 5
 StartingAbilityPoints: 5

@@ -7,7 +7,7 @@ const { AppVersion, URLManager } = require('dos-common');
 const Character = require('../Character');
 const { DOS1, DOS1_EE } = AppVersion;
 
-const App = React.createClass({
+const DOS1App = React.createClass({
   componentWillMount() {
     this.profiles = [
       Character(),
@@ -66,4 +66,4 @@ const App = React.createClass({
   }
 });
 
-module.exports = App;
+module.exports = DOS1App;

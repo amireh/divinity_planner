@@ -4,13 +4,13 @@ const {
   MaxAttributePoints,
   StartingAttributePoints
 } = require('./rules.yml')
-const { ATTRIBUTE_URL_KEYS } = require('./constants')
+const { ATTRIBUTE_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants')
 
 function CharacterAttributes(character, onChange = Function.prototype) {
   let exports = {};
 
-  const attributePoints = Attributes.reduce(function(hash, ability) {
-    hash[ability.id] = 0;
+  const attributePoints = Attributes.reduce(function(hash, attribute) {
+    hash[attribute.Id] = 0;
 
     return hash;
   }, {});
@@ -38,11 +38,11 @@ function CharacterAttributes(character, onChange = Function.prototype) {
 
     const remaining = getRemainingPoints();
 
-    stats.attributePoints = Attributes.reduce(function(set, ability) {
-      const points = attributePoints[ability.id];
+    stats.attributePoints = Attributes.reduce(function(set, attribute) {
+      const points = attributePoints[attribute.Id];
 
-      set[ability.id] = {
-        name: ability.name,
+      set[attribute.Id] = {
+        name: attribute.DisplayName,
         canIncrease: points < MaxAttributePoints && remaining > 0,
         canDecrease: points > 0,
         points: points + BaseAttributePoints
@@ -64,15 +64,15 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     let lastAttrIndex = -1;
 
     function getIndexCharacter(index) {
-      return String.fromCharCode(97+index);
+      return String.fromCharCode(STARTING_INDEX_CHAR_CODE+index);
     }
 
-    Attributes.forEach(function(attr, index) {
-      const points = attributePoints[attr.id];
+    Attributes.forEach(function(attribute, index) {
+      const points = attributePoints[attribute.Id];
 
       if (points > 0) {
         if (lastAttrIndex !== index - 1) {
-          const key = ATTRIBUTE_URL_KEYS[attr.id];
+          const key = ATTRIBUTE_URL_KEYS[attribute.Id];
           fragments.push(key);
         }
 
@@ -91,7 +91,7 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     const attrKeys = Object.keys(ATTRIBUTE_URL_KEYS).reduce(function(set, id) {
       const key = ATTRIBUTE_URL_KEYS[id];
 
-      set[key] = Attributes.filter(a => a.id === id)[0];
+      set[key] = Attributes.filter(a => a.Id === id)[0];
 
       return set;
     }, {})
@@ -103,8 +103,8 @@ function CharacterAttributes(character, onChange = Function.prototype) {
       else {
         const points = char.charCodeAt(0) - 97;
 
-        distribution[nextAttribute.id] = points;
-        attributePoints[nextAttribute.id] = points;
+        distribution[nextAttribute.Id] = points;
+        attributePoints[nextAttribute.Id] = points;
 
         nextAttribute = Attributes[Attributes.indexOf(nextAttribute) + 1];
       }

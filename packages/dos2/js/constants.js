@@ -6,11 +6,12 @@ exports.DOMAIN_URL_KEYS = {
 };
 
 exports.ATTRIBUTE_URL_KEYS = {
-  'dex': 'D',
-  'int': 'I',
-  'con': 'C',
-  'spe': 'S',
-  'per': 'P',
+  'CON': 'C',
+  'FIN': 'F',
+  'INT': 'I',
+  'MEM': 'M',
+  'STR': 'S',
+  'WIT': 'W',
 };
 
 exports.ABILITY_URL_KEYS = {

@@ -7,4 +7,5 @@ if (process.env.NODE_ENV === 'development') {
   };
 }
 
-exports.App = require('./components/App')
+exports.App = require('./components/DOS1App')
+exports.CharacterStatsPanel = require('./components/CharacterStatsPanel')
