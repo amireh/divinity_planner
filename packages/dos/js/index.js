@@ -26,14 +26,14 @@ function renderCurrentApp() {
     require.ensure([ 'dos2' ], function() {
       const DOS2App = require('dos2')
 
-      render(DOS2App);
+      render(DOS2App.App);
     })
   }
   else {
     require.ensure([ 'dos1' ], function() {
       const DOS1App = require('dos1')
 
-      render(DOS1App);
+      render(DOS1App.App);
     })
   }
 }

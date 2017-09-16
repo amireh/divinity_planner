@@ -1,4 +1,4 @@
-const URLManager = require('./shared/URLManager')
+const URLManager = require('./URLManager')
 const DOS1 = 'DOS1'
 const DOS1_EE = 'DOS1_EE'
 const DOS2 = 'DOS2'

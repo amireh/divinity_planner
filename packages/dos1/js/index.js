@@ -7,4 +7,4 @@ if (process.env.NODE_ENV === 'development') {
   };
 }
 
-module.exports = require('./components/App')
+exports.App = require('./components/App')

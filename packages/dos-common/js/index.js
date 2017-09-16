@@ -1,9 +1,10 @@
 require('../css/index.less');
 
 exports.AppVersion = require('./AppVersion')
-exports.EventEmitter = require('./shared/EventEmitter')
-exports.URLManager = require('./shared/URLManager')
+exports.EventEmitter = require('./EventEmitter')
+exports.URLManager = require('./URLManager')
 
-exports.AdjustableItem = require('./shared/components/AdjustableItem')
-exports.Checkbox = require('./shared/components/Checkbox')
-exports.ItemPointsSheet = require('./shared/components/ItemPointsSheet')
+exports.AdjustableItem = require('./components/AdjustableItem')
+exports.Checkbox = require('./components/Checkbox')
+exports.ItemPointsSheet = require('./components/ItemPointsSheet')
+exports.CharacterSelector = require('./components/CharacterSelector')

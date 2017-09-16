@@ -21,12 +21,11 @@ module.exports = [
 
   b.resolveModules({
     directories: [
-      root.join('packages/dos-common/js/shared/shims'),
-      root.join('packages/dos-common/js/shared'),
-      root.join('packages/dos-common/node_modules'),
-      root.join('packages/dos1/node_modules'),
-      root.join('packages/dos2/node_modules'),
+      root.join('packages/dos-common/js/shims'),
+      root.join('node_modules'),
     ],
+
+    relativeDirectories: [],
   }),
 
   b.generateBundle({
