@@ -14,7 +14,7 @@ const ORDER = [
 
 const DOS2AbilityPanel = React.createClass({
   propTypes: {
-    abilities: PropTypes.array.isRequired,
+    abilities: PropTypes.object.isRequired,
   },
 
   getInitialState: function() {

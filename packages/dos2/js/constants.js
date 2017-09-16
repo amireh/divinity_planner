@@ -27,7 +27,6 @@ exports.ABILITY_URL_KEYS = {
   'Water':        'Y',
 };
 
-exports.IGNORED_ABILITIES = [ 'None' ];
 exports.SKILLBOOK_TAB_URL_KEY = 'V';
 
 exports.STARTING_INDEX_CHAR_CODE = 97;

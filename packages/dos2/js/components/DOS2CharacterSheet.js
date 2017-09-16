@@ -1,6 +1,7 @@
 const React = require('react');
 const { object } = React.PropTypes;
 const DOS2CharacterStatsPanel = require('./DOS2CharacterStatsPanel');
+const DOS2SkillTree = require('./DOS2SkillTree');
 // const SkillTree = require('./SkillTree');
 const GameAbilities = require('../GameAbilities');
 // const Skillbook = require('./Skillbook');
@@ -15,13 +16,14 @@ const DOS2CharacterSheet = React.createClass({
   render() {
     const { character } = this.props;
     const activeAbilityId = getAbilityIdFromIndex(this.props.queryParams.t);
-    const activeAbility = GameAbilities.getAll().filter(a => a.id === activeAbilityId)[0];
+    const activeAbility = GameAbilities.get(activeAbilityId);
     const stats = character.toJSON();
 
     return (
       <div>
         <div className="column column--left">
           <DOS2CharacterStatsPanel
+            queryParams={this.props.queryParams}
             abilities={GameAbilities}
             character={character}
             activeAbilityId={activeAbilityId}
@@ -29,15 +31,15 @@ const DOS2CharacterSheet = React.createClass({
           />
         </div>
 
-        {/*<div className="column column--right">
-          {this.props.queryParams.t === K.SKILLBOOK_TAB_URL_KEY ? (
+        {<div className="column column--right">
+          {/*this.props.queryParams.t === K.SKILLBOOK_TAB_URL_KEY ? (
             <Skillbook
               skills={stats.skillbook}
               abilityPoints={stats.abilityPoints}
             />
-          ) : (
-            <SkillTree
-              activeAbilityName={activeAbility && activeAbility.name}
+          ) : */(
+            <DOS2SkillTree
+              activeAbilityName={activeAbility && activeAbility.DisplayName}
               level={stats.level}
               attributePoints={stats.attributePoints}
               abilityPoints={stats.abilityPoints}
@@ -45,7 +47,7 @@ const DOS2CharacterSheet = React.createClass({
               onSkillSelect={this.toggleSkillSelection}
             />
           )}
-        </div>*/}
+        </div>}
       </div>
     );
   },
@@ -66,18 +68,14 @@ const DOS2CharacterSheet = React.createClass({
       return [];
     }
 
-    const sourceAbilities = GameAbilities.getAll();
-
+    const { Skills: skills } = GameAbilities.get(abilityId);
     const { character } = this.props;
-    const { skills } = sourceAbilities.filter(function(ability) {
-      return ability.id === abilityId;
-    })[0];
 
     return skills.map(function(skill) {
       const decoratedSkill = assign({}, skill);
       const requirement = character.skillbook.getSkillRequirement(skill);
 
-      decoratedSkill.learned = character.skillbook.hasSkill(skill.id);
+      decoratedSkill.learned = character.skillbook.hasSkill(skill.Id);
       decoratedSkill.canLearn = !requirement;
       decoratedSkill.requirement = requirement;
 

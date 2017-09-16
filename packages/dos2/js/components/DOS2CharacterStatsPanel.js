@@ -42,16 +42,12 @@ const Tabs = React.createClass({
 })
 
 const DOS2CharacterStatsPanel = React.createClass({
-  getInitialState: function() {
-    return {
-      activePanelId: PANEL_CHAR
-    };
-  },
-
   render() {
+    const { panel: activePanelId = PANEL_CHAR } = this.props.queryParams;
+
     let panel;
 
-    switch(this.state.activePanelId) {
+    switch (activePanelId) {
       case PANEL_CHAR:
         panel = this.renderCharacterPanel();
         break;
@@ -72,7 +68,7 @@ const DOS2CharacterStatsPanel = React.createClass({
       <div className="type-small character-panel">
         <Tabs
           onChange={this.activatePanel}
-          activePanelId={this.state.activePanelId}
+          activePanelId={activePanelId}
         />
 
         {panel}
@@ -152,7 +148,7 @@ const DOS2CharacterStatsPanel = React.createClass({
   },
 
   activatePanel(panel) {
-    this.setState({ activePanelId: panel });
+    URLManager.setQueryParam('panel', panel)
   },
 
   showAbilitySkillTree(abilityId) {

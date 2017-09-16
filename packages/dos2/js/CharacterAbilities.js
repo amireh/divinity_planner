@@ -1,18 +1,15 @@
 const { MaxAbilityPoints } = require('./rules.yml');
-const { ABILITY_URL_KEYS, IGNORED_ABILITIES } = require('./constants')
+const { ABILITY_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants')
 const GameAbilities = require('./GameAbilities');
 
 function CharacterAbilities(character, onChange = Function.prototype) {
   let exports = {};
 
-  const abilityPoints = GameAbilities.getAll()
-    .filter(x => IGNORED_ABILITIES.indexOf(x.Id) === -1)
-    .reduce(function(hash, ability) {
-      hash[ability.Id] = 0;
+  const abilityPoints = GameAbilities.getAll().reduce(function(hash, ability) {
+    hash[ability.Id] = 0;
 
-      return hash;
-    }, {})
-  ;
+    return hash;
+  }, {});
 
   exports.addPoint = function(id) {
     if (abilityPoints[id] < MaxAbilityPoints) {
@@ -145,7 +142,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
     let lastAbilityIndex = -1;
 
     function getIndexCharacter(index) {
-      return String.fromCharCode(97+index);
+      return String.fromCharCode(STARTING_INDEX_CHAR_CODE + index);
     }
 
     GameAbilities.getAll().forEach(function(ability, index) {
@@ -184,7 +181,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
         nextAbility = attrKeys[char]
       }
       else {
-        const points = char.charCodeAt(0) - 97;
+        const points = char.charCodeAt(0) - STARTING_INDEX_CHAR_CODE;
 
         distribution[nextAbility.Id] = points;
         abilityPoints[nextAbility.Id] = points;
