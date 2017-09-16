@@ -13,13 +13,11 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - >-
-          |Electric bolt falls from the sky, dealing 100% (Air) damage to
-          characters and items in the area. Sets status Shocked, which reduces
-          Turn AP by 1.|
-      DisplayName:
-        - '|Dazing Bolt|'
+      Description: >-
+        Electric bolt falls from the sky, dealing 100% (Air) damage to
+        characters and items in the area. Sets status Shocked, which reduces
+        Turn AP by 1.
+      DisplayName: Dazing Bolt
       Distribution: EdgeCenter
       ExplodeRadius: '3'
       ForceTarget: 'No'
@@ -59,12 +57,10 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - >-
-          Shoot a stunning bolt of lightning that forks up to 8 times in a 8
-          radius and deals 100% (Air) damage to each target.
-      DisplayName:
-        - Chain Lightning
+      Description: >-
+        Shoot a stunning bolt of lightning that forks up to 8 times in a 8
+        radius and deals 100% (Air) damage to each target.
+      DisplayName: Chain Lightning
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -83,10 +79,10 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'Electrify;SHOCKED,100,2'
       SkillType: Projectile
-      StatsDescription:
-        - 'Range: 13'
-        - Stunned makes target unable to move or act.
-        - Can target some surfaces and clouds to electrify them.
+      StatsDescription: |-
+        Range: 13
+        Stunned makes target unable to move or act.
+        Can target some surfaces and clouds to electrify them.
       StatsDescriptionParams: Damage;ForkLevels;AreaRadius;TargetRadius
       TargetRadius: '13'
       Tier: Adept
@@ -103,10 +99,8 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - '|Lightning Bolt will damage up to 2 enemies for 100% (Air) damage|'
-      DisplayName:
-        - '|Lightning Bolt|'
+      Description: Lightning Bolt will damage up to 2 enemies for 100% (Air) damage
+      DisplayName: Lightning Bolt
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -129,8 +123,7 @@
       UseWeaponProperties: false
     - Ability: Air
       DamageType: Air
-      DisplayName:
-        - Immemorial Thunder
+      DisplayName: Immemorial Thunder
       ForGameMaster: true
       Id: Projectile_Quest_KrakenRay_Lightning
       SkillProperties: 'CreateSurface,4,,WaterCloudElectrified,100;SHOCKED,20,2'
@@ -147,12 +140,10 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - >-
-          |Target is immune to Stun. Air damage received is instead spread in
-          aoe with electric arcs.|
-      DisplayName:
-        - '|Superconductor|'
+      Description: >-
+        Target is immune to Stun. Air damage received is instead spread in aoe
+        with electric arcs.
+      DisplayName: Superconductor
       ForceTarget: 'No'
       ForGameMaster: true
       ForkChance: '100'
@@ -187,12 +178,10 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - >-
-          |Enemies around you receive 100% (Air) damage. You receive a status
-          that turns enemies in [2]m radius Blind.|
-      DisplayName:
-        - '|Blinding Radiance|'
+      Description: >-
+        Enemies around you receive 100% (Air) damage. You receive a status that
+        turns enemies in [2]m radius Blind.
+      DisplayName: Blinding Radiance
       ForGameMaster: true
       Icon: Skill_Air_BlindingRadiance
       Id: Shout_BlindingRadiance
@@ -215,12 +204,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Creates a bubble around your head full of clean air, allowing you to
-          ignore effects of cloud surfaces. Immune to Suffocation.|
-      DisplayName:
-        - '|Breathing Bubble|'
+      Description: >-
+        Creates a bubble around your head full of clean air, allowing you to
+        ignore effects of cloud surfaces. Immune to Suffocation.
+      DisplayName: Breathing Bubble
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_BreathingBubble
       Id: Shout_BreathingBubble
@@ -246,12 +233,10 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - >-
-          |Deal 100% (Air) damage to enemies around you and create cursed static
-          clouds on the edge of the area of effect|
-      DisplayName:
-        - '|Electric Fence|'
+      Description: >-
+        Deal 100% (Air) damage to enemies around you and create cursed static
+        clouds on the edge of the area of effect
+      DisplayName: Electric Fence
       ForGameMaster: true
       Icon: Skill_Air_ElectricFence
       Id: Shout_ElectricFence
@@ -275,12 +260,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Set Evasion on allies around you, increasing Dodging by 100% and
-          Movement Speed by 20%.|
-      DisplayName:
-        - '|Evasive Aura|'
+      Description: >-
+        Set Evasion on allies around you, increasing Dodging by 100% and
+        Movement Speed by 20%.
+      DisplayName: Evasive Aura
       ForGameMaster: true
       Icon: Skill_Air_EvasiveAura
       Id: Shout_EvasiveAura
@@ -300,10 +283,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 6
-      Description:
-        - '|An aura that helps you and your allies move faster|'
-      DisplayName:
-        - '|Favourable Wind|'
+      Description: An aura that helps you and your allies move faster
+      DisplayName: Favourable Wind
       ForGameMaster: true
       Icon: Skill_Air_FavourableWind
       Id: Shout_FavourableWind
@@ -325,12 +306,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Set Breathing Bubbles on allies around you, allowing them to ignore
-          cloud surfaces and Suffocation status.|
-      DisplayName:
-        - '|Mass Breathing Bubbles|'
+      Description: >-
+        Set Breathing Bubbles on allies around you, allowing them to ignore
+        cloud surfaces and Suffocation status.
+      DisplayName: Mass Breathing Bubbles
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_MassBreathingBubble
       Id: Shout_MassBreathingBubbles
@@ -351,10 +330,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - '|Create smoke cloud around you, hiding you from sight.|'
-      DisplayName:
-        - '|Smoke Cover|'
+      Description: 'Create smoke cloud around you, hiding you from sight.'
+      DisplayName: Smoke Cover
       ForGameMaster: true
       Icon: Skill_Air_Skillcrafting_SmokeCover
       Id: Shout_SmokeCover
@@ -378,12 +355,10 @@
       DamageMultiplier: 80
       DamageRange: 10
       DamageType: Air
-      Description:
-        - >-
-          |Deal 100% (Air) damage to enemies in the area. Caster receives an
-          aura that sets Silence and Suffocating on enemies.|
-      DisplayName:
-        - '|Vacuum Aura|'
+      Description: >-
+        Deal 100% (Air) damage to enemies in the area. Caster receives an aura
+        that sets Silence and Suffocating on enemies.
+      DisplayName: Vacuum Aura
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_VacuumAura
       Id: Shout_VacuumAura
@@ -403,10 +378,8 @@
       AreaRadius: 10
       Cooldown: 5
       DeathType: Explode
-      Description:
-        - '|Storm rages in target area, hitting enemies with lightning bolts|'
-      DisplayName:
-        - '|Thunder Storm|'
+      Description: 'Storm rages in target area, hitting enemies with lightning bolts'
+      DisplayName: Thunder Storm
       ForGameMaster: true
       HitDelay: '0'
       HitRadius: '1'
@@ -433,10 +406,8 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 3
-      Description:
-        - '| Transport pickupable items in target area to your inventory |'
-      DisplayName:
-        - '| Apportation |'
+      Description: ' Transport pickupable items in target area to your inventory '
+      DisplayName: ' Apportation '
       ForGameMaster: true
       Icon: Skill_Air_Apportation
       Id: Target_Apportation
@@ -460,12 +431,8 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_aoe_water_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Conjure a cloud of thick blessed smoke that makes characters
-          Invisible.|
-      DisplayName:
-        - '|Blessed Smoke Cloud|'
+      Description: Conjure a cloud of thick blessed smoke that makes characters Invisible.
+      DisplayName: Blessed Smoke Cloud
       ForGameMaster: true
       Icon: Skill_Air_Skillcrafting_BlessedSmokeCloud
       Id: Target_BlessedSmokeCloud
@@ -486,12 +453,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 4
-      Description:
-        - >-
-          |Your Dodging is increased by 100% and Movement Speed is increased by
-          20%.|
-      DisplayName:
-        - '|Uncanny Evasion|'
+      Description: >-
+        Your Dodging is increased by 100% and Movement Speed is increased by
+        20%.
+      DisplayName: Uncanny Evasion
       ForGameMaster: true
       Icon: Skill_Air_UncannyEvasion
       Id: Target_EvasiveManeuver
@@ -518,12 +483,10 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Physical
-      Description:
-        - >-
-          |Condense all cloud surfaces in the area. Deal air damage to enemies,
-          douse fire.|
-      DisplayName:
-        - '|Pressure Spike|'
+      Description: >-
+        Condense all cloud surfaces in the area. Deal air damage to enemies,
+        douse fire.
+      DisplayName: Pressure Spike
       ForGameMaster: true
       Icon: Skill_Air_PressureSpike
       Id: Target_PressureSpike
@@ -550,10 +513,8 @@
       DamageRange: 10
       DamageType: Air
       DeathType: Electrocution
-      Description:
-        - Electrify a target at an arm's distance. Deals 100% (Air) damage.
-      DisplayName:
-        - Shocking Touch
+      Description: Electrify a target at an arm's distance. Deals 100% (Air) damage.
+      DisplayName: Shocking Touch
       ForGameMaster: true
       Icon: Skill_Air_ShockingTouch
       Id: Target_ShockingTouch
@@ -563,9 +524,9 @@
       MemoryCost: '1'
       SkillProperties: 'SHOCKED,100,2;Electrify'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 2'
-        - Stunned makes target unable to move or act.
+      StatsDescription: |-
+        Range: 2
+        Stunned makes target unable to move or act.
       StatsDescriptionParams: TargetRadius;Damage
       TargetConditions: NonSelf
       TargetRadius: '2'
@@ -584,10 +545,8 @@
       DamageMultiplier: 50
       DamageRange: 10
       DamageType: Air
-      Description:
-        - '|Deal 100% (Air) damage. Set Suffocation and Silence on target.|'
-      DisplayName:
-        - '|Vacuum Touch|'
+      Description: Deal 100% (Air) damage. Set Suffocation and Silence on target.
+      DisplayName: Vacuum Touch
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_VacuumTouch
       Id: Target_VacuumTouch
@@ -613,12 +572,8 @@
       CastSelfAnimation: skill_cast_ground_fire_01_cast
       CleanseStatuses: PETRIFIED;FROZEN;
       Cooldown: 4
-      Description:
-        - >-
-          |Vaporize ground surfaces into clouds. Doesn't work on Oil, Ice or
-          Lava.|
-      DisplayName:
-        - '|Vaporize|'
+      Description: 'Vaporize ground surfaces into clouds. Doesn''t work on Oil, Ice or Lava.'
+      DisplayName: Vaporize
       ForGameMaster: true
       Icon: Skill_Air_Vaporize
       Id: Target_Vaporize
@@ -640,12 +595,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 6
-      Description:
-        - >-
-          |Cause target character to teleport in random direction each time when
-          they are attacked. Increases Air Resistance by [1]%. |
-      DisplayName:
-        - '|Erratic Wisp|'
+      Description: >-
+        Cause target character to teleport in random direction each time when
+        they are attacked. Increases Air Resistance by [1]%. 
+      DisplayName: Erratic Wisp
       ForGameMaster: true
       Icon: Skill_Air_WindWalker
       Id: Target_Windwalker
@@ -673,12 +626,10 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Physical
-      Description:
-        - >-
-          Throw an item or character up high and drop it to the ground, dealing
-          100% (Physical) damage.
-      DisplayName:
-        - Teleportation
+      Description: >-
+        Throw an item or character up high and drop it to the ground, dealing
+        100% (Physical) damage.
+      DisplayName: Teleportation
       ForGameMaster: true
       Height: '5'
       HitRadius: '1'
@@ -689,10 +640,10 @@
       MemoryCost: '1'
       OverrideSkillLevel: 'Yes'
       SkillType: Teleportation
-      StatsDescription:
-        - 'Target range: 13'
-        - Target can be moved 13 away from its position.
-        - 'Select item or character first, then select its destination.'
+      StatsDescription: |-
+        Target range: 13
+        Target can be moved 13 away from its position.
+        Select item or character first, then select its destination.
       StatsDescriptionParams: Damage;AreaRadius;TargetRadius
       TargetConditions: '!Grounded;AllowDead;NonSelf'
       TargetRadius: '13'
@@ -707,10 +658,8 @@
       CanTargetItems: true
       CanTargetTerrain: 'No'
       Cooldown: 3
-      Description:
-        - Make two characters switch places. One of the characters can be you.
-      DisplayName:
-        - Netherswap
+      Description: Make two characters switch places. One of the characters can be you.
+      DisplayName: Netherswap
       ForGameMaster: true
       Height: '5'
       HitRadius: '1'
@@ -730,12 +679,10 @@
       CleanseStatuses: INVISIBLE;BURNING;SLOWED
       Cooldown: 10
       DeathType: Physical
-      Description:
-        - >-
-          Removes surfaces from the battlefield, reveals invisible characters
-          and clears Warm, Burning and Hastened.
-      DisplayName:
-        - Tornado
+      Description: >-
+        Removes surfaces from the battlefield, reveals invisible characters and
+        clears Warm, Burning and Hastened.
+      DisplayName: Tornado
       ForGameMaster: true
       HitRadius: '2'
       Icon: Skill_Air_Tornado
@@ -746,8 +693,7 @@
       PointsMaxOffset: '4'
       RandomPoints: '5'
       SkillType: Tornado
-      StatsDescription:
-        - 'Radius: 2'
+      StatsDescription: 'Radius: 2'
       StatsDescriptionParams: HitRadius
       StatusClearChance: '100'
       SurfaceLifetime: '0'
@@ -766,10 +712,8 @@
       CanTargetItems: true
       Cooldown: 2
       DeathType: Physical
-      Description:
-        - '|Silence enemies in a cone in front of you.|'
-      DisplayName:
-        - '|Silencing Stare|'
+      Description: Silence enemies in a cone in front of you.
+      DisplayName: Silencing Stare
       ForGameMaster: true
       Icon: Skill_Decay_SilencingStare
       Id: Cone_SilencingStare
@@ -800,10 +744,8 @@
       AreaRadius: 10
       ConsequencesStartTime: '1000'
       Cooldown: 5
-      Description:
-        - '|Create blood surfaces. Set Bleeding to enemies.|'
-      DisplayName:
-        - Rain Of Blood
+      Description: Create blood surfaces. Set Bleeding to enemies.
+      DisplayName: Rain Of Blood
       ForGameMaster: true
       Icon: Skill_Decay_BloodRain
       Id: Rain_Blood
@@ -813,9 +755,9 @@
       MemoryCost: '1'
       SkillProperties: 'BLEEDING,100,2;Douse'
       SkillType: Rain
-      StatsDescription:
-        - 'Radius: 10'
-        - 'Duration: 1'
+      StatsDescription: |-
+        Radius: 10
+        Duration: 1
       StatsDescriptionParams: AreaRadius;Lifetime
       SurfaceGrowInterval: '150'
       SurfaceGrowStep: '5'
@@ -836,12 +778,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Increases Physical Armour by [1] and another [1] for each corpse in
-          the around you.|
-      DisplayName:
-        - '|Bone Cage|'
+      Description: >-
+        Increases Physical Armour by [1] and another [1] for each corpse in the
+        around you.
+      DisplayName: Bone Cage
       ForGameMaster: true
       Icon: Skill_Decay_BoneCage
       Id: Shout_BoneCage
@@ -864,12 +804,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Corpses around you explode and totems with ranged damage spawn next
-          to them.|
-      DisplayName:
-        - '|Totems of the Necromancer|'
+      Description: >-
+        Corpses around you explode and totems with ranged damage spawn next to
+        them.
+      DisplayName: Totems of the Necromancer
       ForGameMaster: true
       Icon: Skill_Decay_NecromancerTotems
       Id: Shout_NecromancerTotems
@@ -889,13 +827,11 @@
       AreaRadius: 10
       Cooldown: 5
       DeathType: Explode
-      Description:
-        - >-
-          |The sky is weeping bloody tears. Bolts of coagulated blood fall on
-          enemy characters in the area, setting Disease and Decaying Touch.
-          Turns all water into blood in the area.| |
-      DisplayName:
-        - '| Blood Storm |'
+      Description: >-
+        The sky is weeping bloody tears. Bolts of coagulated blood fall on enemy
+        characters in the area, setting Disease and Decaying Touch. Turns all
+        water into blood in the area.| 
+      DisplayName: ' Blood Storm '
       ForGameMaster: true
       HitDelay: '0'
       HitRadius: '1'
@@ -917,12 +853,10 @@
     - Ability: Death
       ActionPoints: 3
       Cooldown: 5
-      Description:
-        - >-
-          |Raise a walking pile of bones. It can consume corpses to restore
-          Vitality and receive a stacking Damage buff.|
-      DisplayName:
-        - '| Raise Bone Pile |'
+      Description: >-
+        Raise a walking pile of bones. It can consume corpses to restore
+        Vitality and receive a stacking Damage buff.
+      DisplayName: ' Raise Bone Pile '
       ForGameMaster: true
       Icon: Skill_Decay_RaiseBonePile
       Id: Summon_BonePile
@@ -944,12 +878,10 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_aoe_water_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Create a cloud of cursed smoke in an area, applying Suffocating and
-          Blind statuses to all characters inside.|
-      DisplayName:
-        - '|Black Shroud|'
+      Description: >-
+        Create a cloud of cursed smoke in an area, applying Suffocating and
+        Blind statuses to all characters inside.
+      DisplayName: Black Shroud
       ForGameMaster: true
       Icon: Skill_Decay_BlackShroud
       Id: Target_BlackShroud
@@ -970,12 +902,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Target an intact corpse to raise a bloated cadaver that fight's for
-          you. It can explode in a cloud of blood and Physical damage.|
-      DisplayName:
-        - '| Raise Bloated Corpse |'
+      Description: >-
+        Target an intact corpse to raise a bloated cadaver that fight's for you.
+        It can explode in a cloud of blood and Physical damage.
+      DisplayName: ' Raise Bloated Corpse '
       ForGameMaster: true
       Icon: Skill_Decay_RaiseBloatedCorpse
       Id: Target_BloatedCorpse
@@ -1001,12 +931,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_touch_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Consume all blood surfaces around you, then restore Vitality
-          proportionally to area of consumed surfaces.|
-      DisplayName:
-        - '|Blood Bubble|'
+      Description: >-
+        Consume all blood surfaces around you, then restore Vitality
+        proportionally to area of consumed surfaces.
+      DisplayName: Blood Bubble
       ForGameMaster: true
       Icon: Skill_Decay_BloodBubble
       Id: Target_BloodBubble
@@ -1029,12 +957,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_soul_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Target character receives a damage bonus equal to % of their missing
-          hp, but also receives physical damage each turn.|
-      DisplayName:
-        - '|Death Wish|'
+      Description: >-
+        Target character receives a damage bonus equal to % of their missing hp,
+        but also receives physical damage each turn.
+      DisplayName: Death Wish
       ForGameMaster: true
       Icon: Skill_Decay_DeathWish
       Id: Target_DeathWish
@@ -1059,10 +985,8 @@
       CastSelfAnimation: skill_cast_target_soul_01_cast
       Cooldown: 5
       DeathType: Physical
-      Description:
-        - '|Your Vitality cannot be reduced below 1 point.|'
-      DisplayName:
-        - '|DeathsDoor|'
+      Description: Your Vitality cannot be reduced below 1 point.
+      DisplayName: DeathsDoor
       ForGameMaster: true
       Icon: Skill_Decay_LivingOnTheEdge
       Id: Target_DeathsDoor
@@ -1089,12 +1013,10 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Piercing
-      Description:
-        - >-
-          |Deal 100% (Physical) damage to target character. Make the target
-          decay, so that it will take damage from healing.|
-      DisplayName:
-        - Decaying Touch
+      Description: >-
+        Deal 100% (Physical) damage to target character. Make the target decay,
+        so that it will take damage from healing.
+      DisplayName: Decaying Touch
       ForGameMaster: true
       Icon: Skill_Decay_DecayingTouch
       Id: Target_DecayingTouch
@@ -1104,9 +1026,9 @@
       MemoryCost: '1'
       SkillProperties: 'DECAYING_TOUCH,100,2'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 100% (Physical)'
-        - Decay makes healing spells and potions do damage on target.
+      StatsDescription: |-
+        Range: 100% (Physical)
+        Decay makes healing spells and potions do damage on target.
       StatsDescriptionParams: Damage;TargetRadius
       TargetConditions: Character
       TargetRadius: '2'
@@ -1127,13 +1049,11 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Piercing
-      Description:
-        - >-
-          |Undead hands rise from underground in target area, attacking enemy
-          characters that stand in blood surfaces. Deals 100% (Physical) damage
-          to each character and sets Crippled|
-      DisplayName:
-        - '|Grasp Of The Starved|'
+      Description: >-
+        Undead hands rise from underground in target area, attacking enemy
+        characters that stand in blood surfaces. Deals 100% (Physical) damage to
+        each character and sets Crippled
+      DisplayName: Grasp Of The Starved
       ForGameMaster: true
       Icon: Skill_Decay_GraspOfTheStarved
       Id: Target_GraspOfTheStarved
@@ -1161,13 +1081,11 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Piercing
-      Description:
-        - >-
-          |Deal 100% (Physical). Infect a target with a disease that will spread
-          to other nearby characters. Diseased characters deal reduced damage
-          with all attacks and have lowered Constitution.|
-      DisplayName:
-        - Infect
+      Description: >-
+        Deal 100% (Physical). Infect a target with a disease that will spread to
+        other nearby characters. Diseased characters deal reduced damage with
+        all attacks and have lowered Constitution.
+      DisplayName: Infect
       ForGameMaster: true
       Icon: Skill_Decay_Infect
       Id: Target_Infect
@@ -1204,12 +1122,10 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Physical
-      Description:
-        - >-
-          |Unleash a swarm of giant mosquitos to suck the blood out of your
-          enemies, dealing 100% (Physical) damage and healing yourself.|
-      DisplayName:
-        - '|Mosquito Swarm|'
+      Description: >-
+        Unleash a swarm of giant mosquitos to suck the blood out of your
+        enemies, dealing 100% (Physical) damage and healing yourself.
+      DisplayName: Mosquito Swarm
       ForGameMaster: true
       Icon: Skill_Decay_MosquitoSwarm
       Id: Target_MosquitoSwarm
@@ -1233,10 +1149,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_beam_soul_01_cast
       Cooldown: 5
-      Description:
-        - Mark a target that will receive all of the damage you receive.
-      DisplayName:
-        - Shackles Of Pain
+      Description: Mark a target that will receive all of the damage you receive.
+      DisplayName: Shackles Of Pain
       ForGameMaster: true
       Icon: Skill_Decay_ShacklesOfPain
       Id: Target_ShacklesOfPain
@@ -1258,12 +1172,10 @@
       CanTargetItems: false
       CanTargetTerrain: 'Yes'
       Cooldown: -1
-      Description:
-        - >-
-          |Sacrifice your lifeblood to bring an ally back to life. Deals [1]
-          damage to you, resurrects target character with maximum Vitality.|
-      DisplayName:
-        - '|Last Rites|'
+      Description: >-
+        Sacrifice your lifeblood to bring an ally back to life. Deals [1] damage
+        to you, resurrects target character with maximum Vitality.
+      DisplayName: Last Rites
       ForGameMaster: true
       Icon: Skill_Decay_LastRites
       Id: Teleportation_LastRites
@@ -1292,12 +1204,10 @@
       DamageMultiplier: 100
       DamageRange: 10
       DamageType: Corrosive
-      Description:
-        - >-
-          |Reduce Physical Armour on targets in a cone by 100% (Corrosive), set
-          Acid and Disarmed.|
-      DisplayName:
-        - '|Corrosive Spray|'
+      Description: >-
+        Reduce Physical Armour on targets in a cone by 100% (Corrosive), set
+        Acid and Disarmed.
+      DisplayName: Corrosive Spray
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_CorrosiveSpray
       Id: Cone_CorrosiveSpray
@@ -1342,12 +1252,10 @@
       DamageRange: 10
       DamageType: Poison
       DeathType: Acid
-      Description:
-        - >-
-          |Shoot spores full of corrosive acid, dealing 100% (Poison) damage in
-          total.|
-      DisplayName:
-        - '|Acid Spores|'
+      Description: >-
+        Shoot spores full of corrosive acid, dealing 100% (Poison) damage in
+        total.
+      DisplayName: Acid Spores
       ExplodeRadius: '2'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1384,12 +1292,10 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - >-
-          |Throw dust at all enemies in range, blinding them and dealing 100%
-          (Earth) damage.|
-      DisplayName:
-        - '|Dust Blast|'
+      Description: >-
+        Throw dust at all enemies in range, blinding them and dealing 100%
+        (Earth) damage.
+      DisplayName: Dust Blast
       ExplodeRadius: '2'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1420,10 +1326,8 @@
       DamageRange: 10
       DamageType: Poison
       DeathType: Acid
-      Description:
-        - Cast a magical poisonous dart that does 100% (Poison) damage.
-      DisplayName:
-        - Magical Poison Dart
+      Description: Cast a magical poisonous dart that does 100% (Poison) damage.
+      DisplayName: Magical Poison Dart
       ExplodeRadius: '1'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1438,10 +1342,10 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'POISONED,100,3;CreateSurface,1,,Poison,100'
       SkillType: Projectile
-      StatsDescription:
-        - 'Range: 13'
-        - Poisoned deals poison damage over time.
-        - Can target terrain to create ooze surface.
+      StatsDescription: |-
+        Range: 13
+        Poisoned deals poison damage over time.
+        Can target terrain to create ooze surface.
       StatsDescriptionParams: Damage;TargetRadius
       TargetRadius: '13'
       Tier: Starter
@@ -1462,10 +1366,8 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - '|Oil-filled rocks are sent at all enemies in the area.|'
-      DisplayName:
-        - '|Pyroclastic Eruption|'
+      Description: Oil-filled rocks are sent at all enemies in the area.
+      DisplayName: Pyroclastic Eruption
       ExplodeRadius: '3'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1499,12 +1401,10 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - >-
-          |Lob a giant rock filled with sticky oil that will deal 100% (Earth)
-          damage on landing.|
-      DisplayName:
-        - Fossil Strike
+      Description: >-
+        Lob a giant rock filled with sticky oil that will deal 100% (Earth)
+        damage on landing.
+      DisplayName: Fossil Strike
       ExplodeRadius: '2'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1529,8 +1429,7 @@
       UseWeaponProperties: false
     - Ability: Earth
       DamageType: Poison
-      DisplayName:
-        - Breath from the Depths
+      DisplayName: Breath from the Depths
       ForGameMaster: true
       Id: Projectile_Quest_KrakenRay_Poison
       SkillProperties: 'CreateSurface,4,,PoisonCursed,100;POISONED,20,2'
@@ -1546,12 +1445,10 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - >-
-          |Throw dust at the enemy, blinding them and dealing 100% (Earth)
-          damage. Clears surfaces and clouds when targeted at the ground|
-      DisplayName:
-        - '|Throw Dust|'
+      Description: >-
+        Throw dust at the enemy, blinding them and dealing 100% (Earth) damage.
+        Clears surfaces and clouds when targeted at the ground
+      DisplayName: Throw Dust
       ExplodeRadius: '2'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -1582,12 +1479,10 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: DoT
-      Description:
-        - >-
-          |Deal  100% (Earth) damage and Knock Down enemy characters in the area
-          around you. Creates 8 oil surfaces randomly in the radius.|
-      DisplayName:
-        - Earthquake
+      Description: >-
+        Deal  100% (Earth) damage and Knock Down enemy characters in the area
+        around you. Creates 8 oil surfaces randomly in the radius.
+      DisplayName: Earthquake
       ForGameMaster: true
       Icon: Skill_Earth_Earthquake
       Id: Quake_Earthquake
@@ -1621,12 +1516,10 @@
       DamageRange: 10
       DamageType: Poison
       DeathType: Acid
-      Description:
-        - >-
-          |Deal 100% (Poison) damage and set Poisoned to enemies around you.
-          Turn water and blood surfaces and clouds into poison.|
-      DisplayName:
-        - '|Contamination|'
+      Description: >-
+        Deal 100% (Poison) damage and set Poisoned to enemies around you. Turn
+        water and blood surfaces and clouds into poison.
+      DisplayName: Contamination
       ForGameMaster: true
       Icon: Skill_Earth_Contamination
       Id: Shout_Contamination
@@ -1649,12 +1542,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Each ally consumes oil surfaces around them and convert them to Magic
-          Armour.|
-      DisplayName:
-        - '|Mass Oily Carapace|'
+      Description: >-
+        Each ally consumes oil surfaces around them and convert them to Magic
+        Armour.
+      DisplayName: Mass Oily Carapace
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_MassOilyCarapace
       Id: Shout_MassOilyCarapace
@@ -1675,10 +1566,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - '|Allies in aoe start slowly regenerating Physical Armor|'
-      DisplayName:
-        - '|Mend Metal|'
+      Description: Allies in aoe start slowly regenerating Physical Armor
+      DisplayName: Mend Metal
       ForGameMaster: true
       Icon: Skill_Earth_MendMetal
       Id: Shout_MendMetal
@@ -1700,10 +1589,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - '|Consume oil surfaces around you and convert them to Physical Armour|'
-      DisplayName:
-        - '|Oily Carapace|'
+      Description: Consume oil surfaces around you and convert them to Physical Armour
+      DisplayName: Oily Carapace
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_OilyCarapace
       Id: Shout_OilyCarapace
@@ -1728,12 +1615,10 @@
       DamageRange: 10
       DamageType: Poison
       DeathType: Acid
-      Description:
-        - >-
-          |Circular eruption of poison from the caster (reacts with other
-          clouds). Immunity to poison for one turn|
-      DisplayName:
-        - '|Poison Wave|'
+      Description: >-
+        Circular eruption of poison from the caster (reacts with other clouds).
+        Immunity to poison for one turn
+      DisplayName: Poison Wave
       ForGameMaster: true
       Icon: Skill_Earth_PoisonWave
       Id: Shout_PoisonWave
@@ -1761,13 +1646,11 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Physical
-      Description:
-        - >-
-          |Deal physical damage equal to half of your current Physical Armour
-          (SourceCurrentPhysicalArmor damage) in a wave of metal spikes to
-          everyone in the area including yourself.|
-      DisplayName:
-        - '|Reactive Armor|'
+      Description: >-
+        Deal physical damage equal to half of your current Physical Armour
+        (SourceCurrentPhysicalArmor damage) in a wave of metal spikes to
+        everyone in the area including yourself.
+      DisplayName: Reactive Armor
       ForGameMaster: true
       Icon: Skill_Earth_ReactiveArmor
       Id: Shout_ReactiveArmor
@@ -1789,12 +1672,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Remove Poison surfaces and clouds. Gain boost for poison damage
-          depending on amount of cells cleared|
-      DisplayName:
-        - '|Siphon Poison|'
+      Description: >-
+        Remove Poison surfaces and clouds. Gain boost for poison damage
+        depending on amount of cells cleared
+      DisplayName: Siphon Poison
       ForGameMaster: true
       Icon: Skill_Earth_SiphonPoison
       Id: Shout_SiphonPoison
@@ -1817,12 +1698,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Coat your weapons with poison, adding poison damage to your weapon
-          attacks.|
-      DisplayName:
-        - '|Venom Coating|'
+      Description: >-
+        Coat your weapons with poison, adding poison damage to your weapon
+        attacks.
+      DisplayName: Venom Coating
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_VenomCoating
       Id: Shout_VenomCoating
@@ -1844,10 +1723,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - '|Allies in range receive Venom Coating|'
-      DisplayName:
-        - '|Venomous Aura|'
+      Description: Allies in range receive Venom Coating
+      DisplayName: Venomous Aura
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_VenomCoatingAura
       Id: Shout_VenomousAura
@@ -1864,10 +1741,8 @@
     - Ability: Earth
       ActionPoints: 3
       Cooldown: 6
-      Description:
-        - '|Plant can lob acidic spores and emit cursed poison clouds.|'
-      DisplayName:
-        - Summon Plant Monster
+      Description: Plant can lob acidic spores and emit cursed poison clouds.
+      DisplayName: Summon Plant Monster
       ForGameMaster: true
       Icon: Skill_Earth_PoisonousPlantMonster
       Id: Summon_ArtilleryPlant
@@ -1890,10 +1765,8 @@
       CastSelfAnimation: skill_cast_ground_fire_01_cast
       CleanseStatuses: STUNNED;SHOCKED
       Cooldown: 4
-      Description:
-        - '|Turn water and blood surfaces into Oil. Remove Stun from characters.|'
-      DisplayName:
-        - '|Oil Condenser|'
+      Description: Turn water and blood surfaces into Oil. Remove Stun from characters.
+      DisplayName: Oil Condenser
       ForGameMaster: true
       Icon: Skill_Earth_OilSpring
       Id: Target_Condense
@@ -1918,10 +1791,8 @@
       DamageMultiplier: 100
       DamageRange: 10
       DamageType: Corrosive
-      Description:
-        - '|Reduce target''s Physical Armour by 100% (Corrosive), set Acid.|'
-      DisplayName:
-        - '|Corrosive Touch|'
+      Description: 'Reduce target''s Physical Armour by 100% (Corrosive), set Acid.'
+      DisplayName: Corrosive Touch
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_CorrosiveTouch
       Id: Target_CorrosiveTouch
@@ -1945,13 +1816,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_earth_01_cast
       Cooldown: 4
-      Description:
-        - >-
-          Increases and fills a character's maximum Physical Armour by [1].
-          While Fortified, the target cannot be teleported. Removes Poisoned,
-          Bleeding, Burning.
-      DisplayName:
-        - Fortify
+      Description: >-
+        Increases and fills a character's maximum Physical Armour by [1]. While
+        Fortified, the target cannot be teleported. Removes Poisoned, Bleeding,
+        Burning.
+      DisplayName: Fortify
       ForGameMaster: true
       Icon: Skill_Earth_BelovedByNature
       Id: Target_Fortify
@@ -1979,12 +1848,10 @@
       DamageRange: 10
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - >-
-          |Rock Spikes strike all characters, crippling them and dealing 100%
-          (Earth) damage. Creates an oil puddle in the area.|
-      DisplayName:
-        - Impalement
+      Description: >-
+        Rock Spikes strike all characters, crippling them and dealing 100%
+        (Earth) damage. Creates an oil puddle in the area.
+      DisplayName: Impalement
       ForGameMaster: true
       Icon: Skill_Earth_RockSpikes
       Id: Target_RockSpikes
@@ -2011,13 +1878,11 @@
       DamageMultiplier: 50
       DamageRange: 10
       DamageType: Earth
-      Description:
-        - >-
-          |Horrible worms crawl out of the earth, attaching to every character
-          in the area, preventing them from moving or teleporting and dealing
-          poison damage each turn. Deals 100% (Earth) damage.|
-      DisplayName:
-        - '|Worm Tremor|'
+      Description: >-
+        Horrible worms crawl out of the earth, attaching to every character in
+        the area, preventing them from moving or teleporting and dealing poison
+        damage each turn. Deals 100% (Earth) damage.
+      DisplayName: Worm Tremor
       ForGameMaster: true
       Icon: Skill_Earth_WormTremor
       Id: Target_WormTremor
@@ -2036,12 +1901,10 @@
     - Ability: Earth
       ActionPoints: 2
       Cooldown: 5
-      Description:
-        - >-
-          |Vines block path in target area, perform a poison attack on anybody
-          that gets close.|
-      DisplayName:
-        - '|Living Wall|'
+      Description: >-
+        Vines block path in target area, perform a poison attack on anybody that
+        gets close.
+      DisplayName: Living Wall
       ForGameMaster: true
       GrowSpeed: '5'
       GrowTimeout: '0'
@@ -2075,12 +1938,10 @@
       DamageRange: 5
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          25 fireballs come crashing from the sky. Each does 100% (Fire) damage
-          to enemies within a 3 range from impact.
-      DisplayName:
-        - Meteor Shower
+      Description: >-
+        25 fireballs come crashing from the sky. Each does 100% (Fire) damage to
+        enemies within a 3 range from impact.
+      DisplayName: Meteor Shower
       Distribution: Normal
       ExplodeRadius: '3'
       ForceTarget: 'Yes'
@@ -2098,12 +1959,13 @@
       SingleSource: 'No'
       SkillProperties: 'Ignite;CreateSurface,3,,Fire,100'
       SkillType: ProjectileStrike
-      StatsDescription:
-        - 'Range: 13'
-        - Burning does fire damage over time.
-        - >-
-          Can target terrain to create fire surface, burn ooze or oil, evaporate
-          water, or melt ice. Can explode some clouds.
+      StatsDescription: >-
+        Range: 13
+
+        Burning does fire damage over time.
+
+        Can target terrain to create fire surface, burn ooze or oil, evaporate
+        water, or melt ice. Can explode some clouds.
       StatsDescriptionParams: Damage;ExplodeRadius;StrikeCount;TargetRadius
       StrikeCount: '25'
       StrikeDelay: '80'
@@ -2130,13 +1992,11 @@
       CastAnimationCheck: Distance
       Cooldown: 5
       DeathType: Physical
-      Description:
-        - >-
-          |Throw an 4 explosive traps at target locations. Each trap takes a
-          turn to activate. When active, trap will explode when a character
-          approaches it.|
-      DisplayName:
-        - '|Deploy Mass Traps|'
+      Description: >-
+        Throw an 4 explosive traps at target locations. Each trap takes a turn
+        to activate. When active, trap will explode when a character approaches
+        it.
+      DisplayName: Deploy Mass Traps
       ExplodeRadius: '3'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2169,10 +2029,8 @@
       DamageRange: 10
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - '|Send a fiery sphere that will explode and deal 100% (Fire) damage.|'
-      DisplayName:
-        - '|Fireball|'
+      Description: Send a fiery sphere that will explode and deal 100% (Fire) damage.
+      DisplayName: Fireball
       ExplodeRadius: '3'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2205,12 +2063,10 @@
       DamageRange: 10
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Shoot three flaming daggers in a row, each setting Warm. Deals a
-          total of 100% (Fire) damage|
-      DisplayName:
-        - Searing Daggers
+      Description: >-
+        Shoot three flaming daggers in a row, each setting Warm. Deals a total
+        of 100% (Fire) damage
+      DisplayName: Searing Daggers
       ExplodeRadius: '1'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2242,12 +2098,10 @@
       DamageRange: 15
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Send a cursed flame that will split on impact up to 5 times, dealing
-          100% (Fire) damage and leaving a cursed fire surface behind.|
-      DisplayName:
-        - Epidemic Of Fire
+      Description: >-
+        Send a cursed flame that will split on impact up to 5 times, dealing
+        100% (Fire) damage and leaving a cursed fire surface behind.
+      DisplayName: Epidemic Of Fire
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2280,13 +2134,10 @@
       CastAnimationCheck: Distance
       Cooldown: 3
       DeathType: Physical
-      Description:
-        - >-
-          |Throw an explosive trap at target location. Trap takes a turn to
-          activate. When active, trap will explode when a character approaches
-          it.|
-      DisplayName:
-        - '|Throw Explosive Trap|'
+      Description: >-
+        Throw an explosive trap at target location. Trap takes a turn to
+        activate. When active, trap will explode when a character approaches it.
+      DisplayName: Throw Explosive Trap
       ExplodeRadius: '3'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2315,12 +2166,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - >-
-          |An aura that adds fire damage to weapon attacks for all allies in
-          aoe.|
-      DisplayName:
-        - '|Fire Brand|'
+      Description: An aura that adds fire damage to weapon attacks for all allies in aoe.
+      DisplayName: Fire Brand
       ForGameMaster: true
       Icon: Skill_Fire_FireBrand
       Id: Shout_FireBrand
@@ -2344,12 +2191,8 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 5
-      Description:
-        - >-
-          |Flaming Tongues protect you, immediately attacking approaching
-          enemies.|
-      DisplayName:
-        - '|Flaming Tongues|'
+      Description: 'Flaming Tongues protect you, immediately attacking approaching enemies.'
+      DisplayName: Flaming Tongues
       ForGameMaster: true
       Icon: Skill_Fire_FlamingTongues
       Id: Shout_FlamingTongues
@@ -2375,12 +2218,10 @@
       DamageRange: 10
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Set enemy characters on fire around you and deal 100% (Fire) damage.
-          Ignite all susceptible surfaces.|
-      DisplayName:
-        - '|Ignition|'
+      Description: >-
+        Set enemy characters on fire around you and deal 100% (Fire) damage.
+        Ignite all susceptible surfaces.
+      DisplayName: Ignition
       ForGameMaster: true
       Icon: Skill_Fire_Ignition
       Id: Shout_Ignition
@@ -2403,10 +2244,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 2
-      Description:
-        - '|Explode all corpses and Zombies around you.|'
-      DisplayName:
-        - '|Mass Corpse Explosion|'
+      Description: Explode all corpses and Zombies around you.
+      DisplayName: Mass Corpse Explosion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_MassCorpseExplosion
       Id: Shout_MassCorpseExplosion
@@ -2427,12 +2266,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Receive Sparkstriker status that causes your melee attacks to create
-          Spark projectile flying off the initial target at closest enemy|
-      DisplayName:
-        - '|Sparking Swings|'
+      Description: >-
+        Receive Sparkstriker status that causes your melee attacks to create
+        Spark projectile flying off the initial target at closest enemy
+      DisplayName: Sparking Swings
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_SparkingSwings
       Id: Shout_SparkingSwings
@@ -2457,12 +2294,10 @@
       DamageRange: 10
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Explode, dealing 100% (Fire) damage in a large area around you,
-          creating fire surface.|
-      DisplayName:
-        - '|Supernova|'
+      Description: >-
+        Explode, dealing 100% (Fire) damage in a large area around you, creating
+        fire surface.
+      DisplayName: Supernova
       ForGameMaster: true
       Icon: Skill_Fire_Supernova
       Id: Shout_Supernova
@@ -2480,12 +2315,10 @@
       ActionPoints: 1
       AIFlags: CanNotUse
       Cooldown: 6
-      Description:
-        - >-
-          |Fire slug can rush at enemies, leaving a fire trail and burn them
-          with a powerful ray.|
-      DisplayName:
-        - '|Summon Fire Slug|'
+      Description: >-
+        Fire slug can rush at enemies, leaving a fire trail and burn them with a
+        powerful ray.
+      DisplayName: Summon Fire Slug
       ForGameMaster: true
       Icon: Skill_Fire_SummonFireSlug
       Id: Summon_FireSlug
@@ -2507,13 +2340,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_touch_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Target gains Clear-Minded, which increases Strength, Finesse and
-          Intelligence by [1] and Wits by [2]. Removes Blinded, Terrified,
-          Charmed, Taunted, Sleeping, Enraged.|
-      DisplayName:
-        - '|Burn My Eyes|'
+      Description: >-
+        Target gains Clear-Minded, which increases Strength, Finesse and
+        Intelligence by [1] and Wits by [2]. Removes Blinded, Terrified,
+        Charmed, Taunted, Sleeping, Enraged.
+      DisplayName: Burn My Eyes
       ForGameMaster: true
       Icon: Skill_Fire_BurnMyEyes
       Id: Target_BurnMyEyes
@@ -2537,10 +2368,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 4
-      Description:
-        - '|Target corpse or a character with Zombie explodes.|'
-      DisplayName:
-        - '|Corpse Explosion|'
+      Description: Target corpse or a character with Zombie explodes.
+      DisplayName: Corpse Explosion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_CorpseExplosion
       Id: Target_CorpseExplosion
@@ -2566,12 +2395,10 @@
       DamageRange: 10
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Long range single target attack that deals 100% (Fire) damage,
-          leaving the target Blind and Burning.|
-      DisplayName:
-        - '|Fire Whip|'
+      Description: >-
+        Long range single target attack that deals 100% (Fire) damage, leaving
+        the target Blind and Burning.
+      DisplayName: Fire Whip
       ForGameMaster: true
       Icon: Skill_Fire_FlireWhip
       Id: Target_FireWhip
@@ -2598,12 +2425,10 @@
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 3
       DeathType: Incinerate
-      Description:
-        - >-
-          |Enemies in target area will bleed fire when hit. Create a small fire
-          surface beneath each target.|
-      DisplayName:
-        - '|Fireblood|'
+      Description: >-
+        Enemies in target area will bleed fire when hit. Create a small fire
+        surface beneath each target.
+      DisplayName: Fireblood
       ForGameMaster: true
       Icon: Skill_Fire_FireBlood
       Id: Target_Fireblood
@@ -2626,10 +2451,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 5
-      Description:
-        - '|Curse the target to explode in 3 turns or on death.|'
-      DisplayName:
-        - '|Flaming Crescendo|'
+      Description: Curse the target to explode in 3 turns or on death.
+      DisplayName: Flaming Crescendo
       ForGameMaster: true
       Icon: Skill_Fire_FlamingCrescendo
       Id: Target_FlamingCrescendo
@@ -2652,13 +2475,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Set Hasted on target character. Haste increases movement speed by 2m
-          per AP and gives an additional [2] AP per turn. Clears Slowed and
-          Crippled.|
-      DisplayName:
-        - '|Haste|'
+      Description: >-
+        Set Hasted on target character. Haste increases movement speed by 2m per
+        AP and gives an additional [2] AP per turn. Clears Slowed and Crippled.
+      DisplayName: Haste
       ForGameMaster: true
       Icon: Skill_Fire_Haste
       Id: Target_Haste
@@ -2667,8 +2487,7 @@
       MemoryCost: '1'
       SkillProperties: 'HASTED,100,2;'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: 'TargetRadius;Potion:Stats_Hasted:APStart'
       TargetConditions: Character
       TargetRadius: '13'
@@ -2695,12 +2514,10 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_aoe_voodoo_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Explode two random grenades or arrows in inventories of every enemy
-          in target circle.|
-      DisplayName:
-        - '|Mass Sabotage|'
+      Description: >-
+        Explode two random grenades or arrows in inventories of every enemy in
+        target circle.
+      DisplayName: Mass Sabotage
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_MassSabotage
       Id: Target_MassSabotage
@@ -2723,13 +2540,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_voodoo_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Target receives Master Sparkstriker status that causes any enemies
-          damaged by your melee attacks or skills based on your weapon to spawn
-          Sparks at all nearby enemies.|
-      DisplayName:
-        - '|Master Of Sparks|'
+      Description: >-
+        Target receives Master Sparkstriker status that causes any enemies
+        damaged by your melee attacks or skills based on your weapon to spawn
+        Sparks at all nearby enemies.
+      DisplayName: Master Of Sparks
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_MasterOfSparks
       Id: Target_MasterOfSparks
@@ -2752,12 +2567,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 1
-      Description:
-        - >-
-          |If target character is carriyng grenades or arrows, a random one
-          explodes in their inventory.|
-      DisplayName:
-        - '|Sabotage|'
+      Description: >-
+        If target character is carriyng grenades or arrows, a random one
+        explodes in their inventory.
+      DisplayName: Sabotage
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_Sabotage
       Id: Target_Sabotage
@@ -2783,13 +2596,11 @@
       DamageRange: 20
       DamageType: Fire
       DeathType: Incinerate
-      Description:
-        - >-
-          |Deal 100% (Fire) damage around target character. If the character has
-          Burning or Necrofire statuses, the damage gets a bonus for each turn
-          of duration left.|
-      DisplayName:
-        - '|Spontaneous Combustion|'
+      Description: >-
+        Deal 100% (Fire) damage around target character. If the character has
+        Burning or Necrofire statuses, the damage gets a bonus for each turn of
+        duration left.
+      DisplayName: Spontaneous Combustion
       ForGameMaster: true
       Icon: Skill_Fire_SpontaneousCombustion
       Id: Target_SpontaneousCombustion
@@ -2818,13 +2629,11 @@
       DamageRange: 0
       DamageType: Earth
       DeathType: PetrifiedShatter
-      Description:
-        - >-
-          |Throw an Oil Blob at target point, dealing 100% (Earth) damage in the
-          area. Oil Blob deals earth damage with melee attacks and leaves an oil
-          puddle on death.|
-      DisplayName:
-        - '|Summon Oil Blob|'
+      Description: >-
+        Throw an Oil Blob at target point, dealing 100% (Earth) damage in the
+        area. Oil Blob deals earth damage with melee attacks and leaves an oil
+        puddle on death.
+      DisplayName: Summon Oil Blob
       ExplodeRadius: '3'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -2855,13 +2664,11 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: -1
-      Description:
-        - >-
-          |Your character makes the first step towards godhood. Your body grows
-          larger and becomes covered with gold, there appears a halo around your
-          head. You receive free source point per turn and various stat boosts.|
-      DisplayName:
-        - '|Apotheosis|'
+      Description: >-
+        Your character makes the first step towards godhood. Your body grows
+        larger and becomes covered with gold, there appears a halo around your
+        head. You receive free source point per turn and various stat boosts.
+      DisplayName: Apotheosis
       ForGameMaster: true
       Icon: Skill_Polymorph_Apotheosis
       Id: Shout_Apotheosis
@@ -2885,12 +2692,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 6
-      Description:
-        - >-
-          |Grow magnificent horns on your forehead, allowing you to rush at
-          enemies and impale them.|
-      DisplayName:
-        - '|Bull Horns|'
+      Description: >-
+        Grow magnificent horns on your forehead, allowing you to rush at enemies
+        and impale them.
+      DisplayName: Bull Horns
       ForGameMaster: true
       Icon: Skill_Polymorph_BullHorns
       Id: Shout_BullHorns
@@ -2909,10 +2714,8 @@
       CanTargetItems: true
       CleanseStatuses: >-
         SHAPESHIFT_HUMAN;UNDEAD_HUMAN;SHAPESHIFT_LIZARD;UNDEAD_LIZARD;SHAPESHIFT_DWARF;UNDEAD_DWARF;SHAPESHIFT_ELF;UNDEAD_ELF
-      Description:
-        - '| Cancels effects of Shapeshifting Mask. |'
-      DisplayName:
-        - '| Revert To Original Form |'
+      Description: ' Cancels effects of Shapeshifting Mask. '
+      DisplayName: ' Revert To Original Form '
       ForGameMaster: false
       Icon: Skill_Mask_CancelPolymorphism
       Id: Shout_CancelPolymorphism
@@ -2925,10 +2728,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 6
-      Description:
-        - Become one with the shadows.
-      DisplayName:
-        - Chameleon Skin
+      Description: Become one with the shadows.
+      DisplayName: Chameleon Skin
       ForGameMaster: true
       Icon: Skill_Polymorph_ChameleonSkin
       Id: Shout_ChameleonSkin
@@ -2937,8 +2738,7 @@
       MemoryCost: '1'
       SkillProperties: 'INVISIBLE,100,2'
       SkillType: Shout
-      StatsDescription:
-        - Breaks when casting or attacking.
+      StatsDescription: Breaks when casting or attacking.
       Stealth: 'Yes'
       TargetConditions: Self
       Tier: Novice
@@ -2953,12 +2753,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |You get fire immunity, but lowered resistance to water. You bleed
-          fire.|
-      DisplayName:
-        - '|Flaming Skin|'
+      Description: 'You get fire immunity, but lowered resistance to water. You bleed fire.'
+      DisplayName: Flaming Skin
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_FlamingSkin
       Id: Shout_FlamingSkin
@@ -2980,10 +2776,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - '|You get water immunity, but lowered resistance to fire. Bleed ice.|'
-      DisplayName:
-        - '|Ice Skin|'
+      Description: 'You get water immunity, but lowered resistance to fire. Bleed ice.'
+      DisplayName: Ice Skin
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_IceSkin
       Id: Shout_IceSkin
@@ -3005,12 +2799,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Bleed electrified water, immune to electricity, lowered res to poison
-          and earth.|
-      DisplayName:
-        - '|Jellyfish Skin|'
+      Description: >-
+        Bleed electrified water, immune to electricity, lowered res to poison
+        and earth.
+      DisplayName: Jellyfish Skin
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_JellyfishSkin
       Id: Shout_JellyfishSkin
@@ -3033,12 +2825,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Grow snake hair on your head. Gain skill that allows you to petrify
-          enemies.|
-      DisplayName:
-        - '|Medusa Head|'
+      Description: >-
+        Grow snake hair on your head. Gain skill that allows you to petrify
+        enemies.
+      DisplayName: Medusa Head
       ForGameMaster: true
       Icon: Skill_Polymorph_MedusaHead
       Id: Shout_MedusaHead
@@ -3060,12 +2850,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |You get poison and earth immunity, but lowered resistance to air. You
-          bleed poison.|
-      DisplayName:
-        - '|Poisonous Skin|'
+      Description: >-
+        You get poison and earth immunity, but lowered resistance to air. You
+        bleed poison.
+      DisplayName: Poisonous Skin
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_PoisonousSkin
       Id: Shout_PoisonousSkin
@@ -3087,12 +2875,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 1
-      Description:
-        - >-
-          Transform into the form of a Human, switching racial talents, skills
-          and tags.
-      DisplayName:
-        - '| Turn Into a Human|'
+      Description: >-
+        Transform into the form of a Human, switching racial talents, skills and
+        tags.
+      DisplayName: ' Turn Into a Human'
       ForGameMaster: false
       Icon: Skill_Mask_TurnIntoHuman
       Id: Shout_PolymorphIntoHuman
@@ -3113,12 +2899,10 @@
       CanTargetItems: true
       CleanseStatuses: BURNING;POISONED;BLEEDING;NECROFIRE
       Cooldown: -1
-      Description:
-        - >-
-          |Reset all cooldowns, but set both armors two 0. Remove Burning,
-          Poisoned, Bleeding.|
-      DisplayName:
-        - '|Shed Skin|'
+      Description: >-
+        Reset all cooldowns, but set both armors two 0. Remove Burning,
+        Poisoned, Bleeding.
+      DisplayName: Shed Skin
       ForGameMaster: true
       Icon: Skill_Polymorph_ShedSkin
       Id: Shout_ShedSkin
@@ -3142,13 +2926,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Grow spider legs from your back. You can create web surfaces in an
-          area that entangle anyone who walks on it (can't walk or
-          teleportjump).|
-      DisplayName:
-        - '|Spider Legs|'
+      Description: >-
+        Grow spider legs from your back. You can create web surfaces in an area
+        that entangle anyone who walks on it (can't walk or teleportjump).
+      DisplayName: Spider Legs
       ForGameMaster: true
       Icon: Skill_Polymorph_SpiderLegs
       Id: Shout_SpiderLegs
@@ -3170,12 +2951,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Your skin turns to steel, increasing Physical Armour and regenerating
-          a portion of it every turn.|
-      DisplayName:
-        - '|Steel Skin|'
+      Description: >-
+        Your skin turns to steel, increasing Physical Armour and regenerating a
+        portion of it every turn.
+      DisplayName: Steel Skin
       ForGameMaster: true
       Icon: Skill_Polymorph_SteelSkin
       Id: Shout_SteelSkin
@@ -3198,12 +2977,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 6
-      Description:
-        - >-
-          |Grow wings that unlock Flight skill. You ignore ground surfaces as
-          long as you're walking.|
-      DisplayName:
-        - '|Wings|'
+      Description: >-
+        Grow wings that unlock Flight skill. You ignore ground surfaces as long
+        as you're walking.
+      DisplayName: Wings
       ForGameMaster: true
       Icon: Skill_Polymorph_Wings
       Id: Shout_Wings
@@ -3225,10 +3002,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_touch_01_cast
       Cooldown: 6
-      Description:
-        - '| Turn target character into a chicken. |'
-      DisplayName:
-        - '| Chicken Touch |'
+      Description: ' Turn target character into a chicken. '
+      DisplayName: ' Chicken Touch '
       ForGameMaster: true
       Icon: Skill_Polymorph_ChickenTouch
       Id: Target_ChickenTouch
@@ -3252,10 +3027,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_touch_01_cast
       Cooldown: 1
-      Description:
-        - '|Exchange life percentages with target.|'
-      DisplayName:
-        - '|Demonic Bargain|'
+      Description: Exchange life percentages with target.
+      DisplayName: Demonic Bargain
       ForGameMaster: true
       Icon: Skill_Polymorph_DemonicBargain
       Id: Target_DemonicBargain
@@ -3281,12 +3054,10 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Vitality and Armour percentages of characters in target area are
-          summed up and redistributed equally.|
-      DisplayName:
-        - '|Equalize|'
+      Description: >-
+        Vitality and Armour percentages of characters in target area are summed
+        up and redistributed equally.
+      DisplayName: Equalize
       ForGameMaster: true
       Icon: Skill_Polymorph_Equalize
       Id: Target_Equalize
@@ -3312,12 +3083,10 @@
       DamageMultiplier: 150
       DamageRange: 10
       DamageType: Magic
-      Description:
-        - >-
-          |Reduce target's Magic Armour by 100% (Magic). Set status that halves
-          resistances.|
-      DisplayName:
-        - '|Strip Resistance|'
+      Description: >-
+        Reduce target's Magic Armour by 100% (Magic). Set status that halves
+        resistances.
+      DisplayName: Strip Resistance
       ForGameMaster: true
       Icon: Skill_Polymorph_StripResistance
       Id: Target_StripResistance
@@ -3345,12 +3114,8 @@
       DamageRange: 10
       DamageType: Physical
       DeathType: Physical
-      Description:
-        - >-
-          |Lash out at the opponent, deak 100% (Physical) damage and Disarm
-          them.|
-      DisplayName:
-        - '|Tentacle Lash|'
+      Description: 'Lash out at the opponent, deak 100% (Physical) damage and Disarm them.'
+      DisplayName: Tentacle Lash
       ForGameMaster: true
       Icon: Skill_Polymorph_TentacleLash
       Id: Target_TentacleLash
@@ -3374,10 +3139,8 @@
       CanTargetItems: false
       CanTargetTerrain: 'Yes'
       Cooldown: 2
-      Description:
-        - '|Target two circular areas. Swap surfaces and clouds.|'
-      DisplayName:
-        - '|Swap Ground'
+      Description: Target two circular areas. Swap surfaces and clouds.
+      DisplayName: Swap Ground
       ForGameMaster: true
       HitRadius: '3'
       Icon: Skill_Polymorph_SwapGround
@@ -3399,10 +3162,8 @@
       Cooldown: 4
       DamageOnJump: 'No'
       DamageOnLanding: 'No'
-      Description:
-        - '|Apply Haste to yourself, then teleport away from danger. |'
-      DisplayName:
-        - Tactical Retreat
+      Description: 'Apply Haste to yourself, then teleport away from danger. '
+      DisplayName: Tactical Retreat
       ForGameMaster: true
       Icon: Skill_Ranger_TacticalRetreat
       Id: Jump_TacticalRetreat
@@ -3412,8 +3173,7 @@
       Requirements: '!Immobile'
       SkillProperties: 'SELF:HASTED,100,1'
       SkillType: Jump
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: TargetRadius
       TargetRadius: '13'
       Tier: Adept
@@ -3427,12 +3187,10 @@
       Cooldown: 2
       DamageMultiplier: 100
       DeathType: Arrow
-      Description:
-        - >-
-          |16 arrows will fall from the sky in target area, each dealing X-Y
-          damage.|
-      DisplayName:
-        - Arrow Storm
+      Description: >-
+        16 arrows will fall from the sky in target area, each dealing X-Y
+        damage.
+      DisplayName: Arrow Storm
       Distribution: Normal
       ExplodeRadius: '2'
       ForceTarget: 'Yes'
@@ -3469,10 +3227,8 @@
       Cooldown: 5
       DamageMultiplier: 40
       DeathType: Arrow
-      Description:
-        - Fire 16 arrows in a 60 degree arc. Each arrow deals X-Y damage.
-      DisplayName:
-        - Arrow Spray
+      Description: Fire 16 arrows in a 60 degree arc. Each arrow deals X-Y damage.
+      DisplayName: Arrow Spray
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3487,8 +3243,7 @@
       ProjectileTerrainOffset: 'Yes'
       Requirement: RangedWeapon
       SkillType: Projectile
-      StatsDescription:
-        - Damage dealt depends on your weapon's damage rating.
+      StatsDescription: Damage dealt depends on your weapon's damage rating.
       StatsDescriptionParams: Angle;Damage
       TargetConditions: NonSelf;!Ally
       TargetRadius: '13'
@@ -3506,12 +3261,10 @@
       Cooldown: 4
       DamageMultiplier: 100
       DeathType: Arrow
-      Description:
-        - >-
-          |A shot that deals X-Y and receives [2]% bonus damage per 1m distance
-          to target.|
-      DisplayName:
-        - '|Ballistic Shot|'
+      Description: >-
+        A shot that deals X-Y and receives [2]% bonus damage per 1m distance to
+        target.
+      DisplayName: Ballistic Shot
       DistanceDamageMultiplier: '5'
       ExplodeRadius: '0'
       ForceTarget: 'No'
@@ -3542,12 +3295,8 @@
       CanTargetTerrain: 'No'
       CastAnimationCheck: Distance
       Cooldown: 3
-      Description:
-        - >-
-          |Target is marked, decreasing it's Dodge. Prevents from going
-          invisible.|
-      DisplayName:
-        - '|Mark|'
+      Description: 'Target is marked, decreasing it''s Dodge. Prevents from going invisible.'
+      DisplayName: Mark
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3575,10 +3324,8 @@
       Cooldown: 3
       DamageMultiplier: 60
       DeathType: Arrow
-      Description:
-        - 'Fire multiple arrows in a straight line, each dealing X-Y damage.'
-      DisplayName:
-        - Barrage
+      Description: 'Fire multiple arrows in a straight line, each dealing X-Y damage.'
+      DisplayName: Barrage
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3594,9 +3341,9 @@
       ProjectileTerrainOffset: 'Yes'
       Requirement: RangedWeapon
       SkillType: Projectile
-      StatsDescription:
-        - 'Range: 13'
-        - Damage dealt depends on your weapon's damage rating.
+      StatsDescription: |-
+        Range: 13
+        Damage dealt depends on your weapon's damage rating.
       StatsDescriptionParams: Damage;TargetRadius
       TargetConditions: NonSelf
       TargetRadius: '13'
@@ -3615,12 +3362,10 @@
       DamageMultiplier: 100
       DamageType: Piercing
       DeathType: Arrow
-      Description:
-        - >-
-          |Fire an arrow that will pierce enemies that it passes through,
-          ignoring physical armor, dealing 100% (Piercing) damage.|
-      DisplayName:
-        - '|Piercing Shot|'
+      Description: >-
+        Fire an arrow that will pierce enemies that it passes through, ignoring
+        physical armor, dealing 100% (Piercing) damage.
+      DisplayName: Piercing Shot
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3651,10 +3396,8 @@
       CanTargetTerrain: 'Yes'
       Cooldown: 3
       DamageMultiplier: 120
-      Description:
-        - '|Deal X-Y damage and Cripple target character.|'
-      DisplayName:
-        - '|Pin Down|'
+      Description: Deal X-Y damage and Cripple target character.
+      DisplayName: Pin Down
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3685,12 +3428,10 @@
       Cooldown: 4
       DamageMultiplier: 90
       DeathType: Arrow
-      Description:
-        - >-
-          Fire a normal arrow that deals X-Y damage and then forks off to the
-          next target up to 2 times within 5.
-      DisplayName:
-        - Ricochet
+      Description: >-
+        Fire a normal arrow that deals X-Y damage and then forks off to the next
+        target up to 2 times within 5.
+      DisplayName: Ricochet
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3725,12 +3466,10 @@
       Cooldown: 3
       DamageMultiplier: 100
       DeathType: Arrow
-      Description:
-        - >-
-          |Jumps vertically and shoots from high in the air, gaining LOS, range
-          and damage bonuses for superior height. Deals X-Y damage.|
-      DisplayName:
-        - '|Sky Shot|'
+      Description: >-
+        Jumps vertically and shoots from high in the air, gaining LOS, range and
+        damage bonuses for superior height. Deals X-Y damage.
+      DisplayName: Sky Shot
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3763,12 +3502,8 @@
       Cooldown: 5
       DamageMultiplier: 115
       DeathType: Arrow
-      Description:
-        - >-
-          |Heavy attack that deals X-Y damage. Double damage if done from
-          stealth.|
-      DisplayName:
-        - '|Snipe|'
+      Description: Heavy attack that deals X-Y damage. Double damage if done from stealth.
+      DisplayName: Snipe
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3799,13 +3534,11 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_cast_ground_fire_01_cast
       Cooldown: 4
-      Description:
-        - >-
-          |Target Surface in melee radius. You gain status that add elemental
-          damage for one turn will deal damage corresponding to the surface you
-          targeted.|
-      DisplayName:
-        - '|Elemental Arrowheads|'
+      Description: >-
+        Target Surface in melee radius. You gain status that add elemental
+        damage for one turn will deal damage corresponding to the surface you
+        targeted.
+      DisplayName: Elemental Arrowheads
       ForGameMaster: true
       Icon: Skill_Ranger_ElementalArrowheads
       Id: Target_ElementalArrowheads
@@ -3832,10 +3565,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 3
-      Description:
-        - '|Target character''s ranged attacks and skills have increased range.|'
-      DisplayName:
-        - '|Farsight|'
+      Description: Target character's ranged attacks and skills have increased range.
+      DisplayName: Farsight
       ForGameMaster: true
       Icon: Skill_Ranger_Farsight
       Id: Target_Farsight
@@ -3858,12 +3589,10 @@
       CastSelfAnimation: skill_cast_self_water_01_cast
       CleanseStatuses: BURNING;POISONED;CRIPPLED;BLEEDING;DISARMED;KNOCKED_DOWN;MUTED;DISEASED
       Cooldown: 4
-      Description:
-        - >-
-          Cures Crippled, Knocked Down, Blind, Silenced, Bleeding, Burning,
-          Poisoned. Heals target for [2].
-      DisplayName:
-        - First Aid
+      Description: >-
+        Cures Crippled, Knocked Down, Blind, Silenced, Bleeding, Burning,
+        Poisoned. Heals target for [2].
+      DisplayName: First Aid
       ForGameMaster: true
       Icon: Skill_Ranger_FirstAid
       Id: Target_FirstAid
@@ -3872,8 +3601,7 @@
       MemoryCost: '1'
       SkillProperties: 'FIRST_AID,100,0;RESTED,100,1;'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 4'
+      StatsDescription: 'Range: 4'
       StatsDescriptionParams: 'TargetRadius;StatusData:FIRST_AID:HealAmount'
       StatusClearChance: '100'
       TargetConditions: Character;!Dead
@@ -3887,12 +3615,10 @@
       CanTargetTerrain: 'Yes'
       CastSelfAnimation: skill_attack_aoe_01_cast
       Cooldown: 2
-      Description:
-        - >-
-          |Until your next turn, you will reflexively shoot at enemies moving in
-          target area.|
-      DisplayName:
-        - '|Reaction Shot|'
+      Description: >-
+        Until your next turn, you will reflexively shoot at enemies moving in
+        target area.
+      DisplayName: Reaction Shot
       ForGameMaster: true
       Icon: Skill_Ranger_ReactionShot
       Id: Target_ReactionShot
@@ -3903,8 +3629,7 @@
       Requirements: Combat
       SkillProperties: 'REACTION_SHOT,100,1'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: TargetRadius
       TargetRadius: '13'
       Tier: Novice
@@ -3919,10 +3644,8 @@
       Cooldown: 4
       DamageOnJump: 'No'
       DamageOnLanding: 'No'
-      Description:
-        - '|Teleport without breaking sneaking.|'
-      DisplayName:
-        - Cloak And Dagger
+      Description: Teleport without breaking sneaking.
+      DisplayName: Cloak And Dagger
       ForGameMaster: true
       Icon: Skill_Rogue_CloakAndDagger
       Id: Jump_CloakAndDagger
@@ -3931,8 +3654,7 @@
       MemoryCost: '1'
       Requirements: '!Immobile'
       SkillType: Jump
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: TargetRadius
       Stealth: 'Yes'
       TargetRadius: '13'
@@ -3942,12 +3664,10 @@
       Cooldown: 3
       DamageMultiplier: 85
       DeathType: Physical
-      Description:
-        - >-
-          |Jump over the enemy, landing behind their back and backstabbing them
-          for X-Y damage.|
-      DisplayName:
-        - '|Vault|'
+      Description: >-
+        Jump over the enemy, landing behind their back and backstabbing them for
+        X-Y damage.
+      DisplayName: Vault
       EndPosRadius: '2'
       ForGameMaster: true
       Icon: Skill_Rogue_Vault
@@ -3979,10 +3699,8 @@
       DamageMultiplier: 100
       DamageRange: 10
       DamageType: Magic
-      Description:
-        - '|Destroy 100% (Magic) and then set Sleeping|'
-      DisplayName:
-        - '|Chloroform|'
+      Description: Destroy 100% (Magic) and then set Sleeping
+      DisplayName: Chloroform
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -3998,8 +3716,7 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'SLEEPING,100,1'
       SkillType: Projectile
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: Damage;TargetRadius
       Stealth: 'Yes'
       TargetConditions: Character
@@ -4019,10 +3736,8 @@
       Cooldown: 2
       DamageMultiplier: 100
       DeathType: Arrow
-      Description:
-        - '|Launch a dagger at every enemy around you. Can backstab. |'
-      DisplayName:
-        - '| Fan of Knives |'
+      Description: 'Launch a dagger at every enemy around you. Can backstab. '
+      DisplayName: ' Fan of Knives '
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -4053,12 +3768,10 @@
       CastAnimationCheck: Distance
       Cooldown: 6
       DeathType: Incinerate
-      Description:
-        - >-
-          |Summon a mechanical bomber at  the target point. The bomber can
-          explode, dealing fire damage and producing a fire surface.|
-      DisplayName:
-        - Wind-up Toy
+      Description: >-
+        Summon a mechanical bomber at  the target point. The bomber can explode,
+        dealing fire damage and producing a fire surface.
+      DisplayName: Wind-up Toy
       ExplodeRadius: '1'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -4075,8 +3788,7 @@
       SkillType: Projectile
       SpawnLifetime: '3'
       SpawnObject: 6f8db517-f1af-4b47-b095-f239fd2293d0
-      StatsDescription:
-        - 'Can be cast while invisible or sneaking. Range: 13'
+      StatsDescription: 'Can be cast while invisible or sneaking. Range: 13'
       StatsDescriptionParams: TargetRadius
       Stealth: 'Yes'
       TargetConditions: NonSelf
@@ -4094,10 +3806,8 @@
       Cooldown: 1
       DamageMultiplier: 85
       DeathType: Arrow
-      Description:
-        - '|Throw a knife at the opponent, dealing X-Y damage. Can backstab!|'
-      DisplayName:
-        - '|Throwing Knife|'
+      Description: 'Throw a knife at the opponent, dealing X-Y damage. Can backstab!'
+      DisplayName: Throwing Knife
       DivideDamage: 'Yes'
       ExplodeRadius: '0'
       ForceTarget: 'No'
@@ -4128,10 +3838,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 4
-      Description:
-        - Borrow Action Points from your next turn.
-      DisplayName:
-        - Adrenaline
+      Description: Borrow Action Points from your next turn.
+      DisplayName: Adrenaline
       ForGameMaster: true
       Icon: Skill_Rogue_Adrenaline
       Id: Shout_Adrenaline
@@ -4157,10 +3865,8 @@
       Cooldown: 4
       DamageMultiplier: 115
       DeathType: Piercing
-      Description:
-        - '|Dagger attack that deals X-Y and sets Decay and Diseased.|'
-      DisplayName:
-        - '|Corrupted Blade|'
+      Description: Dagger attack that deals X-Y and sets Decay and Diseased.
+      DisplayName: Corrupted Blade
       ForGameMaster: true
       Icon: Skill_Rogue_CorruptedBlade
       Id: Target_CorruptedBlade
@@ -4187,10 +3893,8 @@
       CastSelfAnimation: skill_attack_flurry_01_cast
       Cooldown: 6
       DamageMultiplier: 55
-      Description:
-        - '|Erupt with a barrage of 5 stabs, each dealing X-Y damage.|'
-      DisplayName:
-        - Daggers Drawn
+      Description: 'Erupt with a barrage of 5 stabs, each dealing X-Y damage.'
+      DisplayName: Daggers Drawn
       ForGameMaster: true
       Icon: Skill_Rogue_DaggersDrawn
       Id: Target_DaggersDrawn
@@ -4217,12 +3921,10 @@
       Cooldown: -1
       DamageMultiplier: 140
       DeathType: Explode
-      Description:
-        - >-
-          |Deal X-Y damage. Damage is doubled if you are sneaking or invisible.
-          Target is killed instantly if it is below 10% Vitality.|
-      DisplayName:
-        - Mortal Blow
+      Description: >-
+        Deal X-Y damage. Damage is doubled if you are sneaking or invisible.
+        Target is killed instantly if it is below 10% Vitality.
+      DisplayName: Mortal Blow
       ForGameMaster: true
       Icon: Skill_Rogue_MortalBlow
       Id: Target_Fatality
@@ -4252,10 +3954,8 @@
       DamageMultiplier: 90
       DamageType: Magic
       DeathType: Piercing
-      Description:
-        - '|Reduce target''s Magic Armour by 100% (Magic). Silence target|'
-      DisplayName:
-        - '|Gag Order|'
+      Description: Reduce target's Magic Armour by 100% (Magic). Silence target
+      DisplayName: Gag Order
       ForGameMaster: true
       Icon: Skill_Rogue_GagOrder
       Id: Target_GagOrder
@@ -4283,12 +3983,10 @@
       Cooldown: 5
       DamageMultiplier: 100
       DamageRange: 10
-      Description:
-        - >-
-          |Deal X-Y to target character. Set a status that deals them piercing
-          damage when they try to walk.|
-      DisplayName:
-        - '|Knee Breaker|'
+      Description: >-
+        Deal X-Y to target character. Set a status that deals them piercing
+        damage when they try to walk.
+      DisplayName: Knee Breaker
       ForGameMaster: true
       Icon: Skill_Rogue_KneeBreaker
       Id: Target_KneeBreaker
@@ -4317,12 +4015,10 @@
       DamageMultiplier: 100
       DamageType: Piercing
       DeathType: Piercing
-      Description:
-        - >-
-          |Pierce enemy physical armor and deal 100% (Piercing) damage. Set
-          Bleeding if enemy has no Physical Armor.|
-      DisplayName:
-        - Sawtooth Knife
+      Description: >-
+        Pierce enemy physical armor and deal 100% (Piercing) damage. Set
+        Bleeding if enemy has no Physical Armor.
+      DisplayName: Sawtooth Knife
       ForGameMaster: true
       Icon: Skill_Rogue_SerratedEdge
       Id: Target_SerratedEdge
@@ -4350,12 +4046,10 @@
       Cooldown: 3
       DamageMultiplier: 100
       DamageRange: 10
-      Description:
-        - >-
-          |Deal X-Y damage and set Atrophy: target can't use weapons or weapon
-          skills anymore|
-      DisplayName:
-        - '|Sleeping Arms|'
+      Description: >-
+        Deal X-Y damage and set Atrophy: target can't use weapons or weapon
+        skills anymore
+      DisplayName: Sleeping Arms
       ForGameMaster: true
       Icon: Skill_Rogue_SleepingArms
       Id: Target_SleepingArms
@@ -4383,12 +4077,10 @@
       Cooldown: 4
       DamageMultiplier: 110
       DeathType: Piercing
-      Description:
-        - >-
-          |Dagger attack that deals X-Y damage and sets Bleeding and Fear on all
-          enemies in a small radius.|
-      DisplayName:
-        - '|Terrifying Cruelty|'
+      Description: >-
+        Dagger attack that deals X-Y damage and sets Bleeding and Fear on all
+        enemies in a small radius.
+      DisplayName: Terrifying Cruelty
       ForGameMaster: true
       Icon: Skill_Rogue_TerrifyingCruelty
       Id: Target_TerrifyingCruelty
@@ -4420,12 +4112,10 @@
       DamageRange: 10
       DamageType: Chaos
       DeathType: Piercing
-      Description:
-        - >-
-          |Shoot a volatile bolt that deals 100% (Chaos) damage of random type
-          and creates corresponding surface.|
-      DisplayName:
-        - '|Dimensional Bolt|'
+      Description: >-
+        Shoot a volatile bolt that deals 100% (Chaos) damage of random type and
+        creates corresponding surface.
+      DisplayName: Dimensional Bolt
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -4454,12 +4144,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: -1
-      Description:
-        - >-
-          |Give your summons around you a status that prevents them from dying
-          from damage or disappearing when their lifetime runs out.|
-      DisplayName:
-        - '|Door To Eternity|'
+      Description: >-
+        Give your summons around you a status that prevents them from dying from
+        damage or disappearing when their lifetime runs out.
+      DisplayName: Door To Eternity
       ForGameMaster: true
       Icon: Skill_Summoning_CloseTheDoor
       Id: Shout_CloseTheDoor
@@ -4481,13 +4169,8 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 6
-      Description:
-        - >-
-          | Conjure a demon that will share their Intelligence with you and
-          increase Magic Armour by [1]. Grants you power to terrify and protect
-          yourself with demonic fists. |
-      DisplayName:
-        - '| Summon Inner Demon |'
+      Description: ' Conjure a demon that will share their Intelligence with you and increase Magic Armour by [1]. Grants you power to terrify and protect yourself with demonic fists. '
+      DisplayName: ' Summon Inner Demon '
       ForGameMaster: true
       Icon: Skill_Familiar_InnerDemon
       Id: Shout_InnerDemon
@@ -4505,12 +4188,10 @@
       AreaRadius: 10
       Cooldown: 5
       DeathType: Explode
-      Description:
-        - >-
-          |Unpredictable projectiles from distant planes strike down in target
-          area, dealing random elemental damage.|
-      DisplayName:
-        - '|Ethereal Storm|'
+      Description: >-
+        Unpredictable projectiles from distant planes strike down in target
+        area, dealing random elemental damage.
+      DisplayName: Ethereal Storm
       ForGameMaster: true
       HitDelay: '0'
       HitRadius: '1'
@@ -4533,8 +4214,7 @@
       ActionPoints: 2
       AIFlags: CanNotUse
       Cooldown: 6
-      DisplayName:
-        - '| Summon Cat Familiar |'
+      DisplayName: ' Summon Cat Familiar '
       ForGameMaster: true
       Icon: Skill_Summoning_SummonCat
       Id: Summon_Cat
@@ -4549,10 +4229,8 @@
       ActionPoints: 2
       AIFlags: CanNotUse
       Cooldown: 6
-      Description:
-        - '| Summons a condor that will aid you in combat |'
-      DisplayName:
-        - '| Summon Condor Familiar |'
+      Description: ' Summons a condor that will aid you in combat '
+      DisplayName: ' Summon Condor Familiar '
       ForGameMaster: true
       Icon: Skill_Summoning_SummonCondor
       Id: Summon_Condor
@@ -4567,10 +4245,8 @@
       ActionPoints: 2
       AIFlags: CanNotUse
       Cooldown: 6
-      Description:
-        - '| Summon your personal demon that you can upgrade with Infusions.|'
-      DisplayName:
-        - '| Summon Incarnate |'
+      Description: ' Summon your personal demon that you can upgrade with Infusions.'
+      DisplayName: ' Summon Incarnate '
       ForGameMaster: true
       Icon: Skill_Summoning_SummonIncarnate
       Id: Summon_Incarnate
@@ -4589,12 +4265,8 @@
       ActionPoints: 2
       AIFlags: CanNotUse
       Cooldown: 6
-      Description:
-        - >-
-          | Conjure two linked gateways that allow any character to instantly
-          travel between them. |
-      DisplayName:
-        - '| Planar Gateway |'
+      Description: ' Conjure two linked gateways that allow any character to instantly travel between them. '
+      DisplayName: ' Planar Gateway '
       ForGameMaster: true
       Icon: Skill_Summoning_PlanarGateway
       Id: Summon_PlanarGateway
@@ -4613,10 +4285,8 @@
       ActionPoints: 2
       AIFlags: CanNotUse
       Cooldown: 6
-      Description:
-        - '|Summons a Newt that helps you in combat |'
-      DisplayName:
-        - '| Summon Newt |'
+      Description: 'Summons a Newt that helps you in combat '
+      DisplayName: ' Summon Newt '
       ForGameMaster: true
       Icon: Skill_Summoning_SummonNewt
       Id: Summon_Quest_SummonNewt
@@ -4630,12 +4300,10 @@
     - Ability: Summoning
       ActionPoints: 2
       Cooldown: 1
-      Description:
-        - >-
-          |Summon a totem that matches the element of surface under it. The
-          totem will shoot a projectile at nearest enemy in sight each turn.|
-      DisplayName:
-        - '|Elemental Totem|'
+      Description: >-
+        Summon a totem that matches the element of surface under it. The totem
+        will shoot a projectile at nearest enemy in sight each turn.
+      DisplayName: Elemental Totem
       ForGameMaster: true
       Icon: Skill_Summoning_TotemFromSurface
       Id: Summon_TotemFromSurface
@@ -4658,10 +4326,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Acid Infusion description|'
-      DisplayName:
-        - '|Acid Infusion|'
+      Description: Acid Infusion description
+      DisplayName: Acid Infusion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Earth_AcidInfusion
       Id: Target_AcidInfusion
@@ -4683,10 +4349,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_voodoo_01_cast
       Cooldown: 1
-      Description:
-        - '| Eat friendly summon and regen health |'
-      DisplayName:
-        - '| Cannibalize |'
+      Description: ' Eat friendly summon and regen health '
+      DisplayName: ' Cannibalize '
       ForGameMaster: true
       Icon: Skill_Summoning_Cannibalize
       Id: Target_Cannibalize
@@ -4708,12 +4372,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Charm target non-allied character, causing them to joing your side in
-          combat for the duration of the status.|
-      DisplayName:
-        - '|Dominate Mind|'
+      Description: >-
+        Charm target non-allied character, causing them to joing your side in
+        combat for the duration of the status.
+      DisplayName: Dominate Mind
       ForGameMaster: true
       Icon: Skill_Summoning_DominateMind
       Id: Target_Charm
@@ -4722,9 +4384,9 @@
       MemoryCost: '1'
       SkillProperties: 'CHARMED,100,2'
       SkillType: Target
-      StatsDescription:
-        - 'Range: 13'
-        - Charmed status temporarily turns a target's allegiance around.
+      StatsDescription: |-
+        Range: 13
+        Charmed status temporarily turns a target's allegiance around.
       StatsDescriptionParams: TargetRadius
       TargetConditions: Character;!Ally
       TargetRadius: '13'
@@ -4741,10 +4403,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Cursed Electric Infusion description|'
-      DisplayName:
-        - '|Cursed Electric Infusion|'
+      Description: Cursed Electric Infusion description
+      DisplayName: Cursed Electric Infusion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Air_CursedElectricInfusion
       Id: Target_CursedElectricInfusion
@@ -4768,10 +4428,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Electric Infusion description|'
-      DisplayName:
-        - '|Electric Infusion|'
+      Description: Electric Infusion description
+      DisplayName: Electric Infusion
       ForGameMaster: true
       Icon: Skill_Air_ElectricInfusion
       Id: Target_ElectricInfusion
@@ -4795,10 +4453,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Fire Infusion description|'
-      DisplayName:
-        - '|Fire Infusion|'
+      Description: Fire Infusion description
+      DisplayName: Fire Infusion
       ForGameMaster: true
       Icon: Skill_Fire_FireInfusion
       Id: Target_FireInfusion
@@ -4823,12 +4479,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Target character regenerates vitality and magic armor depending on
-          number of allied characters and totems around them.|
-      DisplayName:
-        - '|Harmony|'
+      Description: >-
+        Target character regenerates vitality and magic armor depending on
+        number of allied characters and totems around them.
+      DisplayName: Harmony
       ForGameMaster: true
       Icon: Skill_Summoning_Harmony
       Id: Target_Harmony
@@ -4852,10 +4506,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Ice Infusion description|'
-      DisplayName:
-        - '|Ice Infusion|'
+      Description: Ice Infusion description
+      DisplayName: Ice Infusion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_BlessedIceInfusion
       Id: Target_IceInfusion
@@ -4879,10 +4531,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Necrofire Infusion description|'
-      DisplayName:
-        - '|Necrofire Infusion|'
+      Description: Necrofire Infusion description
+      DisplayName: Necrofire Infusion
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Fire_NecroFireinfusion
       Id: Target_NecrofireInfusion
@@ -4906,10 +4556,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Poison Infusion description|'
-      DisplayName:
-        - '|Poison Infusion|'
+      Description: Poison Infusion description
+      DisplayName: Poison Infusion
       ForGameMaster: true
       Icon: Skill_Earth_PoisonInfusion
       Id: Target_PoisonInfusion
@@ -4933,12 +4581,10 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Incarnate learns Whirlwind and a Rush skill. Increases Physical
-          Armour by [1].|
-      DisplayName:
-        - '|Power Infusion|'
+      Description: >-
+        Incarnate learns Whirlwind and a Rush skill. Increases Physical Armour
+        by [1].
+      DisplayName: Power Infusion
       ForGameMaster: true
       Icon: Skill_Summoning_PowerInfusion
       Id: Target_PowerInfusion
@@ -4963,12 +4609,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          |Unlocks ranged attack on the Incarnate. Increases Magic Armour by
-          [1].|
-      DisplayName:
-        - '|Ranged Infusion|'
+      Description: 'Unlocks ranged attack on the Incarnate. Increases Magic Armour by [1].'
+      DisplayName: Ranged Infusion
       ForGameMaster: true
       Icon: Skill_Summoning_RangedInfusion
       Id: Target_RangedInfusion
@@ -4993,10 +4635,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Shadow Infusion description|'
-      DisplayName:
-        - '|Shadow Infusion|'
+      Description: Shadow Infusion description
+      DisplayName: Shadow Infusion
       ForGameMaster: true
       Icon: Skill_Summoning_ShadowInfusion
       Id: Target_ShadowInfusion
@@ -5020,12 +4660,10 @@
       CastSelfAnimation: skill_cast_beam_soul_01_cast
       CleanseStatuses: FROZEN;STUNNED;PETRIFIED;KNOCKED_DOWN
       Cooldown: 3
-      Description:
-        - >-
-          |Target character receives half of healing and Armour restoration that
-          you receive. Clears Frozen, Stunned, Knocked Down and Petrified.|
-      DisplayName:
-        - '|Soul Mate|'
+      Description: >-
+        Target character receives half of healing and Armour restoration that
+        you receive. Clears Frozen, Stunned, Knocked Down and Petrified.
+      DisplayName: Soul Mate
       ForGameMaster: true
       Icon: Skill_Summoning_SoulMate
       Id: Target_SoulMate
@@ -5049,12 +4687,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - >-
-          | Target summon deals [1] more base damage during its next turn, but
-          then dies. |
-      DisplayName:
-        - '| Supercharge|'
+      Description: ' Target summon deals [1] more base damage during its next turn, but then dies. '
+      DisplayName: ' Supercharge'
       ForGameMaster: true
       Icon: Skill_Summoning_Supercharge
       Id: Target_Supercharge
@@ -5079,10 +4713,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Warp Infusion description|'
-      DisplayName:
-        - '|Warp Infusion|'
+      Description: Warp Infusion description
+      DisplayName: Warp Infusion
       ForGameMaster: true
       Icon: Skill_Summoning_WarpInfusion
       Id: Target_WarpInfusion
@@ -5106,10 +4738,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_totem_01_cast
       Cooldown: 3
-      Description:
-        - '|Water Infusion description|'
-      DisplayName:
-        - '|Water Infusion|'
+      Description: Water Infusion description
+      DisplayName: Water Infusion
       ForGameMaster: true
       Icon: Skill_Water_WaterInfusion
       Id: Target_WaterInfusion
@@ -5136,13 +4766,11 @@
       Cooldown: 4
       DamageMultiplier: 90
       DeathType: Physical
-      Description:
-        - >-
-          |Smash your weapon into the ground, damaging all non-allied characters
-          in a cone in front of you for X-Y damage and knocking them down.
-          Clears non-cursed surfaces and clouds.|
-      DisplayName:
-        - Battle Stomp
+      Description: >-
+        Smash your weapon into the ground, damaging all non-allied characters in
+        a cone in front of you for X-Y damage and knocking them down. Clears
+        non-cursed surfaces and clouds.
+      DisplayName: Battle Stomp
       ForGameMaster: true
       Icon: Skill_Warrior_GroundSmash
       Id: Cone_GroundSmash
@@ -5155,9 +4783,9 @@
       Requirement: MeleeWeapon
       SkillProperties: 'KNOCKED_DOWN,100,1'
       SkillType: Cone
-      StatsDescription:
-        - 'Cone angle: 25'
-        - 'Length: 10'
+      StatsDescription: |-
+        Cone angle: 25
+        Length: 10
       StatsDescriptionParams: Damage;Angle;Range;
       SurfaceGrowInterval: '5'
       SurfaceGrowStep: '10'
@@ -5173,12 +4801,10 @@
       DamageOnJump: 'No'
       DamageOnLanding: 'Yes'
       DeathType: Incinerate
-      Description:
-        - >-
-          |Become immune to fire for 1 turn and leap toward the target position,
-          dealing fire damage and creating a fire surface upon landing.|
-      DisplayName:
-        - Phoenix Dive
+      Description: >-
+        Become immune to fire for 1 turn and leap toward the target position,
+        dealing fire damage and creating a fire surface upon landing.
+      DisplayName: Phoenix Dive
       ForGameMaster: true
       HitRadius: '2'
       Icon: Skill_Warrior_PhoenixDive
@@ -5189,8 +4815,7 @@
       Requirements: '!Immobile'
       SkillProperties: 'CreateSurface,2,,Fire,100,1;'
       SkillType: Jump
-      StatsDescription:
-        - 'Range: 13'
+      StatsDescription: 'Range: 13'
       StatsDescriptionParams: TargetRadius
       TargetRadius: '13'
       Tier: Adept
@@ -5200,13 +4825,11 @@
       Cooldown: 3
       DamageMultiplier: 70
       DeathType: Physical
-      Description:
-        - >-
-          |Jump from one target to the other, hitting maximum 2 targets, dealing
-          X-Y damage.  Additional targets after first one are chosen randomly in
-          a 10 radius.|
-      DisplayName:
-        - Blitz Attack
+      Description: >-
+        Jump from one target to the other, hitting maximum 2 targets, dealing
+        X-Y damage.  Additional targets after first one are chosen randomly in a
+        10 radius.
+      DisplayName: Blitz Attack
       EndPosRadius: '0'
       ForGameMaster: true
       Icon: Skill_Warrior_BlinkStrike
@@ -5239,13 +4862,10 @@
       DamageMultiplier: 75
       DamageRange: 10
       DamageType: Physical
-      Description:
-        - >-
-          |Throw shield at an enemy. Shield bounces to up to two targets, each
-          time dealing it's maximum armor value (SourceShieldPhysicalArmor
-          damage).|
-      DisplayName:
-        - '|Bouncing Shield|'
+      Description: >-
+        Throw shield at an enemy. Shield bounces to up to two targets, each time
+        dealing it's maximum armor value (SourceShieldPhysicalArmor damage).
+      DisplayName: Bouncing Shield
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -5278,12 +4898,10 @@
       Cooldown: 5
       DamageMultiplier: 50
       DeathType: Physical
-      Description:
-        - >-
-          Rush forward in a straight line, to a point far away, hitting all
-          enemies in your path with X-Y damage.
-      DisplayName:
-        - Battering Ram
+      Description: >-
+        Rush forward in a straight line, to a point far away, hitting all
+        enemies in your path with X-Y damage.
+      DisplayName: Battering Ram
       ForGameMaster: true
       HitRadius: '1'
       Icon: Skill_Warrior_BatteringRam
@@ -5296,8 +4914,7 @@
       Requirements: '!Immobile'
       SkillProperties: 'KNOCKED_DOWN,100,1'
       SkillType: Rush
-      StatsDescription:
-        - 'Range: 12'
+      StatsDescription: 'Range: 12'
       StatsDescriptionParams: Damage;TargetRadius
       TargetConditions: '!Ally'
       TargetRadius: '12'
@@ -5313,12 +4930,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Projectiles that hit you or explode in a 2m radius around you are
-          reflected back at caster. Restores Physical Armour.|
-      DisplayName:
-        - '|Deflective Barrier|'
+      Description: >-
+        Projectiles that hit you or explode in a 2m radius around you are
+        reflected back at caster. Restores Physical Armour.
+      DisplayName: Deflective Barrier
       ForGameMaster: true
       Icon: Skill_Warrior_DeflectiveBarrier
       Id: Shout_DeflectiveBarrier
@@ -5342,10 +4957,8 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 6
-      Description:
-        - '|Allies in melee range redirect [1]% of recieved damage to you.|'
-      DisplayName:
-        - '|Guardian Angel|'
+      Description: 'Allies in melee range redirect [1]% of recieved damage to you.'
+      DisplayName: Guardian Angel
       ForGameMaster: true
       Icon: Skill_Warrior_GuardianAngel
       Id: Shout_GuardianAngel
@@ -5367,10 +4980,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - '| Regain Physical and Magical Armour of your shield. |'
-      DisplayName:
-        - '| Recover Armour |'
+      Description: ' Regain Physical and Magical Armour of your shield. '
+      DisplayName: ' Recover Armour '
       ForGameMaster: true
       Icon: Skill_Shield
       Id: Shout_RecoverArmour
@@ -5390,12 +5001,8 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 4
-      Description:
-        - >-
-          Taunt the enemy. Provoke and tease them so that they want to attack
-          you.
-      DisplayName:
-        - Taunt
+      Description: Taunt the enemy. Provoke and tease them so that they want to attack you.
+      DisplayName: Taunt
       ForGameMaster: true
       Icon: Skill_Warrior_Taunt
       Id: Shout_Taunt
@@ -5418,10 +5025,8 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 4
-      Description:
-        - '|Gain damage boost for every nearby character.|'
-      DisplayName:
-        - '|Thick of the fight|'
+      Description: Gain damage boost for every nearby character.
+      DisplayName: Thick of the fight
       ForGameMaster: true
       Icon: Skill_Warrior_ThickOfTheFight
       Id: Shout_ThickOfTheFight
@@ -5444,10 +5049,8 @@
       CanTargetItems: true
       Cooldown: 3
       DamageMultiplier: 100
-      Description:
-        - 'Perform a whirlwind attack, hitting enemies around you for X-Y damage.'
-      DisplayName:
-        - Whirlwind
+      Description: 'Perform a whirlwind attack, hitting enemies around you for X-Y damage.'
+      DisplayName: Whirlwind
       ForGameMaster: true
       Icon: Skill_Warior_WhirlWind
       Id: Shout_Whirlwind
@@ -5473,13 +5076,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_shout_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Mark target enemy. If they die in the next 3 turns, you are healed
-          and receive damage and armor bonus. If target survives, their Vitality
-          is healed to full and caster receives damage.|
-      DisplayName:
-        - '|Challenge|'
+      Description: >-
+        Mark target enemy. If they die in the next 3 turns, you are healed and
+        receive damage and armor bonus. If target survives, their Vitality is
+        healed to full and caster receives damage.
+      DisplayName: Challenge
       ForGameMaster: true
       Icon: Skill_Warrior_Challenge
       Id: Target_Challenge
@@ -5505,10 +5106,8 @@
       Cooldown: 3
       DamageMultiplier: 115
       DeathType: Physical
-      Description:
-        - Cripple the target and all enemies around it. Deals X-Y weapon damage.
-      DisplayName:
-        - Crippling Blow
+      Description: Cripple the target and all enemies around it. Deals X-Y weapon damage.
+      DisplayName: Crippling Blow
       ForGameMaster: true
       Icon: Skill_Warrior_CripplingBlow
       Id: Target_CripplingBlow
@@ -5519,8 +5118,7 @@
       Requirement: MeleeWeapon
       SkillProperties: 'CRIPPLED,100,1'
       SkillType: Target
-      StatsDescription:
-        - '|Crippled status prevents target from walking or running.|'
+      StatsDescription: Crippled status prevents target from walking or running.
       StatsDescriptionParams: Damage
       TargetConditions: Character;NonSelf
       TargetRadius: '1'
@@ -5537,13 +5135,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_shout_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Target character becomes enraged, giving them guaranteed critical
-          strikes and increased movement speed at the cost of decreased
-          resistances and Dodge.|
-      DisplayName:
-        - '|Enrage|'
+      Description: >-
+        Target character becomes enraged, giving them guaranteed critical
+        strikes and increased movement speed at the cost of decreased
+        resistances and Dodge.
+      DisplayName: Enrage
       ForGameMaster: true
       Icon: Skill_Warrior_Enrage
       Id: Target_Enrage
@@ -5568,10 +5164,8 @@
       CastSelfAnimation: skill_attack_flurry_01_cast
       Cooldown: 6
       DamageMultiplier: 50
-      Description:
-        - '|Attack 5 times with astonishing speed, each hit dealing X-Y damage.|'
-      DisplayName:
-        - Onslaught
+      Description: 'Attack 5 times with astonishing speed, each hit dealing X-Y damage.'
+      DisplayName: Onslaught
       ForGameMaster: true
       Icon: Skill_Warrior_Onslaught
       Id: Target_Flurry
@@ -5598,12 +5192,10 @@
       Cooldown: 3
       DamageMultiplier: 150
       DeathType: Physical
-      Description:
-        - >-
-          |Deal  X-Y damage. If your Physical Armor is higher than opponents,
-          destroy all their Physical Armor. Set Knock Down|
-      DisplayName:
-        - '|Overpower|'
+      Description: >-
+        Deal  X-Y damage. If your Physical Armor is higher than opponents,
+        destroy all their Physical Armor. Set Knock Down
+      DisplayName: Overpower
       ForGameMaster: true
       Icon: Skill_Warrior_Overpower
       Id: Target_Overpower
@@ -5634,13 +5226,11 @@
       DamageRange: 10
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          |Characters in the cone that are Frozen and below 50% Vitality shatter
-          and instantly die. Otherwise they receive 100% (Water) damage and get
-          Frozen.|
-      DisplayName:
-        - '|Deep Freeze|'
+      Description: >-
+        Characters in the cone that are Frozen and below 50% Vitality shatter
+        and instantly die. Otherwise they receive 100% (Water) damage and get
+        Frozen.
+      DisplayName: Deep Freeze
       ForGameMaster: true
       Icon: Skill_Water_Shatter
       Id: Cone_Shatter
@@ -5665,12 +5255,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - >-
-          |Shoot a thin torrent of blessed steam in front of you. Set
-          Regeneration on allies.|
-      DisplayName:
-        - Steam Lance
+      Description: >-
+        Shoot a thin torrent of blessed steam in front of you. Set Regeneration
+        on allies.
+      DisplayName: Steam Lance
       ForGameMaster: true
       Icon: Skill_Water_SteamLance
       Id: Cone_SteamLance
@@ -5700,12 +5288,10 @@
       DamageRange: 5
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          20 ice shards rain from the sky, each doing 100% (Water) damage to
-          enemies within 13 range from impact.
-      DisplayName:
-        - Hail Attack
+      Description: >-
+        20 ice shards rain from the sky, each doing 100% (Water) damage to
+        enemies within 13 range from impact.
+      DisplayName: Hail Attack
       Distribution: Normal
       ExplodeRadius: '4'
       ForceTarget: 'Yes'
@@ -5723,12 +5309,13 @@
       SingleSource: 'No'
       SkillProperties: 'Freeze;CreateSurface,3,,WaterFrozen,25;CHILLED,100,1;Douse'
       SkillType: ProjectileStrike
-      StatsDescription:
-        - 'Range: 13'
-        - >-
-          Frozen makes target unable to move or act, but target gains armor and
-          fire resistance.
-        - Can target terrain to create ice surface or freeze water.
+      StatsDescription: >-
+        Range: 13
+
+        Frozen makes target unable to move or act, but target gains armor and
+        fire resistance.
+
+        Can target terrain to create ice surface or freeze water.
       StatsDescriptionParams: Damage;ExplodeRadius;StrikeCount;TargetRadius
       StrikeCount: '20'
       StrikeDelay: '150'
@@ -5750,12 +5337,10 @@
       DamageRange: 10
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          |Ice pellets fall from the sky, chilling enemies and dealing 100%
-          (Water) damage. Creates Ice surface when targeted at the ground.|
-      DisplayName:
-        - '|Hail Strike|'
+      Description: >-
+        Ice pellets fall from the sky, chilling enemies and dealing 100% (Water)
+        damage. Creates Ice surface when targeted at the ground.
+      DisplayName: Hail Strike
       Distribution: Edge
       ExplodeRadius: '1'
       ForceTarget: 'No'
@@ -5805,10 +5390,8 @@
       CanTargetItems: false
       CanTargetTerrain: 'No'
       Cooldown: 5
-      Description:
-        - '|Shoot a bolt of healing energy that will jump to nearby allies.|'
-      DisplayName:
-        - Healing Ritual
+      Description: Shoot a bolt of healing energy that will jump to nearby allies.
+      DisplayName: Healing Ritual
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -5844,12 +5427,10 @@
       DamageRange: 10
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          |Shoot icy shards in a cone in front of you. Each deals 100% (Water)
-          damage.|
-      DisplayName:
-        - '|Ice Fan|'
+      Description: >-
+        Shoot icy shards in a cone in front of you. Each deals 100% (Water)
+        damage.
+      DisplayName: Ice Fan
       ExplodeRadius: '0'
       ForceTarget: 'No'
       ForGameMaster: true
@@ -5872,8 +5453,7 @@
       UseWeaponProperties: false
     - Ability: Water
       DamageType: Water
-      DisplayName:
-        - Abyssal Waters
+      DisplayName: Abyssal Waters
       ForGameMaster: true
       Id: Projectile_Quest_KrakenRay_Water
       SkillProperties: 'CreateSurface,4,,WaterCursed,100;WET,100,2'
@@ -5882,10 +5462,8 @@
       AreaRadius: 10
       ConsequencesStartTime: '1000'
       Cooldown: 6
-      Description:
-        - Create water surfaces.
-      DisplayName:
-        - Rain
+      Description: Create water surfaces.
+      DisplayName: Rain
       ForGameMaster: true
       Icon: Skill_Water_Rain
       Id: Rain_Water
@@ -5895,13 +5473,14 @@
       MemoryCost: '1'
       SkillProperties: 'WET,100,1;'
       SkillType: Rain
-      StatsDescription:
-        - 'Radius: 10'
-        - 'Duration: 1'
-        - >-
-          Creates water puddles on terrain, douses fires, and makes characters
-          wet. Wet makes target less resistant to air spells but more resistant
-          to fire spells.
+      StatsDescription: >-
+        Radius: 10
+
+        Duration: 1
+
+        Creates water puddles on terrain, douses fires, and makes characters
+        wet. Wet makes target less resistant to air spells but more resistant to
+        fire spells.
       StatsDescriptionParams: AreaRadius;Lifetime
       SurfaceGrowInterval: '100'
       SurfaceGrowStep: '10'
@@ -5921,10 +5500,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - '|Consume frozen surfaces around you and convert them to Magic Armour|'
-      DisplayName:
-        - '|Cryotherapy|'
+      Description: Consume frozen surfaces around you and convert them to Magic Armour
+      DisplayName: Cryotherapy
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_Cryotherapy
       Id: Shout_Cryotherapy
@@ -5945,10 +5522,8 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 3
-      Description:
-        - '|Regenerate Magic Armour for all allies around caster.|'
-      DisplayName:
-        - '|Frost Aura|'
+      Description: Regenerate Magic Armour for all allies around caster.
+      DisplayName: Frost Aura
       ForGameMaster: true
       Icon: Skill_Water_SoothingCold
       Id: Shout_FrostAura
@@ -5974,12 +5549,10 @@
       DamageRange: 10
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          |Set Chilled on enemies around you and deal 100% (Water) damage.
-          Freeze all susceptible surfaces.|
-      DisplayName:
-        - '|Global Cooling|'
+      Description: >-
+        Set Chilled on enemies around you and deal 100% (Water) damage. Freeze
+        all susceptible surfaces.
+      DisplayName: Global Cooling
       ForGameMaster: true
       Icon: Skill_Water_GlobalCooling
       Id: Shout_GlobalCooling
@@ -6003,12 +5576,10 @@
       CanTargetCharacters: true
       CanTargetItems: false
       Cooldown: 5
-      Description:
-        - >-
-          |Every time an ally walks into melee radius near you, a healing tear
-          is shot at him.|
-      DisplayName:
-        - '|Healing Tears|'
+      Description: >-
+        Every time an ally walks into melee radius near you, a healing tear is
+        shot at him.
+      DisplayName: Healing Tears
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_HealingTears
       Id: Shout_HealingTears
@@ -6030,12 +5601,10 @@
       CanTargetItems: false
       CleanseStatuses: FROZEN
       Cooldown: 3
-      Description:
-        - >-
-          |A chain rection that causes ice tiles to explode with water damage
-          and set Knock Down and turn into water puddles.|
-      DisplayName:
-        - '|Ice Breaker|'
+      Description: >-
+        A chain rection that causes ice tiles to explode with water damage and
+        set Knock Down and turn into water puddles.
+      DisplayName: Ice Breaker
       ForGameMaster: false
       Icon: Skill_Water_IceBreaker
       Id: Shout_IceBreaker
@@ -6059,13 +5628,11 @@
       CleanseStatuses: >-
         BURNING;DECAYING_TOUCH;DISEASED;POISONED;BLEEDING;NECROFIRE;SUFFOCATING;ACID
       Cooldown: 5
-      Description:
-        - >-
-          |Heal yourself and allies around you and create a water puddle under
-          every target. Remove Necrofire, Burning, Diseased, Decaying Touch,
-          Poisoned, Bleeding, Suffocation and Acid.|
-      DisplayName:
-        - '|Mass Cleanse Wounds|'
+      Description: >-
+        Heal yourself and allies around you and create a water puddle under
+        every target. Remove Necrofire, Burning, Diseased, Decaying Touch,
+        Poisoned, Bleeding, Suffocation and Acid.
+      DisplayName: Mass Cleanse Wounds
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_MassCleanseWounds
       Id: Shout_MassCleanseWounds
@@ -6087,12 +5654,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Each ally consumes frozen surfaces around them and converts them to
-          Magic Armour|
-      DisplayName:
-        - '|Mass Cryotherapy|'
+      Description: >-
+        Each ally consumes frozen surfaces around them and converts them to
+        Magic Armour
+      DisplayName: Mass Cryotherapy
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_MassCryotherapy
       Id: Shout_MassCryotherapy
@@ -6113,12 +5678,10 @@
       CanTargetCharacters: true
       CanTargetItems: true
       Cooldown: 5
-      Description:
-        - >-
-          |Set Vampiric Hunger on every ally around you, adding [1]% Life Steal.
-          Life Steal heals you proportionate to your damage dealt to Vitality. |
-      DisplayName:
-        - '|Vampiric Hunger Aura|'
+      Description: >-
+        Set Vampiric Hunger on every ally around you, adding [1]% Life Steal.
+        Life Steal heals you proportionate to your damage dealt to Vitality. 
+      DisplayName: Vampiric Hunger Aura
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_VampiricHungerAura
       Id: Shout_VampiricHungerAura
@@ -6140,10 +5703,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_aoe_divine_01_cast
       Cooldown: 4
-      Description:
-        - '|Fully restore target character''s Magic Armour.|'
-      DisplayName:
-        - '|Arcane Stitch|'
+      Description: Fully restore target character's Magic Armour.
+      DisplayName: Arcane Stitch
       ForGameMaster: true
       Icon: Skill_Water_ArcaneStitch
       Id: Target_ArcaneStitch
@@ -6167,12 +5728,10 @@
       CastSelfAnimation: skill_cast_self_touch_01_cast
       CleanseStatuses: BURNING;DECAYING_TOUCH;DISEASED;POISONED;BLEEDING;
       Cooldown: 5
-      Description:
-        - >-
-          |Heal target and create a water puddle under them. Remove Burning,
-          Diseased, Decaying Touch, Poisoned and Bleeding.|
-      DisplayName:
-        - '|Cleanse Wounds|'
+      Description: >-
+        Heal target and create a water puddle under them. Remove Burning,
+        Diseased, Decaying Touch, Poisoned and Bleeding.
+      DisplayName: Cleanse Wounds
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_CleanseWounds
       Id: Target_CleanseWounds
@@ -6195,12 +5754,10 @@
       CanTargetItems: false
       CanTargetTerrain: 'No'
       Cooldown: 4
-      Description:
-        - >-
-          |Ice forms a defensive barrier around target character, making the
-          target character immume to all damage, and heals over time.|
-      DisplayName:
-        - '|Cryogenic Stasis|'
+      Description: >-
+        Ice forms a defensive barrier around target character, making the target
+        character immume to all damage, and heals over time.
+      DisplayName: Cryogenic Stasis
       ForGameMaster: true
       Icon: Skill_Water_CryogenicStasis
       Id: Target_CryogenicStasis
@@ -6223,13 +5780,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_earth_01_cast
       Cooldown: 4
-      Description:
-        - >-
-          Ice forms a defensive barrier around the target, increasing their
-          Magic Armour by [1]. Also cures the statuses Burning, Stunned,
-          Petrified, Diseased, Cursed, and Decaying.
-      DisplayName:
-        - Armour of Frost
+      Description: >-
+        Ice forms a defensive barrier around the target, increasing their Magic
+        Armour by [1]. Also cures the statuses Burning, Stunned, Petrified,
+        Diseased, Cursed, and Decaying.
+      DisplayName: Armour of Frost
       ForGameMaster: true
       Icon: Skill_Water_FrostyShell
       Id: Target_FrostyShell
@@ -6253,10 +5808,8 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_self_water_01_cast
       Cooldown: 4
-      Description:
-        - '|Restore vitality for target character. Cure Poisoned, Bleeding.|'
-      DisplayName:
-        - '|Restoration|'
+      Description: 'Restore vitality for target character. Cure Poisoned, Bleeding.'
+      DisplayName: Restoration
       ForGameMaster: true
       Icon: Skill_Water_Restoration
       Id: Target_Restoration
@@ -6279,13 +5832,11 @@
       CanTargetTerrain: 'No'
       CastSelfAnimation: skill_cast_target_voodoo_01_cast
       Cooldown: 5
-      Description:
-        - >-
-          |Set Vampiric Hunger on target character, adding [1]% Life Steal for 2
-          turns. Life Steal heals you proportionate to your damage dealt to
-          Vitality. |
-      DisplayName:
-        - '|Vampiric Hunger|'
+      Description: >-
+        Set Vampiric Hunger on target character, adding [1]% Life Steal for 2
+        turns. Life Steal heals you proportionate to your damage dealt to
+        Vitality. 
+      DisplayName: Vampiric Hunger
       ForGameMaster: true
       Icon: Skill_Skillcrafting_Water_VampiricHunger
       Id: Target_VampiricHunger
@@ -6314,12 +5865,10 @@
       DamageRange: 10
       DamageType: Water
       DeathType: FrozenShatter
-      Description:
-        - >-
-          |Deal 100% (Water) and set Chilled status on characters in the area.
-          Freeze blood and water surfaces.|
-      DisplayName:
-        - '|Winter Blast|'
+      Description: >-
+        Deal 100% (Water) and set Chilled status on characters in the area.
+        Freeze blood and water surfaces.
+      DisplayName: Winter Blast
       ForGameMaster: true
       Icon: Skill_Water_WinterBlast
       Id: Target_WinterBlast

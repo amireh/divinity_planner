@@ -9,11 +9,12 @@ function interpolateTemplate({
   return interpolate(template)
     .split(/<br\/?>/)
     .map(function(entry) {
-      return entry.trim();
+      return entry.trim().replace(/^\||\|$/g, '');
     })
     .filter(function(entry) {
       return entry.length > 0;
     })
+    .join("\n")
   ;
 
   function interpolate(str) {
