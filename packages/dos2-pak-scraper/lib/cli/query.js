@@ -1,7 +1,4 @@
-const yaml = require('node-yaml')
 const lodash = require('lodash')
-
-const dump = data => process.stdout.write(yaml.dump(data))
 
 module.exports = function query(skillData, property, params) {
   const pluck = params.root ?
@@ -29,12 +26,12 @@ module.exports = function query(skillData, property, params) {
       return map
     }, {})
 
-    dump(counted)
+    return counted
   }
   else if (params.uniq) {
-    dump(lodash.uniq(props))
+    return lodash.uniq(props)
   }
   else {
-    dump(props)
+    return props
   }
 }

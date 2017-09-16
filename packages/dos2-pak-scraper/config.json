@@ -4,5 +4,18 @@
   },
   "assets": {
     "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt"
+  },
+  "abilityIdMapping": {
+    "Air": "Aerotheurge",
+    "Death": "Necromancer",
+    "Earth": "Geomancer",
+    "Fire": "Pyrokinetic",
+    "None": "Special",
+    "Polymorph": "Polymorph",
+    "Ranger": "Huntsman",
+    "Rogue": "Scoundrel",
+    "Summoning": "Summoning",
+    "Warrior": "Warfare",
+    "Water": "Hydrosophist"
   }
 }

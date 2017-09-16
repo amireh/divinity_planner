@@ -14,11 +14,34 @@ const loadRequestedSkillData = () => {
   });
 }
 
+const extensionizeFilePath = filePath => {
+  if (program.format === 'json') {
+    return filePath.replace(/\.yml$/, '.json')
+  }
+  else {
+    return filePath
+  }
+}
+
+const dump = value => {
+  if (program.format === 'json') {
+    return JSON.stringify(value, null, 4)
+  }
+  else {
+    return yaml.dump(value)
+  }
+}
+
 program
   .option(
     '-i, --input [path]',
     'Path to the extracted Shared.pak archive.',
     path.join(root, config.archives.Shared)
+  )
+  .option(
+    '-f, --format [format]',
+    'Output format.',
+    'yml'
   )
 ;
 
@@ -31,22 +54,57 @@ program
   .action(function(property, params) {
     const skillData = scraper.parseSkillData(loadRequestedSkillData());
 
-    scraper.cli.query(skillData, property, params)
+    process.stdout.write(
+      dump(
+        scraper.cli.query(skillData, property, params)
+      )
+    )
+  })
+;
+
+program
+  .command('list-properties')
+  .option('-i, --input [refined.yml]', '', path.join(root, 'db/01-refined.yml'))
+  .action(function(params) {
+    const abilities = yaml.parse(fs.readFileSync(params.input, 'utf8'))
+
+    process.stdout.write(
+      dump(
+        scraper.cli.listProperties({ abilities: abilities })
+      )
+    )
   })
 ;
 
 program
   .command('extract')
-  .option('-i, --input [path]', 'Path to the extracted Shared.pak archive.',
-    path.join(root, config.archives.Shared)
-  )
   .option('-o, --output [path]', 'Path to the generated file.',
     path.join(root, 'db/00-database.yml')
   )
   .action(function(params) {
     const skillData = scraper.parseSkillData(loadRequestedSkillData());
 
-    fs.writeFileSync(params.output, yaml.dump(scraper.cli.extract(skillData)), 'utf8');
+    fs.writeFileSync(
+      extensionizeFilePath(params.output),
+      dump(scraper.cli.extract(skillData)),
+      'utf8'
+    );
+  })
+;
+
+program
+  .command('refine')
+  .option('-o, --output [path]', 'Path to the generated file.',
+    path.join(root, 'db/01-refined.yml')
+  )
+  .action(function(params) {
+    const skillData = scraper.parseSkillData(loadRequestedSkillData());
+
+    fs.writeFileSync(
+      extensionizeFilePath(params.output),
+      dump(scraper.cli.refine(skillData)),
+      'utf8'
+    );
   })
 ;
 

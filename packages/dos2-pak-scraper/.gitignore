@@ -1,3 +1,4 @@
 /archives
 /assets
 /node_modules
+/db/*.json
