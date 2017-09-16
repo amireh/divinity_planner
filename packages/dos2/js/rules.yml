@@ -12,6 +12,18 @@ Attributes:
   - Id: WIT
     DisplayName: Wits
 
+Abilities:
+  - Air
+  - Death
+  - Earth
+  - Fire
+  - Polymorph
+  - Ranger
+  - Rogue
+  - Summoning
+  - Warrior
+  - Water
+
 StartingAttributePoints: 5
 StartingAbilityPoints: 5
 BaseAttributePoints: 5

@@ -15,16 +15,19 @@ exports.ATTRIBUTE_URL_KEYS = {
 };
 
 exports.ABILITY_URL_KEYS = {
-  'aerotheurge':    'A',
-  'expertMarksman': 'E',
-  'geomancer':      'G',
-  'hydrosophist':   'H',
-  'manAtArms':      'M',
-  'pyrokinetic':    'P',
-  'scoundrel':      'S',
-  'witchcraft':     'W',
+  'Air':          'A',
+  'Death':        'D',
+  'Earth':        'E',
+  'Fire':         'F',
+  'Polymorph':    'P',
+  'Ranger':       'R',
+  'Rogue':        'T',
+  'Summoning':    'S',
+  'Warrior':      'W',
+  'Water':        'Y',
 };
 
+exports.IGNORED_ABILITIES = [ 'None' ];
 exports.SKILLBOOK_TAB_URL_KEY = 'V';
 
 exports.STARTING_INDEX_CHAR_CODE = 97;

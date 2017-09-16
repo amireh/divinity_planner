@@ -1,7 +1,7 @@
 const config = require('../../config.json')
 const R = require('ramda')
 const sortObject = require('deep-sort-object')
-const sortByAbility = R.sortWith([ R.ascend(R.prop('id'))])
+const sortById = R.sortWith([ R.ascend(R.prop('Id'))])
 const { interpolateTemplate } = require('../pakUtils')
 
 const Cast = {
@@ -181,10 +181,17 @@ function renameProperties(rewrites) {
 
 function groupByAbility(skills) {
   const abilityMap = Object.keys(config.abilityIdMapping).sort().reduce(function(map, id) {
+    const abilitySkills = skills.filter(x => x.Ability === id)
+
+    // ignore schools that have no skills (e.g. all filtered like in "None")
+    if (abilitySkills.length === 0) {
+      return map;
+    }
+
     map[id] = {
       Id: id,
       DisplayName: config.abilityIdMapping[id],
-      Skills: sortByAbility(skills.filter(x => x.Ability === id)),
+      Skills: sortById(abilitySkills),
     }
 
     return map

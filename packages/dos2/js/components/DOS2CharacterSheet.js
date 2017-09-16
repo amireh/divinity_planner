@@ -22,6 +22,7 @@ const DOS2CharacterSheet = React.createClass({
       <div>
         <div className="column column--left">
           <DOS2CharacterStatsPanel
+            abilities={GameAbilities}
             character={character}
             activeAbilityId={activeAbilityId}
             stats={stats}

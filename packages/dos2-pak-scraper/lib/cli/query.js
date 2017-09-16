@@ -3,7 +3,7 @@ const lodash = require('lodash')
 module.exports = function query(skillData, property, params) {
   const pluck = params.root ?
     x => x[property] :
-    x => x.properties[property]
+    x => x.Properties[property]
   ;
 
   const props = skillData.map(pluck).filter(value => {

@@ -1,15 +1,18 @@
 const { MaxAbilityPoints } = require('./rules.yml');
-const { ABILITY_URL_KEYS } = require('./constants')
+const { ABILITY_URL_KEYS, IGNORED_ABILITIES } = require('./constants')
 const GameAbilities = require('./GameAbilities');
 
 function CharacterAbilities(character, onChange = Function.prototype) {
   let exports = {};
 
-  const abilityPoints = GameAbilities.getAll().reduce(function(hash, ability) {
-    hash[ability.id] = 0;
+  const abilityPoints = GameAbilities.getAll()
+    .filter(x => IGNORED_ABILITIES.indexOf(x.Id) === -1)
+    .reduce(function(hash, ability) {
+      hash[ability.Id] = 0;
 
-    return hash;
-  }, {});
+      return hash;
+    }, {})
+  ;
 
   exports.addPoint = function(id) {
     if (abilityPoints[id] < MaxAbilityPoints) {
@@ -44,11 +47,11 @@ function CharacterAbilities(character, onChange = Function.prototype) {
     const remaining = getRemainingPoints();
 
     stats.abilityPoints = GameAbilities.getAll().reduce(function(set, ability) {
-      const points = abilityPoints[ability.id];
+      const points = abilityPoints[ability.Id];
 
-      set[ability.id] = {
-        id: ability.id,
-        name: ability.name,
+      set[ability.Id] = {
+        id: ability.Id,
+        name: ability.DisplayName,
         canIncrease: points < MaxAbilityPoints && remaining >= getCost(points+1),
         canDecrease: points > 0,
         points: points
@@ -146,11 +149,11 @@ function CharacterAbilities(character, onChange = Function.prototype) {
     }
 
     GameAbilities.getAll().forEach(function(ability, index) {
-      const points = abilityPoints[ability.id];
+      const points = abilityPoints[ability.Id];
 
       if (points > 0) {
         if (lastAbilityIndex !== index - 1) {
-          const key = ABILITY_URL_KEYS[ability.id];
+          const key = ABILITY_URL_KEYS[ability.Id];
           fragments.push(key);
         }
 
@@ -171,7 +174,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
     const attrKeys = Object.keys(ABILITY_URL_KEYS).reduce(function(set, id) {
       const key = ABILITY_URL_KEYS[id];
 
-      set[key] = abilities.filter(a => a.id === id)[0];
+      set[key] = abilities.filter(a => a.Id === id)[0];
 
       return set;
     }, {})
@@ -183,8 +186,8 @@ function CharacterAbilities(character, onChange = Function.prototype) {
       else {
         const points = char.charCodeAt(0) - 97;
 
-        distribution[nextAbility.id] = points;
-        abilityPoints[nextAbility.id] = points;
+        distribution[nextAbility.Id] = points;
+        abilityPoints[nextAbility.Id] = points;
 
         nextAbility = abilities[abilities.indexOf(nextAbility) + 1];
       }

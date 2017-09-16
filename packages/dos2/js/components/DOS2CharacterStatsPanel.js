@@ -1,7 +1,7 @@
 const React = require('react');
 const { AdjustableItem } = require('dos-components');
 const DOS2AttributePanel = require('./DOS2AttributePanel');
-// const AbilityPanel = require('./AbilityPanel');
+const DOS2AbilityPanel = require('./DOS2AbilityPanel');
 // const SkillbookStats = require('./SkillbookStats');
 const { URLManager } = require('dos-common');
 const classSet = require('classnames');
@@ -17,7 +17,7 @@ const Tabs = React.createClass({
     return (
       <div className="stats-panel__tabs">
         {this.renderLink(PANEL_CHAR, 'Character')}
-        {false && this.renderLink(PANEL_ABILITIES, 'Abilities')}
+        {this.renderLink(PANEL_ABILITIES, 'Abilities')}
         {false &&this.renderLink(PANEL_TALENTS, 'Talents')}
         {false &&this.renderLink(PANEL_TRAITS, 'Traits')}
       </div>
@@ -134,13 +134,14 @@ const DOS2CharacterStatsPanel = React.createClass({
           </span>
         </h3>
 
-        {/*<AbilityPanel
+        <DOS2AbilityPanel
+          abilities={this.props.abilities}
           abilityPoints={stats.abilityPoints}
           onIncrease={character.addAbilityPoint}
           onDecrease={character.removeAbilityPoint}
           onSelect={this.showAbilitySkillTree}
           activeAbilityId={activeAbilityId}
-        />*/}
+        />
 
         {/*<SkillbookStats
           skills={stats.skillbook}
