@@ -1,0 +1,6 @@
+{
+  "name": "dos-common",
+  "description": "Divinity: Original Sin planner core modules.",
+  "version": "1.0.0",
+  "main": "js/index.js"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dos-crawlers",
+  "dependencies": {
+    "cheerio": "0.19.0",
+    "commander": "2.9.0",
+    "fs-extra": "0.26.2",
+    "request": "2.65.0"
+  }
+}

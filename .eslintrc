@@ -9,6 +9,10 @@
     "react"
   ],
 
+  "parserOptions": {
+    "sourceType": "module"
+  },
+
   "rules": {
     "no-trailing-spaces": 2,
     "indent": [2, 2, {
@@ -107,6 +111,7 @@
     "spread": true,
     "restParams": true,
     "jsx": true,
+    "sourceType": "module"
   },
 
   "globals": {

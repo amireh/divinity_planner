@@ -1,0 +1,43 @@
+.ability-panel {
+  display: block;
+  vertical-align: top;
+
+  // margin: 1em 0;
+
+  &__tabs {
+    margin: 0;
+  }
+
+  &__category {
+    display: block;
+    position: relative;
+    letter-spacing: .2px;
+    font-weight: 700;
+
+    &-collapser {
+      cursor: pointer;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top:   2px;
+      width:  18px;
+      height: 18px;
+      background-size: 100%;
+      background-color: transparent;
+      background-position: top left;
+      background-repeat: no-repeat;
+      border: none;
+      padding: 0;
+
+      .h-sepia();
+
+      &--expanded {
+        background-image: url("../images/collapser/expanded.png");
+      }
+
+      &--collapsed {
+        background-image: url("../images/collapser/collapsed.png");
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.character-selector {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+
+  &__slot {
+    @dim: 48px;
+
+    height: @dim;
+    width:  @dim;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    cursor: pointer;
+
+    .frame__character-portrait();
+
+    &--inactive {
+      .h-grayscale();
+    }
+
+    img {
+      opacity: 0.5;
+    }
+
+    &--active, &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 50px;
+
+    &--0 { background-image: url('../images/portrait-1.png'); }
+    &--1 { background-image: url('../images/portrait-2.png'); }
+    &--2 { background-image: url('../images/portrait-3.png'); }
+    &--3 { background-image: url('../images/portrait-4.png'); }
+  }
+}
