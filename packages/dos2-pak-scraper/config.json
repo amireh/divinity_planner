@@ -1,9 +1,12 @@
 {
   "archives": {
-    "Shared": "archives/Shared"
+    "Shared": "archives/Shared",
+    "Icons": "archives/Icons"
   },
   "assets": {
-    "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt"
+    "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt",
+    "IconMap": "archives/Shared/Public/Shared/GUI/Ability_Skill_Status_Icons.lsx",
+    "IconSprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/Ability_Skill_Status_Icons.png"
   },
   "abilityIdMapping": {
     "Air": "Aerotheurge",

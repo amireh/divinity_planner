@@ -5,7 +5,8 @@ const config = require('../config')
 const program = require('commander')
 const yaml = require('node-yaml')
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs-extra')
+const { execSync } = require('child_process')
 const root = path.resolve(__dirname, '..')
 
 const loadRequestedSkillData = () => {
@@ -105,6 +106,32 @@ program
       dump(scraper.cli.refine(skillData)),
       'utf8'
     );
+  })
+;
+
+program
+  .command('generate-icons')
+  .option('-o, --output [path]', 'Path to the generated file.',
+    path.join(root, 'db/dos2-icons.less')
+  )
+  .action(function(params) {
+    execSync(
+      `cp "${path.join(root, config.assets.IconSprite)}" "${path.join(root, "db/dos2-icons.png")}"`
+    )
+
+    execSync(
+      `convert db/dos2-icons.png -resize 1024x1024 db/dos2-icons.png`
+    )
+
+    fs.writeFileSync(
+      params.output,
+      scraper.cli.generateIcons({
+        xmlFile: fs.readFileSync(path.join(config.assets.IconMap), 'utf8'),
+        width: 1024,
+        height: 1024,
+      }),
+      'utf8'
+    )
   })
 ;
 

@@ -28,8 +28,10 @@
     "node-yaml": "^3.1.1"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "commander": "^2.11.0",
     "deep-sort-object": "^1.0.2",
+    "fs-extra": "^4.0.2",
     "lodash": "^4.17.4",
     "ramda": "^0.24.1"
   }

@@ -24,7 +24,9 @@ const DOS2Skill = React.createClass({
 
   render() {
     const skill = this.props;
-    const { canLearn, learnable } = skill;
+    // const { canLearn, learnable } = skill;
+    const canLearn = true;
+    const learnable = true;
 
     const className = classSet({
       'skill-tree__skill': true,
@@ -37,7 +39,8 @@ const DOS2Skill = React.createClass({
     let iconClassName = {};
 
     iconClassName['skill-icon-ee'] = true;
-    iconClassName['skill-icon-ee--' + skill.Id] = true;
+    iconClassName[`dos2-icon`] = true;
+    iconClassName[`dos2-icon--${skill.Icon}`] = true;
 
     iconClassName = classSet(iconClassName);
 
