@@ -2,7 +2,6 @@
   "name": "divinity_planner",
   "version": "1.1.0",
   "description": "Divinity: Original Sin talent calculator app.",
-  "main": "ui/index.js",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "6",
@@ -28,6 +27,7 @@
     "less-loader": "^2.2.1",
     "lodash": "^3.10.1",
     "mocha": "^2.3.3",
+    "mortal-webpack": "1.1.1",
     "node-sprite-generator": "^0.9.0",
     "node-sprite-generator-jimp": "0.0.1",
     "react": "^0.14.1",
@@ -41,9 +41,9 @@
   },
   "scripts": {
     "test": "karma start --single-run",
-    "build": "NODE_ENV=production webpack && cp ui/css/splash.css public/dist/",
+    "build": "NODE_ENV=production webpack",
     "start": "NODE_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
-    "lint": "eslint ui packages/*/lib",
+    "lint": "eslint packages/*/lib packages/*/js",
     "sprites": "./scripts/generate_spritesheet.js"
   },
   "repository": {

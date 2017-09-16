@@ -1,10 +1,12 @@
+# errywhere
+node_modules
+*.zip
+
+#
 /.ga/screenshots
 
 /assets
-
-node_modules
-
-*.zip
+/dist
 
 /packages/crawlers/*/assets
 /packages/crawlers/*/fixtures
