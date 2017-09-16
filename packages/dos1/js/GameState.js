@@ -1,14 +1,16 @@
-const { URLManager } = require('dos-common');
+const { AppVersion, URLManager } = require('dos-common');
 
 exports.isEE = function() {
-  return URLManager.getQueryParams().ee === '1';
+  const queryParams = URLManager.getQueryParams();
+
+  return queryParams.ee === '1' || queryParams.version === AppVersion.DOS1_EE;
 };
 
 exports.setEE = function(flag) {
   if (flag && !exports.isEE()) {
-    URLManager.setQueryParam('ee', '1');
+    URLManager.setQueryParam('version', AppVersion.DOS1_EE);
   }
   else if (!flag && exports.isEE()) {
-    URLManager.setQueryParam('ee', null);
+    URLManager.setQueryParam('version', AppVersion.DOS1);
   }
 };

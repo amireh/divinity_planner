@@ -1,5 +1,6 @@
 require('../css/index.less');
 
+exports.AppVersion = require('./AppVersion')
 exports.EventEmitter = require('./shared/EventEmitter')
 exports.URLManager = require('./shared/URLManager')
 

@@ -3,7 +3,7 @@ const GameState = require('../GameState');
 const CharacterSheet = require('./CharacterSheet');
 const CharacterSelector = require('./CharacterSelector');
 const { Checkbox } = require('dos-components');
-const { URLManager } = require('dos-common');
+const { AppVersion, URLManager } = require('dos-common');
 const Character = require('../Character');
 
 const profiles = [
@@ -27,8 +27,8 @@ const App = React.createClass({
     profiles.forEach(profile => profile.addChangeListener(this.updateURL));
   },
 
-  componentWillUpdate: function(nextProps, nextState) {
-    if (nextProps.queryParams.ee !== this.props.queryParams.ee) {
+  componentWillUpdate: function(nextProps) {
+    if (AppVersion.resolve(nextProps.queryParams) !== AppVersion.resolve(this.props.queryParams)) {
       profiles.forEach(profile => profile.ensureIntegrity());
 
       this.updateURL();
@@ -55,7 +55,7 @@ const App = React.createClass({
           <div className="root__ee-toggler">
             <Checkbox
               onChange={this.toggleEnhancedMode}
-              checked={queryParams.ee}
+              checked={GameState.isEE()}
               label="Enhanced Edition"
             />
           </div>

@@ -1,7 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Root = require('./Root');
-const { URLManager } = require('dos-common');
+const AppSwitcher = require('./AppSwitcher')
+const { AppVersion, URLManager } = require('dos-common');
+const { DOS2 } = AppVersion
 
 let appContainer;
 
@@ -15,18 +17,23 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 function renderCurrentApp() {
-  if (location.hash.indexOf('DOS2') > -1) {
-    require.ensure([ 'dos2' ], function() {
-      const DOS2 = require('dos2')
+  const app = AppVersion.resolve()
 
-      render(DOS2);
+  if (!app) {
+    render(AppSwitcher)
+  }
+  else if (app === DOS2) {
+    require.ensure([ 'dos2' ], function() {
+      const DOS2App = require('dos2')
+
+      render(DOS2App);
     })
   }
   else {
     require.ensure([ 'dos1' ], function() {
-      const DOS1 = require('dos1')
+      const DOS1App = require('dos1')
 
-      render(DOS1);
+      render(DOS1App);
     })
   }
 }
