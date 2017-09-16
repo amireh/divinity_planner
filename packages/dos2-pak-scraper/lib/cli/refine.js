@@ -121,6 +121,8 @@ function isPlayerSkill(skill) {
     !skill.Id.match(/.+_\-\d$/) &&
     // e.g. Zone_EnemyAutomatonElectricRay
     !skill.Id.match(/^Zone_/) &&
+    !skill.Id.match(/^Projectile_Quest_/) &&
+    skill.Properties.DisplayNameRef &&
     skill.Properties.Ability &&
     // "None" is the "Special" category of skills in Wikis; they are not learnable
     skill.Properties.Ability !== 'None'

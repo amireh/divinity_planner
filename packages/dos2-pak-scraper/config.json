@@ -5,8 +5,22 @@
   },
   "assets": {
     "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt",
-    "IconMap": "archives/Shared/Public/Shared/GUI/Ability_Skill_Status_Icons.lsx",
-    "IconSprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/Ability_Skill_Status_Icons.png"
+    "Icons": [
+      {
+        "name": "dos2-skills",
+        "manifest": "archives/Shared/Public/Shared/GUI/Ability_Skill_Status_Icons.lsx",
+        "sprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/Ability_Skill_Status_Icons.dds",
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "name": "dos2-skills-extended",
+        "manifest": "archives/Shared/Public/Shared/GUI/Icons_DOS2_Skills.lsx",
+        "sprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/Icons_DOS2_Skills.dds",
+        "width": 512,
+        "height": 512
+      }
+    ]
   },
   "abilityIdMapping": {
     "Air": "Aerotheurge",

@@ -41,13 +41,13 @@ module.exports = function({
   })
 
   const round = x => Math.round(x)
-  const baseCSS = trimMultilineString(`
-    .${className} {
-      background-image: url('./${imageName}');
-      background-size: ${width}px ${height}px;
-    }
-  `)
-  return baseCSS + icons.map(function(icon) {
+  const baseCSS = ''
+  // trimMultilineString(`
+  //   .${className} {
+  //   }
+  // `)
+
+  return baseCSS + "\n" + icons.map(function(icon) {
     const iconWidth   = round(icon.U2 - icon.U1);
     const iconHeight  = round(icon.V2 - icon.V1);
     const iconLeft    = -1 * round(icon.U1);
@@ -55,7 +55,9 @@ module.exports = function({
 
     return trimMultilineString(`
       .${className}--${icon.Id} {
+        background-image: url('./${imageName}');
         background-position: ${iconLeft}px ${iconTop}px;
+        background-size: ${width}px ${height}px;
         width: ${iconWidth}px;
         height: ${iconHeight}px;
       }

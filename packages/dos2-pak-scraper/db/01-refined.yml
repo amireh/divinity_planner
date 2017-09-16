@@ -122,12 +122,6 @@
       UseWeaponDamage: false
       UseWeaponProperties: false
     - Ability: Air
-      DamageType: Air
-      DisplayName: Immemorial Thunder
-      ForGameMaster: true
-      Id: Projectile_Quest_KrakenRay_Lightning
-      SkillProperties: 'CreateSurface,4,,WaterCloudElectrified,100;SHOCKED,20,2'
-    - Ability: Air
       ActionPoints: 3
       AmountOfTargets: '100'
       AreaRadius: 5
@@ -732,14 +726,6 @@
       UseWeaponDamage: false
       UseWeaponProperties: false
     - Ability: Death
-      AIFlags: CanNotUse
-      DamageType: Physical
-      DeathType: DoT
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Blood
-      SkillProperties: 'CreateSurface,1,,Blood;Douse;DISEASED,100,2;DECAYING_TOUCH,100,2'
-      TargetConditions: Enemy
-    - Ability: Death
       ActionPoints: 2
       AreaRadius: 10
       ConsequencesStartTime: '1000'
@@ -1102,15 +1088,6 @@
       UseWeaponDamage: false
       UseWeaponProperties: false
     - Ability: Death
-      AreaRadius: 5
-      DamageMultiplier: 175
-      DamageRange: 0
-      DamageType: Physical
-      ForGameMaster: false
-      Id: Target_Kraken_DummyTargetSkill_Sallow
-      SkillProperties: 'PLAGUE,100,7'
-      TargetRadius: '20'
-    - Ability: Death
       ActionPoints: 2
       AddWeaponRange: false
       CanTargetCharacters: true
@@ -1225,22 +1202,6 @@
       TargetConditions: Character;!Dead
       UseWeaponDamage: false
       UseWeaponProperties: false
-    - Ability: Earth
-      AIFlags: CanNotUse
-      DamageType: Earth
-      DeathType: PetrifiedShatter
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Oil
-      SkillProperties: 'CreateSurface,1,,Oil'
-      TargetConditions: Enemy
-    - Ability: Earth
-      AIFlags: CanNotUse
-      DamageType: Poison
-      DeathType: Acid
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Poison
-      SkillProperties: 'CreateSurface,1,,Poison'
-      TargetConditions: Enemy
     - Ability: Earth
       ActionPoints: 3
       AmountOfTargets: '5'
@@ -1427,12 +1388,6 @@
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
-    - Ability: Earth
-      DamageType: Poison
-      DisplayName: Breath from the Depths
-      ForGameMaster: true
-      Id: Projectile_Quest_KrakenRay_Poison
-      SkillProperties: 'CreateSurface,4,,PoisonCursed,100;POISONED,20,2'
     - Ability: Earth
       ActionPoints: 2
       AreaRadius: 2
@@ -1976,14 +1931,6 @@
       UseWeaponDamage: false
       UseWeaponProperties: false
     - Ability: Fire
-      AIFlags: CanNotUse
-      DamageType: Fire
-      DeathType: Incinerate
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Fire
-      SkillProperties: 'CreateSurface,1,,Fire'
-      TargetConditions: Enemy
-    - Ability: Fire
       ActionPoints: 3
       AmountOfTargets: '4'
       CanTargetCharacters: false
@@ -2495,16 +2442,6 @@
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
-    - Ability: Fire
-      AreaRadius: 4
-      DamageMultiplier: 175
-      DamageRange: 0
-      DamageType: Fire
-      ForGameMaster: false
-      Id: Target_Kraken_DummyTargetSkill_Fire
-      SkillProperties: >-
-        TargetCreateSurface,4,,Fire;BURNING,30,3;TargetCreateSurface,2,,OilBlessed
-      TargetRadius: '20'
     - Ability: Fire
       ActionPoints: 2
       AddWeaponRange: false
@@ -5369,21 +5306,6 @@
       UseWeaponDamage: false
       UseWeaponProperties: false
     - Ability: Water
-      AIFlags: CanNotUse
-      DamageType: Water
-      DeathType: FrozenShatter
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Ice
-      SkillProperties: 'CHILLED,100,1;CreateSurface,1,,WaterFrozen'
-      TargetConditions: Enemy
-    - Ability: Water
-      AIFlags: CanNotUse
-      DamageMultiplier: 0
-      ForGameMaster: false
-      Id: ProjectileStrike_Stormbolt_Water
-      SkillProperties: 'HEALING,100,2'
-      TargetConditions: Ally;!DamagedOnHeal
-    - Ability: Water
       ActionPoints: 2
       AreaRadius: 13
       CanTargetCharacters: true
@@ -5451,12 +5373,6 @@
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
-    - Ability: Water
-      DamageType: Water
-      DisplayName: Abyssal Waters
-      ForGameMaster: true
-      Id: Projectile_Quest_KrakenRay_Water
-      SkillProperties: 'CreateSurface,4,,WaterCursed,100;WET,100,2'
     - Ability: Water
       ActionPoints: 1
       AreaRadius: 10
