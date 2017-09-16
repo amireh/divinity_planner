@@ -1,0 +1,51 @@
+Attributes:
+  - Id: str
+    Name: Strength
+    Boosts:
+      - man_at_arms
+
+StartingAttributePoints: 5
+StartingAbilityPoints: 5
+BaseAttributePoints: 5
+BaseAbilitySkillCount: 3
+MaxAttributePoints: 15
+MaxAbilityPoints: 5
+MaxLevel: 20
+
+Tiers:
+  - Name: Novice
+    AbilityPointRequirement: 1
+  - Name: Adept
+    AbilityPointRequirement: 2
+  - Name: Master
+    AbilityPointRequirement: 4
+
+TierAccessibility:
+  0:
+  1:
+    - Tier: Novice
+      Skills: 3
+  2:
+    - Tier: Novice
+      Skills: 5
+    - Tier: Adept
+      Skills: 2
+  3:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 3
+  4:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 4
+    - Tier: Master
+      Skills: 1
+  5:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 4
+    - Tier: Master
+      Skills: 2

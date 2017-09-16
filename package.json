@@ -2,7 +2,9 @@
   "name": "divinity_planner",
   "version": "1.1.0",
   "description": "Divinity: Original Sin talent calculator app.",
-  "dependencies": {},
+  "dependencies": {
+    "yaml-loader": "^0.5.0"
+  },
   "devDependencies": {
     "babel-core": "6",
     "babel-loader": "6",

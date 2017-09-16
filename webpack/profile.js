@@ -17,6 +17,7 @@ module.exports = [
     'dos-components': root.join('packages/dos-common'),
     'dos1': root.join('packages/dos1'),
     'dos2': root.join('packages/dos2'),
+    'dos2-pak-scraper': root.join('packages/dos2-pak-scraper'),
   }),
 
   b.resolveModules({
@@ -44,6 +45,13 @@ module.exports = [
 
   b.compileJSON(),
   b.compileAssets(),
+  b.compile({
+    pattern: /\.yml$/,
+    loaders: [
+      b.loader({ name: 'json-loader' }),
+      b.loader({ name: 'yaml-loader' })
+    ]
+  }),
 
   b.when(process.env.NODE_ENV === 'development', [
     b.devTool('eval'),
