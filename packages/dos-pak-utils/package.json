@@ -1,0 +1,6 @@
+{
+  "name": "dos-pak-utils",
+  "version": "1.0.0",
+  "description": "Utility functions for D:OS .pak data",
+  "main": "lib/index.js"
+}
