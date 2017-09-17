@@ -1,5 +1,6 @@
 - Id: Air
   DisplayName: Aerotheurge
+  Icon: Ability_Aerotheurge
   Skills:
     - Ability: Air
       ActionPoints: 3
@@ -701,6 +702,7 @@
       TargetRadius: '13'
 - Id: Death
   DisplayName: Necromancer
+  Icon: Ability_Necromancy
   Skills:
     - Ability: Death
       ActionPoints: 2
@@ -1178,6 +1180,7 @@
       Tier: Master
 - Id: Earth
   DisplayName: Geomancer
+  Icon: Ability_Geomancer
   Skills:
     - Ability: Earth
       ActionPoints: 2
@@ -1892,6 +1895,7 @@
       TotalSurfaceCells: '4'
 - Id: Fire
   DisplayName: Pyrokinetic
+  Icon: Ability_Pyrokinetic
   Skills:
     - Ability: Fire
       ActionPoints: 4
@@ -2570,6 +2574,7 @@
       UseWeaponProperties: false
 - Id: Polymorph
   DisplayName: Polymorph
+  Icon: Ability_Polymorph
   Skills:
     - Ability: Polymorph
       ActionPoints: 2
@@ -3113,6 +3118,7 @@
       Tier: Adept
 - Id: Ranger
   DisplayName: Huntsman
+  Icon: Ability_Huntsman
   Skills:
     - Ability: Ranger
       ActionPoints: 1
@@ -3599,6 +3605,7 @@
       UseWeaponProperties: false
 - Id: Rogue
   DisplayName: Scoundrel
+  Icon: Ability_Scoundrel
   Skills:
     - Ability: Rogue
       ActionPoints: 1
@@ -4065,6 +4072,7 @@
       UseWeaponProperties: true
 - Id: Summoning
   DisplayName: Summoning
+  Icon: Ability_Summoning
   Skills:
     - Ability: Summoning
       ActionPoints: 2
@@ -4725,6 +4733,7 @@
       UseWeaponProperties: false
 - Id: Warrior
   DisplayName: Warfare
+  Icon: Ability_Warfare
   Skills:
     - Ability: Warrior
       ActionPoints: 2
@@ -5188,6 +5197,7 @@
       UseWeaponProperties: true
 - Id: Water
   DisplayName: Hydrosophist
+  Icon: Ability_Hydrosophist
   Skills:
     - Ability: Water
       ActionPoints: 4

@@ -204,6 +204,7 @@ function groupByAbility(skills) {
     map[id] = {
       Id: id,
       DisplayName: config.abilityIdMapping[id],
+      Icon: config.abilityIcons[id],
       Skills: sortById(abilitySkills),
     }
 

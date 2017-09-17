@@ -19,6 +19,13 @@
         "sprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/Icons_DOS2_Skills.dds",
         "width": 512,
         "height": 512
+      },
+      {
+        "name": "dos2-abilities",
+        "manifest": "archives/Shared/Public/Shared/GUI/talentsAndAbilities.lsx",
+        "sprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/talentsAndAbilities.dds",
+        "width": 512,
+        "height": 512
       }
     ]
   },
@@ -34,5 +41,31 @@
     "Summoning": "Summoning",
     "Warrior": "Warfare",
     "Water": "Hydrosophist"
+  },
+  "abilityIcons": {
+    "Air": "Ability_Aerotheurge",
+    "?": "Ability_Bartering",
+    "?": "Ability_DualWielding",
+    "Earth": "Ability_Geomancer",
+    "Ranger": "Ability_Huntsman",
+    "Water": "Ability_Hydrosophist",
+    "?": "Ability_Leadership",
+    "?": "Ability_Loremaster",
+    "?": "Ability_LuckyCharm",
+    "Death": "Ability_Necromancy",
+    "?": "Ability_PainReflection",
+    "?": "Ability_Perseverance",
+    "?": "Ability_Persuasion",
+    "Polymorph": "Ability_Polymorph",
+    "Fire": "Ability_Pyrokinetic",
+    "?": "Ability_Ranged",
+    "Rogue": "Ability_Scoundrel",
+    "?": "Ability_SingleHanded",
+    "?": "Ability_Sneaking",
+    "Summoning": "Ability_Summoning",
+    "?": "Ability_Telekinesis",
+    "?": "Ability_Thievery",
+    "?": "Ability_TwoHanded",
+    "Warrior": "Ability_Warfare"
   }
 }
