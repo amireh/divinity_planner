@@ -1,5 +1,5 @@
 const R = require('ramda')
-const { requirementMapping } = require('../config.json')
+const { requirementMapping, talentMapping } = require('../config.json')
 
 module.exports = R.map(refineRequirement)
 
@@ -32,8 +32,10 @@ function inferAndCoerceType(value) {
 
 function inferTypeFromName(name) {
   if (name.startsWith('TALENT_')) {
+    const talentName = name.slice('TALENT_'.length);
+
     return {
-      Id: name.slice('TALENT_'.length),
+      Id: talentMapping[talentName] || talentName,
       Type: 'Talent'
     }
   }

@@ -6,6 +6,10 @@ const K = require('../constants');
 const GameAbilities = require('../GameAbilities');
 const Tooltip = require('tooltip');
 const { Tiers } = require('../rules.yml')
+const GameRequirements = require('../GameRequirements')
+const DOS2ItemRequirements = require('./DOS2ItemRequirements')
+
+require('./DOS2Skill.less');
 
 const DOS2Skill = React.createClass({
   componentDidMount() {
@@ -65,13 +69,13 @@ const DOS2Skill = React.createClass({
     extraInfo = this.renderEETooltipData(skill);
 
     return ReactDOMServer.renderToStaticMarkup(
-      <div>
+      <div className="dos2-skill-tooltip">
         {description}
 
         {extraInfo}
 
         {skill.requirement && (
-          <p className="skill__tooltip-requirement">
+          <p className="dos2-skill-tooltip__requirement">
             {this.getRequirementString(skill.requirement, skill)}
           </p>
         )}
@@ -80,6 +84,8 @@ const DOS2Skill = React.createClass({
   },
 
   renderEETooltipData(skill) {
+    const constraints = GameRequirements.getConstraintsFor(skill.Id)
+
     return (
       <div className="type-small">
         {skill.StatsDescriptions && skill.StatsDescriptions.length > 0 && (
@@ -89,6 +95,13 @@ const DOS2Skill = React.createClass({
             <ul>
               {skill.StatsDescriptions.map(e => <li key={e}>{e}</li>)}
             </ul>
+          </div>
+        )}
+
+        {constraints.length > 0 && (
+          <div>
+            <h3>Conditions</h3>
+            <DOS2ItemRequirements constraints={constraints} />
           </div>
         )}
       </div>
@@ -108,7 +121,7 @@ const DOS2Skill = React.createClass({
         break;
 
       case K.ERR_ABILITY_CAP_REACHED:
-        return "You have learned the maximum number of skills at this ability level."
+        return "You have learned the maximum number of skills allowed at this level."
         break;
     }
   },

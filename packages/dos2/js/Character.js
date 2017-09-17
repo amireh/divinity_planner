@@ -32,6 +32,9 @@ function Character(attrs = {}) {
   API.addAbilityPoint = abilities.addPoint;
   API.removeAbilityPoint = abilities.removePoint;
 
+  API.addTalentPoint = talents.addPoint;
+  API.removeTalentPoint = talents.removePoint;
+
   API.getLevel = function() {
     return level || inferLevel();
   };

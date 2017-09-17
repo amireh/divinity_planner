@@ -53,6 +53,9 @@
       "Id": "Ranger"
     }
   },
+  "talentMapping": {
+    "Raistlin": "GlassCannon"
+  },
   "abilityIcons": {
     "Air": "Ability_Aerotheurge",
     "?": "Ability_Bartering",

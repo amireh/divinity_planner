@@ -34,7 +34,7 @@ const DOS2TalentDetail = React.createClass({
           {talent.Description || <em>Talent description is unavailable.</em>}
         </p>
 
-        {constraints && (
+        {constraints.length > 0 && (
           <div>
             <header className="dos2-talent-detail__constraints-header">
               Conditions

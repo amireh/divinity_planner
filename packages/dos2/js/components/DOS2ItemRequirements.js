@@ -27,7 +27,7 @@ const DOS2ItemRequirements = React.createClass({
       const target = GameTalents.get(con.Id)
 
       return (
-        <span>Mutually exclusive with the talent {target.DisplayName}</span>
+        <span>Mutually exclusive with the talent {target && target.DisplayName || con.Id}</span>
       )
     }
     else if (con.Type === 'Ability' && con.Parameter) {

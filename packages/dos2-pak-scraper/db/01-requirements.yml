@@ -157,7 +157,7 @@
 - Constraints: []
   Id: Lockpick
 - Constraints:
-    - Id: Raistlin
+    - Id: GlassCannon
       Type: Talent
       Negated: true
       Parameter: null
