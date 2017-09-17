@@ -61,7 +61,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
 
     function getIndexCharacter(skill) {
       const ability = GameAbilities.get(skill.Ability);
-      const index = ability.skills.indexOf(skill);
+      const index = ability.Skills.indexOf(skill);
 
       return String.fromCharCode(STARTING_INDEX_CHAR_CODE + index);
     }
@@ -107,7 +107,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
       }
       else {
         const skillIndex = char.charCodeAt(0) - STARTING_INDEX_CHAR_CODE;
-        const skill = currentAbility.skills[skillIndex];
+        const skill = currentAbility.Skills[skillIndex];
 
         exports.addSkill(skill.Id);
       }

@@ -1,11 +1,14 @@
-const Skills = require('dos2-pak-scraper/db/01-refined.yml');
-const SkillIndex = Skills.reduce(function(map, skill) {
-  map[skill.Id] = skill;
+const Abilities = require('dos2-pak-scraper/db/01-refined.yml');
+const SkillIndex = Abilities.reduce(function(map, ability) {
+  ability.Skills.forEach(skill => {
+    map[skill.Id] = skill;
+  })
+
   return map;
 }, {})
 
 exports.getAll = function() {
-  return Skills;
+  return Abilities;
 };
 
 exports.get = function(id) {
