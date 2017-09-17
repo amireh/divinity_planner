@@ -40,10 +40,17 @@ function Character(attrs = {}) {
   };
 
   API.setLevel = function(inLevel) {
-    if (inLevel <= Rules.MaxLevel && inLevel >= 1) {
-      level = inLevel;
-      emitChange();
+    if (inLevel > Rules.MaxLevel) {
+      level = Rules.MaxLevel;
     }
+    else if (inLevel < 1) {
+      level = 1;
+    }
+    else {
+      level = inLevel;
+    }
+
+    emitChange();
   };
 
   API.toJSON = function() {

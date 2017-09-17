@@ -20,7 +20,7 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     return character.isLoneWolf() ? AttributeLoneWolfCap : AttributeSoftCap
   }
 
-  exports.addPoints = function({ id, count = 1 }) {
+  exports.addPoints = function(id, count = 1) {
     const allocated = attributePoints[id]
     const allocatable = Math.min(count, getRemainingPoints())
 
@@ -37,7 +37,7 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     return true;
   };
 
-  exports.removePoints = function({ id, count = 1 }) {
+  exports.removePoints = function(id, count = 1) {
     if (attributePoints[id] > 0) {
       attributePoints[id] = Math.max(0, attributePoints[id] - count);
 

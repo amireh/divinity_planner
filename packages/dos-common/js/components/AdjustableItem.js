@@ -5,7 +5,7 @@ const AdjustableItem = React.createClass({
       <div className="adjustable-item">
         <button
           className="btn adjustable-item__btn btn--minus"
-          onClick={this.props.onDecrease}
+          onClick={this.emitDecrease}
           disabled={!this.props.canDecrease}
           children="-"
         />
@@ -16,7 +16,7 @@ const AdjustableItem = React.createClass({
 
         <button
           className="btn adjustable-item__btn btn--plus"
-          onClick={this.props.onIncrease}
+          onClick={this.emitIncrease}
           disabled={!this.props.canIncrease}
           children="+"
         />
@@ -33,7 +33,37 @@ const AdjustableItem = React.createClass({
         )}
       </div>
     );
+  },
+
+  emitIncrease(e) {
+    if (this.props.bulk) {
+      this.props.onIncrease(getCount(e))
+    }
+    else {
+      this.props.onIncrease()
+    }
+  },
+
+  emitDecrease(e) {
+    if (this.props.bulk) {
+      this.props.onDecrease(getCount(e))
+    }
+    else {
+      this.props.onDecrease()
+    }
   }
 });
+
+function getCount(e) {
+  if (e.altKey) {
+    return 100
+  }
+  else if (e.ctrlKey || e.shiftKey || e.modKey) {
+    return 10
+  }
+  else {
+    return 1
+  }
+}
 
 module.exports = AdjustableItem;

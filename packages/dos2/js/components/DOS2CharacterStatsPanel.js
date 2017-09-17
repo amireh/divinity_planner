@@ -89,9 +89,8 @@ const DOS2CharacterStatsPanel = React.createClass({
               canDecrease={stats.canDecreaseLevel}
               onIncrease={this.raiseLevel}
               onDecrease={this.lowerLevel}
-              onMax={this.setMaxLevel}
-              withMaxControl
               children={stats.level}
+              bulk
             />
           </div>
 
@@ -168,19 +167,16 @@ const DOS2CharacterStatsPanel = React.createClass({
     URLManager.setQueryParam('t', ABILITY_URL_KEYS[abilityId]);
   },
 
-  raiseLevel() {
+  raiseLevel(count) {
     const { character } = this.props;
-    character.setLevel(character.getLevel() + 1);
+
+    character.setLevel(character.getLevel() + count);
   },
 
-  setMaxLevel() {
+  lowerLevel(count) {
     const { character } = this.props;
-    character.setLevel(MaxLevel);
-  },
 
-  lowerLevel() {
-    const { character } = this.props;
-    character.setLevel(character.getLevel() - 1);
+    character.setLevel(character.getLevel() - count);
   },
 
 });

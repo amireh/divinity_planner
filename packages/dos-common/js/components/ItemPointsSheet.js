@@ -49,8 +49,9 @@ const ItemPointsSheet = React.createClass({
           <AdjustableItem
             canIncrease={entry.canIncrease}
             canDecrease={entry.canDecrease}
-            onIncrease={this.emitIncrease.bind(null, id)}
-            onDecrease={this.emitDecrease.bind(null, id)}
+            onIncrease={this.props.onIncrease.bind(null, id)}
+            onDecrease={this.props.onDecrease.bind(null, id)}
+            bulk={this.props.bulk}
           >
             {entry.points}
           </AdjustableItem>
@@ -58,28 +59,6 @@ const ItemPointsSheet = React.createClass({
       </li>
     );
   },
-
-  emitIncrease(id, e) {
-    if (this.props.bulk) {
-      this.props.onIncrease({ id, count: isBulkEvent(e) ? 10 : 1 })
-    }
-    else {
-      this.props.onIncrease(id)
-    }
-  },
-
-  emitDecrease(id, e) {
-    if (this.props.bulk) {
-      this.props.onDecrease({ id, count: isBulkEvent(e) ? 10 : 1 })
-    }
-    else {
-      this.props.onDecrease(id)
-    }
-  }
 });
-
-function isBulkEvent(e) {
-  return e.ctrlKey || e.shiftKey || e.modKey;
-}
 
 module.exports = ItemPointsSheet;
