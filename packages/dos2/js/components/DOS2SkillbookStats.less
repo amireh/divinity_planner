@@ -1,0 +1,38 @@
+@import (reference) "~dos-components/css/helpers";
+@import (reference) "~dos-components/css/variables";
+
+.dos2-skillbook-stats {
+  margin-top: 2em;
+
+  .skill-tree__skill {
+    margin: 0 0 1em 0;
+  }
+
+  &__ability + &__ability {
+    margin-top: 1rem;
+  }
+
+  &__ability[data-hint] {
+    display: block;
+  }
+
+  &__ability-icon {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
+  &__ability-stats {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: monospace;
+    font-size: 1.25em;
+    margin-left: 1em;
+  }
+
+  &__counter {
+    &--max {
+      color: @red;
+    }
+  }
+}

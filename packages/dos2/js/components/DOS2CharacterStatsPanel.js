@@ -2,6 +2,7 @@ const React = require('react');
 const { AdjustableItem } = require('dos-components');
 const DOS2AttributePanel = require('./DOS2AttributePanel');
 const DOS2AbilityPanel = require('./DOS2AbilityPanel');
+const DOS2SkillbookStats = require('./DOS2SkillbookStats');
 // const SkillbookStats = require('./SkillbookStats');
 const { URLManager } = require('dos-common');
 const classSet = require('classnames');
@@ -139,10 +140,10 @@ const DOS2CharacterStatsPanel = React.createClass({
           activeAbilityId={activeAbilityId}
         />
 
-        {/*<SkillbookStats
+        <DOS2SkillbookStats
           skills={stats.skillbook}
           abilityPoints={stats.abilityPoints}
-        />*/}
+        />
       </div>
     )
   },
