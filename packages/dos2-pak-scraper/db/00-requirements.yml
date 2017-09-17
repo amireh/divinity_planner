@@ -1,0 +1,178 @@
+- Constraints: ''
+  Id: ActionPoints
+- Constraints: ''
+  Id: ActionPoints2
+- Constraints: ''
+  Id: AirSpells
+- Constraints: ''
+  Id: AnimalEmpathy
+- Constraints: ''
+  Id: AttackOfOpportunity
+- Constraints: ''
+  Id: AvoidDetection
+- Constraints: ''
+  Id: Awareness
+- Constraints: ''
+  Id: Backstab
+- Constraints: Summoning 2
+  Id: BeastMaster
+- Constraints: ''
+  Id: Bully
+- Constraints: ''
+  Id: Carry
+- Constraints: ''
+  Id: ChanceToHitMelee
+- Constraints: ''
+  Id: ChanceToHitRanged
+- Constraints: ''
+  Id: Charm
+- Constraints: '!TALENT_Escapist'
+  Id: Courageous
+- Constraints: ''
+  Id: Criticals
+- Constraints: ''
+  Id: Damage
+- Constraints: FireSpecialist 1;!TALENT_IceKing
+  Id: Demon
+- Constraints: DualWielding 1
+  Id: DualWieldingBlock
+- Constraints: ''
+  Id: Durability
+- Constraints: ''
+  Id: EarthSpells
+- Constraints: ''
+  Id: ElementalAffinity
+- Constraints: RangerLore 1
+  Id: ElementalRanger
+- Constraints: ''
+  Id: Escapist
+- Constraints: WarriorLore 1;!TALENT_QuickStep
+  Id: Executioner
+- Constraints: ''
+  Id: ExpGain
+- Constraints: Level 2
+  Id: ExtraSkillPoints
+- Constraints: Level 2
+  Id: ExtraStatPoints
+- Constraints: Wand 1
+  Id: ExtraWandCharge
+- Constraints: ''
+  Id: FaroutDude
+- Constraints: ''
+  Id: FireSpells
+- Constraints: ''
+  Id: FiveStarRestaurant
+- Constraints: WarriorLore 5
+  Id: Flanking
+- Constraints: Sneaking 1
+  Id: FolkDancer
+- Constraints: ''
+  Id: GoldenMage
+- Constraints: WaterSpecialist 1;!TALENT_Demon
+  Id: IceKing
+- Constraints: ''
+  Id: IncreasedArmor
+- Constraints: ''
+  Id: Initiative
+- Constraints: ''
+  Id: Intimidate
+- Constraints: ''
+  Id: InventoryAccess
+- Constraints: ''
+  Id: ItemCreation
+- Constraints: ''
+  Id: ItemMovement
+- Constraints: ''
+  Id: Kickstarter
+- Constraints: ''
+  Id: Leech
+- Constraints: ''
+  Id: LightStep
+- Constraints: AirSpecialist 5
+  Id: LightningRod
+- Constraints: ''
+  Id: Lockpick
+- Constraints: '!TALENT_Raistlin'
+  Id: LoneWolf
+- Constraints: ''
+  Id: Luck
+- Constraints: ''
+  Id: MrKnowItAll
+- Constraints: RangerLore 1
+  Id: NoAttackOfOpportunity
+- Constraints: ''
+  Id: Politician
+- Constraints: RogueLore 1;!TALENT_Executioner
+  Id: QuickStep
+- Constraints: '!TALENT_LoneWolf'
+  Id: Raistlin
+- Constraints: ''
+  Id: RangerLoreArrowRecover
+- Constraints: RangerLore 4
+  Id: RangerLoreEvasionBonus
+- Constraints: RangerLore 5
+  Id: RangerLoreRangedAPBonus
+- Constraints: ''
+  Id: Reason
+- Constraints: ''
+  Id: Repair
+- Constraints: ''
+  Id: ResistDead
+- Constraints: ''
+  Id: ResistFear
+- Constraints: ''
+  Id: ResistKnockdown
+- Constraints: ''
+  Id: ResistPoison
+- Constraints: ''
+  Id: ResistSilence
+- Constraints: ''
+  Id: ResistStun
+- Constraints: ''
+  Id: ResurrectToFullHealth
+- Constraints: RogueLore 1
+  Id: RogueLoreDaggerAPBonus
+- Constraints: ''
+  Id: RogueLoreDaggerBackStab
+- Constraints: RogueLore 1
+  Id: RogueLoreGrenadePrecision
+- Constraints: RogueLore 5
+  Id: RogueLoreHoldResistance
+- Constraints: RogueLore 2
+  Id: RogueLoreMovementBonus
+- Constraints: ''
+  Id: Scientist
+- Constraints: RangerLore 2
+  Id: Sight
+- Constraints: SingleHanded 1
+  Id: SpillNoBlood
+- Constraints: ''
+  Id: StandYourGround
+- Constraints: ''
+  Id: Stench
+- Constraints: ''
+  Id: SurpriseAttack
+- Constraints: ''
+  Id: Throwing
+- Constraints: ''
+  Id: Trade
+- Constraints: ''
+  Id: Vitality
+- Constraints: ''
+  Id: WalkItOff
+- Constraints: ''
+  Id: WarriorLoreGrenadeRange
+- Constraints: WarriorLore 1
+  Id: WarriorLoreNaturalArmor
+- Constraints: WarriorLore 1
+  Id: WarriorLoreNaturalHealth
+- Constraints: WarriorLore 5
+  Id: WarriorLoreNaturalResistance
+- Constraints: ''
+  Id: WaterSpells
+- Constraints: EarthSpecialist 5
+  Id: WeatherProof
+- Constraints: ''
+  Id: WhatARush
+- Constraints: ''
+  Id: Zombie

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/amireh/divinity_planner#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "dos-pak-utils": "../dos-pak-utils",
     "mocha": "^3.5.3",
     "node-yaml": "^3.1.1"
   },

@@ -11,8 +11,12 @@ const root = path.resolve(__dirname, '..')
 
 const loadRequestedSkillData = () => {
   return scraper.loadSkillData({
-    filePath: path.join(program.input, config.assets.SkillData)
+    filePath: path.join(root, config.assets.SkillData)
   });
+}
+
+const loadAsset = asset => {
+  return fs.readFileSync(path.join(root, config.assets[asset]), 'utf8')
 }
 
 const extensionizeFilePath = filePath => {
@@ -34,11 +38,6 @@ const dump = value => {
 }
 
 program
-  .option(
-    '-i, --input [path]',
-    'Path to the extracted Shared.pak archive.',
-    path.join(root, config.archives.Shared)
-  )
   .option(
     '-f, --format [format]',
     'Output format.',
@@ -79,15 +78,20 @@ program
 
 program
   .command('extract')
-  .option('-o, --output [path]', 'Path to the generated file.',
-    path.join(root, 'db/00-database.yml')
-  )
-  .action(function(params) {
+  .action(function() {
     const skillData = scraper.parseSkillData(loadRequestedSkillData());
 
     fs.writeFileSync(
-      extensionizeFilePath(params.output),
+      extensionizeFilePath(path.join(root, 'db/00-database.yml')),
       dump(scraper.cli.extract(skillData)),
+      'utf8'
+    );
+
+    const requirements = scraper.parseRequirements(loadAsset('Requirements'));
+
+    fs.writeFileSync(
+      extensionizeFilePath(path.join(root, 'db/00-requirements.yml')),
+      dump(requirements),
       'utf8'
     );
   })
@@ -104,6 +108,14 @@ program
     fs.writeFileSync(
       extensionizeFilePath(params.output),
       dump(scraper.cli.refine(skillData)),
+      'utf8'
+    );
+
+    const requirements = scraper.parseRequirements(loadAsset('Requirements'));
+
+    fs.writeFileSync(
+      extensionizeFilePath(path.join(root, 'db/01-requirements.yml')),
+      dump(scraper.refineRequirements(requirements)),
       'utf8'
     );
   })

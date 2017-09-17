@@ -1,0 +1,130 @@
+# TODO: can we automate this? there must be a place this data is kept
+- Id: AllSkilledUp
+  DisplayName: All-Skilled-Up
+  Icon: Talent_AllSkilledUp
+- Id: Ambidextrous
+  DisplayName: Ambidextrous
+  Icon: Talent_Ambidextrous
+- Id: AncestralKnowledge
+  DisplayName: Ancestral Knowledge
+  Icon: Talent_AncestralKnowledge
+- Id: ArrowRecovery
+  DisplayName: Arrow Recovery
+  Icon: Talent_ArrowRecovery
+- Id: AvoidOpportunists
+  DisplayName: Avoid Opportunists
+  Icon: Talent_AvoidOpportunists
+- Id: BiggerAndBetter
+  DisplayName: Bigger and Better
+  Icon: Talent_BiggerAndBetter
+- Id: ComebackKid
+  DisplayName: Comeback Kid
+  Icon: Talent_ComebackKid
+- Id: CorpseEater
+  DisplayName: Corpse Eater
+  Icon: Talent_CorpseEater
+- Id: Demon
+  DisplayName: Demon
+  Icon: Talent_Demon
+- Id: DwarvenGuile
+  DisplayName: Dwarven Guile
+  Icon: Talent_DwarvenGuile
+- Id: ElementalAffinity
+  DisplayName: Elemental Affinity
+  Icon: Talent_ElementalAffinity
+- Id: ElementalRanger
+  DisplayName: Elemental Ranger
+  Icon: Talent_ElementalRanger
+- Id: Escapist
+  DisplayName: Escapist
+  Icon: Talent_Escapist
+- Id: Executioner
+  DisplayName: Executioner
+  Icon: Talent_Executioner
+- Id: FarOutMan
+  DisplayName: Far-Out-Man
+  Icon: Talent_FarOutMan
+- Id: FiveStarDiner
+  DisplayName: Five-Star-Diner
+  Icon: Talent_FiveStarDiner
+- Id: GlassCannon
+  DisplayName: Glass Cannon
+  Icon: Talent_GlassCannon
+- Id: Guerrilla
+  DisplayName: Guerrilla
+  Icon: Talent_Guerrilla
+- Id: Hothead
+  DisplayName: Hothead
+  Icon: Talent_Hothead
+- Id: IceKing
+  DisplayName: Ice King
+  Icon: Talent_IceKing
+- Id: Ingenious
+  DisplayName: Ingenious
+  Icon: Talent_Ingenious
+- Id: Leech
+  DisplayName: Leech
+  Icon: Talent_Leech
+- Id: LivingArmour
+  DisplayName: Living Armour
+  Icon: Talent_LivingArmour
+- Id: LoneWolf
+  DisplayName: LoneWolf
+  Icon: Talent_LoneWolf
+- Id: Mnemonic
+  DisplayName: Mnemonic
+  Icon: Talent_Mnemonic
+- Id: MorningPerson
+  DisplayName: Morning Person
+  Icon: Talent_MorningPerson
+- Id: Opportunist
+  DisplayName: Opportunist
+  Icon: Talent_Opportunist
+- Id: ParryMaster
+  DisplayName: ParryMaster
+  Icon: Talent_ParryMaster
+- Id: PetPal
+  DisplayName: Pet Pal
+  Icon: Talent_PetPal
+- Id: PictureOfHealth
+  DisplayName: Picture Of Health
+  Icon: Talent_PictureOfHealth
+- Id: Refined
+  DisplayName: Refined
+  Icon: Talent_Refined
+- Id: SavageSortilege
+  DisplayName: Savage Sortilege
+  Icon: Talent_SavageSortilege
+- Id: Slingshot
+  DisplayName: Slingshot
+  Icon: Talent_Slingshot
+- Id: SpellSong
+  DisplayName: SpellSong
+  Icon: Talent_SpellSong
+- Id: Stench
+  DisplayName: Stench
+  Icon: Talent_Stench
+- Id: Sturdy
+  DisplayName: Sturdy
+  Icon: Talent_Sturdy
+- Id: The_Pawn
+  DisplayName: The Pawn
+  Icon: Talent_The_Pawn
+- Id: Thrifty
+  DisplayName: Thrifty
+  Icon: Talent_Thrifty
+- Id: Torturer
+  DisplayName: Torturer
+  Icon: Talent_Torturer
+- Id: Unstable
+  DisplayName: Unstable
+  Icon: Talent_Unstable
+- Id: WalkItOff
+  DisplayName: Walk-It-Off
+  Icon: Talent_WalkItOff
+- Id: WhatARush
+  DisplayName: What-A-Rush
+  Icon: Talent_WhatARush
+- Id: Zombie
+  DisplayName: Zombie
+  Icon: Talent_Zombie

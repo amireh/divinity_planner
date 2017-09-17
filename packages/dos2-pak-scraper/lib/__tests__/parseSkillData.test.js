@@ -16,7 +16,7 @@ describe("dos2-pak-scraper::parseSkillData", function() {
     const [ skill ] = subject(sample)
 
     it('extracts skill id', function() {
-      assert.deepEqual(skill.id, 'Projectile_StaffOfMagus');
+      assert.deepEqual(skill.Id, 'Projectile_StaffOfMagus');
     })
   })
 });

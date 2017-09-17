@@ -1,10 +1,7 @@
 {
-  "archives": {
-    "Shared": "archives/Shared",
-    "Icons": "archives/Icons"
-  },
   "assets": {
-    "SkillData": "Public/Shared/Stats/Generated/Data/SkillData.txt",
+    "SkillData": "archives/Shared/Public/Shared/Stats/Generated/Data/SkillData.txt",
+    "Requirements": "archives/Shared/Public/Shared/Stats/Generated/Data/Requirements.txt",
     "Icons": [
       {
         "name": "dos2-skills",
@@ -24,8 +21,8 @@
         "name": "dos2-abilities",
         "manifest": "archives/Shared/Public/Shared/GUI/talentsAndAbilities.lsx",
         "sprite": "archives/Icons/Public/Shared/Assets/Textures/Icons/talentsAndAbilities.dds",
-        "width": 512,
-        "height": 512
+        "width": 1024,
+        "height": 1024
       }
     ]
   },

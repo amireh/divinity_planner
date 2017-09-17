@@ -2,6 +2,7 @@ const path = require('path')
 const config = require('../../../config.json')
 const root = path.resolve(__dirname, '../../../')
 const fixtures = path.resolve(__dirname, '../fixtures')
+const fs = require('fs')
 
 exports.root = {
   toString: () => root,
@@ -15,3 +16,11 @@ exports.fixtures = {
 
 exports.config = config
 exports.assert = require('chai').assert
+
+exports.loadFile = filePath => {
+  return fs.readFileSync(filePath, 'utf8')
+}
+
+exports.loadAsset = name => {
+  return exports.loadFile(exports.root.join(config.assets[name]))
+}

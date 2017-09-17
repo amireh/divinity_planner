@@ -1,4 +1,6 @@
+exports.parseRequirements = require('./parseRequirements')
 exports.parseSkillData = require('./parseSkillData')
+exports.refineRequirements = require('./refineRequirements')
 exports.loadSkillData = require('./loadSkillData')
 exports.cli = {
   extract: require('./cli/extract'),

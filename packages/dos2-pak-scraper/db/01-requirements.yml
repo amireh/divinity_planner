@@ -1,0 +1,277 @@
+- Constraints: []
+  Id: ActionPoints
+- Constraints: []
+  Id: ActionPoints2
+- Constraints: []
+  Id: AirSpells
+- Constraints: []
+  Id: AnimalEmpathy
+- Constraints: []
+  Id: AttackOfOpportunity
+- Constraints: []
+  Id: AvoidDetection
+- Constraints: []
+  Id: Awareness
+- Constraints: []
+  Id: Backstab
+- Constraints:
+    - Id: Summoning
+      Negated: false
+      Parameter: 2
+  Id: BeastMaster
+- Constraints: []
+  Id: Bully
+- Constraints: []
+  Id: Carry
+- Constraints: []
+  Id: ChanceToHitMelee
+- Constraints: []
+  Id: ChanceToHitRanged
+- Constraints: []
+  Id: Charm
+- Constraints:
+    - Id: TALENT_Escapist
+      Negated: true
+      Parameter: null
+  Id: Courageous
+- Constraints: []
+  Id: Criticals
+- Constraints: []
+  Id: Damage
+- Constraints:
+    - Id: FireSpecialist
+      Negated: false
+      Parameter: 1
+    - Id: TALENT_IceKing
+      Negated: true
+      Parameter: null
+  Id: Demon
+- Constraints:
+    - Id: DualWielding
+      Negated: false
+      Parameter: 1
+  Id: DualWieldingBlock
+- Constraints: []
+  Id: Durability
+- Constraints: []
+  Id: EarthSpells
+- Constraints: []
+  Id: ElementalAffinity
+- Constraints:
+    - Id: RangerLore
+      Negated: false
+      Parameter: 1
+  Id: ElementalRanger
+- Constraints: []
+  Id: Escapist
+- Constraints:
+    - Id: WarriorLore
+      Negated: false
+      Parameter: 1
+    - Id: TALENT_QuickStep
+      Negated: true
+      Parameter: null
+  Id: Executioner
+- Constraints: []
+  Id: ExpGain
+- Constraints:
+    - Id: Level
+      Negated: false
+      Parameter: 2
+  Id: ExtraSkillPoints
+- Constraints:
+    - Id: Level
+      Negated: false
+      Parameter: 2
+  Id: ExtraStatPoints
+- Constraints:
+    - Id: Wand
+      Negated: false
+      Parameter: 1
+  Id: ExtraWandCharge
+- Constraints: []
+  Id: FaroutDude
+- Constraints: []
+  Id: FireSpells
+- Constraints: []
+  Id: FiveStarRestaurant
+- Constraints:
+    - Id: WarriorLore
+      Negated: false
+      Parameter: 5
+  Id: Flanking
+- Constraints:
+    - Id: Sneaking
+      Negated: false
+      Parameter: 1
+  Id: FolkDancer
+- Constraints: []
+  Id: GoldenMage
+- Constraints:
+    - Id: WaterSpecialist
+      Negated: false
+      Parameter: 1
+    - Id: TALENT_Demon
+      Negated: true
+      Parameter: null
+  Id: IceKing
+- Constraints: []
+  Id: IncreasedArmor
+- Constraints: []
+  Id: Initiative
+- Constraints: []
+  Id: Intimidate
+- Constraints: []
+  Id: InventoryAccess
+- Constraints: []
+  Id: ItemCreation
+- Constraints: []
+  Id: ItemMovement
+- Constraints: []
+  Id: Kickstarter
+- Constraints: []
+  Id: Leech
+- Constraints: []
+  Id: LightStep
+- Constraints:
+    - Id: AirSpecialist
+      Negated: false
+      Parameter: 5
+  Id: LightningRod
+- Constraints: []
+  Id: Lockpick
+- Constraints:
+    - Id: TALENT_Raistlin
+      Negated: true
+      Parameter: null
+  Id: LoneWolf
+- Constraints: []
+  Id: Luck
+- Constraints: []
+  Id: MrKnowItAll
+- Constraints:
+    - Id: RangerLore
+      Negated: false
+      Parameter: 1
+  Id: NoAttackOfOpportunity
+- Constraints: []
+  Id: Politician
+- Constraints:
+    - Id: RogueLore
+      Negated: false
+      Parameter: 1
+    - Id: TALENT_Executioner
+      Negated: true
+      Parameter: null
+  Id: QuickStep
+- Constraints:
+    - Id: TALENT_LoneWolf
+      Negated: true
+      Parameter: null
+  Id: Raistlin
+- Constraints: []
+  Id: RangerLoreArrowRecover
+- Constraints:
+    - Id: RangerLore
+      Negated: false
+      Parameter: 4
+  Id: RangerLoreEvasionBonus
+- Constraints:
+    - Id: RangerLore
+      Negated: false
+      Parameter: 5
+  Id: RangerLoreRangedAPBonus
+- Constraints: []
+  Id: Reason
+- Constraints: []
+  Id: Repair
+- Constraints: []
+  Id: ResistDead
+- Constraints: []
+  Id: ResistFear
+- Constraints: []
+  Id: ResistKnockdown
+- Constraints: []
+  Id: ResistPoison
+- Constraints: []
+  Id: ResistSilence
+- Constraints: []
+  Id: ResistStun
+- Constraints: []
+  Id: ResurrectToFullHealth
+- Constraints:
+    - Id: RogueLore
+      Negated: false
+      Parameter: 1
+  Id: RogueLoreDaggerAPBonus
+- Constraints: []
+  Id: RogueLoreDaggerBackStab
+- Constraints:
+    - Id: RogueLore
+      Negated: false
+      Parameter: 1
+  Id: RogueLoreGrenadePrecision
+- Constraints:
+    - Id: RogueLore
+      Negated: false
+      Parameter: 5
+  Id: RogueLoreHoldResistance
+- Constraints:
+    - Id: RogueLore
+      Negated: false
+      Parameter: 2
+  Id: RogueLoreMovementBonus
+- Constraints: []
+  Id: Scientist
+- Constraints:
+    - Id: RangerLore
+      Negated: false
+      Parameter: 2
+  Id: Sight
+- Constraints:
+    - Id: SingleHanded
+      Negated: false
+      Parameter: 1
+  Id: SpillNoBlood
+- Constraints: []
+  Id: StandYourGround
+- Constraints: []
+  Id: Stench
+- Constraints: []
+  Id: SurpriseAttack
+- Constraints: []
+  Id: Throwing
+- Constraints: []
+  Id: Trade
+- Constraints: []
+  Id: Vitality
+- Constraints: []
+  Id: WalkItOff
+- Constraints: []
+  Id: WarriorLoreGrenadeRange
+- Constraints:
+    - Id: WarriorLore
+      Negated: false
+      Parameter: 1
+  Id: WarriorLoreNaturalArmor
+- Constraints:
+    - Id: WarriorLore
+      Negated: false
+      Parameter: 1
+  Id: WarriorLoreNaturalHealth
+- Constraints:
+    - Id: WarriorLore
+      Negated: false
+      Parameter: 5
+  Id: WarriorLoreNaturalResistance
+- Constraints: []
+  Id: WaterSpells
+- Constraints:
+    - Id: EarthSpecialist
+      Negated: false
+      Parameter: 5
+  Id: WeatherProof
+- Constraints: []
+  Id: WhatARush
+- Constraints: []
+  Id: Zombie
