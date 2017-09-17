@@ -2,10 +2,9 @@ const cheerio = require('cheerio')
 const trimMultilineString = str => str.replace(/\n\s*/gm, ' ').trim()
 
 module.exports = function({
-  pngFile,
   xmlFile,
-  width = 2048,
-  height = 2048,
+  width,
+  height,
   className = "dos2-icon",
   imageName = "dos2-icons.png",
 }) {
@@ -41,13 +40,8 @@ module.exports = function({
   })
 
   const round = x => Math.round(x)
-  const baseCSS = ''
-  // trimMultilineString(`
-  //   .${className} {
-  //   }
-  // `)
 
-  return baseCSS + "\n" + icons.map(function(icon) {
+  return icons.map(function(icon) {
     const iconWidth   = round(icon.U2 - icon.U1);
     const iconHeight  = round(icon.V2 - icon.V1);
     const iconLeft    = -1 * round(icon.U1);

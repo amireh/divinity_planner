@@ -115,9 +115,10 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'Electrify;SHOCKED,100,2'
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -184,9 +185,10 @@
       MemoryCost: '1'
       SkillProperties: 'SELF:BLINDING_RADIANCE,100,1;'
       SkillType: Shout
+      Starter: true
       StatsDescriptionParams: 'Damage;Potion:BLINDING_RADIANCE:AuraRadius'
       TargetConditions: Character;NonSelf;Enemy
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -287,8 +289,9 @@
       MemoryCost: '1'
       SkillProperties: 'FAVOURABLE_WIND_AURA,100,3'
       SkillType: Shout
+      Starter: true
       TargetConditions: Self
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -518,13 +521,14 @@
       MemoryCost: '1'
       SkillProperties: 'SHOCKED,100,2;Electrify'
       SkillType: Target
+      Starter: true
       StatsDescription: |-
         Range: 2
         Stunned makes target unable to move or act.
       StatsDescriptionParams: TargetRadius;Damage
       TargetConditions: NonSelf
       TargetRadius: '2'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -901,9 +905,10 @@
       SkillProperties: >-
         Summon,40c6a905-74c3-4d89-9ffe-d3493a22cabd,10,-,Target_DummyTargetSkill;EXPLODE,100,1
       SkillType: Target
+      Starter: true
       TargetConditions: Dead;!Item
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -929,9 +934,10 @@
       MemoryCost: '1'
       SkillProperties: 'BLOOD_BUBBLE,100,0'
       SkillType: Target
+      Starter: true
       TargetConditions: Character
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1012,13 +1018,14 @@
       MemoryCost: '1'
       SkillProperties: 'DECAYING_TOUCH,100,2'
       SkillType: Target
+      Starter: true
       StatsDescription: |-
         Range: 100% (Physical)
         Decay makes healing spells and potions do damage on target.
       StatsDescriptionParams: Damage;TargetRadius
       TargetConditions: Character
       TargetRadius: '2'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1111,10 +1118,11 @@
       MemoryCost: '1'
       SkillProperties: 'SELF:OnHit:VAMPIRIC_TOUCH,100,2;BLEEDING,100,2'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: Character;NonSelf
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1303,13 +1311,14 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'POISONED,100,3;CreateSurface,1,,Poison,100'
       SkillType: Projectile
+      Starter: true
       StatsDescription: |-
         Range: 13
         Poisoned deals poison damage over time.
         Can target terrain to create ooze surface.
       StatsDescriptionParams: Damage;TargetRadius
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1381,10 +1390,11 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'CreateSurface,2,,Oil,100'
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: '!Dead'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1483,9 +1493,10 @@
       MemoryCost: '1'
       SkillProperties: 'POISONED,100,2;Contaminate'
       SkillType: Shout
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: Enemy|(Ally&Undead)
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -1784,9 +1795,10 @@
       MemoryCost: '1'
       SkillProperties: 'FORTIFIED,100,3'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: 'Potion:Stats_Fortified:Armor'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2028,9 +2040,10 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'Ignite;CreateSurface,1,,Fire,100;BURNING,100,2;'
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2177,9 +2190,10 @@
       MemoryCost: '1'
       SkillProperties: 'BURNING,100,2;Ignite;Melt'
       SkillType: Shout
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: Character;NonSelf;Enemy
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2300,9 +2314,10 @@
       MemoryCost: '1'
       SkillProperties: 'CLEAR_MINDED,100,3'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: 'Potion:Stats_ClearMinded:Strength;Potion:Stats_ClearMinded:Wits'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2434,11 +2449,12 @@
       MemoryCost: '1'
       SkillProperties: 'HASTED,100,2;'
       SkillType: Target
+      Starter: true
       StatsDescription: 'Range: 13'
       StatsDescriptionParams: 'TargetRadius;Potion:Stats_Hasted:APStart'
       TargetConditions: Character
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2641,8 +2657,9 @@
       MemoryCost: '1'
       SkillProperties: 'HORNS,100,4'
       SkillType: Shout
+      Starter: true
       TargetConditions: Self
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2900,8 +2917,9 @@
       MemoryCost: '1'
       SkillProperties: 'STEEL_SKIN,100,4'
       SkillType: Shout
+      Starter: true
       TargetConditions: Self
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -2950,9 +2968,10 @@
       MemoryCost: '1'
       SkillProperties: 'CHICKEN,100,2'
       SkillType: Target
+      Starter: true
       TargetConditions: 'Character;NonSelf;!Tagged:TOTEM;!Tagged:CHICKENTOUCH_IMMUNE'
       TargetRadius: '2'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -3062,10 +3081,11 @@
       MemoryCost: '1'
       SkillProperties: 'DISARMED,100,1'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: NonSelf;
       TargetRadius: '8'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -3349,10 +3369,11 @@
       Requirement: RangedWeapon
       SkillProperties: 'CRIPPLED,100,1;'
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: NonSelf
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: true
       UseWeaponProperties: true
@@ -3388,10 +3409,11 @@
       ProjectileTerrainOffset: 'Yes'
       Requirement: RangedWeapon
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: ForkLevels;AreaRadius;Damage;TargetRadius
       TargetConditions: NonSelf
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: true
       UseWeaponProperties: true
@@ -3487,10 +3509,11 @@
       SkillProperties: >-
         SELF:IF(Surface:Fire):ARROWHEAD_FIRE,100,2;SELF:IF(Surface:Water&!Surface:Electrified):ARROWHEAD_WATER,100,2;SELF:IF(Surface:Blood&!Surface:Electrified):ARROWHEAD_BLOOD,100,2;SELF:IF(Surface:Electrified):ARROWHEAD_ELECTRIC,100,2;SELF:IF(Surface:Poison):ARROWHEAD_POISON,100,2;SELF:IF(Surface:Oil):ARROWHEAD_OIL,100,2;SELF:IF(Surface:Lava):ARROWHEAD_FIRE,100,2;
       SkillType: Target
+      Starter: true
       TargetConditions: >-
         Surface:Fire|Surface:Water|Surface:Blood|Surface:Poison|Surface:Oil|Surface:Lava
       TargetRadius: '3'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -3538,12 +3561,13 @@
       MemoryCost: '1'
       SkillProperties: 'FIRST_AID,100,0;RESTED,100,1;'
       SkillType: Target
+      Starter: true
       StatsDescription: 'Range: 4'
       StatsDescriptionParams: 'TargetRadius;StatusData:FIRST_AID:HealAmount'
       StatusClearChance: '100'
       TargetConditions: Character;!Dead
       TargetRadius: '4'
-      Tier: Starter
+      Tier: Novice
     - Ability: Ranger
       ActionPoints: 1
       AreaRadius: 4
@@ -3620,10 +3644,11 @@
       Requirement: DaggerWeapon
       SkillProperties: AlwaysBackstab
       SkillType: MultiStrike
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: 'Character;NonSelf;!Tagged:BLOCK_FORK'
       TargetRadius: '8'
-      Tier: Starter
+      Tier: Novice
       UseWeaponDamage: true
       UseWeaponProperties: true
     - Ability: Rogue
@@ -3653,12 +3678,13 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'SLEEPING,100,1'
       SkillType: Projectile
+      Starter: true
       StatsDescription: 'Range: 13'
       StatsDescriptionParams: Damage;TargetRadius
       Stealth: 'Yes'
       TargetConditions: Character
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -3761,10 +3787,11 @@
       Requirement: DaggerWeapon
       SkillProperties: CanBackstab
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetConditions: NonSelf
       TargetRadius: '8'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: true
       UseWeaponProperties: true
@@ -3786,9 +3813,10 @@
       Requirements: Combat
       SkillProperties: 'ADRENALINE,100,-1,,2,2'
       SkillType: Shout
+      Starter: true
       Stealth: 'Yes'
       TargetConditions: Self
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -4067,9 +4095,10 @@
       ProjectileTerrainOffset: 'Yes'
       SkillProperties: 'CreateSurface,1,,DamageType'
       SkillType: Projectile
+      Starter: true
       StatsDescriptionParams: Damage
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -4194,10 +4223,11 @@
       SkillProperties: >-
         TARGET:IF(Tagged:INCARNATE_S&(InSurface:SurfaceFire|InSurface:SurfaceLava)):INF_FIRE,100,-1;TARGET:IF(InSurface:SurfaceWater&Tagged:INCARNATE_S):INF_WATER,100,-1;TARGET:IF(InSurface:SurfaceBlood&Tagged:INCARNATE_S):INF_BLOOD,100,-1;TARGET:IF(Tagged:INCARNATE_S&(InSurface:SurfaceWaterElectrified|InSurface:SurfaceBloodElectrified)):INF_ELECTRIC,100,-1;TARGET:IF(InSurface:SurfacePoison&Tagged:INCARNATE_S):INF_POISON,100,-1;TARGET:IF(InSurface:SurfaceOil&Tagged:INCARNATE_S):INF_OIL,100,-1;TARGET:IF(Tagged:INCARNATE_G&(InSurface:SurfaceFire|InSurface:SurfaceLava)):INF_FIRE_G,100,-1;TARGET:IF(InSurface:SurfaceWater&Tagged:INCARNATE_G):INF_WATER_G,100,-1;TARGET:IF(InSurface:SurfaceBlood&Tagged:INCARNATE_G):INF_BLOOD_G,100,-1;TARGET:IF(Tagged:INCARNATE_G&(InSurface:SurfaceWaterElectrified|InSurface:SurfaceBloodElectrified)):INF_ELECTRIC_G,100,-1;TARGET:IF(InSurface:SurfacePoison&Tagged:INCARNATE_G):INF_POISON_G,100,-1;TARGET:IF(InSurface:SurfaceOil&Tagged:INCARNATE_G):INF_OIL_G,100,-1;
       SkillType: Summon
+      Starter: true
       SummonCount: '1'
       SummonLevel: '-1'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
     - Ability: Summoning
       ActionPoints: 2
       AIFlags: CanNotUse
@@ -4249,10 +4279,11 @@
       MemorizationRequirements: Summoning 1
       MemoryCost: '1'
       SkillType: Summon
+      Starter: true
       SummonCount: '1'
       SummonLevel: '-1'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       Totem: true
     - Ability: Summoning
       ActionPoints: 1
@@ -4556,10 +4587,11 @@
       MemoryCost: '1'
       SkillProperties: 'INF_RANGED,100,-1'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: 'Potion:Stats_Infusion_Ranged:MagicArmor'
       TargetConditions: 'MySummon;(Tagged:INCARNATE_S|Tagged:INCARNATE_G)'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -4720,6 +4752,7 @@
       Requirement: MeleeWeapon
       SkillProperties: 'KNOCKED_DOWN,100,1'
       SkillType: Cone
+      Starter: true
       StatsDescription: |-
         Cone angle: 25
         Length: 10
@@ -4729,7 +4762,7 @@
       SurfaceStatusChance: '0'
       SurfaceType: None
       TargetConditions: '!Dead;!Ally'
-      Tier: Starter
+      Tier: Novice
       UseWeaponDamage: true
       UseWeaponProperties: true
     - Ability: Warrior
@@ -4851,11 +4884,12 @@
       Requirements: '!Immobile'
       SkillProperties: 'KNOCKED_DOWN,100,1'
       SkillType: Rush
+      Starter: true
       StatsDescription: 'Range: 12'
       StatsDescriptionParams: Damage;TargetRadius
       TargetConditions: '!Ally'
       TargetRadius: '12'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: true
       UseWeaponProperties: true
@@ -5055,11 +5089,12 @@
       Requirement: MeleeWeapon
       SkillProperties: 'CRIPPLED,100,1'
       SkillType: Target
+      Starter: true
       StatsDescription: Crippled status prevents target from walking or running.
       StatsDescriptionParams: Damage
       TargetConditions: Character;NonSelf
       TargetRadius: '1'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: true
       UseWeaponDamage: true
       UseWeaponProperties: true
@@ -5086,9 +5121,10 @@
       MemoryCost: '1'
       SkillProperties: 'ENRAGED,100,1'
       SkillType: Target
+      Starter: true
       TargetConditions: Character;Ally
       TargetRadius: '2'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -5296,12 +5332,13 @@
       SingleSource: 'No'
       SkillProperties: 'CreateSurface,1,,WaterFrozen,25;CHILLED,100,2;Douse'
       SkillType: ProjectileStrike
+      Starter: true
       StatsDescriptionParams: Damage
       StrikeCount: '3'
       StrikeDelay: '150'
       TargetProjectiles: 'Yes'
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -5389,6 +5426,7 @@
       MemoryCost: '1'
       SkillProperties: 'WET,100,1;'
       SkillType: Rain
+      Starter: true
       StatsDescription: >-
         Radius: 10
 
@@ -5403,7 +5441,7 @@
       SurfaceStatusChance: '100'
       SurfaceType: Water
       TargetRadius: '8'
-      Tier: Starter
+      Tier: Novice
       TotalSurfaceCells: '250'
       UseCharacterStats: false
       UseWeaponDamage: false
@@ -5709,10 +5747,11 @@
       MemoryCost: '1'
       SkillProperties: 'MAGIC_SHELL,100,3;'
       SkillType: Target
+      Starter: true
       StatsDescriptionParams: 'Potion:Stats_MagicShell:MagicArmor'
       TargetConditions: Character
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false
@@ -5734,9 +5773,10 @@
       MemoryCost: '1'
       SkillProperties: 'REGENERATION,100,2;'
       SkillType: Target
+      Starter: true
       TargetConditions: Character
       TargetRadius: '13'
-      Tier: Starter
+      Tier: Novice
       UseCharacterStats: false
       UseWeaponDamage: false
       UseWeaponProperties: false

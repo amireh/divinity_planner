@@ -108,6 +108,8 @@ module.exports = R.pipe(
     'UseWeaponProperties': Cast.boolean,
   })),
 
+  R.map(renameStarterTierToNovice),
+
   R.map(sortObject),
 
   groupByAbility
@@ -157,6 +159,15 @@ function castValues(mapping) {
 
       return map;
     }, Object.assign({}, skill))
+  }
+}
+
+function renameStarterTierToNovice(skill) {
+  if (skill.Tier === 'Starter') {
+    return Object.assign({}, skill, { Tier: 'Novice', Starter: true })
+  }
+  else {
+    return skill
   }
 }
 
