@@ -8,30 +8,22 @@ const Tooltip = require('tooltip');
 const { Tiers } = require('../rules.yml')
 
 const DOS2Skill = React.createClass({
-  getDefaultProps: function() {
-    return {
-      learnable: true
-    };
-  },
-
-  componentDidMount: function() {
+  componentDidMount() {
     this.tip = new Tooltip();
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.tip = null;
   },
 
   render() {
     const skill = this.props;
-    // const { canLearn, learnable } = skill;
-    const canLearn = true;
-    const learnable = true;
+    const { canLearn } = skill;
 
     const className = classSet({
       'skill-tree__skill': true,
-      'skill-tree__skill--unlocked': learnable && canLearn && !skill.learned,
-      'skill-tree__skill--learned': learnable && skill.learned,
+      'skill-tree__skill--unlocked': canLearn && !skill.learned,
+      'skill-tree__skill--learned': skill.learned,
       'skill-tree__skill--locked': !skill.learned && !canLearn,
       'hint--top': true
     });
@@ -54,15 +46,11 @@ const DOS2Skill = React.createClass({
         <div className="skill-tree__skill-icon">
           <div className={iconClassName} />
 
-          {learnable && (
-            <span className="skill-tree__skill-icon-highlighter" />
-          )}
+          <span className="skill-tree__skill-icon-highlighter" />
         </div>
 
         <span className="skill-tree__skill-name">
-          {learnable && (<a>{skill.DisplayName}</a>)}
-
-          {!learnable && skill.DisplayName}
+          <a>{skill.DisplayName}</a>
         </span>
       </div>
     );
@@ -121,11 +109,6 @@ const DOS2Skill = React.createClass({
 
       case K.ERR_ABILITY_CAP_REACHED:
         return "You have learned the maximum number of skills at this ability level."
-        break;
-
-      // TODO? what's skill.level
-      case K.ERR_CHAR_LEVEL_TOO_LOW:
-        return `Your character needs to be level ${skill.level || skill.rqCharacterLevel} to learn this skill.`
         break;
     }
   },

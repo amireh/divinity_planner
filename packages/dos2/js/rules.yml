@@ -33,9 +33,9 @@ MaxAbilityPoints: 5
 MaxLevel: 20
 
 Tiers:
-  - Id: Starter
-    DisplayName: Starter
-    AbilityPointRequirement: 1
+  # - Id: Starter
+  #   DisplayName: Starter
+  #   AbilityPointRequirement: 1
   - Id: Novice
     DisplayName: Novice
     AbilityPointRequirement: 1

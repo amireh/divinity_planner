@@ -34,8 +34,8 @@ exports.K_UNLIMITED = Infinity;
 
 exports.ERR_ABILITY_LEVEL_TOO_LOW = 'ERR_ABILITY_LEVEL_TOO_LOW';
 exports.ERR_ABILITY_CAP_REACHED   = 'ERR_ABILITY_CAP_REACHED';
-exports.ERR_CHAR_LEVEL_TOO_LOW    = 'ERR_CHAR_LEVEL_TOO_LOW';
 
-exports.TIER_NOVICE = 0;
-exports.TIER_ADEPT = 1;
-exports.TIER_MASTER = 2;
+exports.TIER_STARTER = 'Starter';
+exports.TIER_NOVICE = 'Novice';
+exports.TIER_ADEPT = 'Adept';
+exports.TIER_MASTER = 'Master';
