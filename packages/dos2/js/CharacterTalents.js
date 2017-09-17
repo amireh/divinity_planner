@@ -11,6 +11,8 @@ function CharacterTalents(character, onChange = Function.prototype) {
     return map
   }, {})
 
+  const talentIds = Object.keys(talentPoints)
+
   function getAllowedPoints() {
     const charLevel = character.getLevel()
 
@@ -29,35 +31,6 @@ function CharacterTalents(character, onChange = Function.prototype) {
   }) {
     return allowedPoints - allocatedPoints
   }
-
-  // exports.fromURL = function(url) {
-  //   let distribution = {};
-  //   let nextAttribute = Attributes[0];
-
-  //   const attrKeys = Object.keys(ATTRIBUTE_URL_KEYS).reduce(function(set, id) {
-  //     const key = ATTRIBUTE_URL_KEYS[id];
-
-  //     set[key] = Attributes.filter(a => a.Id === id)[0];
-
-  //     return set;
-  //   }, {})
-
-  //   url.split('').forEach(function(char) {
-  //     if (attrKeys[char]) {
-  //       nextAttribute = attrKeys[char]
-  //     }
-  //     else {
-  //       const points = char.charCodeAt(0) - 97;
-
-  //       distribution[nextAttribute.Id] = points;
-  //       attributePoints[nextAttribute.Id] = points;
-
-  //       nextAttribute = Attributes[Attributes.indexOf(nextAttribute) + 1];
-  //     }
-  //   });
-
-  //   return distribution;
-  // };
 
   return {
     getPoints() {
@@ -100,8 +73,7 @@ function CharacterTalents(character, onChange = Function.prototype) {
         return String.fromCharCode(STARTING_INDEX_CHAR_CODE + (b - a -1))
       };
 
-      return Object
-        .keys(talentPoints)
+      return talentIds
         .filter(x => talentPoints[x] === 1)
         .map(Id => pool.indexOf(GameTalents.get(Id)))
         .reduce((list, at) => {
@@ -149,7 +121,7 @@ function CharacterTalents(character, onChange = Function.prototype) {
     },
 
     saveFromURL(selection) {
-      Object.keys(talentPoints).forEach(id => {
+      talentIds.forEach(id => {
         talentPoints[id] = 0;
       });
 
@@ -175,6 +147,20 @@ function CharacterTalents(character, onChange = Function.prototype) {
         onChange();
       }
     },
+
+    ensureIntegrity() {
+      const allocated = talentIds.filter(x => talentPoints[x] === 1);
+      const valid = allocated.slice(0, getAllowedPoints())
+
+      talentIds.forEach(function(id) {
+        if (valid.indexOf(id) > -1) {
+          talentPoints[id] = 1
+        }
+        else {
+          talentPoints[id] = 0
+        }
+      })
+    }
   }
 }
 

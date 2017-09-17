@@ -208,6 +208,7 @@ function Character(attrs = {}) {
       skillbook.ensureIntegrity();
       attributes.ensureIntegrity();
       abilities.ensureIntegrity();
+      talents.ensureIntegrity();
     });
   }
 
