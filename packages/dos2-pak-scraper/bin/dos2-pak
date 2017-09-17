@@ -52,7 +52,7 @@ program
   .option('-r, --root')
   .option('--present')
   .action(function(property, params) {
-    const skillData = scraper.parseSkillData(loadRequestedSkillData());
+    const skillData = scraper.parseSkills(loadRequestedSkillData());
 
     process.stdout.write(
       dump(
@@ -79,11 +79,11 @@ program
 program
   .command('extract')
   .action(function() {
-    const skillData = scraper.parseSkillData(loadRequestedSkillData());
+    const skillData = scraper.parseSkills(loadRequestedSkillData());
 
     fs.writeFileSync(
       extensionizeFilePath(path.join(root, 'db/00-database.yml')),
-      dump(scraper.cli.extract(skillData)),
+      dump(skillData),
       'utf8'
     );
 
@@ -103,7 +103,7 @@ program
     path.join(root, 'db/01-refined.yml')
   )
   .action(function(params) {
-    const skillData = scraper.parseSkillData(loadRequestedSkillData());
+    const skillData = scraper.parseSkills(loadRequestedSkillData());
 
     fs.writeFileSync(
       extensionizeFilePath(params.output),
