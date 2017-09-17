@@ -31,6 +31,14 @@ const dump = value => {
   }
 }
 
+const generate = ({ fileName, contents }) => {
+  fs.writeFileSync(
+    extensionizeFilePath(path.join(root, fileName)),
+    dump(contents),
+    'utf8'
+  );
+}
+
 program
   .option(
     '-f, --format [format]',
@@ -73,52 +81,39 @@ program
 program
   .command('extract')
   .action(function() {
-    const skillData = scraper.parseSkills(loadAsset('SkillData'));
+    generate({
+      fileName: 'db/00-skills.yml',
+      contents: scraper.parseSkills(loadAsset('SkillData'))
+    })
 
-    fs.writeFileSync(
-      extensionizeFilePath(path.join(root, 'db/00-skills.yml')),
-      dump(skillData),
-      'utf8'
-    );
-
-    const requirements = scraper.parseRequirements(loadAsset('Requirements'));
-
-    fs.writeFileSync(
-      extensionizeFilePath(path.join(root, 'db/00-requirements.yml')),
-      dump(requirements),
-      'utf8'
-    );
+    generate({
+      fileName: 'db/00-requirements.yml',
+      contents: scraper.parseRequirements(loadAsset('Requirements'))
+    })
   })
 ;
 
 program
   .command('refine')
   .action(function() {
-    const skills = scraper.parseSkills(loadAsset('SkillData'));
-    const refinedSkills = scraper.refineSkills(skills)
+    generate({
+      fileName: 'db/01-skills.yml',
+      contents: scraper.refineSkills(
+        scraper.parseSkills(loadAsset('SkillData'))
+      )
+    })
 
-    fs.writeFileSync(
-      extensionizeFilePath(path.join(root, 'db/01-skills.yml')),
-      dump(refinedSkills),
-      'utf8'
-    );
-
-    const requirements = scraper.parseRequirements(loadAsset('Requirements'));
-    const refinedRequirements = scraper.refineRequirements(requirements)
-
-    fs.writeFileSync(
-      extensionizeFilePath(path.join(root, 'db/01-requirements.yml')),
-      dump(refinedRequirements),
-      'utf8'
-    );
+    generate({
+      fileName: 'db/01-requirements.yml',
+      contents: scraper.refineRequirements(
+        scraper.parseRequirements(loadAsset('Requirements'))
+      )
+    })
   })
 ;
 
 program
   .command('generate-icons')
-  .option('-o, --output [path]', 'Path to the generated file.',
-    path.join(root, 'db/')
-  )
   .action(function(params) {
     const iconSets = config.assets.Icons;
 
