@@ -24,11 +24,13 @@ Abilities:
   - Warrior
   - Water
 
-StartingAttributePoints: 5
+StartingCharacterAttributePoints: 3
 StartingAbilityPoints: 5
-BaseAttributePoints: 5
+BaseAttributePoints: 10
 BaseAbilitySkillCount: 3
-MaxAttributePoints: 15
+AttributeSoftCap: 30
+AttributeLoneWolfCap: 60
+AttributeHardCap: 70
 MaxAbilityPoints: 5
 MaxLevel: 40
 

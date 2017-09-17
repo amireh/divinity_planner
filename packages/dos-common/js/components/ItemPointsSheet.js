@@ -1,11 +1,12 @@
 const React = require('react');
 const AdjustableItem = require('./AdjustableItem');
 const classSet = require('classnames')
-const { object, string, func } = React.PropTypes;
+const { bool, object, string, func } = React.PropTypes;
 
 const ItemPointsSheet = React.createClass({
   propTypes: {
     activeItemId: string,
+    bulk: bool,
     items: object,
     onIncrease: func,
     onDecrease: func,
@@ -48,15 +49,37 @@ const ItemPointsSheet = React.createClass({
           <AdjustableItem
             canIncrease={entry.canIncrease}
             canDecrease={entry.canDecrease}
-            onIncrease={this.props.onIncrease.bind(null, id)}
-            onDecrease={this.props.onDecrease.bind(null, id)}
+            onIncrease={this.emitIncrease.bind(null, id)}
+            onDecrease={this.emitDecrease.bind(null, id)}
           >
             {entry.points}
           </AdjustableItem>
         </div>
       </li>
     );
+  },
+
+  emitIncrease(id, e) {
+    if (this.props.bulk) {
+      this.props.onIncrease({ id, count: isBulkEvent(e) ? 10 : 1 })
+    }
+    else {
+      this.props.onIncrease(id)
+    }
+  },
+
+  emitDecrease(id, e) {
+    if (this.props.bulk) {
+      this.props.onDecrease({ id, count: isBulkEvent(e) ? 10 : 1 })
+    }
+    else {
+      this.props.onDecrease(id)
+    }
   }
 });
+
+function isBulkEvent(e) {
+  return e.ctrlKey || e.shiftKey || e.modKey;
+}
 
 module.exports = ItemPointsSheet;

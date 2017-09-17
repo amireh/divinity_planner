@@ -5,7 +5,7 @@ const CharacterAbilities = require('./CharacterAbilities');
 const CharacterSkillbook = require('./CharacterSkillbook');
 const CharacterTalents = require('./CharacterTalents');
 const Rules = require('./rules.yml')
-const { assign } = require('lodash');
+const { assign, partial } = require('lodash');
 
 function Character(attrs = {}) {
   const emitter = EventEmitter();
@@ -26,8 +26,8 @@ function Character(attrs = {}) {
   API.addChangeListener = emitter.addChangeListener;
   API.removeChangeListener = emitter.removeChangeListener;
 
-  API.addAttributePoint = attributes.addPoint;
-  API.removeAttributePoint = attributes.removePoint;
+  API.addAttributePoints = attributes.addPoints;
+  API.removeAttributePoints = attributes.removePoints;
 
   API.addAbilityPoint = abilities.addPoint;
   API.removeAbilityPoint = abilities.removePoint;
@@ -36,7 +36,7 @@ function Character(attrs = {}) {
   API.removeTalentPoint = talents.removePoint;
 
   API.getLevel = function() {
-    return level || inferLevel();
+    return level || 1;
   };
 
   API.setLevel = function(inLevel) {
@@ -175,6 +175,7 @@ function Character(attrs = {}) {
     emitChange();
   };
 
+
   API.addSkillToSpellbook = skillbook.addSkill;
   API.hasSkillInSpellbook = skillbook.hasSkill;
   API.removeSkillFromSpellbook = skillbook.removeSkill;
@@ -184,13 +185,7 @@ function Character(attrs = {}) {
   character.getAttributePoints = attributes.getPoints;
   character.getAbilityPoints = abilities.getPoints;
   character.getTalentPoints = talents.getPoints;
-
-  function inferLevel() {
-    return Math.max(
-      1,
-      Math.max(attributes.getAllocatedPoints() - Rules.StartingAttributePoints, 0) * 2
-    );
-  }
+  character.isLoneWolf = partial(talents.selected, 'LoneWolf')
 
   function inSilence(performer) {
     emitter.inSilence(performer);

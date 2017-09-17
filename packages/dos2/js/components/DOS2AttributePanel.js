@@ -5,14 +5,14 @@ const { object, func } = React.PropTypes;
 const DOS2AttributePanel = React.createClass({
   propTypes: {
     attributePoints: object,
-    onAddAttributePoint: func,
-    onRemoveAttributePoint: func
+    onAddAttributePoints: func,
+    onRemoveAttributePoints: func
   },
 
   getDefaultProps: function() {
     return {
-      onAddAttributePoint: Function.prototype,
-      onRemoveAttributePoint: Function.prototype,
+      onAddAttributePoints: Function.prototype,
+      onRemoveAttributePoints: Function.prototype,
     };
   },
 
@@ -20,8 +20,9 @@ const DOS2AttributePanel = React.createClass({
     return (
       <ItemPointsSheet
         items={this.props.attributePoints}
-        onIncrease={this.props.onAddAttributePoint}
-        onDecrease={this.props.onRemoveAttributePoint}
+        onIncrease={this.props.onAddAttributePoints}
+        onDecrease={this.props.onRemoveAttributePoints}
+        bulk
       />
     );
   },

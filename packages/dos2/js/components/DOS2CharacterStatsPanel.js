@@ -7,12 +7,12 @@ const DOS2SkillbookStats = require('./DOS2SkillbookStats');
 // const SkillbookStats = require('./SkillbookStats');
 const { URLManager } = require('dos-common');
 const classSet = require('classnames');
-const { ABILITY_URL_KEYS, SKILLBOOK_TAB_URL_KEY, MAX_LEVEL } = require('../constants');
+const { ABILITY_URL_KEYS, SKILLBOOK_TAB_URL_KEY } = require('../constants');
+const { MaxLevel } = require('../rules.yml')
 
 const PANEL_CHAR = 'character';
 const PANEL_ABILITIES = 'abilities';
 const PANEL_TALENTS = 'talents';
-const PANEL_TRAITS = 'traits';
 
 const Tabs = React.createClass({
   render() {
@@ -21,7 +21,6 @@ const Tabs = React.createClass({
         {this.renderLink(PANEL_CHAR, 'Character')}
         {this.renderLink(PANEL_ABILITIES, 'Abilities')}
         {this.renderLink(PANEL_TALENTS, 'Talents')}
-        {false &&this.renderLink(PANEL_TRAITS, 'Traits')}
       </div>
     )
   },
@@ -60,10 +59,6 @@ const DOS2CharacterStatsPanel = React.createClass({
       case PANEL_TALENTS:
         panel = this.renderTalentsPanel();
         break;
-
-      case PANEL_TRAITS:
-        panel = <p>Traits will also be available soon!</p>;
-        break;
     }
 
     return (
@@ -95,7 +90,7 @@ const DOS2CharacterStatsPanel = React.createClass({
               onIncrease={this.raiseLevel}
               onDecrease={this.lowerLevel}
               onMax={this.setMaxLevel}
-              withMaxControl={false}
+              withMaxControl
               children={stats.level}
             />
           </div>
@@ -112,8 +107,8 @@ const DOS2CharacterStatsPanel = React.createClass({
 
         <DOS2AttributePanel
           attributePoints={stats.attributePoints}
-          onAddAttributePoint={character.addAttributePoint}
-          onRemoveAttributePoint={character.removeAttributePoint}
+          onAddAttributePoints={character.addAttributePoints}
+          onRemoveAttributePoints={character.removeAttributePoints}
         />
       </div>
     )
@@ -180,7 +175,7 @@ const DOS2CharacterStatsPanel = React.createClass({
 
   setMaxLevel() {
     const { character } = this.props;
-    character.setLevel(MAX_LEVEL);
+    character.setLevel(MaxLevel);
   },
 
   lowerLevel() {

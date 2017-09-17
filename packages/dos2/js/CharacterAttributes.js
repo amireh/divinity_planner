@@ -1,8 +1,9 @@
 const {
   Attributes,
+  AttributeSoftCap,
+  AttributeLoneWolfCap,
   BaseAttributePoints,
-  MaxAttributePoints,
-  StartingAttributePoints
+  StartingCharacterAttributePoints
 } = require('./rules.yml')
 const { ATTRIBUTE_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants')
 
@@ -15,9 +16,30 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     return hash;
   }, {});
 
-  exports.addPoint = function(id) {
-    if (attributePoints[id] < MaxAttributePoints && getRemainingPoints() > 0) {
-      attributePoints[id] += 1;
+  const getCap = () => {
+    return character.isLoneWolf() ? AttributeLoneWolfCap : AttributeSoftCap
+  }
+
+  exports.addPoints = function({ id, count = 1 }) {
+    const allocated = attributePoints[id]
+    const allocatable = Math.min(count, getRemainingPoints())
+
+    if (allocatable === 0) {
+      return false;
+    }
+
+    const capped = Math.min(allocatable + allocated, getCap());
+
+    attributePoints[id] = capped;
+
+    onChange();
+
+    return true;
+  };
+
+  exports.removePoints = function({ id, count = 1 }) {
+    if (attributePoints[id] > 0) {
+      attributePoints[id] = Math.max(0, attributePoints[id] - count);
 
       onChange();
 
@@ -25,25 +47,19 @@ function CharacterAttributes(character, onChange = Function.prototype) {
     }
   };
 
-  exports.removePoint = function(attrId) {
-    if (attributePoints[attrId] > 0) {
-      attributePoints[attrId] -= 1;
-
-      onChange();
-    }
-  };
-
   exports.toJSON = function() {
     let stats = {};
 
     const remaining = getRemainingPoints();
+    const isLoneWolf = character.isLoneWolf()
+    const cap = isLoneWolf ? AttributeLoneWolfCap : AttributeSoftCap
 
     stats.attributePoints = Attributes.reduce(function(set, attribute) {
       const points = attributePoints[attribute.Id];
 
       set[attribute.Id] = {
         name: attribute.DisplayName,
-        canIncrease: points < MaxAttributePoints && remaining > 0,
+        canIncrease: points < cap && remaining > 0,
         canDecrease: points > 0,
         points: points + BaseAttributePoints
       };
@@ -114,8 +130,10 @@ function CharacterAttributes(character, onChange = Function.prototype) {
   };
 
   function getPoolSize() {
-    return StartingAttributePoints + Math.floor(
-      Math.max(0, character.getLevel()) / 2
+    const modifier = character.isLoneWolf() ? 2 : 1
+
+    return StartingCharacterAttributePoints + (
+      Math.max(0, character.getLevel()) * modifier
     );
   }
 

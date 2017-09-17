@@ -160,6 +160,10 @@ function CharacterTalents(character, onChange = Function.prototype) {
           talentPoints[id] = 0
         }
       })
+    },
+
+    selected(id) {
+      return talentPoints[id] === 1;
     }
   }
 }
