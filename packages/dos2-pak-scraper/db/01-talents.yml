@@ -2,15 +2,18 @@
 - Id: AllSkilledUp
   DisplayName: All-Skilled-Up
   Icon: Talent_AllSkilledUp
+  Description: All Skilled Up immedialy gives you 1 extra Combat ability point and 1 extra Civil ability point.
 - Id: Ambidextrous
   DisplayName: Ambidextrous
   Icon: Talent_Ambidextrous
+  Description: Reduces the cost of using grenades and scrolls by 1AP when your offhand is free.
 - Id: AncestralKnowledge
   DisplayName: Ancestral Knowledge
   Icon: Talent_AncestralKnowledge
 - Id: ArrowRecovery
   DisplayName: Arrow Recovery
   Icon: Talent_ArrowRecovery
+  Description: Arrow Recovery gives you 33% chance to recover a special arrow after shooting it.
 - Id: AvoidOpportunists
   DisplayName: Avoid Opportunists
   Icon: Talent_AvoidOpportunists
@@ -20,6 +23,10 @@
 - Id: ComebackKid
   DisplayName: Comeback Kid
   Icon: Talent_ComebackKid
+  Description: >
+    When an opponent lands the blow that should kill you, Comeback Kid will
+    leave you with 1 health as long as you had more than 1 left. Incompatible
+    with Leech.
 - Id: CorpseEater
   DisplayName: Corpse Eater
   Icon: Talent_CorpseEater
@@ -34,6 +41,9 @@
   Icon: Talent_ElementalAffinity
 - Id: ElementalRanger
   DisplayName: Elemental Ranger
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Elemental+Ranger
+  Description: >
+    Arrows inflict bonus elemental damage depending on the surface your target is standing in.
   Icon: Talent_ElementalRanger
 - Id: Escapist
   DisplayName: Escapist

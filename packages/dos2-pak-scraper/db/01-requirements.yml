@@ -16,6 +16,7 @@
   Id: Backstab
 - Constraints:
     - Id: Summoning
+      Type: Unknown
       Negated: false
       Parameter: 2
   Id: BeastMaster
@@ -30,7 +31,8 @@
 - Constraints: []
   Id: Charm
 - Constraints:
-    - Id: TALENT_Escapist
+    - Id: Escapist
+      Type: Talent
       Negated: true
       Parameter: null
   Id: Courageous
@@ -39,15 +41,18 @@
 - Constraints: []
   Id: Damage
 - Constraints:
-    - Id: FireSpecialist
+    - Id: Fire
+      Type: Ability
       Negated: false
       Parameter: 1
-    - Id: TALENT_IceKing
+    - Id: IceKing
+      Type: Talent
       Negated: true
       Parameter: null
   Id: Demon
 - Constraints:
     - Id: DualWielding
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: DualWieldingBlock
@@ -58,7 +63,8 @@
 - Constraints: []
   Id: ElementalAffinity
 - Constraints:
-    - Id: RangerLore
+    - Id: Ranger
+      Type: Ability
       Negated: false
       Parameter: 1
   Id: ElementalRanger
@@ -66,9 +72,11 @@
   Id: Escapist
 - Constraints:
     - Id: WarriorLore
+      Type: Unknown
       Negated: false
       Parameter: 1
-    - Id: TALENT_QuickStep
+    - Id: QuickStep
+      Type: Talent
       Negated: true
       Parameter: null
   Id: Executioner
@@ -76,16 +84,19 @@
   Id: ExpGain
 - Constraints:
     - Id: Level
+      Type: Unknown
       Negated: false
       Parameter: 2
   Id: ExtraSkillPoints
 - Constraints:
     - Id: Level
+      Type: Unknown
       Negated: false
       Parameter: 2
   Id: ExtraStatPoints
 - Constraints:
     - Id: Wand
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: ExtraWandCharge
@@ -97,21 +108,25 @@
   Id: FiveStarRestaurant
 - Constraints:
     - Id: WarriorLore
+      Type: Unknown
       Negated: false
       Parameter: 5
   Id: Flanking
 - Constraints:
     - Id: Sneaking
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: FolkDancer
 - Constraints: []
   Id: GoldenMage
 - Constraints:
-    - Id: WaterSpecialist
+    - Id: Water
+      Type: Ability
       Negated: false
       Parameter: 1
-    - Id: TALENT_Demon
+    - Id: Demon
+      Type: Talent
       Negated: true
       Parameter: null
   Id: IceKing
@@ -135,13 +150,15 @@
   Id: LightStep
 - Constraints:
     - Id: AirSpecialist
+      Type: Unknown
       Negated: false
       Parameter: 5
   Id: LightningRod
 - Constraints: []
   Id: Lockpick
 - Constraints:
-    - Id: TALENT_Raistlin
+    - Id: Raistlin
+      Type: Talent
       Negated: true
       Parameter: null
   Id: LoneWolf
@@ -150,7 +167,8 @@
 - Constraints: []
   Id: MrKnowItAll
 - Constraints:
-    - Id: RangerLore
+    - Id: Ranger
+      Type: Ability
       Negated: false
       Parameter: 1
   Id: NoAttackOfOpportunity
@@ -158,26 +176,31 @@
   Id: Politician
 - Constraints:
     - Id: RogueLore
+      Type: Unknown
       Negated: false
       Parameter: 1
-    - Id: TALENT_Executioner
+    - Id: Executioner
+      Type: Talent
       Negated: true
       Parameter: null
   Id: QuickStep
 - Constraints:
-    - Id: TALENT_LoneWolf
+    - Id: LoneWolf
+      Type: Talent
       Negated: true
       Parameter: null
   Id: Raistlin
 - Constraints: []
   Id: RangerLoreArrowRecover
 - Constraints:
-    - Id: RangerLore
+    - Id: Ranger
+      Type: Ability
       Negated: false
       Parameter: 4
   Id: RangerLoreEvasionBonus
 - Constraints:
-    - Id: RangerLore
+    - Id: Ranger
+      Type: Ability
       Negated: false
       Parameter: 5
   Id: RangerLoreRangedAPBonus
@@ -201,6 +224,7 @@
   Id: ResurrectToFullHealth
 - Constraints:
     - Id: RogueLore
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: RogueLoreDaggerAPBonus
@@ -208,28 +232,33 @@
   Id: RogueLoreDaggerBackStab
 - Constraints:
     - Id: RogueLore
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: RogueLoreGrenadePrecision
 - Constraints:
     - Id: RogueLore
+      Type: Unknown
       Negated: false
       Parameter: 5
   Id: RogueLoreHoldResistance
 - Constraints:
     - Id: RogueLore
+      Type: Unknown
       Negated: false
       Parameter: 2
   Id: RogueLoreMovementBonus
 - Constraints: []
   Id: Scientist
 - Constraints:
-    - Id: RangerLore
+    - Id: Ranger
+      Type: Ability
       Negated: false
       Parameter: 2
   Id: Sight
 - Constraints:
     - Id: SingleHanded
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: SpillNoBlood
@@ -251,16 +280,19 @@
   Id: WarriorLoreGrenadeRange
 - Constraints:
     - Id: WarriorLore
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: WarriorLoreNaturalArmor
 - Constraints:
     - Id: WarriorLore
+      Type: Unknown
       Negated: false
       Parameter: 1
   Id: WarriorLoreNaturalHealth
 - Constraints:
     - Id: WarriorLore
+      Type: Unknown
       Negated: false
       Parameter: 5
   Id: WarriorLoreNaturalResistance
@@ -268,6 +300,7 @@
   Id: WaterSpells
 - Constraints:
     - Id: EarthSpecialist
+      Type: Unknown
       Negated: false
       Parameter: 5
   Id: WeatherProof

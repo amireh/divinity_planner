@@ -39,6 +39,20 @@
     "Warrior": "Warfare",
     "Water": "Hydrosophist"
   },
+  "requirementMapping": {
+    "FireSpecialist": {
+      "Type": "Ability",
+      "Id": "Fire"
+    },
+    "WaterSpecialist": {
+      "Type": "Ability",
+      "Id": "Water"
+    },
+    "RangerLore": {
+      "Type": "Ability",
+      "Id": "Ranger"
+    }
+  },
   "abilityIcons": {
     "Air": "Ability_Aerotheurge",
     "?": "Ability_Bartering",
