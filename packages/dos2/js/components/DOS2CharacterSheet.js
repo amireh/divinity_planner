@@ -2,11 +2,10 @@ const React = require('react');
 const { object } = React.PropTypes;
 const DOS2CharacterStatsPanel = require('./DOS2CharacterStatsPanel');
 const DOS2SkillTree = require('./DOS2SkillTree');
-// const SkillTree = require('./SkillTree');
 const GameAbilities = require('../GameAbilities');
-// const Skillbook = require('./Skillbook');
+const DOS2Skillbook = require('./DOS2Skillbook');
 const { assign } = require('lodash');
-const { ABILITY_URL_KEYS } = require('../constants');
+const { ABILITY_URL_KEYS, SKILLBOOK_TAB_URL_KEY } = require('../constants');
 
 const DOS2CharacterSheet = React.createClass({
   propTypes: {
@@ -32,12 +31,12 @@ const DOS2CharacterSheet = React.createClass({
         </div>
 
         {<div className="column column--right">
-          {/*this.props.queryParams.t === K.SKILLBOOK_TAB_URL_KEY ? (
-            <Skillbook
+          {this.props.queryParams.t === SKILLBOOK_TAB_URL_KEY ? (
+            <DOS2Skillbook
               skills={stats.skillbook}
               abilityPoints={stats.abilityPoints}
             />
-          ) : */(
+          ) : (
             <DOS2SkillTree
               activeAbilityName={activeAbility && activeAbility.DisplayName}
               level={stats.level}

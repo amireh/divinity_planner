@@ -57,19 +57,23 @@ const DOS2SkillTree = React.createClass({
             .sort(function(a, b) {
               return Order.indexOf(a) > Order.indexOf(b);
             })
-            .map(this.renderLevel.bind(null, skillsByTier))}
+            .map(this.renderTier.bind(null, skillsByTier))}
         </ul>
       </div>
     );
   },
 
-  renderLevel(map, tier) {
+  renderTier(map, tier) {
     const title = 'The skill tier.';
-
     const className = classSet({
       'skill-tree__level': true,
       'skill-tree__level--ee': true
     });
+    const tierSkills = map[tier];
+
+    if (tierSkills.length === 0) {
+      return null;
+    }
 
     return (
       <li key={tier} className={className}>
