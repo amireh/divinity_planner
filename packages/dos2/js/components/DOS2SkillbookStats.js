@@ -32,7 +32,10 @@ const DOS2SkillbookStats = React.createClass({
     return (
       <div className="dos2-skillbook-stats">
         <h3 className="dos2-skillbook-stats__header header">
-          <a onClick={this.openSkillbook}>
+          <a
+            onClick={this.openSkillbook}
+            className={classSet({ 'active': this.props.active })}
+          >
             Skillbook
           </a>
         </h3>

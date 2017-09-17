@@ -1,12 +1,15 @@
 const React = require('react');
 const AdjustableItem = require('./AdjustableItem');
-const { object, func } = React.PropTypes;
+const classSet = require('classnames')
+const { object, string, func } = React.PropTypes;
 
 const ItemPointsSheet = React.createClass({
   propTypes: {
+    activeItemId: string,
     items: object,
     onIncrease: func,
-    onDecrease: func
+    onDecrease: func,
+    onClick: func,
   },
 
   getDefaultProps: function() {
@@ -26,11 +29,19 @@ const ItemPointsSheet = React.createClass({
 
   renderItem(id) {
     const entry = this.props.items[id];
+    const linkable = typeof this.props.onClick === 'function';
+    const { onClick = Function.prototype } = this.props;
 
     return (
       <li key={id} className="item-points-sheet__entry">
-        <span className="item-points-sheet__label">
-          {entry.name}
+        <span className="item-points-sheet__label" onClick={onClick.bind(null, id)}>
+          {linkable ? (
+            <a className={classSet({ active: this.props.activeItemId === id })}>
+              {entry.name}
+            </a>
+          ) : (
+            entry.name
+          )}
         </span>
 
         <div className="item-points-sheet__controls">

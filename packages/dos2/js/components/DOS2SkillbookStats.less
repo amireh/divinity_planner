@@ -2,10 +2,17 @@
 @import (reference) "~dos-components/css/variables";
 
 .dos2-skillbook-stats {
+  @icon-size: 32px;
+
   margin-top: 2em;
 
   .skill-tree__skill {
     margin: 0 0 1em 0;
+  }
+
+  &__ability {
+    position: relative;
+    line-height: @icon-size;
   }
 
   &__ability + &__ability {
@@ -20,6 +27,10 @@
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
+    transform: scale(0.5);
+    position: absolute;
+    margin-top: -@icon-size / 2;
+    margin-left: -@icon-size / 2;
   }
 
   &__ability-stats {
@@ -27,7 +38,8 @@
     vertical-align: middle;
     font-family: monospace;
     font-size: 1.25em;
-    margin-left: 1em;
+    margin-left: @icon-size;
+    padding-left: 1em;
   }
 
   &__counter {

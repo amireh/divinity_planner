@@ -2,11 +2,12 @@ const React = require('react');
 const { AdjustableItem } = require('dos-components');
 const DOS2AttributePanel = require('./DOS2AttributePanel');
 const DOS2AbilityPanel = require('./DOS2AbilityPanel');
+const DOS2TalentPanel = require('./DOS2TalentPanel');
 const DOS2SkillbookStats = require('./DOS2SkillbookStats');
 // const SkillbookStats = require('./SkillbookStats');
 const { URLManager } = require('dos-common');
 const classSet = require('classnames');
-const K = require('../constants');
+const { ABILITY_URL_KEYS, SKILLBOOK_TAB_URL_KEY, MAX_LEVEL } = require('../constants');
 
 const PANEL_CHAR = 'character';
 const PANEL_ABILITIES = 'abilities';
@@ -19,7 +20,7 @@ const Tabs = React.createClass({
       <div className="stats-panel__tabs">
         {this.renderLink(PANEL_CHAR, 'Character')}
         {this.renderLink(PANEL_ABILITIES, 'Abilities')}
-        {false &&this.renderLink(PANEL_TALENTS, 'Talents')}
+        {this.renderLink(PANEL_TALENTS, 'Talents')}
         {false &&this.renderLink(PANEL_TRAITS, 'Traits')}
       </div>
     )
@@ -57,7 +58,7 @@ const DOS2CharacterStatsPanel = React.createClass({
         break;
 
       case PANEL_TALENTS:
-        panel = <p>Talents will be available soon!</p>;
+        panel = this.renderTalentsPanel();
         break;
 
       case PANEL_TRAITS:
@@ -143,6 +144,22 @@ const DOS2CharacterStatsPanel = React.createClass({
         <DOS2SkillbookStats
           skills={stats.skillbook}
           abilityPoints={stats.abilityPoints}
+          active={this.props.queryParams.t === SKILLBOOK_TAB_URL_KEY}
+        />
+      </div>
+    )
+  },
+
+  renderTalentsPanel() {
+    const { character, stats } = this.props;
+
+    return (
+      <div>
+        <DOS2TalentPanel
+          queryParams={this.props.queryParams}
+          talentPoints={stats.talentPoints}
+          onAddTalentPoint={character.addTalentPoint}
+          onRemoveTalentPoint={character.removeTalentPoint}
         />
       </div>
     )
@@ -153,7 +170,7 @@ const DOS2CharacterStatsPanel = React.createClass({
   },
 
   showAbilitySkillTree(abilityId) {
-    URLManager.setQueryParam('t', K.ABILITY_URL_KEYS[abilityId]);
+    URLManager.setQueryParam('t', ABILITY_URL_KEYS[abilityId]);
   },
 
   raiseLevel() {
@@ -163,7 +180,7 @@ const DOS2CharacterStatsPanel = React.createClass({
 
   setMaxLevel() {
     const { character } = this.props;
-    character.setLevel(K.MAX_LEVEL);
+    character.setLevel(MAX_LEVEL);
   },
 
   lowerLevel() {

@@ -1,9 +1,10 @@
 const React = require('react');
 const { object } = React.PropTypes;
+const GameAbilities = require('../GameAbilities');
 const DOS2CharacterStatsPanel = require('./DOS2CharacterStatsPanel');
 const DOS2SkillTree = require('./DOS2SkillTree');
-const GameAbilities = require('../GameAbilities');
 const DOS2Skillbook = require('./DOS2Skillbook');
+const DOS2TalentDetail = require('./DOS2TalentDetail');
 const { assign } = require('lodash');
 const { ABILITY_URL_KEYS, SKILLBOOK_TAB_URL_KEY } = require('../constants');
 
@@ -15,7 +16,6 @@ const DOS2CharacterSheet = React.createClass({
   render() {
     const { character } = this.props;
     const activeAbilityId = getAbilityIdFromIndex(this.props.queryParams.t);
-    const activeAbility = GameAbilities.get(activeAbilityId);
     const stats = character.toJSON();
 
     return (
@@ -30,25 +30,47 @@ const DOS2CharacterSheet = React.createClass({
           />
         </div>
 
-        {<div className="column column--right">
-          {this.props.queryParams.t === SKILLBOOK_TAB_URL_KEY ? (
-            <DOS2Skillbook
-              skills={stats.skillbook}
-              abilityPoints={stats.abilityPoints}
-            />
-          ) : (
-            <DOS2SkillTree
-              activeAbilityName={activeAbility && activeAbility.DisplayName}
-              level={stats.level}
-              attributePoints={stats.attributePoints}
-              abilityPoints={stats.abilityPoints}
-              skills={this.getSkillsForAbility(activeAbilityId)}
-              onSkillSelect={this.toggleSkillSelection}
-            />
-          )}
-        </div>}
+        <div className="column column--right">
+          {this.renderContent()}
+        </div>
       </div>
     );
+  },
+
+  renderContent() {
+    const { panel: activePanelId } = this.props.queryParams;
+    const { character } = this.props;
+    const activeAbilityId = getAbilityIdFromIndex(this.props.queryParams.t);
+    const activeAbility = GameAbilities.get(activeAbilityId);
+    const stats = character.toJSON();
+
+    if (this.props.queryParams.t === SKILLBOOK_TAB_URL_KEY) {
+      return (
+        <DOS2Skillbook
+          skills={stats.skillbook}
+          abilityPoints={stats.abilityPoints}
+        />
+      )
+    }
+    else if (activePanelId === 'talents') {
+      return (
+        <DOS2TalentDetail
+          activeTalentId={this.props.queryParams.talent}
+        />
+      )
+    }
+    else {
+      return (
+        <DOS2SkillTree
+          activeAbilityName={activeAbility && activeAbility.DisplayName}
+          level={stats.level}
+          attributePoints={stats.attributePoints}
+          abilityPoints={stats.abilityPoints}
+          skills={this.getSkillsForAbility(activeAbilityId)}
+          onSkillSelect={this.toggleSkillSelection}
+        />
+      )
+    }
   },
 
   toggleSkillSelection(id) {

@@ -96,7 +96,7 @@ const DOS2Skill = React.createClass({
   },
 
   getRequirementString(requirement, skill) {
-    const [ tier ] = Tiers.filter(x => x.Name === skill.Tier)
+    const [ tier ] = Tiers.filter(x => x.Id === skill.Tier)
 
     switch(requirement) {
       case K.ERR_ABILITY_LEVEL_TOO_LOW:

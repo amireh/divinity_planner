@@ -3,6 +3,7 @@ const { EventEmitter } = require('dos-common');
 const CharacterAttributes = require('./CharacterAttributes');
 const CharacterAbilities = require('./CharacterAbilities');
 const CharacterSkillbook = require('./CharacterSkillbook');
+const CharacterTalents = require('./CharacterTalents');
 const Rules = require('./rules.yml')
 const { assign } = require('lodash');
 
@@ -16,6 +17,7 @@ function Character(attrs = {}) {
   const attributes = CharacterAttributes(character, emitter.emitChange);
   const abilities = CharacterAbilities(character, emitter.emitChange);
   const skillbook = CharacterSkillbook(character, emitter.emitChange)
+  const talents = CharacterTalents(character, emitter.emitChange)
 
   let level = null;
 
@@ -51,6 +53,7 @@ function Character(attrs = {}) {
 
     assign(stats, attributes.toJSON());
     assign(stats, abilities.toJSON());
+    assign(stats, talents.toJSON());
     assign(stats, attrs);
 
     return JSON.parse(JSON.stringify(stats));
@@ -148,6 +151,7 @@ function Character(attrs = {}) {
   character.getLevel = API.getLevel;
   character.getAttributePoints = attributes.getPoints;
   character.getAbilityPoints = abilities.getPoints;
+  character.getTalentPoints = talents.getPoints;
 
   function inferLevel() {
     return Math.max(
