@@ -30,7 +30,7 @@ BaseAttributePoints: 5
 BaseAbilitySkillCount: 3
 MaxAttributePoints: 15
 MaxAbilityPoints: 5
-MaxLevel: 20
+MaxLevel: 40
 
 Tiers:
   # - Id: Starter

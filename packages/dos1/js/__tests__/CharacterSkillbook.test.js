@@ -1,6 +1,6 @@
 const CharacterSkillbook = require('../CharacterSkillbook');
-const K = require('constants');
-const TestUtils = require('TestUtils');
+const K = require('../constants');
+const TestUtils = require('../TestUtils');
 
 describe('CharacterSkillbook', function() {
   let subject;

@@ -1,5 +1,5 @@
 const GameState = require('../GameState');
-const URLManager = require('URLManager');
+const { URLManager } = require('dos-common');
 
 describe('GameState', function() {
   describe('#isEE', function() {

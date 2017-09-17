@@ -59,6 +59,15 @@ module.exports = [
     b.compileCSS({ extract: false }),
   ]),
 
+  b.when(process.env.NODE_ENV === 'test', [
+    b.devTool('eval'),
+    b.compileJS({ hot: false }),
+    b.compileCSS({ extract: false }),
+    b.defineConstants({
+      'process.env.MOJO_RUNNER_PATH': root.join('.mojo.js')
+    })
+  ]),
+
   b.when(process.env.NODE_ENV === 'production', [
     b.compileJS({ hot: false }),
     b.compileCSS({ extract: true }),

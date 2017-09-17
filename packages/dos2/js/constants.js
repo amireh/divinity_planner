@@ -3,7 +3,10 @@ exports.DOMAIN_URL_KEYS = {
   'attributes': '1',
   'abilities':  '2',
   'skillbook':  '3',
+  'talents':    '4',
 };
+
+exports.DOMAIN_URL_SEPARATOR = ';'
 
 exports.ATTRIBUTE_URL_KEYS = {
   'CON': 'C',

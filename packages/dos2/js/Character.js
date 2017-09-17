@@ -1,4 +1,4 @@
-const { DOMAIN_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants');
+const { DOMAIN_URL_KEYS, DOMAIN_URL_SEPARATOR, STARTING_INDEX_CHAR_CODE } = require('./constants');
 const { EventEmitter } = require('dos-common');
 const CharacterAttributes = require('./CharacterAttributes');
 const CharacterAbilities = require('./CharacterAbilities');
@@ -67,6 +67,7 @@ function Character(attrs = {}) {
     const attributesURL = attributes.toURL();
     const abilitiesURL = abilities.toURL();
     const skillbookURL = skillbook.toURL();
+    const talentsURL = talents.toURL();
 
     if (level > 1) {
       fragments.push(DOMAIN_URL_KEYS['level']);
@@ -88,6 +89,12 @@ function Character(attrs = {}) {
       fragments.push(skillbookURL);
     }
 
+    if (talentsURL.length) {
+      fragments.push(DOMAIN_URL_KEYS['talents']);
+      fragments.push(talentsURL);
+      fragments.push(DOMAIN_URL_SEPARATOR);
+    }
+
     return fragments.join('');
   };
 
@@ -97,6 +104,7 @@ function Character(attrs = {}) {
     let attributesStr = '';
     let abilitiesStr = '';
     let skillbookStr = '';
+    let talentsStr = '';
 
     url.split('').forEach(function(char) {
       switch(char) {
@@ -104,7 +112,16 @@ function Character(attrs = {}) {
         case DOMAIN_URL_KEYS['attributes']:
         case DOMAIN_URL_KEYS['abilities']:
         case DOMAIN_URL_KEYS['skillbook']:
-          domain = char;
+        case DOMAIN_URL_KEYS['talents']:
+          // it's because talents uses numbers and those conflict with the
+          // domain keys; we stop parsing talents only when we encounter @
+          if (domain === DOMAIN_URL_KEYS['talents']) {
+            talentsStr += char;
+          }
+          else {
+            domain = char;
+          }
+
           break;
 
         default:
@@ -119,6 +136,14 @@ function Character(attrs = {}) {
           }
           else if (domain === DOMAIN_URL_KEYS['skillbook']) {
             skillbookStr += char;
+          }
+          else if (domain === DOMAIN_URL_KEYS['talents']) {
+            if (char === DOMAIN_URL_SEPARATOR) {
+              domain = null;
+            }
+            else {
+              talentsStr += char;
+            }
           }
       }
     });
@@ -138,6 +163,10 @@ function Character(attrs = {}) {
 
       if (skillbookStr.length) {
         skillbook.fromURL(skillbookStr);
+      }
+
+      if (talentsStr.length) {
+        talents.saveFromURL(talents.fromURL(talentsStr));
       }
 
       ensureIntegrity();

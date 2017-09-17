@@ -1,4 +1,4 @@
-const URLManager = require('URLManager');
+const URLManager = require('../URLManager');
 
 describe('URLManager', function() {
   describe('#getQueryParams', function() {
