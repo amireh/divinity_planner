@@ -3,8 +3,10 @@ const {
   AttributeSoftCap,
   AttributeLoneWolfCap,
   BaseAttributePoints,
-  StartingCharacterAttributePoints
+  StartingCharacterAttributePoints,
+  Modifiers,
 } = require('./rules.yml')
+
 const { ATTRIBUTE_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants')
 
 function CharacterAttributes(character, onChange = Function.prototype) {
@@ -18,6 +20,66 @@ function CharacterAttributes(character, onChange = Function.prototype) {
 
   const getCap = () => {
     return character.isLoneWolf() ? AttributeLoneWolfCap : AttributeSoftCap
+  }
+
+  const applyModifiers = (mods, initialValue) => {
+    return mods.reduce(function(value, { op, param }) {
+      if (op === 'ADD') {
+        return value + param;
+      }
+      else if (op === 'MUL') {
+        return value * param;
+      }
+      else {
+        console.warn(`Unrecognized modifier "${op}"`)
+        return value
+      }
+    }, initialValue)
+  }
+
+  const isModApplicable = mod => {
+    switch (mod.Type) {
+      case 'Talent':
+        return character.hasTalent(mod.Id);
+
+      default:
+        console.warn(`Don't know how to test modifier applicability: "${mod.Type}"`)
+        return false
+    }
+  }
+
+  function getPoolSize() {
+    const modifiers = Modifiers
+      .filter(isModApplicable)
+      .reduce(function(list, x) {
+        return list.concat(x.Effect || x.Effects)
+      }, [])
+      .reduce((list, Effect) => {
+        if (Effect.match(/^([\+\x])(\d+) \[Attribute\]$/)) {
+          return list.concat({
+            op: RegExp.$1 === '+' ? 'ADD' : 'MUL',
+            param: parseInt(RegExp.$2, 10)
+          })
+        }
+        else {
+          return list
+        }
+      }, [])
+
+    return (
+      StartingCharacterAttributePoints +
+      applyModifiers(modifiers, Math.max(0, character.getLevel()))
+    );
+  }
+
+  function getAllocatedPoints() {
+    return Object.keys(attributePoints).reduce((sum, id) => {
+      return sum + attributePoints[id];
+    }, 0);
+  }
+
+  function getRemainingPoints() {
+    return getPoolSize() - getAllocatedPoints();
   }
 
   exports.addPoints = function(id, count = 1) {
@@ -128,24 +190,6 @@ function CharacterAttributes(character, onChange = Function.prototype) {
 
     return distribution;
   };
-
-  function getPoolSize() {
-    const modifier = character.isLoneWolf() ? 2 : 1
-
-    return StartingCharacterAttributePoints + (
-      Math.max(0, character.getLevel()) * modifier
-    );
-  }
-
-  function getAllocatedPoints() {
-    return Object.keys(attributePoints).reduce((sum, id) => {
-      return sum + attributePoints[id];
-    }, 0);
-  }
-
-  function getRemainingPoints() {
-    return getPoolSize() - getAllocatedPoints();
-  }
 
   exports.getPoolSize = getPoolSize;
   exports.getAllocatedPoints = getAllocatedPoints;

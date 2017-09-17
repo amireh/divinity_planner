@@ -1,0 +1,139 @@
+- Id: DualWielding
+  DisplayName: Dual Wielding
+  Group: Weapons
+  Icon: Ability_DualWielding
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Dual Wielding increases damage and Dodging when dual-wielding two one-handed
+    weapons.
+
+- Id: Ranged
+  DisplayName: Ranged
+  Group: Weapons
+  Icon: Ability_Ranged
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Ranged increase damage and Critical Chance with bows and crossbows.
+
+- Id: SingleHanded
+  DisplayName: Single-Handed
+  Group: Weapons
+  Icon: Ability_SingleHanded
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Single-handed increase damage and Accuracy when using a one-handed weapon
+    (dagger, sword, axe, mace or wand) with a shield or empty off-hand.
+
+- Id: TwoHanded
+  DisplayName: Two-Handed
+  Group: Weapons
+  Icon: Ability_TwoHanded
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Two-Handed increase damage and critical multiplier when using two-handed melee
+    weapon (Sword, axe, mace, spear or staff).
+
+- Id: Leadership
+  DisplayName: Leadership
+  Group: Defence
+  Icon: Ability_Leadership
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Leadership grants dodging and resistance bonuses to all allies in a 5m radius.
+
+- Id: Perseverance
+  DisplayName: Perseverance
+  Group: Defence
+  Icon: Ability_Perseverance
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Perseverance restores Magic Armor after you recover from Frozen or Stunned,
+    and restores Physical Armor after knocked down or Petrified.
+
+- Id: Retribution
+  DisplayName: Retribution
+  Group: Defence
+  Icon: Ability_PainReflection
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Retribution reflects received damage to your attacker.
+
+- Id: Air
+  DisplayName:  Aerotheurge
+  Group: Skills
+  Icon: Ability_Aerotheurge
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Aerotheurge increases all damage you deal to Magic Armour.
+
+- Id: Death
+  DisplayName: Necromancer
+  Group: Skills
+  Icon: Ability_Necromancy
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Necromancer heals you every time you deal damage to Vitality. Damage from reflection effects yields half heal.
+
+- Id: Earth
+  DisplayName: Geomancer
+  Group: Skills
+  Icon: Ability_Geomancer
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Geomancer increases all Poison damage you deal and any Physical Armour restoration that you cause.
+
+- Id: Fire
+  DisplayName: Pyrokinetic
+  Group: Skills
+  Icon: Ability_Pyrokinetic
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Pyrokinetic increases all Fire damage you deal.
+
+- Id: Polymorph
+  DisplayName: Polymorph
+  Group: Skills
+  Icon: Ability_Polymorph
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Polymorph provides one free attribute point per point invested.
+
+- Id: Ranger
+  DisplayName: Huntsman
+  Group: Skills
+  Icon: Ability_Huntsman
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Huntsman increases the damage bonus when attacking from high ground.
+
+- Id: Rogue
+  DisplayName: Scoundrel
+  Group: Skills
+  Icon: Ability_Scoundrel
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Scoundrel increases movement speed and boosts your Critical Modifier.
+
+- Id: Summoning
+  DisplayName: Summoning
+  Group: Skills
+  Icon: Ability_Summoning
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Summoning increases Vitality, Damage, Physical Armour and Magical Armour of your summons and totems.
+
+- Id: Warrior
+  DisplayName: Warfare
+  Group: Skills
+  Icon: Ability_Warfare
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Warfare increases all damage you deal to Physical Armour.
+
+- Id: Water
+  DisplayName: Hydrosophist
+  Group: Skills
+  Icon: Ability_Hydrosophist
+  # Source: http://divinityoriginalsin2.wiki.fextralife.com/Abilities
+  Description: >-
+    Hydrosophist increases all healing and Armour restoration that you cause.

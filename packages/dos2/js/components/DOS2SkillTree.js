@@ -2,14 +2,14 @@ const React = require('react');
 const DOS2Skill = require('./DOS2Skill');
 const { Tiers } = require('../rules.yml');
 const classSet = require('classnames');
-const HYBRID_TIER = {
-  Id: 'Hybrid',
-  DisplayName: 'Hybrid'
+const CRAFTED_TIER = {
+  Id: 'Crafted',
+  DisplayName: 'Crafted'
 }
 const { array, func } = React.PropTypes;
 const { sortBy } = require('lodash')
 
-const Order = Tiers.map(x => x.Id).concat(HYBRID_TIER.Id)
+const Order = Tiers.map(x => x.Id).concat(CRAFTED_TIER.Id)
 
 const DOS2SkillTree = React.createClass({
   propTypes: {
@@ -27,7 +27,7 @@ const DOS2SkillTree = React.createClass({
     const { skills } = this.props;
 
     const skillsByTier = skills.reduce(function(map, skill) {
-      const tier = skill.Tier || HYBRID_TIER.Id;
+      const tier = skill.Tier || CRAFTED_TIER.Id;
 
       map[tier].push(skill);
 
@@ -35,7 +35,7 @@ const DOS2SkillTree = React.createClass({
     }, Tiers.reduce(function(map, tier) {
       map[tier.Id] = []
       return map;
-    }, { [HYBRID_TIER.Id]: [] }));
+    }, { [CRAFTED_TIER.Id]: [] }));
 
     return (
       <div className="skill-tree">
@@ -78,7 +78,7 @@ const DOS2SkillTree = React.createClass({
     return (
       <li key={tier} className={className}>
         <h4 className="skill-tree__level-indicator skill-tree__level-indicator--tier">
-          {(Tiers.find(x => x.Id === tier) || HYBRID_TIER).DisplayName}
+          {(Tiers.find(x => x.Id === tier) || CRAFTED_TIER).DisplayName}
         </h4>
 
         {map[tier].map(this.renderSkill)}

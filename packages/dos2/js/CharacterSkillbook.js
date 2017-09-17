@@ -60,8 +60,8 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
     let fragments = [];
 
     function getIndexCharacter(skill) {
-      const ability = GameAbilities.get(skill.Ability);
-      const index = ability.Skills.indexOf(skill);
+      const ability = GameSkills.getByAbility(skill.Ability);
+      const index = ability.indexOf(skill);
 
       return String.fromCharCode(STARTING_INDEX_CHAR_CODE + index);
     }
@@ -90,7 +90,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
   };
 
   exports.fromURL = function(url) {
-    const abilities = GameAbilities.getAll();
+    const abilities = GameSkills.getAll();
     let currentAbility = abilities[0];
 
     book = [];
@@ -107,7 +107,7 @@ function CharacterSkillbook(character, onChange = Function.prototype) {
       }
       else {
         const skillIndex = char.charCodeAt(0) - STARTING_INDEX_CHAR_CODE;
-        const skill = currentAbility.Skills[skillIndex];
+        const skill = currentAbility[skillIndex];
 
         exports.addSkill(skill.Id);
       }

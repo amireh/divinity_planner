@@ -1,16 +1,8 @@
 const React = require('react');
 const { AdjustableItem } = require('dos-components');
 const classSet = require('classnames');
+const { sortBy } = require('lodash')
 const { PropTypes } = React;
-
-const ORDER = [
-  'Weapons',
-  'Defence',
-  'Skills',
-  'Personality',
-  'Craftsmanship',
-  'Nasty Deeds'
-];
 
 const DOS2AbilityPanel = React.createClass({
   propTypes: {
@@ -27,7 +19,7 @@ const DOS2AbilityPanel = React.createClass({
     const abilitiesByCategory = Object.keys(abilityPoints)
       .reduce((set, abilityId) => {
         const ability = this.props.abilities.get(abilityId);
-        const category = ability.category || 'Skills';
+        const category = ability.Group || 'Combat';
 
         let categoryEntry = set.filter(e => e.name === category)[0];
 
@@ -41,8 +33,8 @@ const DOS2AbilityPanel = React.createClass({
 
         return set;
       }, [])
-      .sort(function(a,b) {
-        return ORDER.indexOf(a.name) > ORDER.indexOf(b.name);
+      .map(category => {
+        return Object.assign(category, { abilities: sortBy(category.abilities, 'name') })
       })
     ;
 

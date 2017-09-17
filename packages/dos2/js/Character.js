@@ -192,6 +192,7 @@ function Character(attrs = {}) {
   character.getAttributePoints = attributes.getPoints;
   character.getAbilityPoints = abilities.getPoints;
   character.getTalentPoints = talents.getPoints;
+  character.hasTalent = talents.selected;
   character.isLoneWolf = partial(talents.selected, 'LoneWolf')
 
   function inSilence(performer) {

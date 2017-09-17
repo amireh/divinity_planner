@@ -1,0 +1,52 @@
+- Id: Bartering
+  DisplayName: Bartering
+  Group: Personality
+  Description: >-
+    Bartering improves your haggling skills. With each point invested,
+    traders' items become cheaper and your items become more expensive.
+  Icon: Ability_Bartering
+
+- Id: LuckyCharm
+  DisplayName: Lucky Charm
+  Group: Personality
+  Description: >-
+    Lucky Charm increases your likelihood of finding extra treasure wherever
+    loot is stashed.
+  Icon: Ability_LuckyCharm
+
+- Id: Persuasion
+  DisplayName: Persuasion
+  Group: Personality
+  Description: >-
+    Persuasion helps you convince characters in a dialog to do your bidding and
+    also increases how much characters like you.
+  Icon: Ability_Persuasion
+
+- Id: Loremaster
+  DisplayName: Loremaster
+  Group: Craftsmanship
+  Description: >-
+    Loremaster identifies enemies and allows you to identify items. Increasing
+    Loremaster allows you to identify more, faster.
+  Icon: Ability_Loremaster
+
+- Id: Telekinesis
+  DisplayName: Telekinesis
+  Group: Craftsmanship
+  Description: >-
+    Telekinesis allows you to move items telepathically regardless of weight.
+  Icon: Ability_Telekinesis
+
+- Id: Sneaking
+  DisplayName: Sneaking
+  Group: Nasty Deeds
+  Description: >-
+    Sneaking determines how well you can sneak without getting caught.
+  Icon: Ability_Sneaking
+
+- Id: Thievery
+  DisplayName: Thievery
+  Group: Nasty Deeds
+  Description: >-
+    Thieving improves your lock picking and pickpocketing skills.
+  Icon: Ability_Thievery

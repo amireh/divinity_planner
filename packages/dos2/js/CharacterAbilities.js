@@ -1,4 +1,4 @@
-const { MaxAbilityPoints } = require('./rules.yml');
+const { CombatAbilitySoftCap } = require('./rules.yml');
 const { ABILITY_URL_KEYS, STARTING_INDEX_CHAR_CODE } = require('./constants')
 const GameAbilities = require('./GameAbilities');
 
@@ -12,7 +12,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
   }, {});
 
   exports.addPoint = function(id) {
-    if (abilityPoints[id] < MaxAbilityPoints) {
+    if (abilityPoints[id] < CombatAbilitySoftCap) {
       const remaining = getRemainingPoints();
       const cost = abilityPoints[id] + 1;
 
@@ -49,7 +49,7 @@ function CharacterAbilities(character, onChange = Function.prototype) {
       set[ability.Id] = {
         id: ability.Id,
         name: ability.DisplayName,
-        canIncrease: points < MaxAbilityPoints && remaining >= getCost(points+1),
+        canIncrease: points < CombatAbilitySoftCap && remaining >= getCost(points+1),
         canDecrease: points > 0,
         points: points
       };

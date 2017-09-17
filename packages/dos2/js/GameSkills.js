@@ -7,6 +7,11 @@ const SkillIndex = Abilities.reduce(function(map, ability) {
   return map;
 }, {})
 
+const AbilityIndex = Abilities.reduce(function(map, ability) {
+  map[ability.Id] = ability.Skills;
+  return map
+}, {})
+
 exports.getAll = function() {
   return Abilities;
 };
@@ -14,3 +19,7 @@ exports.getAll = function() {
 exports.get = function(id) {
   return SkillIndex[id];
 };
+
+exports.getByAbility = function(abilityId) {
+  return AbilityIndex[abilityId]
+}

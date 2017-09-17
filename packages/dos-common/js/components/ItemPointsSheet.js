@@ -31,11 +31,11 @@ const ItemPointsSheet = React.createClass({
   renderItem(id) {
     const entry = this.props.items[id];
     const linkable = typeof this.props.onClick === 'function';
-    const { onClick = Function.prototype } = this.props;
+    const { onClick } = this.props;
 
     return (
       <li key={id} className="item-points-sheet__entry">
-        <span className="item-points-sheet__label" onClick={onClick.bind(null, id)}>
+        <span className="item-points-sheet__label" onClick={onClick ? onClick.bind(null, id) : undefined}>
           {linkable ? (
             <a className={classSet({ active: this.props.activeItemId === id })}>
               {entry.name}
