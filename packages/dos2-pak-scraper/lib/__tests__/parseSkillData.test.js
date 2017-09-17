@@ -1,12 +1,10 @@
-const subject = require("../parseSkillData");
+const subject = require("../parseSkills");
 const fs = require('fs')
-const { assert, fixtures } = require('./utils')
-const { loadSkillData } = require('../')
+const { assert, loadAsset, fixtures } = require('./utils')
 
-describe("dos2-pak-scraper::parseSkillData", function() {
+describe("dos2-pak-scraper::parseSkills", function() {
   it('works with the real thing', function() {
-    const skillDataSource = loadSkillData({});
-    const skillData = subject(skillDataSource)
+    const skillData = subject(loadAsset('SkillData'))
 
     assert.ok(skillData.length > 0);
   });

@@ -1,4 +1,4 @@
-const Talents = require('dos2-pak-scraper/db/02-talents.yml');
+const Talents = require('dos2-pak-scraper/db/01-talents.yml');
 const TalentIndex = Talents.reduce(function(map, talent) {
   map[talent.Id] = talent;
 

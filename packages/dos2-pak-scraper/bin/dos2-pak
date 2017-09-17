@@ -9,12 +9,6 @@ const fs = require('fs-extra')
 const { execSync } = require('child_process')
 const root = path.resolve(__dirname, '..')
 
-const loadRequestedSkillData = () => {
-  return scraper.loadSkillData({
-    filePath: path.join(root, config.assets.SkillData)
-  });
-}
-
 const loadAsset = asset => {
   return fs.readFileSync(path.join(root, config.assets[asset]), 'utf8')
 }
@@ -52,7 +46,7 @@ program
   .option('-r, --root')
   .option('--present')
   .action(function(property, params) {
-    const skillData = scraper.parseSkills(loadRequestedSkillData());
+    const skillData = scraper.parseSkills(loadAsset('SkillData'));
 
     process.stdout.write(
       dump(
@@ -64,7 +58,7 @@ program
 
 program
   .command('list-properties')
-  .option('-i, --input [refined.yml]', '', path.join(root, 'db/01-refined.yml'))
+  .option('-i, --input [refined.yml]', '', path.join(root, 'db/01-skills.yml'))
   .action(function(params) {
     const abilities = yaml.parse(fs.readFileSync(params.input, 'utf8'))
 
@@ -79,10 +73,10 @@ program
 program
   .command('extract')
   .action(function() {
-    const skillData = scraper.parseSkills(loadRequestedSkillData());
+    const skillData = scraper.parseSkills(loadAsset('SkillData'));
 
     fs.writeFileSync(
-      extensionizeFilePath(path.join(root, 'db/00-database.yml')),
+      extensionizeFilePath(path.join(root, 'db/00-skills.yml')),
       dump(skillData),
       'utf8'
     );
@@ -99,23 +93,22 @@ program
 
 program
   .command('refine')
-  .option('-o, --output [path]', 'Path to the generated file.',
-    path.join(root, 'db/01-refined.yml')
-  )
-  .action(function(params) {
-    const skillData = scraper.parseSkills(loadRequestedSkillData());
+  .action(function() {
+    const skills = scraper.parseSkills(loadAsset('SkillData'));
+    const refinedSkills = scraper.refineSkills(skills)
 
     fs.writeFileSync(
-      extensionizeFilePath(params.output),
-      dump(scraper.cli.refine(skillData)),
+      extensionizeFilePath(path.join(root, 'db/01-skills.yml')),
+      dump(refinedSkills),
       'utf8'
     );
 
     const requirements = scraper.parseRequirements(loadAsset('Requirements'));
+    const refinedRequirements = scraper.refineRequirements(requirements)
 
     fs.writeFileSync(
       extensionizeFilePath(path.join(root, 'db/01-requirements.yml')),
-      dump(scraper.refineRequirements(requirements)),
+      dump(refinedRequirements),
       'utf8'
     );
   })

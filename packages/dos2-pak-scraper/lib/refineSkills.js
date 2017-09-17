@@ -1,8 +1,8 @@
-const config = require('../../config.json')
+const config = require('../config.json')
 const R = require('ramda')
 const sortObject = require('deep-sort-object')
 const sortById = R.sortWith([ R.ascend(R.prop('Id'))])
-const { interpolateTemplate } = require('../pakUtils')
+const { interpolateTemplate } = require('dos-pak-utils')
 
 const Cast = {
   number: x => parseFloat(x),
@@ -117,7 +117,6 @@ module.exports = R.pipe(
 
 function isPlayerSkill(skill) {
   return (
-    skill.Type === 'SkillData' &&
     skill.Properties.IsEnemySkill !== 'Yes' &&
     // e.g. Projectile_Grenade_ChemicalWarfare_-1
     !skill.Id.match(/.+_\-\d$/) &&
