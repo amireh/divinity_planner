@@ -1,9 +1,17 @@
+process.env.NODE_ENV = 'test'
+
 var webpackConfig = require('./webpack.config');
 
 module.exports = function(config) {
   config.set({
     frameworks: [ 'mocha' ],
     browsers: [ 'chrome_without_security' ],
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-mocha',
+      'karma-sourcemap-loader',
+      'karma-webpack',
+    ],
 
     customLaunchers: {
       // if you want to use this (for CI or to debug a ScriptError), run karma

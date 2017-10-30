@@ -1,0 +1,52 @@
+@import (reference) "../variables";
+
+.btn {
+  background: darken(@brown, 35%);
+  // color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75em;
+  line-height: 17px;
+
+  &--minus {
+    background-image: url('./button/btn-minus.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    color: transparent;
+
+    &:hover, &:focus {
+      outline: none;
+      background-image: url('./button/btn-minus--hover.png');
+    }
+
+    &:active {
+      outline: none;
+      background-color: transparent;
+      background-image: url('./button/btn-minus--active.png');
+    }
+  }
+
+  &--plus {
+    background-image: url('./button/btn-plus.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: transparent;
+
+    &:hover, &:focus {
+      outline: none;
+      background-image: url('./button/btn-plus--hover.png');
+    }
+
+    &:active {
+      background-color: transparent;
+      background-image: url('./button/btn-plus--active.png');
+    }
+  }
+
+  &:disabled {
+    visibility: hidden;
+  }
+}

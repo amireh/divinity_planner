@@ -1,0 +1,146 @@
+#!/usr/bin/env node
+
+const scraper = require('../lib')
+const config = require('../config')
+const program = require('commander')
+const yaml = require('node-yaml')
+const path = require('path')
+const fs = require('fs-extra')
+const { execSync } = require('child_process')
+const root = path.resolve(__dirname, '..')
+
+const loadAsset = asset => {
+  return fs.readFileSync(path.join(root, config.assets[asset]), 'utf8')
+}
+
+const extensionizeFilePath = filePath => {
+  if (program.format === 'json') {
+    return filePath.replace(/\.yml$/, '.json')
+  }
+  else {
+    return filePath
+  }
+}
+
+const dump = value => {
+  if (program.format === 'json') {
+    return JSON.stringify(value, null, 4)
+  }
+  else {
+    return yaml.dump(value)
+  }
+}
+
+const generate = ({ fileName, contents }) => {
+  fs.writeFileSync(
+    extensionizeFilePath(path.join(root, fileName)),
+    dump(contents),
+    'utf8'
+  );
+}
+
+program
+  .option(
+    '-f, --format [format]',
+    'Output format.',
+    'yml'
+  )
+;
+
+program
+  .command('query <property>')
+  .option('-u, --uniq')
+  .option('-c, --count')
+  .option('-r, --root')
+  .option('--present')
+  .action(function(property, params) {
+    const skillData = scraper.parseSkills(loadAsset('SkillData'));
+
+    process.stdout.write(
+      dump(
+        scraper.cli.query(skillData, property, params)
+      )
+    )
+  })
+;
+
+program
+  .command('list-properties')
+  .option('-i, --input [refined.yml]', '', path.join(root, 'db/01-skills.yml'))
+  .action(function(params) {
+    const abilities = yaml.parse(fs.readFileSync(params.input, 'utf8'))
+
+    process.stdout.write(
+      dump(
+        scraper.cli.listProperties({ abilities: abilities })
+      )
+    )
+  })
+;
+
+program
+  .command('extract')
+  .action(function() {
+    generate({
+      fileName: 'db/00-skills.yml',
+      contents: scraper.parseSkills(loadAsset('SkillData'))
+    })
+
+    generate({
+      fileName: 'db/00-requirements.yml',
+      contents: scraper.parseRequirements(loadAsset('Requirements'))
+    })
+  })
+;
+
+program
+  .command('refine')
+  .action(function() {
+    generate({
+      fileName: 'db/01-skills.yml',
+      contents: scraper.refineSkills(
+        scraper.parseSkills(loadAsset('SkillData'))
+      )
+    })
+
+    generate({
+      fileName: 'db/01-requirements.yml',
+      contents: scraper.refineRequirements(
+        scraper.parseRequirements(loadAsset('Requirements'))
+      )
+    })
+  })
+;
+
+program
+  .command('generate-icons')
+  .action(function(params) {
+    const iconSets = config.assets.Icons;
+
+    iconSets.every(({ name, sprite, manifest, width, height }) => {
+      const pngPath = path.join(root, `db/${name}.png`)
+      const ddsPath = path.join(root, sprite)
+      const dimensions = `${width}x${height}`
+
+      execSync(`convert "${ddsPath}" -resize ${dimensions} "${pngPath}"`)
+
+      fs.writeFileSync(
+        path.join(params.output, `${name}.less`),
+
+        scraper.cli.generateIcons({
+          className: "dos2-icon",
+          imageName: `${name}.png`,
+          xmlFile: fs.readFileSync(path.join(root, manifest), 'utf8'),
+          width,
+          height,
+        }),
+
+        'utf8'
+      )
+
+      return true;
+    })
+  })
+;
+
+program.parse(process.argv)

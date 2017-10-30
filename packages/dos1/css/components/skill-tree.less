@@ -1,0 +1,113 @@
+.skill-tree {
+  display: inline-block;
+  vertical-align: top;
+  // margin: 0 1em;
+
+  .header--framed {
+    margin-top: 0;
+    line-height: 44px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+
+  &__empty-message {
+    font-size: 0.75em;
+    line-height: 1.6;
+  }
+
+  &__listing {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__level {
+    list-style: none;
+    margin: 0 0 1em 0;
+    position: relative;
+    padding: 1em;
+
+    .frame__skill-tree-level();
+    .shaded-background();
+
+    &--ee {
+      margin-top: 4em;
+    }
+  }
+
+
+  &__level-indicator {
+    position: absolute;
+    right:  0em;
+    top:    1em;
+    font-size: 0.75em;
+    font-weight: bold;
+
+    &--tier {
+      // position: static;
+      font-size: inherit;
+      line-height: 2em;
+      left: 0;
+      top: -4.5em;
+    }
+  }
+
+  &__skill {
+    display: inline-block;
+    margin: 1em;
+    width: 100px;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+
+    &--locked {
+      .skill-tree__skill-icon {
+        .h-grayscale();
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+
+    &--learned {
+      .skill-tree__skill-icon-highlighter {
+        display: block;
+      }
+
+      a { color: inherit; }
+    }
+  }
+
+  &__skill-icon {
+    @dim: 42px;
+    position: relative;
+
+    height: @dim;
+    width:  @dim;
+
+    .frame__skill-icon();
+
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    box-sizing: border-box;
+  }
+
+  &__skill-icon-highlighter {
+    display: block;
+    position: absolute;
+    top:    -5px;
+    right:  -5px;
+    height: 32px;
+    top: -5px;
+    left:   -5px;
+    display: none;
+    .frame__skill-icon--active();
+  }
+
+  &__skill-name {
+    font-size: 0.75em;
+    display: block;
+  }
+}

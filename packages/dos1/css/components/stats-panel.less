@@ -1,0 +1,56 @@
+@import (reference) "~dos-components/css/helpers";
+
+.stats-panel {
+  text-align: center;
+
+  &__tabs {
+    text-align: center;
+    border-bottom: 1px dotted darken(@brown, 40%);
+    margin-bottom: 2em;
+  }
+
+  &__link {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+
+    // background-color: darken(@brown, 55%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    padding: 0;
+
+    // .frame__skill-icon--no-fill();
+    // border: 1px solid darken(@brown, 40%);
+    margin: 0 0 1em 0;
+
+    & + & {
+      margin-left: 1em;
+    }
+
+    &--character {
+      background-image: url('./stats-panel/stats__equipment.png');
+    }
+
+    &--abilities {
+      background-image: url('./stats-panel/stats__abilities.png');
+    }
+
+    &--talents {
+      background-image: url('./stats-panel/stats__talents.png');
+    }
+
+    &--traits {
+      background-image: url('./stats-panel/stats__traits.png');
+    }
+
+    &:not(.active) {
+      .h-grayscale();
+    }
+
+    &.active {
+      -webkit-filter: sepia(1) brightness(125%);
+      // .h-sepia();
+    }
+  }
+}

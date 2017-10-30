@@ -1,0 +1,39 @@
+{
+  "name": "dos2-pak-scraper",
+  "version": "1.0.0",
+  "description": "Extract D:OS 2 game data from source .pak files",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha 'lib/**/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amireh/divinity_planner.git"
+  },
+  "keywords": [
+    "divinity",
+    "dos",
+    "game",
+    "pak"
+  ],
+  "author": "Ahmad Amireh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amireh/divinity_planner/issues"
+  },
+  "homepage": "https://github.com/amireh/divinity_planner#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "dos-pak-utils": "../dos-pak-utils",
+    "mocha": "^3.5.3",
+    "node-yaml": "^3.1.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.11.0",
+    "deep-sort-object": "^1.0.2",
+    "fs-extra": "^4.0.2",
+    "lodash": "^4.17.4",
+    "ramda": "^0.24.1"
+  }
+}

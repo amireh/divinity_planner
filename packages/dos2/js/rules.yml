@@ -1,0 +1,140 @@
+Attributes:
+  - Id: STR
+    DisplayName: Strength
+  - Id: FIN
+    DisplayName: Finesse
+  - Id: INT
+    DisplayName: Intelligence
+  - Id: CON
+    DisplayName: Constitution
+  - Id: MEM
+    DisplayName: Memory
+    Description: >-
+      Memory affects your amount of Memory Slots, which are required to learn
+      skills. More powerful skills cost more Memory Slots.
+  - Id: WIT
+    DisplayName: Wits
+
+StartingCharacterAttributePoints: 3
+StartingAbilityPoints: 5
+BaseAttributePoints: 10
+BaseAbilitySkillCount: 3
+
+# Caps
+AttributeSoftCap: 30
+AttributeLoneWolfCap: 60
+AttributeHardCap: 70
+
+CombatAbilitySoftCap: 10
+CombatAbilityLoneWolfCap: 20
+
+CivilAbilitySoftCap: 5
+CivilAbilityLoneWolfCap: 5
+
+MaxLevel: 40
+
+Modifiers:
+  - Id: AllSkilledUp
+    Type: Talent
+    Effects:
+      - +1 [Ability]
+      - +1 [CivilAbility]
+
+  - Id: BiggerAndBetter
+    Type: Talent
+    Effect: +2 [Attribute]
+
+  - Id: Elegant
+    Type: Talent
+    Effect: +2 [Attribute:FIN]
+
+  - Id: Ingenious
+    Type: Talent
+    Effect: +2 [Attribute:WIT]
+
+  - Id: LoneWolf
+    Type: Talent
+    Effect: x2 [Attribute]
+
+  - Id: Sophisticated
+    Type: Talent
+    Effect: +2 [Attribute:INT]
+
+  - Id: Spellsong
+    Type: Talent
+    Effect: +1 [CivilAbility:Persuasion]
+
+  - Id: Sturdy
+    Type: Talent
+    Effect: +2 [Attribute:STR]
+
+  - Id: DwarvenGuile
+    Type: Talent
+    Effect: +1 [CivilAbility:Sneaking]
+
+Tiers:
+  # - Id: Starter
+  #   DisplayName: Starter
+  #   AbilityPointRequirement: 1
+  - Id: Novice
+    DisplayName: Novice
+    AbilityPointRequirement: 1
+  - Id: Adept
+    DisplayName: Adept
+    AbilityPointRequirement: 2
+  - Id: Master
+    DisplayName: Master
+    AbilityPointRequirement: 4
+
+TierAccessibility:
+  0:
+  1:
+    - Tier: Novice
+      Skills: 3
+  2:
+    - Tier: Novice
+      Skills: 5
+    - Tier: Adept
+      Skills: 2
+  3:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 3
+  4:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 4
+    - Tier: Master
+      Skills: 1
+  5:
+    - Tier: Novice
+      Skills: 6
+    - Tier: Adept
+      Skills: 4
+    - Tier: Master
+      Skills: 2
+
+TalentPointLevels:
+  - 1
+  - 3
+  - 9
+  - 14
+  - 18
+  - 23
+  - 28
+  - 33
+
+# TODO: implement
+CivilAbilityLevels:
+  - 1
+  - 2
+  - 6
+  - 10
+  - 14
+  - 18
+  - 22
+  - 26
+  - 30
+  - 34

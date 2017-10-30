@@ -1,0 +1,30 @@
+.skillbook-stats {
+  padding-bottom: 1em;
+  margin-top: 2em;
+
+  .skill-tree__skill {
+    margin: 0 0 1em 0;
+  }
+
+  &__ability[data-hint] {
+    display: block;
+  }
+
+  &__ability-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__ability-stats {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: monospace;
+    font-size: 1.25em;
+  }
+
+  &__counter {
+    &--max {
+      color: @red;
+    }
+  }
+}

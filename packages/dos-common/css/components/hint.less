@@ -1,0 +1,30 @@
+@import "../../vendor/hint";
+
+.hint:before, .hint:after, [data-hint]:before, [data-hint]:after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+
+  // was hoping to make the tooltips stick so we can scroll:
+  //
+  // -webkit-transition: 0s linear;
+  // -moz-transition: 0s linear;
+  // transition: 0s linear;
+  // -webkit-transition-delay: 500ms;
+  // -moz-transition-delay: 500ms;
+  // transition-delay: 500ms;
+
+  text-align: left;
+
+  line-height: 1.6;
+}
+
+.hint:after, [data-hint]:after {
+  max-width: 320px;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: pre;
+}
+
+.hint--timeout:before, .hint--timeout:after {
+}

@@ -1,0 +1,6 @@
+{
+  "name": "dos2",
+  "description": "Divinity: Original Sin 2 character planner.",
+  "version": "1.0.0",
+  "main": "js/index.js"
+}
